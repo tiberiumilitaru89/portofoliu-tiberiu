@@ -18,3 +18,5 @@ simulate-visitors.js
 test-audit.js
 test-suite.js
 package.json
+
+generate-qr.js
