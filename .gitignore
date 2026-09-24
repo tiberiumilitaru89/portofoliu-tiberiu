@@ -10,3 +10,11 @@ Thumbs.db
 *.log
 .env
 .env.local
+
+# Internal test scripts and generators
+audit-interactive.js
+generate-cv-pdf.js
+simulate-visitors.js
+test-audit.js
+test-suite.js
+package.json
