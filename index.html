@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ro" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Militaru Tiberiu Nicolae | Dezvoltator Web, Automatizări & Soluții IT</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Portofoliu profesional Tiberiu Nicolae Militaru. Creare site-uri web moderne, automatizări de procese, administrare baze de date (SQL), consiliere & soluții software și hardware la cerere, mentenanță completă.">
+    <meta name="keywords" content="Militaru Tiberiu Nicolae, Dezvoltator Web, Creare Site-uri, Automatizari, Full Stack Developer, React, Node.js, SQL, Baze de Date, Mentenanta IT, Consiliere Web, Hardware, Ploiesti">
+    <meta name="author" content="Militaru Tiberiu Nicolae">
+    <meta name="theme-color" content="#030712">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp Preview) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tiberiu Nicolae Militaru - Soluții Web, Automatizări & IT la Cerere">
+    <meta property="og:description" content="Site-uri web moderne, automatizări pentru afaceri, arhitecturi de baze de date și suport complet software & hardware.">
+    <meta property="og:image" content="profile.jpg">
+    <meta property="og:locale" content="ro_RO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Militaru Tiberiu Nicolae | Portofoliu & CV">
+    <meta name="twitter:description" content="Construiesc site-uri, automatizez fluxuri de lucru și rezolv provocări hardware & software.">
+    <meta name="twitter:image" content="profile.jpg">
+
+    <!-- Fonts (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+    <!-- Screen Reader Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Sari la conținutul principal</a>
+
+    <!-- Three.js Interactive 3D Particle Universe Container -->
+    <div id="canvas-container" class="canvas-container" aria-hidden="true"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#home" class="logo" aria-label="Militaru Tiberiu Nicolae Acasă">
+                <span class="logo-bracket">&lt;</span><span class="logo-name">Tiberiu</span><span class="logo-dot">.</span><span class="logo-sub">Dev</span><span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" data-i18n="nav_home">Acasă</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav_services">Servicii</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav_about">Despre Mine</a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Portofoliu</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Competențe</a></li>
+                    <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Experiență</a></li>
+                    <li><a href="#terminal" class="nav-link" data-i18n="nav_terminal">Terminal</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Navigation Controls (Lang, Theme, Mobile Hamburger) -->
+            <div class="nav-controls">
+                <!-- Language Toggle Button -->
+                <div class="lang-switch-wrap">
+                    <button id="langToggleBtn" class="control-btn lang-btn" aria-label="Comută limba (Switch language)">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="langCurrentText">RO</span>
+                    </button>
+                </div>
+
+                <!-- Theme Toggle Button -->
+                <button id="themeToggleBtn" class="control-btn theme-btn" aria-label="Comută tema (Dark / Light)">
+                    <i class="fa-solid fa-sun" id="themeIcon"></i>
+                </button>
+
+                <!-- Quick CV Download Action -->
+                <a href="CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" id="quickCvBtn" class="btn btn-sm btn-outline-cyan header-cv-btn" title="Descarcă CV-ul în format PDF">
+                    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="nav_btn_cv">CV PDF</span>
+                </a>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button class="hamburger-btn" id="hamburgerBtn" aria-label="Deschide meniul de navigare" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer-header">
+                <span class="drawer-title"><i class="fa-solid fa-compass"></i> Meniu</span>
+                <button id="drawerCloseBtn" class="drawer-close-btn" aria-label="Închide meniul">&times;</button>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="#home" class="mobile-nav-link" data-i18n="nav_home">Acasă</a></li>
+                <li><a href="#services" class="mobile-nav-link" data-i18n="nav_services">Servicii & Soluții</a></li>
+                <li><a href="#about" class="mobile-nav-link" data-i18n="nav_about">Despre Mine</a></li>
+                <li><a href="#projects" class="mobile-nav-link" data-i18n="nav_projects">Portofoliu Proiecte</a></li>
+                <li><a href="#skills" class="mobile-nav-link" data-i18n="nav_skills">Competențe Tehnice</a></li>
+                <li><a href="#experience" class="mobile-nav-link" data-i18n="nav_experience">Experiență & Studii</a></li>
+                <li><a href="#terminal" class="mobile-nav-link" data-i18n="nav_terminal">Terminal CLI</a></li>
+                <li><a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact Direct</a></li>
+            </ul>
+            <div class="mobile-drawer-footer">
+                <a href="CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full print-cv-trigger">
+                    <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn_print_cv">Descarcă CV (PDF)</span>
+                </a>
+                <a href="https://wa.me/40720955119?text=Salut%20Tiberiu,%20am%20vazut%20portofoliul%20tau%20si%20as%20dori%20sa%20discutam." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-full">
+                    <i class="fa-brands fa-whatsapp"></i> <span>Scrie-mi pe WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- ================================================================= -->
+        <!-- 1. HERO SECTION (Uman, Direct, Orientat pe Rezultate) -->
+        <!-- ================================================================= -->
+        <section class="hero-section" id="home">
+            <div class="container hero-container">
+                <div class="hero-grid">
+                    
+                    <!-- Hero Text -->
+                    <div class="hero-text-col">
+                        <div class="status-badge">
+                            <span class="status-pulse"></span>
+                            <span data-i18n="hero_status">Disponibil pentru Proiecte & Colaborări</span>
+                        </div>
+
+                        <h1 class="hero-title">
+                            <span class="greeting" data-i18n="hero_greeting">Salut! Sunt</span>
+                            <span class="hero-name">Militaru Tiberiu Nicolae</span>
+                        </h1>
+
+                        <!-- Dynamic Typing Element -->
+                        <div class="typing-box">
+                            <span class="typing-label" data-i18n="hero_focus_label">Ce fac eu:</span>
+                            <span class="typing-target" id="typingTarget"></span><span class="typing-cursor">|</span>
+                        </div>
+
+                        <!-- Human, Accessible & Professional Summary -->
+                        <p class="hero-bio" data-i18n="hero_bio">
+                            Construiesc <strong>site-uri web moderne</strong>, automatizez fluxuri repetitive de lucru și rezolv provocări tehnice – de la <strong>cod curat</strong> (React, Node.js, SQL) până la <strong>mentenanță și soluții hardware/software la cerere</strong>. Ofer consiliere tehnică clară pe înțelesul oricui, transformând cerințele tale în rezultate concrete, sigure și funcționale 24/7.
+                        </p>
+
+                        <!-- Quick Value Tags (Visible immediately) -->
+                        <div class="hero-pills">
+                            <span class="pill"><i class="fa-solid fa-globe"></i> <span data-i18n="pill_web">Site-uri Web & Magazine</span></span>
+                            <span class="pill"><i class="fa-solid fa-bolt"></i> <span data-i18n="pill_auto">Automatizări de Procese</span></span>
+                            <span class="pill"><i class="fa-solid fa-database"></i> <span data-i18n="pill_db">Baze de Date & Optimizare</span></span>
+                            <span class="pill"><i class="fa-solid fa-screwdriver-wrench"></i> <span data-i18n="pill_hw">Soluții Hardware & Suport</span></span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="hero-actions">
+                            <!-- Direct WhatsApp & Phone Action -->
+                            <a href="https://wa.me/40720955119?text=Salut%20Tiberiu,%20am%20vazut%20portofoliul%20tau%20si%20as%20dori%20sa%20discutam." target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="heroWhatsAppBtn">
+                                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_talk">Hai să vorbim pe WhatsApp</span>
+                            </a>
+                            
+                            <!-- Direct PDF CV Download -->
+                            <a href="CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline print-cv-trigger" id="heroPrintCvBtn">
+                                <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn_download_cv">Descarcă CV (PDF)</span>
+                            </a>
+
+                            <!-- Terminal Jump -->
+                            <a href="#terminal" class="btn btn-ghost" id="heroTerminalBtn">
+                                <i class="fa-solid fa-terminal"></i> <span data-i18n="btn_cli">Terminal CLI</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Visual / Profile Image Card -->
+                    <div class="hero-photo-col">
+                        <div class="profile-card-wrap">
+                            <div class="profile-glow-ring"></div>
+                            <div class="profile-card">
+                                <div class="profile-img-container">
+                                    <img src="profile.jpg" alt="Militaru Tiberiu Nicolae - Dezvoltator Web & Specialist IT" class="profile-photo" onerror="this.src='https://ui-avatars.com/api/?name=Tiberiu+Militaru&background=0284c7&color=ffffff&size=300'">
+                                </div>
+                                <div class="profile-info-footer">
+                                    <h3 class="profile-card-name">Tiberiu Militaru</h3>
+                                    <p class="profile-card-role" data-i18n="profile_card_role">Dezvoltator Web & Administrator Baze de Date</p>
+                                    
+                                    <div class="profile-quick-stats">
+                                        <div class="p-stat">
+                                            <span class="p-stat-val">5+</span>
+                                            <span class="p-stat-lbl" data-i18n="stat_exp_short">Ani Experiență</span>
+                                        </div>
+                                        <div class="p-stat-divider"></div>
+                                        <div class="p-stat">
+                                            <span class="p-stat-val">99.9%</span>
+                                            <span class="p-stat-lbl" data-i18n="stat_uptime_short">Uptime & Fiabilitate</span>
+                                        </div>
+                                        <div class="p-stat-divider"></div>
+                                        <div class="p-stat">
+                                            <span class="p-stat-val">100%</span>
+                                            <span class="p-stat-lbl" data-i18n="stat_delivery_short">Soluții Dedicate</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="profile-social-mini">
+                                        <a href="https://wa.me/40720955119" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="mini-soc-btn" title="Contact WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                                        <a href="mailto:tiberiumilitaru89@gmail.com?subject=Contact%20Portofoliu" aria-label="Email" class="mini-soc-btn" title="Trimite Email"><i class="fa-solid fa-envelope"></i></a>
+                                        <a href="https://www.linkedin.com/in/tiberiu-militaru-nicolae89" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="mini-soc-btn" title="Profil LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                        <a href="https://github.com/tiberiumilitaru89" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="mini-soc-btn" title="Profil GitHub"><i class="fa-brands fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- 2. SERVICII & SOLUȚII LA CERERE (Cu ce te pot ajuta) -->
+        <!-- ================================================================= -->
+        <section class="section services-section" id="services">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge" data-i18n="serv_badge">Servicii & Soluții la Cheie</span>
+                    <h2 class="section-title" data-i18n="serv_title">Cu Ce Te Pot Ajuta?</h2>
+                    <p class="section-subtitle" data-i18n="serv_subtitle">
+                        Fie că ai nevoie de prezență online de la zero, de automatizarea muncii manuale sau de mentenanță și suport tehnic dedicat, îți ofer soluții clare, adaptate nevoilor tale.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    
+                    <!-- Serviciu 1: Dezvoltare Web & Site-uri -->
+                    <div class="service-card" data-tilt>
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="s1_title">Creare Site-uri & Aplicații Web</h3>
+                        <p class="service-card-desc" data-i18n="s1_desc">
+                            De la site-uri de prezentare moderne, rapide și optimizate pentru Google, până la magazine online complete sau platforme interactive (React, HTML5, CSS3, Node.js). Arată excelent pe telefon, se încarcă într-o clipită și transformă vizitatorii în clienți.
+                        </p>
+                        <ul class="service-points">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s1_pt1">Design 100% responsive (mobil, tabletă, PC)</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s1_pt2">Optimizare viteză de încărcare & SEO de bază</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s1_pt3">Formulare de contact, WhatsApp direct, chat live</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Serviciu 2: Backend & Baze de Date -->
+                    <div class="service-card" data-tilt>
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="s2_title">Baze de Date & Backend Sigur</h3>
+                        <p class="service-card-desc" data-i18n="s2_desc">
+                            Inima oricărui sistem digital de succes. Proiectez scheme de baze de date (PostgreSQL, MySQL, MS SQL) și API-uri rapide (Node.js, Express, PHP) capabile să gestioneze comenzi, stocuri sau utilizatori simultani în deplină siguranță.
+                        </p>
+                        <ul class="service-points">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_pt1">Administrare & optimizare interogări SQL lente</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_pt2">Integrare API-uri REST, plăți online, webhook-uri</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_pt3">Politici riguroase de backup și securitate</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Serviciu 3: Automatizări & Eficientizare -->
+                    <div class="service-card" data-tilt>
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="s3_title">Automatizări de Procese & Date</h3>
+                        <p class="service-card-desc" data-i18n="s3_desc">
+                            Scapă de sarcinile plictisitoare și de erorile umane. Construiesc scripturi și aplicații care generează automat rapoarte, facturi, oferte PDF sau sincronizează date între fișiere Excel și baze de date în fracțiuni de secundă.
+                        </p>
+                        <ul class="service-points">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s3_pt1">Reducere timpi de lucru de la zeci de minute la 5 secunde</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s3_pt2">Generare automată de PDF-uri compatibile ATS / print</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s3_pt3">Aplicații CRM pe măsură pentru tehnicieni & afaceri</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Serviciu 4: Soluții Hardware/Software & Mentenanță -->
+                    <div class="service-card" data-tilt>
+                        <div class="service-icon-box">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="service-card-title" data-i18n="s4_title">Consiliere, Hardware & Mentenanță</h3>
+                        <p class="service-card-desc" data-i18n="s4_desc">
+                            Tehnologia trebuie să lucreze pentru tine, nu împotriva ta. Ofer consiliere în achiziții de echipamente, asamblare de calculatoare/servere, diagnostic hardware, configurare rețele locale și mentenanță periodică pentru a preveni căderile de sistem.
+                        </p>
+                        <ul class="service-points">
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s4_pt1">Consiliere obiectivă (fără costuri inutile de echipament)</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s4_pt2">Diagnoză, curățare, upgrade hardware & devirusare</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s4_pt3">Suport tehnic nivel 1 & 2 și rezolvare rapidă a incidentelor</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- 3. DESPRE MINE & VALORI PROFESIONALE -->
+        <!-- ================================================================= -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    
+                    <div class="about-content-col">
+                        <span class="section-badge" data-i18n="about_badge">Profil Profesional & Viziune</span>
+                        <h2 class="section-title text-left" data-i18n="about_title">Cine Sunt și Cum Lucrez</h2>
+                        
+                        <div class="about-paragraphs">
+                            <p data-i18n="about_p1">
+                                Sunt un <strong>dezvoltator pasionat de tehnologie și administrator de baze de date</strong> care îmbină experiența practică de peste 5 ani în menținerea infrastructurilor critice cu dorința continuă de perfecționare. În prezent, îmi aprofundez cunoștințele de algoritmi, structuri de date și programare orientată pe obiecte (C#, C++) la <strong>Colegiul Tehnic „Elie Radu” din Ploiești</strong>.
+                            </p>
+                            <p data-i18n="about_p2">
+                                În carieră am văzut cât de mult costă o pană de sistem sau un proces administrativ blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, ușor de folosit și menținute la o disponibilitate de 99.9%.
+                            </p>
+                        </div>
+
+                        <!-- Highlights List -->
+                        <div class="about-highlights-grid">
+                            <div class="highlight-item">
+                                <div class="h-icon"><i class="fa-solid fa-bullseye"></i></div>
+                                <div>
+                                    <h4 data-i18n="h1_title">Orientat pe Rezultate</h4>
+                                    <p data-i18n="h1_desc">Fiecare linie de cod sau piesă hardware montată are un scop clar: să economisească timp și bani.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="h-icon"><i class="fa-solid fa-comments"></i></div>
+                                <div>
+                                    <h4 data-i18n="h2_title">Comunicare Transparentă</h4>
+                                    <p data-i18n="h2_desc">Fără jargon tehnic inutil. Știi întotdeauna stadiul lucrărilor și ce soluții sunt cele mai bune.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Counter Card -->
+                    <div class="about-stats-col">
+                        <div class="stats-card">
+                            <h3 class="stats-card-title" data-i18n="stats_card_title">Cifre & Indicatori de Performanță</h3>
+                            
+                            <div class="stats-items-wrap">
+                                <div class="stat-box">
+                                    <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+                                    <p class="stat-label" data-i18n="stat_exp_lbl">Ani Experiență IT & Suport Sisteme</p>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number" data-target="99">0</span><span class="stat-plus">.9%</span>
+                                    <p class="stat-label" data-i18n="stat_uptime_lbl">Uptime Menținut pe Sisteme de Baze de Date</p>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number" data-target="40">0</span><span class="stat-plus">%</span>
+                                    <p class="stat-label" data-i18n="stat_perf_lbl">Reducere Timp Execuție Interogări SQL</p>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+                                    <p class="stat-label" data-i18n="stat_tech_lbl">Tehnologii, Limbaje & Baze de Date Stăpânite</p>
+                                </div>
+                            </div>
+
+                            <div class="stats-card-footer">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <span data-i18n="stats_quote">„Securitatea, viteza și simplitatea în utilizare nu sunt opționale.”</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- 4. PORTOFOLIU & PROIECTE REALE -->
+        <!-- ================================================================= -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge" data-i18n="proj_badge">Studii de Caz & Soluții Livrate</span>
+                    <h2 class="section-title" data-i18n="proj_title">Proiecte Web & Aplicații</h2>
+                    <p class="section-subtitle" data-i18n="proj_subtitle">
+                        Iată câteva exemple concrete de soluții software construite pentru a automatiza fluxuri, vinde online și gestiona comenzi în timp real.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    
+                    <!-- Proiectul 1: ATS / PDF Generator -->
+                    <div class="project-card" data-project="proj1" data-tilt>
+                        <div class="project-header">
+                            <div class="project-icon-badge">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <span class="project-category" data-i18n="proj1_tag">Automatizare B2B & PDF</span>
+                        </div>
+                        <h3 class="project-title" data-i18n="proj1_title">Generator Documente PDF pt. Sisteme ATS</h3>
+                        <p class="project-desc" data-i18n="proj1_summary">
+                            Platformă inteligentă de generare dinamică a documentelor tehnice și a CV-urilor, prelucrând date structurate JSON. A redus timpul manual de redactare de la 20 de minute la mai puțin de 5 secunde, garantând parsare completă pentru algoritmii de recrutare automată (ATS).
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">JavaScript ES6</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">JSON Parsing</span>
+                            <span class="tech-tag">PDF Rendering</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj1" aria-label="Detalii tehnice despre Generator PDF">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            </button>
+                            <a href="https://github.com/tiberiumilitaru89" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi pe GitHub">
+                                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Proiectul 2: Florărie E-Commerce Live Chat -->
+                    <div class="project-card" data-project="proj2" data-tilt>
+                        <div class="project-header">
+                            <div class="project-icon-badge">
+                                <i class="fa-solid fa-store"></i>
+                            </div>
+                            <span class="project-category" data-i18n="proj2_tag">E-Commerce & Real-Time</span>
+                        </div>
+                        <h3 class="project-title" data-i18n="proj2_title">Magazin Online cu Chat Live (Florărie)</h3>
+                        <p class="project-desc" data-i18n="proj2_summary">
+                            Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC. Include catalog dinamic de produse, coș de cumpărături securizat și modul de Live Chat în timp real bazat pe WebSockets pentru a converti vizitatorii în clienți direct pe site.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">MVC</span>
+                            <span class="tech-tag">Responsive UI</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj2" aria-label="Detalii tehnice despre Magazin Florărie">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            </button>
+                            <a href="https://github.com/tiberiumilitaru89" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi pe GitHub">
+                                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Proiectul 3: CRM Instalații & Gestiune Servicii -->
+                    <div class="project-card" data-project="proj3" data-tilt>
+                        <div class="project-header">
+                            <div class="project-icon-badge">
+                                <i class="fa-solid fa-toolbox"></i>
+                            </div>
+                            <span class="project-category" data-i18n="proj3_tag">CRM & Baze de Date</span>
+                        </div>
+                        <h3 class="project-title" data-i18n="proj3_title">Aplicație CRM & Gestiune Servicii</h3>
+                        <p class="project-desc" data-i18n="proj3_summary">
+                            Platformă pe măsură pentru o firmă de instalații sanitare și meseriași. Asigură preluarea comenzilor clienților, alocarea tehnicienilor pe teren, alerte automate SLA și gestiunea istoricului de intervenții printr-un API RESTful securizat și baze relaționale SQL.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj3" aria-label="Detalii tehnice despre Aplicație CRM">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            </button>
+                            <a href="https://github.com/tiberiumilitaru89" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi pe GitHub">
+                                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="projects-cta text-center">
+                    <p data-i18n="proj_cta_text">Ai o idee de proiect sau vrei să optimizezi un flux de lucru existent?</p>
+                    <a href="https://wa.me/40720955119?text=Salut%20Tiberiu,%20as%20dori%20sa%20discutam%20despre%20un%20nou%20proiect." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fa-brands fa-whatsapp"></i> <span data-i18n="proj_cta_btn">Discută Proiectul Tău pe WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- 5. COMPETENȚE TEHNICE (Frontend, Backend, Hardware & Tools) -->
+        <!-- ================================================================= -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge" data-i18n="skills_badge">Stack Tehnologic & Unelte</span>
+                    <h2 class="section-title" data-i18n="skills_title">Competențe & Tehnologii</h2>
+                    <p class="section-subtitle" data-i18n="skills_subtitle">
+                        O privire completă asupra tehnologiilor folosite în dezvoltarea frontend, arhitectura backend, administrarea bazelor de date și mentenanța hardware.
+                    </p>
+                </div>
+
+                <div class="skills-category-grid">
+                    
+                    <!-- Frontend -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon"><i class="fa-brands fa-react"></i></div>
+                            <div>
+                                <h3 data-i18n="cat_front_title">Dezvoltare Frontend & UI</h3>
+                                <span class="skill-cat-sub" data-i18n="cat_front_sub">Interfețe moderne, responsive & intuitive</span>
+                            </div>
+                        </div>
+                        <div class="skill-tags-cloud">
+                            <span class="s-tag">React.js</span>
+                            <span class="s-tag">JavaScript (ES6+)</span>
+                            <span class="s-tag">TypeScript</span>
+                            <span class="s-tag">HTML5 & CSS3</span>
+                            <span class="s-tag">State Management</span>
+                            <span class="s-tag">Responsive Design</span>
+                            <span class="s-tag">UI/UX Integration</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend & Databases -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon"><i class="fa-solid fa-database"></i></div>
+                            <div>
+                                <h3 data-i18n="cat_back_title">Backend & Baze de Date</h3>
+                                <span class="skill-cat-sub" data-i18n="cat_back_sub">Arhitecturi rapide, securizate & scalabile</span>
+                            </div>
+                        </div>
+                        <div class="skill-tags-cloud">
+                            <span class="s-tag">Node.js</span>
+                            <span class="s-tag">Express.js</span>
+                            <span class="s-tag">PHP</span>
+                            <span class="s-tag">PostgreSQL</span>
+                            <span class="s-tag">MySQL</span>
+                            <span class="s-tag">MS SQL Server</span>
+                            <span class="s-tag">RESTful APIs</span>
+                            <span class="s-tag">WebSockets</span>
+                            <span class="s-tag">Query Optimization & DBA</span>
+                        </div>
+                    </div>
+
+                    <!-- Hardware, Rețele & Mentenanță -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <div>
+                                <h3 data-i18n="cat_hw_title">Hardware, Suport & Mentenanță</h3>
+                                <span class="skill-cat-sub" data-i18n="cat_hw_sub">Continuitate operațională & infrastructură</span>
+                            </div>
+                        </div>
+                        <div class="skill-tags-cloud">
+                            <span class="s-tag">Diagnoză Hardware</span>
+                            <span class="s-tag">Asamblare Stații & Servere</span>
+                            <span class="s-tag">Mentenanță Preventivă</span>
+                            <span class="s-tag">Rețelistică & Switch-uri</span>
+                            <span class="s-tag">Backup & Disaster Recovery</span>
+                            <span class="s-tag">Root Cause Analysis (RCA)</span>
+                            <span class="s-tag">Suport Nivel 1 & 2</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Concepte -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <div>
+                                <h3 data-i18n="cat_devops_title">DevOps, Limbaje OOP & Unelte</h3>
+                                <span class="skill-cat-sub" data-i18n="cat_devops_sub">Fluxuri de lucru profesionale & automatizate</span>
+                            </div>
+                        </div>
+                        <div class="skill-tags-cloud">
+                            <span class="s-tag">Git & GitHub</span>
+                            <span class="s-tag">CI/CD Pipelines</span>
+                            <span class="s-tag">C# & C++ (POO)</span>
+                            <span class="s-tag">Python (Scraping/Scripts)</span>
+                            <span class="s-tag">Agile / Scrum</span>
+                            <span class="s-tag">VS Code</span>
+                            <span class="s-tag">Vercel & Cloud Hosting</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Languages Row -->
+                <div class="languages-box">
+                    <h4 class="lang-box-title" data-i18n="lang_box_title"><i class="fa-solid fa-language"></i> Limbi Străine Vorbite</h4>
+                    <div class="lang-items">
+                        <div class="lang-item">
+                            <span class="lang-flag">🇷🇴</span>
+                            <strong>Română</strong> - <span data-i18n="lang_ro_lvl">Nativ</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-flag">🇬🇧</span>
+                            <strong>Engleză</strong> - <span data-i18n="lang_en_lvl">C1 (Avansat / Fluent profesional)</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-flag">🇩🇪</span>
+                            <strong>Germană</strong> - <span data-i18n="lang_de_lvl">B2 (Mediu-Superior)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- 6. EXPERIENȚĂ & EDUCAȚIE (Timeline Profesional) -->
+        <!-- ================================================================= -->
+        <section class="section experience-section" id="experience">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge" data-i18n="exp_badge">Evoluție Profesională</span>
+                    <h2 class="section-title" data-i18n="exp_title">Experiență & Educație</h2>
+                    <p class="section-subtitle" data-i18n="exp_subtitle">
+                        Un parcurs solid format din responsabilități reale în sisteme critice, completat de studii riguroase de programare și management.
+                    </p>
+                </div>
+
+                <div class="timeline-container">
+                    
+                    <!-- Job 1 -->
+                    <div class="timeline-block">
+                        <div class="timeline-node">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="exp1_period">Ianuarie 2026 – Prezent</span>
+                                <span class="timeline-company"><i class="fa-solid fa-building"></i> Corpul Experților</span>
+                            </div>
+                            <h3 class="timeline-role" data-i18n="exp1_role">Administrator Baze de Date (DBA)</h3>
+                            <ul class="timeline-list">
+                                <li data-i18n="exp1_d1">Administrez și optimizez baze de date de producție (PostgreSQL, MySQL) pentru peste 200 de utilizatori activi, garantând disponibilitate 99.9%.</li>
+                                <li data-i18n="exp1_d2">Am refăcut strategiile de indexare și optimizare a interogărilor SQL complexe, reducând timpii medii de execuție cu 40%.</li>
+                                <li data-i18n="exp1_d3">Asigur proiectarea schemelor relaționale pentru noi module funcționale, monitorizarea proactivă și rezolvarea anomaliilor în timp real.</li>
+                            </ul>
+                            <div class="timeline-chips">
+                                <span>PostgreSQL</span>
+                                <span>MySQL</span>
+                                <span>Performance Tuning</span>
+                                <span>Data Integrity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="timeline-block">
+                        <div class="timeline-node">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2014 – 2020</span>
+                                <span class="timeline-company"><i class="fa-solid fa-building"></i> SC SIATI SRL</span>
+                            </div>
+                            <h3 class="timeline-role" data-i18n="exp2_role">Asistent Manager & Coordonator Digitalizare</h3>
+                            <ul class="timeline-list">
+                                <li data-i18n="exp2_d1">Am condus digitalizarea fluxurilor de documente interne pentru o echipă de peste 50 de angajați.</li>
+                                <li data-i18n="exp2_d2">Am proiectat și implementat un sistem intern de gestiune a sarcinilor care a redus timpul de procesare cu 30%.</li>
+                                <li data-i18n="exp2_d3">Am negociat contracte de mentenanță IT și am coordonat partenerii externi pentru upgrade-uri de sistem.</li>
+                            </ul>
+                            <div class="timeline-chips">
+                                <span>Digital Transformation</span>
+                                <span>Workflow Optimization</span>
+                                <span>Agile Mgmt</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="timeline-block">
+                        <div class="timeline-node">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2010 – 2014</span>
+                                <span class="timeline-company"><i class="fa-solid fa-building"></i> Grup Feroviar Român (GFR)</span>
+                            </div>
+                            <h3 class="timeline-role" data-i18n="exp3_role">Tehnician IT (Suport Nivel 1 și 2)</h3>
+                            <ul class="timeline-list">
+                                <li data-i18n="exp3_d1">Am întreținut și monitorizat infrastructura hardware și software a unui sistem feroviar național (300+ utilizatori activi).</li>
+                                <li data-i18n="exp3_d2">Am efectuat analize root-cause (RCA) pentru defecțiuni, reducând timpul mediu de rezolvare a incidentelor critice cu 25%.</li>
+                                <li data-i18n="exp3_d3">Am colaborat direct cu echipele de dezvoltare software pentru raportarea bug-urilor și aplicarea patch-urilor de securitate.</li>
+                            </ul>
+                            <div class="timeline-chips">
+                                <span>Hardware Diagnostics</span>
+                                <span>Tier 1/2 Support</span>
+                                <span>Incident Mgmt</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="timeline-block education-block">
+                        <div class="timeline-node">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="edu1_period">Septembrie 2025 – Prezent</span>
+                                <span class="timeline-company"><i class="fa-solid fa-school"></i> Colegiul Tehnic „Elie Radu”, Ploiești</span>
+                            </div>
+                            <h3 class="timeline-role" data-i18n="edu1_title">Studii Analist Programator (Nivel 5)</h3>
+                            <p class="timeline-desc" data-i18n="edu1_desc">
+                                Specializare axată pe Programare Orientată pe Obiecte (C#, C++), Structuri de Date & Algoritmi, Arhitecturi Baze de Date Relaționale (SQL) și Dezvoltare Web Full-Stack (HTML5, React.js, Node.js).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-block education-block">
+                        <div class="timeline-node">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Absolvit 2019</span>
+                                <span class="timeline-company"><i class="fa-solid fa-university"></i> Universitatea Bioterra</span>
+                            </div>
+                            <h3 class="timeline-role" data-i18n="edu2_title">Master & Licență în Management</h3>
+                            <p class="timeline-desc" data-i18n="edu2_desc">
+                                Specializare în Managementul Performanței, Optimizarea Sistemelor și Arhitecturi de Control în IMM-uri.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- 7. TERMINAL CLI INTERACTIV (Easter Egg & Tech Showcase) -->
+        <!-- ================================================================= -->
+        <section class="section terminal-section" id="terminal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge" data-i18n="term_badge">Consolă Interactivă</span>
+                    <h2 class="section-title" data-i18n="term_title">Terminal CLI v3.0</h2>
+                    <p class="section-subtitle" data-i18n="term_subtitle">
+                        Preferi linia de comandă? Scrie <code class="inline-cmd">help</code> pentru a explora întregul profil sau încearcă comanda secretă <code class="inline-cmd">matrix</code> pentru o ploaie digitală!
+                    </p>
+                </div>
+
+                <div class="terminal-shell">
+                    <div class="terminal-topbar">
+                        <div class="terminal-traffic-lights">
+                            <button class="term-btn term-close" id="termClose" title="Resetează terminalul" aria-label="Resetează terminalul"></button>
+                            <button class="term-btn term-min" id="termMin" title="Golește ecranul" aria-label="Golește ecranul"></button>
+                            <button class="term-btn term-max" id="termMax" title="Comută tema" aria-label="Comută tema"></button>
+                        </div>
+                        <div class="terminal-title">tiberiu@dev-workstation:~ (bash)</div>
+                        <div class="terminal-tools">
+                            <span class="term-status-dot"></span> Online
+                        </div>
+                    </div>
+
+                    <div class="terminal-viewport" id="terminalBody">
+                        <!-- Canvas overlay for Matrix Easter Egg -->
+                        <canvas id="matrixCanvas" class="matrix-canvas" aria-hidden="true"></canvas>
+
+                        <div class="terminal-screen" id="terminalOutput">
+                            <div class="t-line t-sys">[SYSTEM] Developer Workstation initialized (Environment: Web/Linux).</div>
+                            <div class="t-line t-sys">[SYSTEM] Type <span class="highlight-cyan">'help'</span> to see available commands or <span class="highlight-cyan">'cv'</span> to print.</div>
+                        </div>
+
+                        <div class="terminal-prompt-row">
+                            <span class="prompt-user">tiberiu@dev-os</span><span class="prompt-separator">:</span><span class="prompt-dir">~</span><span class="prompt-symbol">$</span>
+                            <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal command prompt" placeholder="type 'help'...">
+                        </div>
+                    </div>
+
+                    <div class="terminal-quick-chips">
+                        <span class="quick-chip" data-cmd="help">help</span>
+                        <span class="quick-chip" data-cmd="services">services</span>
+                        <span class="quick-chip" data-cmd="projects">projects</span>
+                        <span class="quick-chip" data-cmd="skills">skills</span>
+                        <span class="quick-chip" data-cmd="cv">cv</span>
+                        <span class="quick-chip" data-cmd="matrix">matrix</span>
+                        <span class="quick-chip" data-cmd="clear">clear</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================= -->
+        <!-- 8. CONTACT & COLABORARE (Notificare pe email & WhatsApp direct) -->
+        <!-- ================================================================= -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge" data-i18n="contact_badge">Contact Rapid</span>
+                    <h2 class="section-title" data-i18n="contact_title">Hai Să Colaborăm!</h2>
+                    <p class="section-subtitle" data-i18n="contact_subtitle">
+                        Ai o întrebare, vrei un site nou sau ai nevoie de o mână de ajutor cu un sistem sau o bază de date? Sunt la doar un mesaj distanță.
+                    </p>
+                </div>
+
+                <div class="contact-card-grid">
+                    
+                    <!-- Stânga: Date directe de contact cu click direct WhatsApp / Email -->
+                    <div class="contact-info-col">
+                        <h3 class="contact-box-title" data-i18n="contact_direct_title">Informații Directe</h3>
+                        <p class="contact-box-desc" data-i18n="contact_direct_desc">
+                            Îmi poți scrie direct pe WhatsApp pentru un răspuns rapid sau trimite un email. Pe PC se va deschide WhatsApp Web / clientul tău de mail, iar pe telefon se deschid aplicațiile native.
+                        </p>
+
+                        <div class="contact-links-list">
+                            
+                            <!-- WhatsApp Click-to-Chat (Nativ PC & Telefon) -->
+                            <a href="https://wa.me/40720955119?text=Salut%20Tiberiu,%20am%20vazut%20portofoliul%20tau%20si%20as%20dori%20sa%20discutam." target="_blank" rel="noopener noreferrer" class="contact-item-row" id="contactWhatsAppLink">
+                                <div class="c-icon whatsapp-icon">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div class="c-details">
+                                    <span class="c-label">WhatsApp (Chat Rapid)</span>
+                                    <span class="c-value">(+40) 720 955 119</span>
+                                </div>
+                                <div class="c-action-arrow">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </a>
+
+                            <!-- Apel Telefonic Direct -->
+                            <a href="tel:+40720955119" class="contact-item-row" id="contactPhoneLink">
+                                <div class="c-icon phone-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="c-details">
+                                    <span class="c-label">Telefon Direct</span>
+                                    <span class="c-value">(+40) 720 955 119</span>
+                                </div>
+                                <div class="c-action-arrow">
+                                    <i class="fa-solid fa-phone-flip"></i>
+                                </div>
+                            </a>
+
+                            <!-- Email Nativ Mailto -->
+                            <a href="mailto:tiberiumilitaru89@gmail.com?subject=Colaborare%20Proiect%20/%20Discutie%20Tehnica" class="contact-item-row" id="contactEmailLink">
+                                <div class="c-icon email-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="c-details">
+                                    <span class="c-label">Email</span>
+                                    <span class="c-value">tiberiumilitaru89@gmail.com</span>
+                                </div>
+                                <div class="c-action-arrow">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </a>
+
+                            <!-- Locație -->
+                            <div class="contact-item-row static-row">
+                                <div class="c-icon location-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="c-details">
+                                    <span class="c-label" data-i18n="contact_loc_label">Locație & Disponibilitate</span>
+                                    <span class="c-value" data-i18n="contact_loc_val">Ploiești, Prahova / Remote (Național)</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Social Networks -->
+                        <div class="contact-social-wrap">
+                            <span class="social-head" data-i18n="contact_social_label">Rețele & Repozitorii:</span>
+                            <div class="social-buttons">
+                                <a href="https://www.linkedin.com/in/tiberiu-militaru-nicolae89" target="_blank" rel="noopener noreferrer" class="soc-btn" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in"></i> <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/tiberiumilitaru89" target="_blank" rel="noopener noreferrer" class="soc-btn" aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dreapta: Formular Securizat cu Notificare pe Email -->
+                    <div class="contact-form-col">
+                        <div class="form-wrapper">
+                            <h3 class="form-title" data-i18n="form_title">Trimite un Mesaj Direct</h3>
+                            <p class="form-sub" data-i18n="form_sub">Completează formularul și vei primi un răspuns în maxim 24 de ore.</p>
+
+                            <form id="contactForm" class="contact-form" action="https://formspree.io/f/mjykoenj" method="POST" novalidate>
+                                
+                                <!-- Honeypot anti-spam field (hidden from real users, bots fill it) -->
+                                <div class="honeypot-field" aria-hidden="true" style="display: none !important;">
+                                    <label for="_gotcha">Do not fill this field</label>
+                                    <input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senderName" data-i18n="form_name_label">Numele Tău <span class="required">*</span></label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-user input-icon"></i>
+                                        <input type="text" id="senderName" name="name" required placeholder="Ex: Alexandru Popescu" autocomplete="name">
+                                    </div>
+                                    <span class="field-error" id="nameError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senderEmail" data-i18n="form_email_label">Adresa de Email <span class="required">*</span></label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-envelope input-icon"></i>
+                                        <input type="email" id="senderEmail" name="email" required placeholder="nume@exemplu.ro" autocomplete="email">
+                                    </div>
+                                    <span class="field-error" id="emailError"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="projectType" data-i18n="form_type_label">Despre ce este vorba?</label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-list-check input-icon"></i>
+                                        <select id="projectType" name="service_type">
+                                            <option value="site_web" data-i18n="opt_web">Creare Site Web / Magazin Online</option>
+                                            <option value="automatizare" data-i18n="opt_auto">Automatizare de Procese / Rapoarte</option>
+                                            <option value="baza_date" data-i18n="opt_db">Baze de Date & Optimizare SQL</option>
+                                            <option value="hardware_mentenanta" data-i18n="opt_hw">Consiliere Hardware / Mentenanță IT</option>
+                                            <option value="altele" data-i18n="opt_other">Alte Întrebări / Proiect Custom</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senderMessage" data-i18n="form_msg_label">Mesajul Tău <span class="required">*</span></label>
+                                    <div class="input-wrap">
+                                        <i class="fa-solid fa-message input-icon textarea-icon"></i>
+                                        <textarea id="senderMessage" name="message" rows="4" required placeholder="Spune-mi câteva detalii despre ce dorești să realizezi..."></textarea>
+                                    </div>
+                                    <span class="field-error" id="messageError"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-submit" id="submitContactBtn">
+                                    <i class="fa-solid fa-paper-plane"></i> <span data-i18n="btn_send_msg">Trimite Mesajul</span>
+                                </button>
+                                
+                                <p class="form-footnote" data-i18n="form_security_notice">
+                                    <i class="fa-solid fa-lock"></i> Datele tale sunt în siguranță și nu vor fi divulgate terților.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-bracket">&lt;</span><span class="logo-name">Tiberiu</span><span class="logo-dot">.</span><span class="logo-sub">Dev</span><span class="logo-bracket">/&gt;</span>
+                    <p class="footer-tagline" data-i18n="footer_tagline">Soluții web moderne, baze de date sigure și suport tehnic de încredere.</p>
+                </div>
+                <div class="footer-quick-links">
+                    <a href="#services" data-i18n="nav_services">Servicii</a>
+                    <a href="#projects" data-i18n="nav_projects">Portofoliu</a>
+                    <a href="#skills" data-i18n="nav_skills">Competențe</a>
+                    <a href="#contact" data-i18n="nav_contact">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Militaru Tiberiu Nicolae. <span data-i18n="footer_rights">Toate drepturile rezervate.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back To Top Button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Mergi sus la începutul paginii">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Project Details Modal -->
+    <div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Titlu Proiect</h3>
+                <button class="modal-close-btn" id="modalCloseBtn" aria-label="Închide fereastra modală">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Conținut injectat dinamic în mod securizat -->
+            </div>
+            <div class="modal-footer">
+                <a href="https://github.com/tiberiumilitaru89" id="modalGithubLink" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                    <i class="fa-brands fa-github"></i> <span data-i18n="btn_view_repo">Vezi pe GitHub</span>
+                </a>
+                <button class="btn btn-primary" id="modalDismissBtn" data-i18n="btn_close">Închide</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Three.js WebGL Library (Local for 100% offline & local file reliability) -->
+    <script src="three.min.js"></script>
+    
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
