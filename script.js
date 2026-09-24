@@ -219,7 +219,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 footer_tagline: "Soluții web moderne, baze de date sigure și suport tehnic de încredere.",
                 footer_rights: "Toate drepturile rezervate.",
                 btn_view_repo: "Vezi pe GitHub",
-                btn_close: "Închide"
+                btn_close: "Închide",
+                footer_qr: "Scanează pentru a distribui"
             },
             en: {
                 // Header & Nav
@@ -386,7 +387,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 footer_tagline: "Modern web solutions, dependable databases, and trusted IT maintenance.",
                 footer_rights: "All rights reserved.",
                 btn_view_repo: "View on GitHub",
-                btn_close: "Close"
+                btn_close: "Close",
+                footer_qr: "Scan to share"
             }
         };
 

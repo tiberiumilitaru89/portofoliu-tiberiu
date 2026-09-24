@@ -1707,6 +1707,22 @@ img {
 .footer-quick-links a:hover {
     color: var(--accent-cyan);
 }
+.footer-qr-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.footer-qr-code .qr-img {
+    border-radius: 8px;
+    padding: 4px;
+    background: #ffffff; /* Contrast guarantee for scanning */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.footer-qr-code .qr-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
 .footer-bottom {
     display: flex;
     justify-content: center;
