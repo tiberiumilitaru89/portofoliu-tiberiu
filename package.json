@@ -1,0 +1,43 @@
+{
+  "name": "portofoliu-tiberiu",
+  "version": "1.0.0",
+  "description": "Site web de prezentare profesional, modern și bilingv (Română / Engleză), conceput pentru promovarea serviciilor de dezvoltare web, automatizări de procese, administrare baze de date (SQL), consiliere IT și mentenanță hardware & software la cerere.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiberiumilitaru89/portofoliu-tiberiu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiberiumilitaru89/portofoliu-tiberiu/issues"
+  },
+  "homepage": "https://github.com/tiberiumilitaru89/portofoliu-tiberiu#readme",
+  "devDependencies": {
+    "puppeteer": "^25.12.0",
+    "sharp": "^0.35.4",
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "detect-libc": "^2.1.2",
+    "fdir": "^6.5.0",
+    "lightningcss": "^1.33.0",
+    "lightningcss-win32-x64-msvc": "^1.33.0",
+    "nanoid": "^3.3.19",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.7",
+    "postcss": "^8.5.28",
+    "rolldown": "^1.2.11",
+    "semver": "^7.8.5",
+    "source-map-js": "^1.2.1",
+    "tinyglobby": "^0.2.17",
+    "tslib": "^2.8.1"
+  }
+}
