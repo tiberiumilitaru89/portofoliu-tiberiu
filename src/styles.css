@@ -844,8 +844,8 @@ img {
     gap: 12px;
 }
 .mini-soc-btn {
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
     border-radius: var(--radius-full);
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
@@ -853,7 +853,7 @@ img {
     align-items: center;
     justify-content: center;
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 1.3rem;
     transition: var(--transition);
 }
 .mini-soc-btn:hover {

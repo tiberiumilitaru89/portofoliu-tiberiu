@@ -1416,6 +1416,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (output) output.innerHTML = '<div class="t-line t-sys">[SYSTEM] Terminal reset. Type \'help\' for assistance.</div>';
             if (isMatrixActive) toggleMatrix();
         });
+
+        // Easter Egg: Ctrl+K / Cmd+K to toggle Terminal visibility
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                const termSection = document.getElementById('terminal');
+                if (termSection) {
+                    if (termSection.style.display === 'none') {
+                        termSection.style.display = 'block';
+                        termSection.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(() => input?.focus(), 500);
+                        ToastModule.show("Terminal Hacker Mode Activat", 'success');
+                    } else {
+                        termSection.style.display = 'none';
+                    }
+                }
+            }
+        });
     })();
 
 
