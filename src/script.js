@@ -1673,7 +1673,6 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-            try {
                 /**
                  * Endpoint securizat prin Vercel Serverless Functions
                  * (Endpoint-ul real Formspree e ascuns in Variabile de Mediu pe backend)
