@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 /**
  * script.js - Portofoliu & CV Tiberiu Nicolae Militaru
  * ArhitecturÄƒ modularÄƒ, securizatÄƒ, optimizatÄƒ pentru performanÈ›Äƒ & Vercel
@@ -1472,7 +1472,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     architecture: 'Zero-Dependency Frontend (Vanilla JS, CSS Grid). Full Serverless Backend on Google Firebase: Hosting, Firestore (Real-time NoSQL), and Authentication (Google OAuth). Includes Node.js 22 Firebase Cloud Functions for Stripe Webhook validation and secure PDF rendering via headless Puppeteer.',
                     results: '✅ Fully Serverless architecture (zero maintenance), auto-scalable.<br>✅ Complete Stripe integration (Subscriptions & Checkout) for an autonomous end-to-end flow.<br>✅ Client-side ATS scoring algorithm based on keyword matching.'
                 },
-                github: 'https://github.com/tiberiumilitaru89'
+                github: 'https://github.com/tiberiumilitaru89/cv-builder-ats'
             },
             proj2: {
                 ro: {
