@@ -455,7 +455,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const html = document.documentElement;
         const body = document.body;
 
-        let currentTheme = SafeStorage.get('tiberiu_portfolio_theme', 'dark');
+        // 1. Verificam localStorage. Daca nu exista, verificam preferinta sistemului de operare
+        const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const defaultTheme = systemPrefersDark ? 'dark' : 'light';
+        let currentTheme = SafeStorage.get('tiberiu_portfolio_theme', defaultTheme);
 
         const setTheme = (theme, notify = false) => {
             currentTheme = theme;
@@ -587,15 +590,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. NEURAL NETWORK & SYNAPSE UNIVERSE (Adaptive Dark/Light & Mouse Hotspot)
     // ==========================================================================
     ThreeDParticleUniverseModule = (() => {
-        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        // isMobile este acum definit mai jos în interior pentru a fi dinamic, nu distrugem canvas-ul
         const container = document.getElementById('canvas-container');
         
         if (!container) return;
-
-        if (isMobile) {
-            container.remove();
-            return { updateLanguage: () => {} };
-        }
 
         const canvas = document.createElement('canvas');
         canvas.style.position = 'absolute';
@@ -686,14 +684,19 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // Neuron class / generator
+        const isMobile = window.innerWidth < 768; // Verificare dynamica, fara matchMedia static
+
         const initNeurons = () => {
             neurons = [];
             impulses = [];
             shockwaves = [];
 
-            // Adaptive node count
+            // Adaptive node count (Eco Mode on Mobile)
             let count = Math.min(Math.floor((width * height) / 12500), 95);
-            if (width < 768) count = Math.min(count, 45);
+            if (width < 768) {
+                // Eco Mode: drastically reduce particle count
+                count = Math.min(count, 25);
+            }
 
             const palette = palettes[currentTheme] || palettes.dark;
 
@@ -805,8 +808,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const palette = palettes[currentTheme] || palettes.dark;
 
-            // 1. Draw Mouse Hotspot Aura if active
-            if (mouse.active && mouse.x > 0 && mouse.y > 0) {
+            // 1. Draw Mouse Hotspot Aura if active (Disabled on mobile)
+            if (!isMobile && mouse.active && mouse.x > 0 && mouse.y > 0) {
                 const auraPulse = Math.sin(frameCount * 0.05) * 8;
                 const auraRad = mouse.auraRadius + auraPulse;
                 const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, auraRad);
