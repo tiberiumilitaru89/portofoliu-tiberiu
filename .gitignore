@@ -20,3 +20,6 @@ test-suite.js
 package.json
 
 generate-qr.js
+
+node_modules/
+dist/

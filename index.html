@@ -15,14 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Tiberiu Nicolae Militaru - Soluții Web, Automatizări & IT la Cerere">
     <meta property="og:description" content="Site-uri web moderne, automatizări pentru afaceri, arhitecturi de baze de date și suport complet software & hardware.">
-    <meta property="og:image" content="profile.jpg">
+    <meta property="og:image" content="/profile.webp">
     <meta property="og:locale" content="ro_RO">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Militaru Tiberiu Nicolae | Portofoliu & CV">
     <meta name="twitter:description" content="Construiesc site-uri, automatizez fluxuri de lucru și rezolv provocări hardware & software.">
-    <meta name="twitter:image" content="profile.jpg">
+    <meta name="twitter:image" content="/profile.webp">
 
     <!-- Fonts (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body data-theme="dark">
     <!-- Screen Reader Skip Link for Accessibility -->
@@ -82,7 +82,7 @@
                 </button>
 
                 <!-- Quick CV Download Action -->
-                <a href="CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" id="quickCvBtn" class="btn btn-sm btn-outline-cyan header-cv-btn" title="Descarcă CV-ul în format PDF">
+                <a href="/CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" id="quickCvBtn" class="btn btn-sm btn-outline-cyan header-cv-btn" title="Descarcă CV-ul în format PDF">
                     <i class="fa-solid fa-file-pdf"></i> <span data-i18n="nav_btn_cv">CV PDF</span>
                 </a>
 
@@ -112,7 +112,7 @@
                 <li><a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact Direct</a></li>
             </ul>
             <div class="mobile-drawer-footer">
-                <a href="CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full print-cv-trigger">
+                <a href="/CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full print-cv-trigger">
                     <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn_print_cv">Descarcă CV (PDF)</span>
                 </a>
                 <a href="https://wa.me/40720955119?text=Salut%20Tiberiu,%20am%20vazut%20portofoliul%20tau%20si%20as%20dori%20sa%20discutam." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-full">
@@ -171,7 +171,7 @@
                             </a>
                             
                             <!-- Direct PDF CV Download -->
-                            <a href="CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline print-cv-trigger" id="heroPrintCvBtn">
+                            <a href="/CV-Militaru-Tiberiu.pdf" download="CV-Militaru-Tiberiu.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline print-cv-trigger" id="heroPrintCvBtn">
                                 <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn_download_cv">Descarcă CV (PDF)</span>
                             </a>
 
@@ -188,7 +188,7 @@
                             <div class="profile-glow-ring"></div>
                             <div class="profile-card">
                                 <div class="profile-img-container">
-                                    <img src="profile.jpg" alt="Militaru Tiberiu Nicolae - Dezvoltator Web & Specialist IT" class="profile-photo" onerror="this.src='https://ui-avatars.com/api/?name=Tiberiu+Militaru&background=0284c7&color=ffffff&size=300'">
+                                    <img src="/profile.webp" alt="Militaru Tiberiu Nicolae - Dezvoltator Web & Specialist IT" class="profile-photo" fetchpriority="high" onerror="this.src='https://ui-avatars.com/api/?name=Tiberiu+Militaru&background=0284c7&color=ffffff&size=300'">
                                 </div>
                                 <div class="profile-info-footer">
                                     <h3 class="profile-card-name">Tiberiu Militaru</h3>
@@ -982,7 +982,7 @@
                     <a href="#contact" data-i18n="nav_contact">Contact</a>
                 </div>
                 <div class="footer-qr-code">
-                    <img src="qr-code.png" alt="QR Code Portofoliu" width="100" height="100" class="qr-img">
+                    <img src="/qr-code.webp" alt="QR Code Portofoliu" width="100" height="100" class="qr-img" loading="lazy" decoding="async">
                     <span class="qr-text" data-i18n="footer_qr">Scanează pentru a distribui</span>
                 </div>
             </div>
@@ -1020,10 +1020,7 @@
     <!-- Toast Notifications Container -->
     <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-    <!-- Three.js WebGL Library (Local for 100% offline & local file reliability) -->
-    <script src="three.min.js"></script>
-    
     <!-- Main JavaScript File -->
-    <script src="script.js"></script>
+    <script type="module" src="/src/script.js"></script>
 </body>
 </html>
