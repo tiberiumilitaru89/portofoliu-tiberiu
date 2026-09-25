@@ -1655,18 +1655,18 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
+            try {
                 /**
-                 * Endpoint configurat Formspree pt. notificari pe email:
+                 * Endpoint securizat prin Vercel Serverless Functions
+                 * (Endpoint-ul real Formspree e ascuns in Variabile de Mediu pe backend)
                  */
-                const formspreeEndpoint = 'https://formspree.io/f/mjykoenj';
-
-                const response = await fetch(formspreeEndpoint, {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
-                    body: JSON.stringify(formData)
+                    body: JSON.stringify({ ...formData, _gotcha: honeypot ? honeypot.value : '' })
                 });
 
                 if (response.ok) {
