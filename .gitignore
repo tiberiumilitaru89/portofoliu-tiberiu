@@ -16,3 +16,5 @@ test-suite.js
 generate-qr.js
 node_modules/
 dist/
+
+package-lock.json
