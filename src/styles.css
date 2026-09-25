@@ -14,8 +14,8 @@
     --border-hover: rgba(0, 240, 255, 0.4);
 
     --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --text-secondary: #e2e8f0;
+    --text-muted: #94a3b8;
 
     /* Accents */
     --accent-cyan: #00f0ff;
@@ -159,6 +159,10 @@ body {
     position: relative;
     min-height: 100vh;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] {
+    background: radial-gradient(circle at center, #2a2a35 0%, #030712 100%);
 }
 
 /* Accessibility: Skip link */

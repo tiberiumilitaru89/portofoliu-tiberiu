@@ -587,8 +587,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. NEURAL NETWORK & SYNAPSE UNIVERSE (Adaptive Dark/Light & Mouse Hotspot)
     // ==========================================================================
     ThreeDParticleUniverseModule = (() => {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
         const container = document.getElementById('canvas-container');
+        
         if (!container) return;
+
+        if (isMobile) {
+            container.remove();
+            return { updateLanguage: () => {} };
+        }
 
         const canvas = document.createElement('canvas');
         canvas.style.position = 'absolute';
