@@ -1,7 +1,7 @@
 "use strict";
 /**
  * script.js - Portofoliu & CV Tiberiu Nicolae Militaru
- * ArhitecturÄƒ modularÄƒ, securizatÄƒ, optimizatÄƒ pentru performanÈ›Äƒ & Vercel
+ * Arhitectură modulară, securizată, optimizată pentru performanță & Vercel
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,171 +56,171 @@ document.addEventListener('DOMContentLoaded', () => {
         const translations = {
             ro: {
                 // Header & Nav
-                nav_home: "AcasÄƒ",
+                nav_home: "Acasă",
                 nav_services: "Servicii",
                 nav_about: "Despre Mine",
                 nav_projects: "Portofoliu",
-                nav_skills: "CompetenÈ›e",
-                nav_experience: "ExperienÈ›Äƒ",
+                nav_skills: "Competențe",
+                nav_experience: "Experiență",
                 nav_terminal: "Terminal",
                 nav_contact: "Contact",
                 nav_btn_cv: "CV PDF",
-                btn_print_cv: "DescarcÄƒ CV (PDF)",
+                btn_print_cv: "Descarcă CV (PDF)",
 
                 // Hero
-                hero_status: "Disponibil pentru Proiecte & ColaborÄƒri",
+                hero_status: "Disponibil pentru Proiecte & Colaborări",
                 hero_greeting: "Salut! Sunt",
                 hero_focus_label: "Ce fac eu:",
-                hero_bio: "Construiesc <strong>site-uri web moderne</strong>, automatizez fluxuri repetitive de lucru È™i rezolv provocÄƒri tehnice â€“ de la <strong>cod curat</strong> (React, Node.js, SQL) pÃ¢nÄƒ la <strong>mentenanÈ›Äƒ È™i soluÈ›ii hardware/software la cerere</strong>. Ofer consiliere tehnicÄƒ clarÄƒ pe Ã®nÈ›elesul oricui, transformÃ¢nd cerinÈ›ele tale Ã®n rezultate concrete, sigure È™i funcÈ›ionale 24/7.",
+                hero_bio: "Construiesc <strong>site-uri web moderne</strong>, automatizez fluxuri repetitive de lucru și rezolv provocări tehnice – de la <strong>cod curat</strong> (React, Node.js, SQL) până la <strong>mentenanță și soluții hardware/software la cerere</strong>. Ofer consiliere tehnică clară pe înțelesul oricui, transformând cerințele tale în rezultate concrete, sigure și funcționale 24/7.",
                 pill_web: "Site-uri Web & Magazine",
-                pill_auto: "AutomatizÄƒri de Procese",
+                pill_auto: "Automatizări de Procese",
                 pill_db: "Baze de Date & Optimizare",
-                pill_hw: "SoluÈ›ii Hardware & Suport",
-                btn_talk: "Hai sÄƒ vorbim pe WhatsApp",
-                btn_download_cv: "DescarcÄƒ CV (PDF)",
+                pill_hw: "Soluții Hardware & Suport",
+                btn_talk: "Hai să vorbim pe WhatsApp",
+                btn_download_cv: "Descarcă CV (PDF)",
                 btn_cli: "Terminal CLI",
 
                 // Profile Card
                 profile_card_role: "Dezvoltator Web & Administrator Baze de Date",
-                stat_exp_short: "Ani ExperienÈ›Äƒ",
+                stat_exp_short: "Ani Experiență",
                 stat_uptime_short: "Uptime & Fiabilitate",
-                stat_delivery_short: "SoluÈ›ii Dedicate",
+                stat_delivery_short: "Soluții Dedicate",
 
                 // Servicii
-                serv_badge: "Servicii & SoluÈ›ii la Cheie",
+                serv_badge: "Servicii & Soluții la Cheie",
                 serv_title: "Cu Ce Te Pot Ajuta?",
-                serv_subtitle: "Fie cÄƒ ai nevoie de prezenÈ›Äƒ online de la zero, de automatizarea muncii manuale sau de mentenanÈ›Äƒ È™i suport tehnic dedicat, Ã®È›i ofer soluÈ›ii clare, adaptate nevoilor tale.",
-                s1_title: "Creare Site-uri & AplicaÈ›ii Web",
-                s1_desc: "De la site-uri de prezentare moderne, rapide È™i optimizate pentru Google, pÃ¢nÄƒ la magazine online complete sau platforme interactive (React, HTML5, CSS3, Node.js). AratÄƒ excelent pe telefon, se Ã®ncarcÄƒ Ã®ntr-o clipitÄƒ È™i transformÄƒ vizitatorii Ã®n clienÈ›i.",
-                s1_pt1: "Design 100% responsive (mobil, tabletÄƒ, PC)",
-                s1_pt2: "Optimizare vitezÄƒ de Ã®ncÄƒrcare & SEO de bazÄƒ",
+                serv_subtitle: "Fie că ai nevoie de prezență online de la zero, de automatizarea muncii manuale sau de mentenanță și suport tehnic dedicat, îți ofer soluții clare, adaptate nevoilor tale.",
+                s1_title: "Creare Site-uri & Aplicații Web",
+                s1_desc: "De la site-uri de prezentare moderne, rapide și optimizate pentru Google, până la magazine online complete sau platforme interactive (React, HTML5, CSS3, Node.js). Arată excelent pe telefon, se încarcă într-o clipită și transformă vizitatorii în clienți.",
+                s1_pt1: "Design 100% responsive (mobil, tabletă, PC)",
+                s1_pt2: "Optimizare viteză de încărcare & SEO de bază",
                 s1_pt3: "Formulare de contact, WhatsApp direct, chat live",
 
                 s2_title: "Baze de Date & Backend Sigur",
-                s2_desc: "Inima oricÄƒrui sistem digital de succes. Proiectez scheme de baze de date (PostgreSQL, MySQL, MS SQL) È™i API-uri rapide (Node.js, Express, PHP) capabile sÄƒ gestioneze comenzi, stocuri sau utilizatori simultani Ã®n deplinÄƒ siguranÈ›Äƒ.",
-                s2_pt1: "Administrare & optimizare interogÄƒri SQL lente",
-                s2_pt2: "Integrare API-uri REST, plÄƒÈ›i online, webhook-uri",
-                s2_pt3: "Politici riguroase de backup È™i securitate",
+                s2_desc: "Inima oricărui sistem digital de succes. Proiectez scheme de baze de date (PostgreSQL, MySQL, MS SQL) și API-uri rapide (Node.js, Express, PHP) capabile să gestioneze comenzi, stocuri sau utilizatori simultani în deplină siguranță.",
+                s2_pt1: "Administrare & optimizare interogări SQL lente",
+                s2_pt2: "Integrare API-uri REST, plăți online, webhook-uri",
+                s2_pt3: "Politici riguroase de backup și securitate",
 
-                s3_title: "AutomatizÄƒri de Procese & Date",
-                s3_desc: "ScapÄƒ de sarcinile plictisitoare È™i de erorile umane. Construiesc scripturi È™i aplicaÈ›ii care genereazÄƒ automat rapoarte, facturi, oferte PDF sau sincronizeazÄƒ date Ã®ntre fiÈ™iere Excel È™i baze de date Ã®n fracÈ›iuni de secundÄƒ.",
+                s3_title: "Automatizări de Procese & Date",
+                s3_desc: "Scapă de sarcinile plictisitoare și de erorile umane. Construiesc scripturi și aplicații care generează automat rapoarte, facturi, oferte PDF sau sincronizează date între fișiere Excel și baze de date în fracțiuni de secundă.",
                 s3_pt1: "Reducere timpi de lucru de la zeci de minute la 5 secunde",
-                s3_pt2: "Generare automatÄƒ de PDF-uri compatibile ATS / print",
-                s3_pt3: "AplicaÈ›ii CRM pe mÄƒsurÄƒ pentru tehnicieni & afaceri",
+                s3_pt2: "Generare automată de PDF-uri compatibile ATS / print",
+                s3_pt3: "Aplicații CRM pe măsură pentru tehnicieni & afaceri",
 
-                s4_title: "Consiliere, Hardware & MentenanÈ›Äƒ",
-                s4_desc: "Tehnologia trebuie sÄƒ lucreze pentru tine, nu Ã®mpotriva ta. Ofer consiliere Ã®n achiziÈ›ii de echipamente, asamblare de calculatoare/servere, diagnostic hardware, configurare reÈ›ele locale È™i mentenanÈ›Äƒ periodicÄƒ pentru a preveni cÄƒderile de sistem.",
-                s4_pt1: "Consiliere obiectivÄƒ (fÄƒrÄƒ costuri inutile de echipament)",
-                s4_pt2: "DiagnozÄƒ, curÄƒÈ›are, upgrade hardware & devirusare",
-                s4_pt3: "Suport tehnic nivel 1 & 2 È™i rezolvare rapidÄƒ a incidentelor",
+                s4_title: "Consiliere, Hardware & Mentenanță",
+                s4_desc: "Tehnologia trebuie să lucreze pentru tine, nu împotriva ta. Ofer consiliere în achiziții de echipamente, asamblare de calculatoare/servere, diagnostic hardware, configurare rețele locale și mentenanță periodică pentru a preveni căderile de sistem.",
+                s4_pt1: "Consiliere obiectivă (fără costuri inutile de echipament)",
+                s4_pt2: "Diagnoză, curățare, upgrade hardware & devirusare",
+                s4_pt3: "Suport tehnic nivel 1 & 2 și rezolvare rapidă a incidentelor",
 
                 // Despre Mine
                 about_badge: "Profil Profesional & Viziune",
-                about_title: "Cine Sunt È™i Cum Lucrez",
-                about_p1: "Sunt un <strong>dezvoltator pasionat de tehnologie È™i administrator de baze de date</strong> care Ã®mbinÄƒ experienÈ›a practicÄƒ de peste 5 ani Ã®n menÈ›inerea infrastructurilor critice cu dorinÈ›a continuÄƒ de perfecÈ›ionare. ÃŽn prezent, Ã®mi aprofundez cunoÈ™tinÈ›ele de algoritmi, structuri de date È™i programare orientatÄƒ pe obiecte (C#, C++) la <strong>Colegiul Tehnic â€žElie Raduâ€ din PloieÈ™ti</strong>.",
-                about_p2: "ÃŽn carierÄƒ am vÄƒzut cÃ¢t de mult costÄƒ o panÄƒ de sistem sau un proces administrativ blocat Ã®n hÃ¢rtii. De aceea, abordarea mea este una <strong>pragmaticÄƒ È™i orientatÄƒ spre soluÈ›ii</strong>: ascult nevoile tale, explic opÈ›iunile Ã®n cuvinte simple È™i construiesc sisteme fiabile, uÈ™or de folosit È™i menÈ›inute la o disponibilitate de 99.9%.",
+                about_title: "Cine Sunt și Cum Lucrez",
+                about_p1: "Sunt un <strong>dezvoltator pasionat de tehnologie și administrator de baze de date</strong> care îmbină experiența practică de peste 5 ani în menținerea infrastructurilor critice cu dorința continuă de perfecționare. În prezent, îmi aprofundez cunoștințele de algoritmi, structuri de date și programare orientată pe obiecte (C#, C++) la <strong>Colegiul Tehnic „Elie Radu” din Ploiești</strong>.",
+                about_p2: "În carieră am văzut cât de mult costă o pană de sistem sau un proces administrativ blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, ușor de folosit și menținute la o disponibilitate de 99.9%.",
                 h1_title: "Orientat pe Rezultate",
-                h1_desc: "Fiecare linie de cod sau piesÄƒ hardware montatÄƒ are un scop clar: sÄƒ economiseascÄƒ timp È™i bani.",
-                h2_title: "Comunicare TransparentÄƒ",
-                h2_desc: "FÄƒrÄƒ jargon tehnic inutil. È˜tii Ã®ntotdeauna stadiul lucrÄƒrilor È™i ce soluÈ›ii sunt cele mai bune.",
-                stats_card_title: "Cifre & Indicatori de PerformanÈ›Äƒ",
-                stat_exp_lbl: "Ani ExperienÈ›Äƒ IT & Suport Sisteme",
-                stat_uptime_lbl: "Uptime MenÈ›inut pe Sisteme de Baze de Date",
-                stat_perf_lbl: "Reducere Timp ExecuÈ›ie InterogÄƒri SQL",
-                stat_tech_lbl: "Tehnologii, Limbaje & Baze de Date StÄƒpÃ¢nite",
-                stats_quote: "â€žSecuritatea, viteza È™i simplitatea Ã®n utilizare nu sunt opÈ›ionale.â€",
+                h1_desc: "Fiecare linie de cod sau piesă hardware montată are un scop clar: să economisească timp și bani.",
+                h2_title: "Comunicare Transparentă",
+                h2_desc: "Fără jargon tehnic inutil. Știi întotdeauna stadiul lucrărilor și ce soluții sunt cele mai bune.",
+                stats_card_title: "Cifre & Indicatori de Performanță",
+                stat_exp_lbl: "Ani Experiență IT & Suport Sisteme",
+                stat_uptime_lbl: "Uptime Menținut pe Sisteme de Baze de Date",
+                stat_perf_lbl: "Reducere Timp Execuție Interogări SQL",
+                stat_tech_lbl: "Tehnologii, Limbaje & Baze de Date Stăpânite",
+                stats_quote: "„Securitatea, viteza și simplitatea în utilizare nu sunt opționale.”",
 
                 // Proiecte
-                proj_badge: "Studii de Caz & SoluÈ›ii Livrate",
-                proj_title: "Proiecte Web & AplicaÈ›ii",
-                proj_subtitle: "IatÄƒ cÃ¢teva exemple concrete de soluÈ›ii software construite pentru a automatiza fluxuri, vinde online È™i gestiona comenzi Ã®n timp real.",
+                proj_badge: "Studii de Caz & Soluții Livrate",
+                proj_title: "Proiecte Web & Aplicații",
+                proj_subtitle: "Iată câteva exemple concrete de soluții software construite pentru a automatiza fluxuri, vinde online și gestiona comenzi în timp real.",
                 proj1_tag: "Automatizare B2B & PDF",
                 proj1_title: "Generator Documente PDF pt. Sisteme ATS",
-                proj1_summary: "PlatformÄƒ inteligentÄƒ de generare dinamicÄƒ a documentelor tehnice È™i a CV-urilor, prelucrÃ¢nd date structurate JSON. A redus timpul manual de redactare de la 20 de minute la mai puÈ›in de 5 secunde, garantÃ¢nd parsare completÄƒ pentru algoritmii de recrutare automatÄƒ (ATS).",
+                proj1_summary: "Platformă inteligentă de generare dinamică a documentelor tehnice și a CV-urilor, prelucrând date structurate JSON. A redus timpul manual de redactare de la 20 de minute la mai puțin de 5 secunde, garantând parsare completă pentru algoritmii de recrutare automată (ATS).",
                 proj2_tag: "E-Commerce & Real-Time",
-                proj2_title: "Magazin Online cu Chat Live (FlorÄƒrie)",
-                proj2_summary: "AplicaÈ›ie web completÄƒ pentru o florÄƒrie localÄƒ, dezvoltatÄƒ pe arhitecturÄƒ MVC. Include catalog dinamic de produse, coÈ™ de cumpÄƒrÄƒturi securizat È™i modul de Live Chat Ã®n timp real bazat pe WebSockets pentru a converti vizitatorii Ã®n clienÈ›i direct pe site.",
+                proj2_title: "Magazin Online cu Chat Live (Florărie)",
+                proj2_summary: "Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC. Include catalog dinamic de produse, coș de cumpărături securizat și modul de Live Chat în timp real bazat pe WebSockets pentru a converti vizitatorii în clienți direct pe site.",
                 proj3_tag: "CRM & Baze de Date",
-                proj3_title: "AplicaÈ›ie CRM & Gestiune Servicii",
-                proj3_summary: "PlatformÄƒ pe mÄƒsurÄƒ pentru o firmÄƒ de instalaÈ›ii sanitare È™i meseriaÈ™i. AsigurÄƒ preluarea comenzilor clienÈ›ilor, alocarea tehnicienilor pe teren, alerte automate SLA È™i gestiunea istoricului de intervenÈ›ii printr-un API RESTful securizat È™i baze relaÈ›ionale SQL.",
+                proj3_title: "Aplicație CRM & Gestiune Servicii",
+                proj3_summary: "Platformă pe măsură pentru o firmă de instalații sanitare și meseriași. Asigură preluarea comenzilor clienților, alocarea tehnicienilor pe teren, alerte automate SLA și gestiunea istoricului de intervenții printr-un API RESTful securizat și baze relaționale SQL.",
                 btn_details: "Detalii Tehnice",
-                proj_cta_text: "Ai o idee de proiect sau vrei sÄƒ optimizezi un flux de lucru existent?",
-                proj_cta_btn: "DiscutÄƒ Proiectul TÄƒu pe WhatsApp",
+                proj_cta_text: "Ai o idee de proiect sau vrei să optimizezi un flux de lucru existent?",
+                proj_cta_btn: "Discută Proiectul Tău pe WhatsApp",
 
-                // CompetenÈ›e
+                // Competențe
                 skills_badge: "Stack Tehnologic & Unelte",
-                skills_title: "CompetenÈ›e & Tehnologii",
-                skills_subtitle: "O privire completÄƒ asupra tehnologiilor folosite Ã®n dezvoltarea frontend, arhitectura backend, administrarea bazelor de date È™i mentenanÈ›a hardware.",
+                skills_title: "Competențe & Tehnologii",
+                skills_subtitle: "O privire completă asupra tehnologiilor folosite în dezvoltarea frontend, arhitectura backend, administrarea bazelor de date și mentenanța hardware.",
                 cat_front_title: "Dezvoltare Frontend & UI",
-                cat_front_sub: "InterfeÈ›e moderne, responsive & intuitive",
+                cat_front_sub: "Interfețe moderne, responsive & intuitive",
                 cat_back_title: "Backend & Baze de Date",
                 cat_back_sub: "Arhitecturi rapide, securizate & scalabile",
-                cat_hw_title: "Hardware, Suport & MentenanÈ›Äƒ",
-                cat_hw_sub: "Continuitate operaÈ›ionalÄƒ & infrastructurÄƒ",
+                cat_hw_title: "Hardware, Suport & Mentenanță",
+                cat_hw_sub: "Continuitate operațională & infrastructură",
                 cat_devops_title: "DevOps, Limbaje OOP & Unelte",
                 cat_devops_sub: "Fluxuri de lucru profesionale & automatizate",
-                lang_box_title: "Limbi StrÄƒine Vorbite",
+                lang_box_title: "Limbi Străine Vorbite",
                 lang_ro_lvl: "Nativ",
                 lang_en_lvl: "C1 (Avansat / Fluent profesional)",
                 lang_de_lvl: "B2 (Mediu-Superior)",
 
-                // ExperienÈ›Äƒ
-                exp_badge: "EvoluÈ›ie ProfesionalÄƒ",
-                exp_title: "ExperienÈ›Äƒ & EducaÈ›ie",
-                exp_subtitle: "Un parcurs solid format din responsabilitÄƒÈ›i reale Ã®n sisteme critice, completat de studii riguroase de programare È™i management.",
-                exp1_period: "Ianuarie 2026 â€“ Prezent",
+                // Experiență
+                exp_badge: "Evoluție Profesională",
+                exp_title: "Experiență & Educație",
+                exp_subtitle: "Un parcurs solid format din responsabilități reale în sisteme critice, completat de studii riguroase de programare și management.",
+                exp1_period: "Ianuarie 2026 – Prezent",
                 exp1_role: "Administrator Baze de Date (DBA)",
-                exp1_d1: "Administrez È™i optimizez baze de date de producÈ›ie (PostgreSQL, MySQL) pentru peste 200 de utilizatori activi, garantÃ¢nd disponibilitate 99.9%.",
-                exp1_d2: "Am refÄƒcut strategiile de indexare È™i optimizare a interogÄƒrilor SQL complexe, reducÃ¢nd timpii medii de execuÈ›ie cu 40%.",
-                exp1_d3: "Asigur proiectarea schemelor relaÈ›ionale pentru noi module funcÈ›ionale, monitorizarea proactivÄƒ È™i rezolvarea anomaliilor Ã®n timp real.",
+                exp1_d1: "Administrez și optimizez baze de date de producție (PostgreSQL, MySQL) pentru peste 200 de utilizatori activi, garantând disponibilitate 99.9%.",
+                exp1_d2: "Am refăcut strategiile de indexare și optimizare a interogărilor SQL complexe, reducând timpii medii de execuție cu 40%.",
+                exp1_d3: "Asigur proiectarea schemelor relaționale pentru noi module funcționale, monitorizarea proactivă și rezolvarea anomaliilor în timp real.",
                 exp2_role: "Asistent Manager & Coordonator Digitalizare",
-                exp2_d1: "Am condus digitalizarea fluxurilor de documente interne pentru o echipÄƒ de peste 50 de angajaÈ›i.",
-                exp2_d2: "Am proiectat È™i implementat un sistem intern de gestiune a sarcinilor care a redus timpul de procesare cu 30%.",
-                exp2_d3: "Am negociat contracte de mentenanÈ›Äƒ IT È™i am coordonat partenerii externi pentru upgrade-uri de sistem.",
-                exp3_role: "Tehnician IT (Suport Nivel 1 È™i 2)",
-                exp3_d1: "Am Ã®ntreÈ›inut È™i monitorizat infrastructura hardware È™i software a unui sistem feroviar naÈ›ional (300+ utilizatori activi).",
-                exp3_d2: "Am efectuat analize root-cause (RCA) pentru defecÈ›iuni, reducÃ¢nd timpul mediu de rezolvare a incidentelor critice cu 25%.",
-                exp3_d3: "Am colaborat direct cu echipele de dezvoltare software pentru raportarea bug-urilor È™i aplicarea patch-urilor de securitate.",
-                edu1_period: "Septembrie 2025 â€“ Prezent",
+                exp2_d1: "Am condus digitalizarea fluxurilor de documente interne pentru o echipă de peste 50 de angajați.",
+                exp2_d2: "Am proiectat și implementat un sistem intern de gestiune a sarcinilor care a redus timpul de procesare cu 30%.",
+                exp2_d3: "Am negociat contracte de mentenanță IT și am coordonat partenerii externi pentru upgrade-uri de sistem.",
+                exp3_role: "Tehnician IT (Suport Nivel 1 și 2)",
+                exp3_d1: "Am întreținut și monitorizat infrastructura hardware și software a unui sistem feroviar național (300+ utilizatori activi).",
+                exp3_d2: "Am efectuat analize root-cause (RCA) pentru defecțiuni, reducând timpul mediu de rezolvare a incidentelor critice cu 25%.",
+                exp3_d3: "Am colaborat direct cu echipele de dezvoltare software pentru raportarea bug-urilor și aplicarea patch-urilor de securitate.",
+                edu1_period: "Septembrie 2025 – Prezent",
                 edu1_title: "Studii Analist Programator (Nivel 5)",
-                edu1_desc: "Specializare axatÄƒ pe Programare OrientatÄƒ pe Obiecte (C#, C++), Structuri de Date & Algoritmi, Arhitecturi Baze de Date RelaÈ›ionale (SQL) È™i Dezvoltare Web Full-Stack (HTML5, React.js, Node.js).",
-                edu2_title: "Master & LicenÈ›Äƒ Ã®n Management",
-                edu2_desc: "Specializare Ã®n Managementul PerformanÈ›ei, Optimizarea Sistemelor È™i Arhitecturi de Control Ã®n IMM-uri.",
+                edu1_desc: "Specializare axată pe Programare Orientată pe Obiecte (C#, C++), Structuri de Date & Algoritmi, Arhitecturi Baze de Date Relaționale (SQL) și Dezvoltare Web Full-Stack (HTML5, React.js, Node.js).",
+                edu2_title: "Master & Licență în Management",
+                edu2_desc: "Specializare în Managementul Performanței, Optimizarea Sistemelor și Arhitecturi de Control în IMM-uri.",
 
                 // Terminal
-                term_badge: "ConsolÄƒ InteractivÄƒ",
+                term_badge: "Consolă Interactivă",
                 term_title: "Terminal CLI v3.0",
-                term_subtitle: "Preferi linia de comandÄƒ? Scrie help pentru a explora profilul sau Ã®ncearcÄƒ matrix pentru o ploaie digitalÄƒ!",
+                term_subtitle: "Preferi linia de comandă? Scrie help pentru a explora profilul sau încearcă matrix pentru o ploaie digitală!",
 
                 // Contact
                 contact_badge: "Contact Rapid",
-                contact_title: "Hai SÄƒ ColaborÄƒm!",
-                contact_subtitle: "Ai o Ã®ntrebare, vrei un site nou sau ai nevoie de o mÃ¢nÄƒ de ajutor cu un sistem sau o bazÄƒ de date? Sunt la doar un mesaj distanÈ›Äƒ.",
-                contact_direct_title: "InformaÈ›ii Directe",
-                contact_direct_desc: "ÃŽmi poÈ›i scrie direct pe WhatsApp pentru un rÄƒspuns rapid sau trimite un email. Pe PC se va deschide WhatsApp Web / clientul tÄƒu de mail, iar pe telefon se deschid aplicaÈ›iile native.",
-                contact_loc_label: "LocaÈ›ie & Disponibilitate",
-                contact_loc_val: "PloieÈ™ti, Prahova / Remote (NaÈ›ional)",
-                contact_social_label: "ReÈ›ele & Repozitorii:",
+                contact_title: "Hai Să Colaborăm!",
+                contact_subtitle: "Ai o întrebare, vrei un site nou sau ai nevoie de o mână de ajutor cu un sistem sau o bază de date? Sunt la doar un mesaj distanță.",
+                contact_direct_title: "Informații Directe",
+                contact_direct_desc: "Îmi poți scrie direct pe WhatsApp pentru un răspuns rapid sau trimite un email. Pe PC se va deschide WhatsApp Web / clientul tău de mail, iar pe telefon se deschid aplicațiile native.",
+                contact_loc_label: "Locație & Disponibilitate",
+                contact_loc_val: "Ploiești, Prahova / Remote (Național)",
+                contact_social_label: "Rețele & Repozitorii:",
                 form_title: "Trimite un Mesaj Direct",
-                form_sub: "CompleteazÄƒ formularul È™i vei primi un rÄƒspuns Ã®n maxim 24 de ore.",
-                form_name_label: "Numele TÄƒu",
+                form_sub: "Completează formularul și vei primi un răspuns în maxim 24 de ore.",
+                form_name_label: "Numele Tău",
                 form_email_label: "Adresa de Email",
                 form_type_label: "Despre ce este vorba?",
                 opt_web: "Creare Site Web / Magazin Online",
                 opt_auto: "Automatizare de Procese / Rapoarte",
                 opt_db: "Baze de Date & Optimizare SQL",
-                opt_hw: "Consiliere Hardware / MentenanÈ›Äƒ IT",
-                opt_other: "Alte ÃŽntrebÄƒri / Proiect Custom",
-                form_msg_label: "Mesajul TÄƒu",
+                opt_hw: "Consiliere Hardware / Mentenanță IT",
+                opt_other: "Alte Întrebări / Proiect Custom",
+                form_msg_label: "Mesajul Tău",
                 btn_send_msg: "Trimite Mesajul",
-                form_security_notice: "Datele tale sunt Ã®n siguranÈ›Äƒ È™i nu vor fi divulgate terÈ›ilor.",
+                form_security_notice: "Datele tale sunt în siguranță și nu vor fi divulgate terților.",
 
                 // Footer & Modal
-                footer_tagline: "SoluÈ›ii web moderne, baze de date sigure È™i suport tehnic de Ã®ncredere.",
+                footer_tagline: "Soluții web moderne, baze de date sigure și suport tehnic de încredere.",
                 footer_rights: "Toate drepturile rezervate.",
                 btn_view_repo: "Vezi pe GitHub",
-                btn_close: "ÃŽnchide",
-                footer_qr: "ScaneazÄƒ pentru a distribui"
+                btn_close: "Închide",
+                footer_qr: "Scanează pentru a distribui"
             },
             en: {
                 // Header & Nav
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hero_status: "Available for Projects & Collaboration",
                 hero_greeting: "Hi! I'm",
                 hero_focus_label: "What I do:",
-                hero_bio: "I build <strong>modern websites</strong>, automate repetitive workflows, and solve technical challengesâ€”from <strong>clean code</strong> (React, Node.js, SQL) to <strong>custom hardware/software maintenance on demand</strong>. I provide clear technical guidance without confusing jargon, turning your requirements into robust, reliable solutions running 24/7.",
+                hero_bio: "I build <strong>modern websites</strong>, automate repetitive workflows, and solve technical challenges—from <strong>clean code</strong> (React, Node.js, SQL) to <strong>custom hardware/software maintenance on demand</strong>. I provide clear technical guidance without confusing jargon, turning your requirements into robust, reliable solutions running 24/7.",
                 pill_web: "Websites & E-Commerce",
                 pill_auto: "Workflow Automation",
                 pill_db: "Databases & Optimization",
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 stat_uptime_lbl: "Maintained Uptime on Production DBs",
                 stat_perf_lbl: "Reduction in Complex SQL Query Times",
                 stat_tech_lbl: "Technologies, Languages & DBs Mastered",
-                stats_quote: "â€œSecurity, speed, and ease of use are never optional.â€",
+                stats_quote: "“Security, speed, and ease of use are never optional.”",
 
                 // Proiecte
                 proj_badge: "Case Studies & Live Projects",
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj_cta_text: "Have a project idea or want to optimize an existing workflow?",
                 proj_cta_btn: "Discuss Your Project on WhatsApp",
 
-                // CompetenÈ›e
+                // Competențe
                 skills_badge: "Tech Stack & Tooling",
                 skills_title: "Skills & Technologies",
                 skills_subtitle: "A detailed breakdown of my tech stack across frontend development, backend architecture, database administration, and hardware maintenance.",
@@ -332,11 +332,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 lang_en_lvl: "C1 (Advanced / Professional Fluency)",
                 lang_de_lvl: "B2 (Upper Intermediate)",
 
-                // ExperienÈ›Äƒ
+                // Experiență
                 exp_badge: "Career Milestones",
                 exp_title: "Experience & Education",
                 exp_subtitle: "A solid track record of enterprise responsibilities backed by academic foundations in computer analysis and management.",
-                exp1_period: "January 2026 â€“ Present",
+                exp1_period: "January 2026 – Present",
                 exp1_role: "Database Administrator (DBA)",
                 exp1_d1: "Administer and tune production databases (PostgreSQL, MySQL) for 200+ active users, maintaining 99.9% uptime.",
                 exp1_d2: "Redesigned indexing strategies and optimized complex SQL queries, decreasing average execution latency by 40%.",
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 exp3_d1: "Maintained hardware/software infrastructure for a national railway system supporting 300+ concurrent users.",
                 exp3_d2: "Executed Root Cause Analysis (RCA) on critical failures, cutting mean incident resolution time by 25%.",
                 exp3_d3: "Collaborated directly with software dev teams on systematic bug reporting and critical security patching.",
-                edu1_period: "September 2025 â€“ Present",
+                edu1_period: "September 2025 – Present",
                 edu1_title: "Programmer Analyst Studies (Level 5)",
                 edu1_desc: "Core curriculum focused on Object-Oriented Programming (C#, C++), Data Structures & Algorithms, Relational SQL Databases, and Full-Stack Web Architecture (React.js, Node.js).",
                 edu2_title: "Master's & Bachelor's in Management",
@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Update title
             document.title = lang === 'ro' 
-                ? "Militaru Tiberiu Nicolae | Dezvoltator Web, AutomatizÄƒri & SoluÈ›ii IT" 
+                ? "Militaru Tiberiu Nicolae | Dezvoltator Web, Automatizări & Soluții IT" 
                 : "Militaru Tiberiu Nicolae | Web Developer, Automation & IT Solutions";
 
             // Update all DOM elements with data-i18n attribute
@@ -474,8 +474,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (toggleBtn) {
                 const isDark = theme === 'dark';
-                toggleBtn.setAttribute('aria-label', isDark ? 'ComutÄƒ pe Modul Luminos' : 'ComutÄƒ pe Modul ÃŽntunecat');
-                toggleBtn.setAttribute('title', isDark ? 'ComutÄƒ pe Modul Luminos (Light Mode)' : 'ComutÄƒ pe Modul ÃŽntunecat (Dark Mode)');
+                toggleBtn.setAttribute('aria-label', isDark ? 'Comută pe Modul Luminos' : 'Comută pe Modul Întunecat');
+                toggleBtn.setAttribute('title', isDark ? 'Comută pe Modul Luminos (Light Mode)' : 'Comută pe Modul Întunecat (Dark Mode)');
             }
 
             // Dispatch event for Neural Canvas and any dynamic subscribers
@@ -485,8 +485,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const lang = (typeof I18nModule !== 'undefined' && I18nModule) ? I18nModule.getCurrentLang() : 'ro';
                 ToastModule.show(
                     theme === 'dark' 
-                        ? (lang === 'ro' ? 'Mod ÃŽntunecat activat ðŸŒ™' : 'Dark Mode activated ðŸŒ™')
-                        : (lang === 'ro' ? 'Mod Luminos activat â˜€ï¸' : 'Light Mode activated â˜€ï¸'),
+                        ? (lang === 'ro' ? 'Mod Întunecat activat 🌙' : 'Dark Mode activated 🌙')
+                        : (lang === 'ro' ? 'Mod Luminos activat ☀️' : 'Light Mode activated ☀️'),
                     'info',
                     2000
                 );
@@ -522,10 +522,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const phrases = {
             ro: [
                 "Creare Site-uri & Magazine Web",
-                "AutomatizÄƒri de Procese & Date",
+                "Automatizări de Procese & Date",
                 "Administrare Baze de Date (SQL)",
-                "Consiliere & DiagnozÄƒ Hardware",
-                "MentenanÈ›Äƒ Software & Suport 24/7",
+                "Consiliere & Diagnoză Hardware",
+                "Mentenanță Software & Suport 24/7",
                 "Arhitecturi Moderne React & Node.js"
             ],
             en: [
@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. NEURAL NETWORK & SYNAPSE UNIVERSE (Adaptive Dark/Light & Mouse Hotspot)
     // ==========================================================================
     ThreeDParticleUniverseModule = (() => {
-        // isMobile este acum definit mai jos Ã®n interior pentru a fi dinamic, nu distrugem canvas-ul
+        // isMobile este acum definit mai jos în interior pentru a fi dinamic, nu distrugem canvas-ul
         const container = document.getElementById('canvas-container');
         
         if (!container) return;
@@ -1288,16 +1288,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
 
                 case 'services':
-                    printLine('1. ðŸŒ Web & E-Commerce: React, Node.js, HTML5, Responsive UI', 't-succ');
-                    printLine('2. âš¡ Process Automation: PDF gen, ATS parsing, repetitive task elimination', 't-succ');
-                    printLine('3. ðŸ—„ï¸ Database Administration: PostgreSQL, MySQL, MS SQL, Query tuning', 't-succ');
-                    printLine('4. ðŸ› ï¸ Hardware & Maintenance: Custom PCs/servers, diagnostics, 99.9% uptime', 't-succ');
+                    printLine('1. 🌐 Web & E-Commerce: React, Node.js, HTML5, Responsive UI', 't-succ');
+                    printLine('2. ⚡ Process Automation: PDF gen, ATS parsing, repetitive task elimination', 't-succ');
+                    printLine('3. 🗄️ Database Administration: PostgreSQL, MySQL, MS SQL, Query tuning', 't-succ');
+                    printLine('4. 🛠️ Hardware & Maintenance: Custom PCs/servers, diagnostics, 99.9% uptime', 't-succ');
                     break;
 
                 case 'projects':
-                    printLine('â€¢ [ATS PDF Gen]: 20min manual work cut to 5 sec (JSON parsing, PHP/Node)', 't-out');
-                    printLine('â€¢ [E-Commerce Florist]: Live chat, WebSockets, MVC, React storefront', 't-out');
-                    printLine('â€¢ [Field Service CRM]: Technician scheduling, SQL backend, REST API', 't-out');
+                    printLine('• [ATS PDF Gen]: 20min manual work cut to 5 sec (JSON parsing, PHP/Node)', 't-out');
+                    printLine('• [E-Commerce Florist]: Live chat, WebSockets, MVC, React storefront', 't-out');
+                    printLine('• [Field Service CRM]: Technician scheduling, SQL backend, REST API', 't-out');
                     const projTarget = document.getElementById('projects');
                     if (typeof projTarget?.scrollIntoView === 'function') projTarget.scrollIntoView({ behavior: 'smooth' });
                     break;
@@ -1309,10 +1309,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
 
                 case 'experience':
-                    printLine('â€¢ Database Administrator @ Corpul Expertilor (2026 - Present)', 't-out');
-                    printLine('â€¢ Assistant Manager & Digital Transformation @ SC SIATI SRL (2014 - 2020)', 't-out');
-                    printLine('â€¢ IT System Technician (Tier 1 & 2) @ GFR (2010 - 2014)', 't-out');
-                    printLine('â€¢ Analyst Programmer Studies @ Colegiul Tehnic Elie Radu', 't-out');
+                    printLine('• Database Administrator @ Corpul Expertilor (2026 - Present)', 't-out');
+                    printLine('• Assistant Manager & Digital Transformation @ SC SIATI SRL (2014 - 2020)', 't-out');
+                    printLine('• IT System Technician (Tier 1 & 2) @ GFR (2010 - 2014)', 't-out');
+                    printLine('• Analyst Programmer Studies @ Colegiul Tehnic Elie Radu', 't-out');
                     break;
 
                 case 'contact':
@@ -1332,7 +1332,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.body.appendChild(dlLink);
                     dlLink.click();
                     dlLink.remove();
-                    printLine('[OK] FiÈ™ierul "CV-Militaru-Tiberiu.pdf" a fost descÄƒrcat cu succes.', 't-succ');
+                    printLine('[OK] Fișierul "CV-Militaru-Tiberiu.pdf" a fost descărcat cu succes.', 't-succ');
                     break;
 
                 case 'matrix':
@@ -1461,46 +1461,46 @@ document.addEventListener('DOMContentLoaded', () => {
         const projectData = {
             proj1: {
                 ro: {
-                    title: 'CV Builder Pro & ATS Analyzer (SaaS)',
-                    desc: 'O aplicatie web avansata (SaaS) dezvoltata de la zero, care permite utilizatorilor sa-si construiasca, vizeze si analizeze CV-urile in timp real. Platforma include un sistem complet de monetizare, autentificare sigura si generare de PDF-uri direct din cloud.',
-                    architecture: 'Frontend Zero-Dependency (Vanilla JS, CSS Grid). Backend complet Serverless pe Google Firebase: Hosting, Firestore (NoSQL Live), si Authentication (Google OAuth). Include Microservicii pe Firebase Cloud Functions (Node.js 22) pentru validarea platilor prin Stripe Webhook si generarea securizata de PDF-uri cu Puppeteer.',
-                    results: '✅ Arhitectura complet Serverless (0 mentenanta), auto-scalabila.<br>✅ Integrare completa Stripe (Abonamente & Checkout) si functionare autonoma end-to-end.<br>✅ Algoritm client-side pentru scoring ATS in functie de cuvinte cheie.'
+                    title: "CV Builder Pro & ATS Analyzer (SaaS)",
+                    desc: "O aplicație web avansată (SaaS) dezvoltată de la zero, care permite utilizatorilor să-și construiască, vizeze și analizeze CV-urile în timp real. Platforma include un sistem complet de monetizare, autentificare sigură și generare de PDF-uri direct din cloud.",
+                    architecture: "Frontend Zero-Dependency (Vanilla JS, CSS Grid). Backend complet Serverless pe Google Firebase: Hosting, Firestore (NoSQL Live) și Authentication (Google OAuth). Include Microservicii pe Firebase Cloud Functions (Node.js 22) pentru validarea plăților prin Stripe Webhook și generarea securizată de PDF-uri cu Puppeteer.",
+                    results: "• Arhitectură complet Serverless (0 mentenanță), auto-scalabilă.<br>• Integrare completă Stripe (Abonamente & Checkout) și funcționare autonomă end-to-end.<br>• Algoritm client-side pentru scoring ATS în funcție de cuvinte cheie."
                 },
                 en: {
-                    title: 'CV Builder Pro & ATS Analyzer (SaaS)',
-                    desc: 'An advanced SaaS web application built from scratch, allowing users to build, preview, and analyze their CVs in real-time. Features a full monetization system, secure authentication, and cloud-based PDF generation.',
-                    architecture: 'Zero-Dependency Frontend (Vanilla JS, CSS Grid). Full Serverless Backend on Google Firebase: Hosting, Firestore (Real-time NoSQL), and Authentication (Google OAuth). Includes Node.js 22 Firebase Cloud Functions for Stripe Webhook validation and secure PDF rendering via headless Puppeteer.',
-                    results: '✅ Fully Serverless architecture (zero maintenance), auto-scalable.<br>✅ Complete Stripe integration (Subscriptions & Checkout) for an autonomous end-to-end flow.<br>✅ Client-side ATS scoring algorithm based on keyword matching.'
+                    title: "CV Builder Pro & ATS Analyzer (SaaS)",
+                    desc: "An advanced SaaS web application built from scratch, allowing users to build, preview, and analyze their CVs in real-time. Features a full monetization system, secure authentication, and cloud-based PDF generation.",
+                    architecture: "Zero-Dependency Frontend (Vanilla JS, CSS Grid). Full Serverless Backend on Google Firebase: Hosting, Firestore (Real-time NoSQL), and Authentication (Google OAuth). Includes Node.js 22 Firebase Cloud Functions for Stripe Webhook validation and secure PDF rendering via headless Puppeteer.",
+                    results: "• Fully Serverless architecture (zero maintenance), auto-scalable.<br>• Complete Stripe integration (Subscriptions & Checkout) for an autonomous end-to-end flow.<br>• Client-side ATS scoring algorithm based on keyword matching."
                 },
-                github: 'https://github.com/tiberiumilitaru89/cv-builder-ats'
+                github: "https://github.com/tiberiumilitaru89/cv-builder-ats"
             },
             proj2: {
                 ro: {
-                    title: "Magazin Online cu Chat Live (FlorÄƒrie)",
-                    desc: "O platformÄƒ de comerÈ› electronic gÃ¢nditÄƒ pentru o florÄƒrie localÄƒ, unde decizia de cumpÄƒrare depinde adesea de asistenÈ›a Ã®n timp real (buchete personalizate, livrare rapidÄƒ la domiciliu).",
-                    architecture: "Dezvoltat pe <strong>React.js</strong> pentru frontend È™i <strong>Node.js</strong> pentru serverul de comenzi È™i chat. Am integrat <strong>WebSockets</strong> pentru comunicare instantÄƒ bidirecÈ›ionalÄƒ Ã®ntre client È™i vÃ¢nzÄƒtor, fÄƒrÄƒ reÃ®ncÄƒrcarea paginii.",
-                    results: "â€¢ CreÈ™tere de 35% a ratei de finalizare a comenzilor datoritÄƒ asistenÈ›ei live.<br>â€¢ Timp de Ã®ncÄƒrcare sub 1.2 secunde pe conexiuni 4G mobile.<br>â€¢ Panou simplu de administrare comenzi È™i mesaje pentru patron."
+                    title: "Magazin Online cu Chat Live (Florărie)",
+                    desc: "O platformă de comerț electronic gândită pentru o florărie locală, unde decizia de cumpărare depinde adesea de asistența în timp real (buchete personalizate, livrare rapidă la domiciliu).",
+                    architecture: "Dezvoltat pe <strong>React.js</strong> pentru frontend și <strong>Node.js</strong> pentru serverul de comenzi și chat. Am integrat <strong>WebSockets</strong> pentru comunicare instantă bidirecțională între client și vânzător, fără reîncărcarea paginii.",
+                    results: "• Creștere de 35% a ratei de finalizare a comenzilor datorită asistenței live.<br>• Timp de încărcare sub 1.2 secunde pe conexiuni 4G mobile.<br>• Panou simplu de administrare comenzi și mesaje pentru patron."
                 },
                 en: {
                     title: "Online Store with Live Chat (Florist)",
                     desc: "A bespoke e-commerce platform built for a local flower boutique, where client purchase decisions heavily rely on instant consultation for custom arrangements.",
                     architecture: "Built on <strong>React.js</strong> (SPA) with an Express/Node.js backend. Integrated bidirectional <strong>WebSockets</strong> for zero-latency client-to-seller live messaging.",
-                    results: "â€¢ 35% boost in checkout completion rates via instant chat support.<br>â€¢ Sub-1.2 second load time on standard 4G mobile connections.<br>â€¢ Streamlined real-time order dashboard for the owner."
+                    results: "• 35% boost in checkout completion rates via instant chat support.<br>• Sub-1.2 second load time on standard 4G mobile connections.<br>• Streamlined real-time order dashboard for the owner."
                 },
                 github: "https://github.com/tiberiumilitaru89"
             },
             proj3: {
                 ro: {
-                    title: "AplicaÈ›ie CRM & Gestiune Servicii",
-                    desc: "CreatÄƒ pentru o firmÄƒ de instalaÈ›ii sanitare È™i intervenÈ›ii tehnice. Anterior, toate programÄƒrile se notau Ã®n agende fizice, ducÃ¢nd la Ã®ntÃ¢rzieri È™i suprapuneri de comenzi pe teren.",
-                    architecture: "BazÄƒ de date relaÈ›ionalÄƒ pe <strong>PostgreSQL / MySQL</strong> cu scheme optimizate È™i constrÃ¢ngeri de integritate. InterfaÈ›Äƒ React prietenoasÄƒ pe mobil pentru instalatori È™i API REST securizat cu alerte automate SLA.",
-                    results: "â€¢ Eliminarea completÄƒ a suprapunerilor de programÄƒri pe teren.<br>â€¢ NotificÄƒri automate cÄƒtre clienÈ›i prin SMS/Email.<br>â€¢ Istoric detaliat al fiecÄƒrui client pentru intervenÈ›ii Ã®n garanÈ›ie."
+                    title: "Aplicație CRM & Gestiune Servicii",
+                    desc: "Creată pentru o firmă de instalații sanitare și intervenții tehnice. Anterior, toate programările se notau în agende fizice, ducând la întârzieri și suprapuneri de comenzi pe teren.",
+                    architecture: "Bază de date relațională pe <strong>PostgreSQL / MySQL</strong> cu scheme optimizate și constrângeri de integritate. Interfață React prietenoasă pe mobil pentru instalatori și API REST securizat cu alerte automate SLA.",
+                    results: "• Eliminarea completă a suprapunerilor de programări pe teren.<br>• Notificări automate către clienți prin SMS/Email.<br>• Istoric detaliat al fiecărui client pentru intervenții în garanție."
                 },
                 en: {
                     title: "Service Management & CRM Tool",
                     desc: "Engineered for a plumbing and field maintenance company. Previously, appointments and warranties were tracked on paper, resulting in missed appointments and SLA breaches.",
                     architecture: "Relational <strong>PostgreSQL/MySQL</strong> database with normalized schemas and indexing. Responsive mobile React UI for field technicians and a RESTful API with automated SLA dispatching.",
-                    results: "â€¢ Zero scheduling conflicts and automated technician assignment.<br>â€¢ Automated client confirmation notifications.<br>â€¢ Centralized client history for rapid warranty audits."
+                    results: "• Zero scheduling conflicts and automated technician assignment.<br>• Automated client confirmation notifications.<br>• Centralized client history for rapid warranty audits."
                 },
                 github: "https://github.com/tiberiumilitaru89"
             }
@@ -1517,11 +1517,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modalBody) {
                 modalBody.innerHTML = `
                     <div style="margin-bottom: 16px;">
-                        <h4 style="color: var(--accent-cyan); margin-bottom: 6px; font-size: 1.05rem;"><i class="fa-solid fa-bullseye"></i> Problema RezolvatÄƒ:</h4>
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 6px; font-size: 1.05rem;"><i class="fa-solid fa-bullseye"></i> Problema Rezolvată:</h4>
                         <p>${info.desc}</p>
                     </div>
                     <div style="margin-bottom: 16px;">
-                        <h4 style="color: var(--accent-cyan); margin-bottom: 6px; font-size: 1.05rem;"><i class="fa-solid fa-code"></i> ArhitecturÄƒ & Implementare:</h4>
+                        <h4 style="color: var(--accent-cyan); margin-bottom: 6px; font-size: 1.05rem;"><i class="fa-solid fa-code"></i> Arhitectură & Implementare:</h4>
                         <p>${info.architecture}</p>
                     </div>
                     <div>
@@ -1630,7 +1630,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Name
             if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
-                nameError.textContent = lang === 'ro' ? "Te rog sÄƒ introduci numele complet." : "Please enter your name.";
+                nameError.textContent = lang === 'ro' ? "Te rog să introduci numele complet." : "Please enter your name.";
                 isValid = false;
             } else {
                 nameError.textContent = "";
@@ -1638,7 +1638,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Email
             if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
-                emailError.textContent = lang === 'ro' ? "Te rog sÄƒ introduci o adresÄƒ de email validÄƒ." : "Please enter a valid email address.";
+                emailError.textContent = lang === 'ro' ? "Te rog să introduci o adresă de email validă." : "Please enter a valid email address.";
                 isValid = false;
             } else {
                 emailError.textContent = "";
@@ -1646,7 +1646,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Message
             if (!messageInput.value.trim() || messageInput.value.trim().length < 10) {
-                messageError.textContent = lang === 'ro' ? "Mesajul trebuie sÄƒ aibÄƒ minim 10 caractere." : "Message must be at least 10 characters.";
+                messageError.textContent = lang === 'ro' ? "Mesajul trebuie să aibă minim 10 caractere." : "Message must be at least 10 characters.";
                 isValid = false;
             } else {
                 messageError.textContent = "";
@@ -1699,16 +1699,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     ToastModule.show(
                         lang === 'ro' 
-                            ? "Mesajul tÄƒu a fost trimis cu succes! Te voi contacta Ã®n cel mai scurt timp." 
+                            ? "Mesajul tău a fost trimis cu succes! Te voi contacta în cel mai scurt timp." 
                             : "Your message was sent successfully! I will get back to you shortly.",
                         'success'
                     );
                     form.reset();
                 } else {
-                    // Fallback prietenos Ã®n cazul Ã®n care Formspree returneaza o eroare temporara
+                    // Fallback prietenos în cazul în care Formspree returneaza o eroare temporara
                     ToastModule.show(
                         lang === 'ro'
-                            ? "Mesajul a fost recepÈ›ionat! ÃŽmi poÈ›i scrie oricÃ¢nd direct È™i pe WhatsApp la (+40) 720 955 119."
+                            ? "Mesajul a fost recepționat! Îmi poți scrie oricând direct și pe WhatsApp la (+40) 720 955 119."
                             : "Message received! You can also reach me directly on WhatsApp at (+40) 720 955 119.",
                         'success',
                         6000
@@ -1716,10 +1716,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                 }
             } catch (error) {
-                // DacÄƒ reÈ›eaua e offline sau blocatÄƒ de extensii, oferim alternativa pe WhatsApp
+                // Dacă rețeaua e offline sau blocată de extensii, oferim alternativa pe WhatsApp
                 ToastModule.show(
                     lang === 'ro'
-                        ? "Eroare de conexiune la trimitere directÄƒ. Te rog sÄƒ mÄƒ contactezi pe WhatsApp la (+40) 720 955 119 sau prin email!"
+                        ? "Eroare de conexiune la trimitere directă. Te rog să mă contactezi pe WhatsApp la (+40) 720 955 119 sau prin email!"
                         : "Network error sending message. Please contact me directly on WhatsApp at (+40) 720 955 119 or via email!",
                     'info',
                     6000
@@ -1742,7 +1742,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const lang = I18nModule.getCurrentLang();
                 ToastModule.show(
                     lang === 'ro' 
-                        ? 'DescÄƒrcarea CV-ului (PDF) a Ã®nceput!' 
+                        ? 'Descărcarea CV-ului (PDF) a început!' 
                         : 'CV (PDF) download initiated!',
                     'success',
                     3500
@@ -1752,4 +1752,3 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
 });
-
