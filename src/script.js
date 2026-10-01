@@ -69,19 +69,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Hero
                 hero_status: "Disponibil pentru Proiecte & Colaborări",
+                hero_title: "IT Consultant • Full-Stack Solutions",
                 hero_greeting: "Salut! Sunt",
-                hero_focus_label: "Ce fac eu:",
-                hero_bio: "Construiesc <strong>site-uri web moderne</strong>, automatizez fluxuri repetitive de lucru și rezolv provocări tehnice – de la <strong>cod curat</strong> (React, Node.js, SQL) până la <strong>mentenanță și soluții hardware/software la cerere</strong>. Ofer consiliere tehnică clară pe înțelesul oricui, transformând cerințele tale în rezultate concrete, sigure și funcționale 24/7.",
-                pill_web: "Site-uri Web & Magazine",
-                pill_auto: "Automatizări de Procese",
-                pill_db: "Baze de Date & Optimizare",
-                pill_hw: "Soluții Hardware & Suport",
+                hero_focus_label: "Ce dezvolt:",
+                hero_bio: "Dezvolt <strong>aplicații web scalabile, platforme SaaS și sisteme CRM</strong> folosind React, Node.js și baze de date SQL. Ofer <strong>arhitectură software, automatizări de procese și consultanță IT dedicată</strong>, transformând cerințele tale de afaceri în soluții digitale sigure, rapide și funcționale 24/7.",
+                pill_mvp: "MVP & SaaS Development",
+                pill_crm: "Sisteme CRM & Automatizări",
+                pill_db: "Arhitectură Baze de Date (SQL)",
+                pill_consulting: "Consultanță IT & Suport",
                 btn_talk: "Hai să vorbim pe WhatsApp",
                 btn_download_cv: "Descarcă CV (PDF)",
                 btn_cli: "Terminal CLI",
 
                 // Profile Card
-                profile_card_role: "Dezvoltator Web & Administrator Baze de Date",
+                profile_card_role: "IT Consultant & Soluții Software",
                 stat_exp_short: "Ani Experiență",
                 stat_uptime_short: "Uptime & Fiabilitate",
                 stat_delivery_short: "Soluții Dedicate",
@@ -89,36 +90,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Servicii
                 serv_badge: "Servicii & Soluții la Cheie",
                 serv_title: "Cu Ce Te Pot Ajuta?",
-                serv_subtitle: "Fie că ai nevoie de prezență online de la zero, de automatizarea muncii manuale sau de mentenanță și suport tehnic dedicat, îți ofer soluții clare, adaptate nevoilor tale.",
-                s1_title: "Creare Site-uri & Aplicații Web",
-                s1_desc: "De la site-uri de prezentare moderne, rapide și optimizate pentru Google, până la magazine online complete sau platforme interactive (React, HTML5, CSS3, Node.js). Arată excelent pe telefon, se încarcă într-o clipită și transformă vizitatorii în clienți.",
-                s1_pt1: "Design 100% responsive (mobil, tabletă, PC)",
-                s1_pt2: "Optimizare viteză de încărcare & SEO de bază",
-                s1_pt3: "Formulare de contact, WhatsApp direct, chat live",
+                serv_subtitle: "Fie că ai nevoie de un MVP pentru lansarea unei idei, de o platformă SaaS scalabilă, de un CRM dedicat sau de optimizarea bazelor de date, îți ofer soluții clare și robuste.",
+                s1_title: "Aplicații Web, MVP & Platforme SaaS",
+                s1_desc: "De la idee la primul produs lansat pe piață (MVP), magazine online sau platforme SaaS complexe construite cu React și Node.js. Arată impecabil pe telefon, au arhitectură scalabilă și convertesc vizitatorii în clienți.",
+                s1_pt1: "Arhitectură modernă React, Node.js & REST APIs",
+                s1_pt2: "Design 100% responsive & performanță ultra-rapidă",
+                s1_pt3: "Integrare plăți online, autentificare securizată & webhooks",
 
-                s2_title: "Baze de Date & Backend Sigur",
-                s2_desc: "Inima oricărui sistem digital de succes. Proiectez scheme de baze de date (PostgreSQL, MySQL, MS SQL) și API-uri rapide (Node.js, Express, PHP) capabile să gestioneze comenzi, stocuri sau utilizatori simultani în deplină siguranță.",
-                s2_pt1: "Administrare & optimizare interogări SQL lente",
-                s2_pt2: "Integrare API-uri REST, plăți online, webhook-uri",
-                s2_pt3: "Politici riguroase de backup și securitate",
+                s2_title: "Baze de Date, Arhitectură & Backend Sigur",
+                s2_desc: "Proiectez și optimizez infrastructuri de date (PostgreSQL, MySQL, MS SQL) și servicii backend securizate, capabile să susțină fluxuri mari de date și tranzacții concurente cu disponibilitate garantată 99.9%.",
+                s2_pt1: "Modelare scheme relaționale & constrângeri de integritate",
+                s2_pt2: "Optimizare interogări SQL complexe (reducere timpi până la 40%)",
+                s2_pt3: "Politici riguroase de securitate, indexare și backup automat",
 
-                s3_title: "Automatizări de Procese & Date",
-                s3_desc: "Scapă de sarcinile plictisitoare și de erorile umane. Construiesc scripturi și aplicații care generează automat rapoarte, facturi, oferte PDF sau sincronizează date între fișiere Excel și baze de date în fracțiuni de secundă.",
-                s3_pt1: "Reducere timpi de lucru de la zeci de minute la 5 secunde",
-                s3_pt2: "Generare automată de PDF-uri compatibile ATS / print",
-                s3_pt3: "Aplicații CRM pe măsură pentru tehnicieni & afaceri",
+                s3_title: "Sisteme CRM & Automatizări de Procese",
+                s3_desc: "Elimin munca manuală repetitivă și riscul de erori umane. Dezvolt soluții CRM pe măsură pentru companii și meseriași, alături de automatizări inteligente de fluxuri, generare documente și sincronizare de date.",
+                s3_pt1: "Platforme CRM dedicate (alocare sarcini, comenzi, tehnicieni pe teren)",
+                s3_pt2: "Generare automată de rapoarte, facturi și documente PDF complexe",
+                s3_pt3: "Sincronizare automată între Excel, baze de date și servicii terțe",
 
-                s4_title: "Consiliere, Hardware & Mentenanță",
-                s4_desc: "Tehnologia trebuie să lucreze pentru tine, nu împotriva ta. Ofer consiliere în achiziții de echipamente, asamblare de calculatoare/servere, diagnostic hardware, configurare rețele locale și mentenanță periodică pentru a preveni căderile de sistem.",
-                s4_pt1: "Consiliere obiectivă (fără costuri inutile de echipament)",
-                s4_pt2: "Diagnoză, curățare, upgrade hardware & devirusare",
-                s4_pt3: "Suport tehnic nivel 1 & 2 și rezolvare rapidă a incidentelor",
+                s4_title: "Consultanță IT, Diagnoză & Mentenanță",
+                s4_desc: "Consultanță tehnică independentă și suport pragmatic. Te ajut să alegi soluțiile hardware și software optime fără bugete irosite, asigur diagnostic precis, securizare și mentenanță proactivă.",
+                s4_pt1: "Consultanță de arhitectură & selecție stack tehnologic",
+                s4_pt2: "Diagnosticare hardware, rețele locale & depanare incidente critice",
+                s4_pt3: "Mentenanță preventivă și suport dedicat pentru stabilitate 24/7",
 
                 // Despre Mine
                 about_badge: "Profil Profesional & Viziune",
                 about_title: "Cine Sunt și Cum Lucrez",
-                about_p1: "Sunt un <strong>dezvoltator pasionat de tehnologie și administrator de baze de date</strong> care îmbină experiența practică de peste 5 ani în menținerea infrastructurilor critice cu dorința continuă de perfecționare. În prezent, îmi aprofundez cunoștințele de algoritmi, structuri de date și programare orientată pe obiecte (C#, C++) la <strong>Colegiul Tehnic „Elie Radu” din Ploiești</strong>.",
-                about_p2: "În carieră am văzut cât de mult costă o pană de sistem sau un proces administrativ blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, ușor de folosit și menținute la o disponibilitate de 99.9%.",
+                about_p1: "Sunt un <strong>consultant IT și dezvoltator cu orientare pragmatică spre rezultate de business</strong>, îmbinând formarea superioară în management cu expertiza practică acumulată în peste 5 ani de menținere a sistemelor critice. În prezent, îmi consolidez cunoștințele de algoritmi, structuri de date și programare orientată pe obiecte (C#, C++) ca <strong>Analist Programator (Nivel 5)</strong> la <strong>Colegiul Tehnic „Elie Radu” din Ploiești</strong>.",
+                about_p2: "În activitatea mea am văzut cât de mult costă o pană de sistem sau un proces operațional blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, sigure și menținute la o disponibilitate de 99.9%.",
                 h1_title: "Orientat pe Rezultate",
                 h1_desc: "Fiecare linie de cod sau piesă hardware montată are un scop clar: să economisească timp și bani.",
                 h2_title: "Comunicare Transparentă",
@@ -134,13 +135,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj_badge: "Studii de Caz & Soluții Livrate",
                 proj_title: "Proiecte Web & Aplicații",
                 proj_subtitle: "Iată câteva exemple concrete de soluții software construite pentru a automatiza fluxuri, vinde online și gestiona comenzi în timp real.",
-                proj1_tag: "Automatizare B2B & PDF",
+                proj1_tag: "Automatizare & Logică de Business",
                 proj1_title: "Generator Documente PDF pt. Sisteme ATS",
                 proj1_summary: "Platformă inteligentă de generare dinamică a documentelor tehnice și a CV-urilor, prelucrând date structurate JSON. A redus timpul manual de redactare de la 20 de minute la mai puțin de 5 secunde, garantând parsare completă pentru algoritmii de recrutare automată (ATS).",
-                proj2_tag: "E-Commerce & Real-Time",
+                proj2_tag: "Web Application & E-Commerce Real-Time",
                 proj2_title: "Magazin Online cu Chat Live (Florărie)",
                 proj2_summary: "Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC. Include catalog dinamic de produse, coș de cumpărături securizat și modul de Live Chat în timp real bazat pe WebSockets pentru a converti vizitatorii în clienți direct pe site.",
-                proj3_tag: "CRM & Baze de Date",
+                proj3_tag: "Sistem CRM & Baze de Date SQL",
                 proj3_title: "Aplicație CRM & Gestiune Servicii",
                 proj3_summary: "Platformă pe măsură pentru o firmă de instalații sanitare și meseriași. Asigură preluarea comenzilor clienților, alocarea tehnicienilor pe teren, alerte automate SLA și gestiunea istoricului de intervenții printr-un API RESTful securizat și baze relaționale SQL.",
                 btn_details: "Detalii Tehnice",
@@ -206,11 +207,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 form_name_label: "Numele Tău",
                 form_email_label: "Adresa de Email",
                 form_type_label: "Despre ce este vorba?",
-                opt_web: "Creare Site Web / Magazin Online",
-                opt_auto: "Automatizare de Procese / Rapoarte",
-                opt_db: "Baze de Date & Optimizare SQL",
-                opt_hw: "Consiliere Hardware / Mentenanță IT",
-                opt_other: "Alte Întrebări / Proiect Custom",
+                opt_web: "Dezvoltare MVP / Platformă SaaS / Aplicație Web",
+                opt_auto: "Sistem CRM / Automatizări de Procese",
+                opt_db: "Arhitectură Baze de Date & Optimizare SQL",
+                opt_hw: "Consultanță IT & Mentenanță Tehnică",
+                opt_other: "Alte Întrebări / Proiect Personalizat",
                 form_msg_label: "Mesajul Tău",
                 btn_send_msg: "Trimite Mesajul",
                 form_security_notice: "Datele tale sunt în siguranță și nu vor fi divulgate terților.",
@@ -237,19 +238,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Hero
                 hero_status: "Available for Projects & Collaboration",
+                hero_title: "IT Consultant • Full-Stack Solutions",
                 hero_greeting: "Hi! I'm",
-                hero_focus_label: "What I do:",
-                hero_bio: "I build <strong>modern websites</strong>, automate repetitive workflows, and solve technical challenges—from <strong>clean code</strong> (React, Node.js, SQL) to <strong>custom hardware/software maintenance on demand</strong>. I provide clear technical guidance without confusing jargon, turning your requirements into robust, reliable solutions running 24/7.",
-                pill_web: "Websites & E-Commerce",
-                pill_auto: "Workflow Automation",
-                pill_db: "Databases & Optimization",
-                pill_hw: "Hardware & Tech Support",
+                hero_focus_label: "What I build:",
+                hero_bio: "I build <strong>scalable web applications, SaaS platforms, and custom CRM systems</strong> using React, Node.js, and SQL databases. I provide <strong>software architecture, process automation, and dedicated IT consulting</strong>, turning your business requirements into secure, high-performance digital solutions running 24/7.",
+                pill_mvp: "MVP & SaaS Development",
+                pill_crm: "Custom CRM & Automations",
+                pill_db: "Database Architecture (SQL)",
+                pill_consulting: "IT Consulting & Support",
                 btn_talk: "Let's Talk on WhatsApp",
                 btn_download_cv: "Download CV (PDF)",
                 btn_cli: "Terminal CLI",
 
                 // Profile Card
-                profile_card_role: "Web Developer & Database Administrator",
+                profile_card_role: "IT Consultant & Software Solutions",
                 stat_exp_short: "Years Experience",
                 stat_uptime_short: "Uptime & Reliability",
                 stat_delivery_short: "Custom Solutions",
@@ -257,35 +259,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Servicii
                 serv_badge: "End-to-End Solutions",
                 serv_title: "How Can I Help You?",
-                serv_subtitle: "Whether you need a web presence from scratch, automation for tedious manual tasks, or proactive tech support, I deliver clean, customized solutions tailored to your business.",
-                s1_title: "Websites & Modern Web Apps",
-                s1_desc: "From blazing-fast business landing pages to full e-commerce platforms and web portals (React, HTML5, CSS3, Node.js). Pixel-perfect on mobile, rapid loading speeds, and built to convert visitors into customers.",
-                s1_pt1: "100% responsive design (mobile, tablet, desktop)",
-                s1_pt2: "Speed optimization & fundamental SEO",
-                s1_pt3: "Lead forms, WhatsApp direct button, live chat",
+                serv_subtitle: "Whether you need a rapid MVP to validate your concept, a scalable SaaS platform, a tailored CRM, or database tuning, I deliver clear, robust technical solutions.",
+                s1_title: "Web Apps, MVP & SaaS Platforms",
+                s1_desc: "From concept to first deployed product (MVP), online stores, or complex SaaS platforms engineered with React and Node.js. Mobile-first, architecturally scalable, and built to convert users.",
+                s1_pt1: "Modern React, Node.js & REST API architecture",
+                s1_pt2: "100% responsive design & blazing fast performance",
+                s1_pt3: "Online payment processing, secure authentication & webhooks",
 
                 s2_title: "Secure Backend & Database Architecture",
-                s2_desc: "The heartbeat of any digital product. I architect high-performance database schemas (PostgreSQL, MySQL, MS SQL) and secure APIs (Node.js, Express, PHP) designed to handle orders and user traffic reliably.",
-                s2_pt1: "Administration & slow SQL query optimization",
-                s2_pt2: "REST APIs, online payment integration, webhooks",
-                s2_pt3: "Rigorous backup policies & security auditing",
+                s2_desc: "The backbone of high-traffic digital products. I design relational schemas (PostgreSQL, MySQL, MS SQL) and secure backend services capable of handling concurrent transactions with 99.9% uptime.",
+                s2_pt1: "Relational schema design & data integrity constraints",
+                s2_pt2: "Complex SQL query optimization (latency reduced by up to 40%)",
+                s2_pt3: "Strict security practices, smart indexing & automated backups",
 
-                s3_title: "Process & Data Automation",
-                s3_desc: "Eliminate human error and repetitive tasks. I engineer scripts and applications that generate automated PDF invoices, reports, or sync data between spreadsheets and databases in fractions of a second.",
-                s3_pt1: "Cut processing times from 20 minutes down to 5 seconds",
-                s3_pt2: "Dynamic PDF document generation (ATS & print ready)",
-                s3_pt3: "Custom CRM applications tailored for service providers",
+                s3_title: "Custom CRM & Process Automation",
+                s3_desc: "Eliminate repetitive paperwork and human error. I build custom CRM software for field teams and service contractors, alongside smart document generators and spreadsheet synchronization.",
+                s3_pt1: "Tailored CRM suites (order triage, technician scheduling, field workflows)",
+                s3_pt2: "Automated generation of invoices, technical reports, and dynamic PDFs",
+                s3_pt3: "Automated synchronization between spreadsheets, databases, and third-party APIs",
 
-                s4_title: "IT Consulting, Hardware & Maintenance",
-                s4_desc: "Technology should work for you, not against you. I offer consulting on hardware procurement without overpaying, workstation/server assembly, hardware diagnostics, local networking, and preventive maintenance.",
-                s4_pt1: "Objective consulting (no unnecessary equipment costs)",
-                s4_pt2: "Diagnostics, hardware upgrades, malware removal",
-                s4_pt3: "Tier 1 & 2 technical support and swift incident triage",
+                s4_title: "IT Consulting, Diagnostics & Maintenance",
+                s4_desc: "Pragmatic, vendor-neutral technology consulting. I help you choose the right software and hardware architectures without bloated budgets, ensuring thorough diagnosis, security, and continuous support.",
+                s4_pt1: "Architecture consulting & technology stack selection",
+                s4_pt2: "Hardware diagnostic, local networks & swift incident resolution",
+                s4_pt3: "Preventive maintenance and dedicated support for 24/7 reliability",
 
                 // Despre Mine
                 about_badge: "Professional Background & Vision",
                 about_title: "Who I Am & How I Work",
-                about_p1: "I am a <strong>passionate web developer and database administrator</strong> who pairs 5+ years of practical experience maintaining critical enterprise systems with an appetite for modern software engineering. Currently deepening my knowledge in algorithms and OOP (C#, C++) at <strong>'Elie Radu' Technical College</strong>.",
+                about_p1: "I am an <strong>IT consultant and software developer with a pragmatic focus on business outcomes</strong>, combining higher education in management with 5+ years of hands-on experience maintaining critical enterprise systems. Currently consolidating my knowledge of algorithms, data structures, and object-oriented programming (C#, C++) as a <strong>Programmer Analyst (Level 5)</strong> at the <strong>'Elie Radu' Technical College</strong>.",
                 about_p2: "Throughout my career, I've seen firsthand how costly system downtime and paperwork bottlenecks can be. That's why my approach is <strong>pragmatic and results-driven</strong>: I listen to your exact needs, explain solutions in plain language, and build systems with 99.9% uptime availability.",
                 h1_title: "Results-Oriented",
                 h1_desc: "Every line of code and hardware component configured serves a single purpose: saving time and money.",
@@ -302,13 +304,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj_badge: "Case Studies & Live Projects",
                 proj_title: "Web Projects & Applications",
                 proj_subtitle: "Here are real-world software solutions built to automate workflows, sell online, and manage service requests in real time.",
-                proj1_tag: "B2B Automation & PDF",
+                proj1_tag: "Automation & Business Logic",
                 proj1_title: "ATS-Compatible PDF Document Generator",
                 proj1_summary: "Dynamic PDF rendering platform parsing structured JSON data. Slashed manual drafting cycles from 20 minutes to under 5 seconds, ensuring 100% compliance with automated applicant tracking algorithms (ATS).",
-                proj2_tag: "E-Commerce & Real-Time",
+                proj2_tag: "Web Application & Real-Time E-Commerce",
                 proj2_title: "Online Store with Live Chat (Florist)",
                 proj2_summary: "Full-scale e-commerce web application for a local florist built with MVC architecture. Features real-time WebSockets live chat, dynamic product catalogs, and secure checkout to drive online sales conversions.",
-                proj3_tag: "CRM & Database Management",
+                proj3_tag: "Custom CRM & SQL Databases",
                 proj3_title: "Service Management & CRM Tool",
                 proj3_summary: "Tailored CRM application for plumbing contractors and field technicians. Handles customer work orders, technician scheduling, automatic SLA alerts, and service history tracking through secure REST APIs and SQL.",
                 btn_details: "Technical Details",
@@ -374,10 +376,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 form_name_label: "Your Name",
                 form_email_label: "Email Address",
                 form_type_label: "What is this regarding?",
-                opt_web: "Website / E-Commerce Development",
-                opt_auto: "Process & Report Automation",
-                opt_db: "Database Optimization & SQL",
-                opt_hw: "Hardware Consulting & IT Support",
+                opt_web: "MVP / SaaS Platform / Web Application",
+                opt_auto: "Custom CRM / Process Automation",
+                opt_db: "Database Architecture & SQL Optimization",
+                opt_hw: "IT Consulting & Technical Maintenance",
                 opt_other: "General Inquiry / Custom Project",
                 form_msg_label: "Your Message",
                 btn_send_msg: "Send Message",
@@ -402,8 +404,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Update title
             document.title = lang === 'ro' 
-                ? "Militaru Tiberiu Nicolae | Dezvoltator Web, Automatizări & Soluții IT" 
-                : "Militaru Tiberiu Nicolae | Web Developer, Automation & IT Solutions";
+                ? "Militaru Tiberiu Nicolae | IT Consultant • Full-Stack Solutions" 
+                : "Militaru Tiberiu Nicolae | IT Consultant • Full-Stack Solutions";
 
             // Update all DOM elements with data-i18n attribute
             document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -521,20 +523,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = document.getElementById('typingTarget');
         const phrases = {
             ro: [
-                "Creare Site-uri & Magazine Web",
-                "Automatizări de Procese & Date",
-                "Administrare Baze de Date (SQL)",
-                "Consiliere & Diagnoză Hardware",
-                "Mentenanță Software & Suport 24/7",
-                "Arhitecturi Moderne React & Node.js"
+                "Dezvoltare MVP & Platforme SaaS",
+                "Aplicații CRM & Gestiune pe Măsură",
+                "Arhitectură Baze de Date & Optimizare SQL",
+                "Automatizări de Procese & Reducere Timpi",
+                "Consultanță IT & Mentenanță Dedicată"
             ],
             en: [
-                "Modern Websites & E-Commerce",
-                "Workflow & Data Automation",
-                "Database Administration (SQL)",
-                "Hardware Consulting & Diagnostics",
-                "24/7 Software & Tech Maintenance",
-                "Modern React & Node.js Architectures"
+                "MVP & Scalable SaaS Development",
+                "Custom CRM & Operational Systems",
+                "Database Architecture & SQL Tuning",
+                "Process Automation & Workflow Efficiency",
+                "Dedicated IT Consulting & Maintenance"
             ]
         };
 
@@ -579,6 +579,12 @@ document.addEventListener('DOMContentLoaded', () => {
             isDeleting = false;
             type();
         };
+
+        // Initialize typing on load with active language
+        if (typeof I18nModule !== 'undefined' && I18nModule && typeof I18nModule.getCurrentLang === 'function') {
+            currentLang = I18nModule.getCurrentLang();
+        }
+        type();
 
         return {
             updateLanguage
@@ -1288,10 +1294,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
 
                 case 'services':
-                    printLine('1. 🌐 Web & E-Commerce: React, Node.js, HTML5, Responsive UI', 't-succ');
-                    printLine('2. ⚡ Process Automation: PDF gen, ATS parsing, repetitive task elimination', 't-succ');
-                    printLine('3. 🗄️ Database Administration: PostgreSQL, MySQL, MS SQL, Query tuning', 't-succ');
-                    printLine('4. 🛠️ Hardware & Maintenance: Custom PCs/servers, diagnostics, 99.9% uptime', 't-succ');
+                    printLine('1. 🚀 MVP & Platforme SaaS: React, Node.js, Arhitecturi scalabile, REST APIs', 't-succ');
+                    printLine('2. 🗄️ Baze de Date & Backend Sigur: PostgreSQL, MySQL, Optimizare SQL (-40% latență)', 't-succ');
+                    printLine('3. ⚡ Sisteme CRM & Automatizări: Aplicații dedicate, generare PDF, sincronizări date', 't-succ');
+                    printLine('4. 🛠️ Consultanță IT & Mentenanță: Diagnoză tehnică, selecție stack, securitate & uptime 99.9%', 't-succ');
                     break;
 
                 case 'projects':
