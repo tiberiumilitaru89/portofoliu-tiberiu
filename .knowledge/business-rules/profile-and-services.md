@@ -33,3 +33,11 @@ dependencies: ["portfolio-root-index"]
 3. `Arhitectură Baze de Date & Optimizare SQL`
 4. `Automatizări de Procese & Reducere Timpi`
 5. `Consultanță IT & Mentenanță Dedicată`
+
+## 4. Domeniu Web Oficial & Cărți de Vizită
+* **Domeniu Web Oficial:** `www.tiberiumilitaru.ro`
+* **Redirecționare Vercel:** `portofoliu-tiberiu.vercel.app` $\to$ `www.tiberiumilitaru.ro` (301 Permanent Redirect).
+* **Tipar Cărți de Vizită:**
+  - URL tipărit pe verso: `www.tiberiumilitaru.ro`
+  - Cod QR: Rezoluție 1000px, nivel de corecție a erorilor High (`H`), encodat direct pentru `https://www.tiberiumilitaru.ro`.
+
