@@ -48,9 +48,16 @@ Pentru consolidarea Knowledge Graph și Rich Snippets, antetul paginii conține 
    - Serviciu profesional IT cu arie de deservire locală și națională (`areaServed`).
    - Catalog de oferte (`OfferCatalog`) aliniat celor 4 piloni oficiali de servicii.
 
-## 4. Pași Operaționali Post-Lansare
-1. **Google Search Console:**
-   - Adăugare proprietate domeniu `www.tiberiumilitaru.ro`.
-   - Trimitere `https://www.tiberiumilitaru.ro/sitemap.xml`.
-2. **Google Business Profile (Opțional / Recomandat):**
-   - Profil de companie/profesionist independent pe Ploiești pentru afișare pe Google Maps la căutări locale.
+## 4. Stare Operațională & Verificare (Finalizată)
+1. **Domeniu & Nameservere:**
+   - Domeniu achiziționat pe Hostico: `tiberiumilitaru.ro`.
+   - Nameservere delegate către Vercel: `ns1.vercel-dns.com` și `ns2.vercel-dns.com`.
+   - Certificat SSL Let's Encrypt emis și activ pe `https://www.tiberiumilitaru.ro`.
+   - Redirect 308 permanent de la apex (`tiberiumilitaru.ro`) la `www.tiberiumilitaru.ro`.
+2. **Google Search Console:**
+   - Proprietate verificată la nivel de Prefix URL: `https://www.tiberiumilitaru.ro`.
+   - Verificare realizată prin tag HTML `<meta name="google-site-verification" content="XqIbLUjbY74iclfNMUNN1UMPC8ojfiur3dvNZCt7W6Q" />`.
+   - Sitemap `/sitemap.xml` trimis și validat cu status verde: **Succes** (1 pagină descoperită la 1 oct. 2026).
+3. **Google Business Profile (Pas Următor Opțional):**
+   - Profil de profesionist independent în Ploiești pentru prezență pe Google Maps.
+
