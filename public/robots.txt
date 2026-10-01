@@ -1,0 +1,8 @@
+# robots.txt - Militaru Tiberiu Nicolae (IT Consultant)
+# https://www.tiberiumilitaru.ro
+
+User-agent: *
+Allow: /
+
+# Canonical Sitemap
+Sitemap: https://www.tiberiumilitaru.ro/sitemap.xml
