@@ -1,20 +1,17 @@
 # Dependencies
 node_modules/
+
+# Production Build Output
+dist/
+
 # Operating System Files
 .DS_Store
 Thumbs.db
+
 # Logs & Environment
 *.log
 .env
 .env.local
-# Internal test scripts and generators
-audit-interactive.js
-generate-cv-pdf.js
-simulate-visitors.js
-test-audit.js
-test-suite.js
-generate-qr.js
-node_modules/
-dist/
 
+# Lockfile
 package-lock.json
