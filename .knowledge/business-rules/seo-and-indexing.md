@@ -1,7 +1,7 @@
 ---
 id: seo-and-indexing
 domain: business-rules
-last_verified: 2026-10-01
+last_verified: 2026-10-02
 dependencies: ["portfolio-root-index", "profile-and-services"]
 ---
 
@@ -54,6 +54,7 @@ Pentru consolidarea Knowledge Graph și Rich Snippets, antetul paginii conține 
    - Nameservere delegate către Vercel: `ns1.vercel-dns.com` și `ns2.vercel-dns.com`.
    - Certificat SSL Let's Encrypt emis și activ pe `https://www.tiberiumilitaru.ro`.
    - Redirect 308 permanent de la apex (`tiberiumilitaru.ro`) la `www.tiberiumilitaru.ro`.
+   - Redirect 308 permanent din subdomeniul Vercel (`portofoliu-tiberiu.vercel.app`) către domeniul canonic (`www.tiberiumilitaru.ro`) via `vercel.json` cu filtrare pe antet `Host`.
 2. **Google Search Console:**
    - Proprietate verificată la nivel de Prefix URL: `https://www.tiberiumilitaru.ro`.
    - Verificare realizată prin tag HTML `<meta name="google-site-verification" content="XqIbLUjbY74iclfNMUNN1UMPC8ojfiur3dvNZCt7W6Q" />`.
