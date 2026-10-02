@@ -4,6 +4,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "portofoliu-tiberiu.vercel.app"
+        }
+      ],
+      "destination": "https://www.tiberiumilitaru.ro/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
