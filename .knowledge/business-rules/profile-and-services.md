@@ -1,7 +1,7 @@
 ---
 id: profile-and-services
 domain: business-rules
-last_verified: 2026-10-01
+last_verified: 2026-10-07
 dependencies: ["portfolio-root-index"]
 ---
 
@@ -40,4 +40,11 @@ dependencies: ["portfolio-root-index"]
 * **Tipar Cărți de Vizită:**
   - URL tipărit pe verso: `www.tiberiumilitaru.ro`
   - Cod QR: Rezoluție 1000px, nivel de corecție a erorilor High (`H`), encodat direct pentru `https://www.tiberiumilitaru.ro`.
+
+## 5. Registrul Oficial al Proiectelor de Portofoliu
+1. **CV Builder Pro & ATS Analyzer (SaaS):** Live pe Firebase (`cvsmartats.web.app`), depozit public `cv-builder-ats`.
+2. **Magazin Florărie cu Chat Live (E-Commerce):** Soluție comercială client cu cod proprietar protejat prin acord de confidențialitate (NDA / Cod Privat).
+3. **Aplicație CRM & Gestiune Servicii (Instalbloc):** Depozit dedicat pe GitHub `github.com/tiberiumilitaru89/instalbloc`.
+4. **Platformă Civică & Audit Urban (Viziune Urbană Ploiești):** Platformă Next.js 15 / TypeScript, depozit dedicat `github.com/tiberiumilitaru89/viziune-urbana-ploiesti`, domeniu asociat `viziuneurbanaploiesti.ro`.
+
 
