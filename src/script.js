@@ -1519,7 +1519,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     architecture: "Built on <strong>React.js</strong> (SPA) with an Express/Node.js backend. Integrated bidirectional <strong>WebSockets</strong> for zero-latency client-to-seller live messaging.",
                     results: "• 35% boost in checkout completion rates via instant chat support.<br>• Sub-1.2 second load time on standard 4G mobile connections.<br>• Streamlined real-time order dashboard for the owner."
                 },
-                github: "https://github.com/tiberiumilitaru89"
+                github: null
             },
             proj3: {
                 ro: {
@@ -1534,7 +1534,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     architecture: "Relational <strong>PostgreSQL/MySQL</strong> database with normalized schemas and indexing. Responsive mobile React UI for field technicians and a RESTful API with automated SLA dispatching.",
                     results: "• Zero scheduling conflicts and automated technician assignment.<br>• Automated client confirmation notifications.<br>• Centralized client history for rapid warranty audits."
                 },
-                github: "https://github.com/tiberiumilitaru89"
+                github: "https://github.com/tiberiumilitaru89/instalbloc"
             }
         };
 
@@ -1564,7 +1564,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (githubLink) {
-                githubLink.href = data.github;
+                if (data.github) {
+                    githubLink.style.display = 'inline-flex';
+                    githubLink.href = data.github;
+                } else {
+                    githubLink.style.display = 'none';
+                }
             }
 
             modal.classList.add('active');
