@@ -1,6 +1,12 @@
 # robots.txt - Militaru Tiberiu Nicolae (IT Consultant)
 # https://www.tiberiumilitaru.ro
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
 User-agent: *
 Allow: /
 
