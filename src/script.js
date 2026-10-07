@@ -1530,16 +1530,16 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             proj3: {
                 ro: {
-                    title: "Aplicație CRM & Gestiune Servicii",
+                    title: "Aplicație CRM & Gestiune Servicii (Instalbloc)",
                     desc: "Creată pentru o firmă de instalații sanitare și intervenții tehnice. Anterior, toate programările se notau în agende fizice, ducând la întârzieri și suprapuneri de comenzi pe teren.",
-                    architecture: "Bază de date relațională pe <strong>PostgreSQL / MySQL</strong> cu scheme optimizate și constrângeri de integritate. Interfață React prietenoasă pe mobil pentru instalatori și API REST securizat cu alerte automate SLA.",
-                    results: "• Eliminarea completă a suprapunerilor de programări pe teren.<br>• Notificări automate către clienți prin SMS/Email.<br>• Istoric detaliat al fiecărui client pentru intervenții în garanție."
+                    architecture: "Arhitectură modernă pe <strong>Next.js 16</strong> cu <strong>React 19</strong> și <strong>TypeScript</strong>. Persistență cu <strong>Drizzle ORM</strong> peste <strong>SQLite / LibSQL</strong> (embedded & zero-latency queries), validare runtime cu <strong>Zod</strong>, monitorizare integrată cu <strong>Sentry</strong> și interfețe responsive stilizate cu <strong>Tailwind CSS v4</strong>.",
+                    results: "• Eliminarea completă a suprapunerilor de programări pe teren.<br>• Sistem de triaj și alerte automate SLA pentru dispecerat.<br>• Observabilitate end-to-end și trasabilitate a fiecărei cereri/intervenții."
                 },
                 en: {
-                    title: "Service Management & CRM Tool",
+                    title: "Service Management & CRM Tool (Instalbloc)",
                     desc: "Engineered for a plumbing and field maintenance company. Previously, appointments and warranties were tracked on paper, resulting in missed appointments and SLA breaches.",
-                    architecture: "Relational <strong>PostgreSQL/MySQL</strong> database with normalized schemas and indexing. Responsive mobile React UI for field technicians and a RESTful API with automated SLA dispatching.",
-                    results: "• Zero scheduling conflicts and automated technician assignment.<br>• Automated client confirmation notifications.<br>• Centralized client history for rapid warranty audits."
+                    architecture: "Modern architecture on <strong>Next.js 16</strong> with <strong>React 19</strong> and <strong>TypeScript</strong>. Persistence via <strong>Drizzle ORM</strong> with <strong>SQLite / LibSQL</strong>, strict runtime schema validation with <strong>Zod</strong>, end-to-end monitoring via <strong>Sentry</strong>, and responsive interfaces with <strong>Tailwind CSS v4</strong>.",
+                    results: "• Zero scheduling conflicts and automated technician assignment.<br>• Automated SLA dispatching and technician status tracking.<br>• Production observability and centralized service auditing."
                 },
                 github: "https://github.com/tiberiumilitaru89/instalbloc"
             },
