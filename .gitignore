@@ -15,3 +15,7 @@ Thumbs.db
 
 # Lockfile
 package-lock.json
+
+# Internal Documentation (agent rules, OKF knowledge base)
+.knowledge/
+README.md
