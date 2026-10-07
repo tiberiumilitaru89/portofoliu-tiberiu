@@ -1749,10 +1749,78 @@ img {
     color: var(--text-muted);
 }
 
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    height: 48px;
+    padding: 0 18px 0 14px;
+    background: #25D366;
+    color: #ffffff;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.2s ease;
+}
+
+.floating-whatsapp i {
+    font-size: 1.45rem;
+    color: #ffffff;
+}
+
+.floating-whatsapp:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
+    background: #20ba59;
+    color: #ffffff;
+}
+
+/* Pulsing online status indicator */
+.whatsapp-status-dot {
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.whatsapp-status-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: inherit;
+    animation: wa-pulse 1.8s infinite;
+}
+
+@keyframes wa-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.6);
+        opacity: 0;
+    }
+}
+
 /* Back to top button */
 .back-to-top {
     position: fixed;
-    bottom: 24px;
+    bottom: 84px;
     right: 24px;
     width: 44px;
     height: 44px;
@@ -1908,6 +1976,7 @@ img {
     .terminal-section,
     .contact-form-col,
     .footer,
+    .floating-whatsapp,
     .back-to-top,
     .modal-backdrop,
     .toast-container,
@@ -2105,5 +2174,29 @@ img {
     }
     .btn {
         min-height: 44px;
+    }
+    .floating-whatsapp {
+        bottom: 20px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    .floating-whatsapp .whatsapp-label {
+        display: none;
+    }
+    .floating-whatsapp .whatsapp-status-dot {
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        border: 1.5px solid #25D366;
+    }
+    .back-to-top {
+        bottom: 78px;
+        right: 18px;
+        width: 40px;
+        height: 40px;
     }
 }

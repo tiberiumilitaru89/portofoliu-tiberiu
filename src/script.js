@@ -224,7 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 footer_rights: "Toate drepturile rezervate.",
                 btn_view_repo: "Vezi pe GitHub",
                 btn_close: "Închide",
-                footer_qr: "Scanează pentru a distribui"
+                footer_qr: "Scanează pentru a distribui",
+                floating_whatsapp_label: "Discută pe WhatsApp",
+                floating_whatsapp_aria: "Contactează-mă direct pe WhatsApp"
             },
             en: {
                 // Header & Nav
@@ -396,7 +398,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 footer_rights: "All rights reserved.",
                 btn_view_repo: "View on GitHub",
                 btn_close: "Close",
-                footer_qr: "Scan to share"
+                footer_qr: "Scan to share",
+                floating_whatsapp_label: "Chat on WhatsApp",
+                floating_whatsapp_aria: "Chat directly with Tiberiu on WhatsApp"
             }
         };
 
@@ -425,6 +429,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const langIndicator = document.getElementById('langCurrentText');
             if (langIndicator) {
                 langIndicator.textContent = lang.toUpperCase();
+            }
+
+            // Update Floating WhatsApp Link & Aria
+            const floatingWhatsapp = document.getElementById('floatingWhatsappBtn');
+            if (floatingWhatsapp) {
+                const messageText = lang === 'ro'
+                    ? "Salut Tiberiu, am vazut portofoliul tau si as dori sa discutam o colaborare pentru un proiect."
+                    : "Hi Tiberiu, I saw your portfolio and would like to discuss a potential project collaboration.";
+                floatingWhatsapp.href = `https://wa.me/40720955119?text=${encodeURIComponent(messageText)}`;
+                floatingWhatsapp.setAttribute('aria-label', translations[lang].floating_whatsapp_aria || "WhatsApp");
             }
 
             // Trigger typing effect reload with new language (if module is ready)
@@ -1672,6 +1686,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contactForm');
         if (!form) return;
 
+        const formInitTime = Date.now();
+
         const nameInput = document.getElementById('senderName');
         const emailInput = document.getElementById('senderEmail');
         const messageInput = document.getElementById('senderMessage');
@@ -1733,12 +1749,15 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> ${lang === 'ro' ? 'Se trimite...' : 'Sending...'}`;
 
+            const interactionDuration = Date.now() - formInitTime;
+
             const formData = {
                 name: nameInput.value.trim(),
                 email: emailInput.value.trim(),
                 _replyto: emailInput.value.trim(),
                 service: document.getElementById('projectType')?.value || 'General',
-                message: messageInput.value.trim()
+                message: messageInput.value.trim(),
+                _formDuration: interactionDuration
             };
 
             try {
