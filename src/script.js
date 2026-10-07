@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj3_summary: "Platformă pe măsură pentru o firmă de instalații sanitare și meseriași. Asigură preluarea comenzilor clienților, alocarea tehnicienilor pe teren, alerte automate SLA și gestiunea istoricului de intervenții printr-un API RESTful securizat și baze relaționale SQL.",
                 proj4_tag: "Civic Tech & Platforme Digitale",
                 proj4_title: "Platformă Civică & Audit Urban (Viziune Urbană Ploiești)",
-                proj4_summary: "Platformă web modernă dezvoltată în Next.js 15 și TypeScript dedicată inițiativelor de regenerare urbană din Ploiești. Include module pentru audituri tehnice, gestiune parteneriate, generare dinamică a formularului 230 și panou administrativ securizat.",
+                proj4_summary: "Platformă web civică Full-Stack modernă dezvoltată în Next.js 15, TypeScript și Supabase (PostgreSQL). Include sincronizare în timp real între panoul administrativ și interfața publică, audituri tehnice de subsol, arhivare istorică non-destructivă (soft delete) și generare fiscală securizată a Formularului 230.",
                 btn_details: "Detalii Tehnice",
                 proj_cta_text: "Ai o idee de proiect sau vrei să optimizezi un flux de lucru existent?",
                 proj_cta_btn: "Discută Proiectul Tău pe WhatsApp",
@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj3_summary: "Tailored CRM application for plumbing contractors and field technicians. Handles customer work orders, technician scheduling, automatic SLA alerts, and service history tracking through secure REST APIs and SQL.",
                 proj4_tag: "Civic Tech & Cloud Platforms",
                 proj4_title: "Civic Platform & Urban Audit (Viziune Urbană Ploiești)",
-                proj4_summary: "Full-scale civic web platform built on Next.js 15 and TypeScript for urban regeneration initiatives in Ploiești. Features technical audit workflows, partner management, dynamic fiscal form 230 generation, and an authenticated admin console.",
+                proj4_summary: "Full-Stack civic web platform built with Next.js 15, TypeScript, and Supabase (PostgreSQL). Features real-time state synchronization between the admin console and public interface, technical basement audits, non-destructive archiving (soft delete), and secure fiscal Form 230 generation.",
                 btn_details: "Technical Details",
                 proj_cta_text: "Have a project idea or want to optimize an existing workflow?",
                 proj_cta_btn: "Discuss Your Project on WhatsApp",
@@ -1545,16 +1545,16 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             proj4: {
                 ro: {
-                    title: "Viziune Urbană Noua Ploiești — Platformă Civică & Digitalizare",
+                    title: "Viziune Urbană Noua Ploiești — Platformă Civică & Cloud Database",
                     desc: "Proiect civic amplu dezvoltat pentru municipiul Ploiești, destinat transparentizării auditurilor tehnice la asociațiile de proprietari, atragerii de fonduri și digitalizării complete a fluxurilor comunitare.",
-                    architecture: "Arhitectură modernă pe <strong>Next.js 15.5</strong> (App Router) cu <strong>TypeScript</strong> și <strong>Tailwind CSS</strong>. Include validare strictă a schemelor de date prin <strong>Zod</strong>, server actions optimizate, securizare împotriva scurgerilor de PII (date personale), optimizare SEO cu Schema.org JSON-LD hibrid și generare automată de fișiere fiscale.",
-                    results: "• 100% performanță și 0 erori de randare statică (10 rute pre-generate pe Vercel Edge).<br>• Panou administrativ securizat (`/admin`) pentru coordonarea auditurilor și a partenerilor locali.<br>• Sistem interactiv bilingv adaptat pentru mobil și desktop cu încărcare sub 1 secundă."
+                    architecture: "Arhitectură Full-Stack pe <strong>Next.js 15.5</strong> (App Router, React 19) cu <strong>TypeScript</strong>, integrată cu <strong>Supabase (PostgreSQL)</strong>. Include un strat de abstractizare a datelor (`/lib/db.ts`), sincronizare în timp real între panoul `/admin` și componentele publice (`/api/public/data` cu Edge Caching), validare Zod la runtime, securitate Zero-Trust cu roluri separate (Anon vs Service Role) și mecanism non-destructiv de arhivare (Soft Delete).",
+                    results: "• Sincronizare Cloud în timp real cu persistență pe bază de date relațională PostgreSQL (Supabase).<br>• Arhivare istorică (`is_archived: true`) pentru audituri, parteneri și formulare 230 fără pierderi de date.<br>• Performanță 100% cu 12 rute hibride pre-generate și distribuite global prin Vercel Edge Network.<br>• Panou administrativ securizat cu gestiune FSM a stadiilor și generare automată de fișiere fiscale."
                 },
                 en: {
-                    title: "Viziune Urbană Noua Ploiești — Civic Platform & Digitalization",
+                    title: "Viziune Urbană Noua Ploiești — Civic Platform & Cloud Database",
                     desc: "A large-scale civic platform engineered for the municipality of Ploiești to streamline technical audits for homeowners associations, drive fundraising, and digitize community workflows.",
-                    architecture: "Modern architecture built on <strong>Next.js 15.5</strong> (App Router) with <strong>TypeScript</strong> and <strong>Tailwind CSS</strong>. Features runtime schema validation via <strong>Zod</strong>, zero-latency server actions, strict PII privacy controls, hybrid Schema.org JSON-LD SEO, and automated fiscal document generation.",
-                    results: "• 100% build performance with 10 static edge routes pre-rendered on Vercel.<br>• Authenticated admin panel (`/admin`) managing audits, partners, and metrics.<br>• Mobile-optimized responsive design with sub-second page load times."
+                    architecture: "Full-Stack architecture built on <strong>Next.js 15.5</strong> (App Router, React 19) with <strong>TypeScript</strong>, backed by <strong>Supabase (PostgreSQL)</strong>. Features a typed database abstraction layer (`/lib/db.ts`), real-time synchronization between the `/admin` console and public UI (`/api/public/data` with Edge Caching), runtime schema validation via Zod, Zero-Trust role isolation (Anon vs Service Role), and a non-destructive Soft Delete archiving model.",
+                    results: "• Real-time cloud synchronization backed by persistent relational PostgreSQL storage (Supabase).<br>• Historical Soft-Delete data safety (`is_archived: true`) for audits, partners, and fiscal submissions.<br>• 100% build performance with 12 hybrid routes deployed on Vercel Edge Network.<br>• Authenticated admin panel with FSM state machine transitions and automated fiscal form processing."
                 },
                 github: "https://github.com/tiberiumilitaru89/viziune-urbana-ploiesti"
             }
