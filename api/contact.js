@@ -1,3 +1,26 @@
+// In-memory sliding window rate limiter for Serverless container defense
+const rateLimitMap = new Map();
+const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 5;
+
+function isRateLimited(ip) {
+    if (!ip || ip === 'unknown') return false;
+    const now = Date.now();
+    const record = rateLimitMap.get(ip);
+
+    if (!record || now - record.startTime > RATE_LIMIT_WINDOW_MS) {
+        rateLimitMap.set(ip, { count: 1, startTime: now });
+        return false;
+    }
+
+    if (record.count >= MAX_REQUESTS_PER_WINDOW) {
+        return true;
+    }
+
+    record.count += 1;
+    return false;
+}
+
 export default async function handler(req, res) {
     // 1. CORS & Preflight checks
     if (req.method === 'OPTIONS') {
@@ -7,6 +30,16 @@ export default async function handler(req, res) {
     // 2. Only allow POST requests
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method Not Allowed' });
+    }
+
+    // 2.1 Sliding Window Rate Limiting (Anti-flood / DoS defense)
+    const forwarded = req.headers['x-forwarded-for'];
+    const clientIp = typeof forwarded === 'string' 
+        ? forwarded.split(',')[0].trim() 
+        : (req.socket?.remoteAddress || 'unknown');
+
+    if (isRateLimited(clientIp)) {
+        return res.status(429).json({ error: 'Too many requests. Please wait a minute before submitting again.' });
     }
 
     try {

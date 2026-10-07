@@ -1,7 +1,7 @@
 ---
 id: seo-and-indexing
 domain: business-rules
-last_verified: 2026-10-02
+last_verified: 2026-10-07
 dependencies: ["portfolio-root-index", "profile-and-services"]
 ---
 
@@ -61,4 +61,9 @@ Pentru consolidarea Knowledge Graph și Rich Snippets, antetul paginii conține 
    - Sitemap `/sitemap.xml` trimis și validat cu status verde: **Succes** (1 pagină descoperită la 1 oct. 2026).
 3. **Google Business Profile (Pas Următor Opțional):**
    - Profil de profesionist independent în Ploiești pentru prezență pe Google Maps.
+
+## 5. Integritate DOM Static pentru Crawler-i (Anti-Autosabotaj)
+* **Valori numerice implicite în HTML:** Elementele `.stat-number` conțin nativ valorile finale reale (`5`, `99`, `40`, `15`), garantând că boții fără suport JS indexează corect metricile profesionale (nu valori de `0`).
+* **Curățare client-side:** Redirecționările se efectuează strict prin antete HTTP (Edge 308), fiind interzisă utilizarea scripturilor inline `window.location.replace` în `<head>`.
+
 

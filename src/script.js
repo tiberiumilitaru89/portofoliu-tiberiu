@@ -1168,6 +1168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.stat-number').forEach(stat => {
                     const target = parseInt(stat.getAttribute('data-target'), 10);
                     let current = 0;
+                    stat.textContent = '0';
                     const increment = target <= 10 ? 1 : Math.ceil(target / 40);
                     const timer = setInterval(() => {
                         current += increment;
@@ -1212,6 +1213,31 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.createElement('div');
             div.className = `t-line ${cssClass}`;
             div.innerHTML = content;
+            output.appendChild(div);
+            if (body) body.scrollTop = body.scrollHeight;
+        };
+
+        const printSafeCmd = (cmdText) => {
+            if (!output) return;
+            const div = document.createElement('div');
+            div.className = 't-line t-cmd';
+            div.textContent = `tiberiu@dev-os:~$ ${cmdText}`;
+            output.appendChild(div);
+            if (body) body.scrollTop = body.scrollHeight;
+        };
+
+        const printSafeError = (unrecognizedCmd) => {
+            if (!output) return;
+            const div = document.createElement('div');
+            div.className = 't-line t-err';
+            const prefix = document.createTextNode(`Command not recognized: "${unrecognizedCmd}". Type `);
+            const helpSpan = document.createElement('span');
+            helpSpan.className = 'highlight-cyan';
+            helpSpan.textContent = "'help'";
+            const suffix = document.createTextNode(' for a list of commands.');
+            div.appendChild(prefix);
+            div.appendChild(helpSpan);
+            div.appendChild(suffix);
             output.appendChild(div);
             if (body) body.scrollTop = body.scrollHeight;
         };
@@ -1276,7 +1302,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cmd = cmdRaw.trim().toLowerCase();
             if (!cmd) return;
 
-            printLine(`tiberiu@dev-os:~$ ${escapeHTML(cmdRaw)}`, 't-cmd');
+            printSafeCmd(cmdRaw);
 
             switch (cmd) {
                 case 'help':
@@ -1360,7 +1386,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
 
                 default:
-                    printLine(`Command not recognized: "${escapeHTML(cmd)}". Type <span class="highlight-cyan">'help'</span> for a list of commands.`, 't-err');
+                    printSafeError(cmd);
                     break;
             }
         };
