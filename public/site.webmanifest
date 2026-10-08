@@ -1,0 +1,24 @@
+{
+  "name": "Militaru Tiberiu Nicolae | IT Consultant",
+  "short_name": "Tiberiu Militaru",
+  "description": "IT Consultant & Full-Stack Solutions. Dezvoltare MVP & platforme SaaS, sisteme CRM, arhitecturi SQL și consultanță IT.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/profile.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ]
+}
