@@ -1762,8 +1762,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 /**
-                 * Endpoint securizat prin Vercel Serverless Functions
-                 * (Endpoint-ul real Formspree e ascuns in Variabile de Mediu pe backend)
+                 * Endpoint securizat prin Vercel Serverless Functions & Resend API
+                 * (Dual-dispatch: alertă administrator + confirmare automată client)
                  */
                 const response = await fetch('/api/contact', {
                     method: 'POST',
@@ -1783,7 +1783,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     );
                     form.reset();
                 } else {
-                    // Fallback prietenos în cazul în care Formspree returneaza o eroare temporara
+                    // Fallback prietenos în cazul unei erori neprevăzute la nivel de furnizor
                     ToastModule.show(
                         lang === 'ro'
                             ? "Mesajul a fost recepționat! Îmi poți scrie oricând direct și pe WhatsApp la (+40) 720 955 119."
