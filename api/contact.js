@@ -290,8 +290,9 @@ export default async function handler(req, res) {
             return res.status(400).json({ error: 'Mesajul trebuie să aibă între 10 și 5000 de caractere.' });
         }
 
-        // 5. Configurare variabile Resend API
-        const apiKey = process.env.RESEND_API_KEY;
+        // 5. Configurare variabile Resend API (suportă atât RESEND_API_KEY cât și RESENDAPIKEY)
+        const rawKey = process.env.RESEND_API_KEY || process.env.RESENDAPIKEY || '';
+        const apiKey = typeof rawKey === 'string' ? rawKey.trim() : '';
         const adminRecipient = process.env.ADMIN_NOTIFICATION_EMAIL || 'tiberiumilitaru89@gmail.com';
         const fromEmail = process.env.NOTIFICATION_FROM_EMAIL || 'Tiberiu Militaru Portofoliu <onboarding@resend.dev>';
 
