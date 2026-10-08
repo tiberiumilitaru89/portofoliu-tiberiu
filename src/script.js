@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj_badge: "Studii de Caz & Soluții Livrate",
                 proj_title: "Proiecte Web & Aplicații",
                 proj_subtitle: "Iată câteva exemple concrete de soluții software construite pentru a automatiza fluxuri, vinde online și gestiona comenzi în timp real.",
-                proj1_tag: "Automatizare & Logică de Business",
-                proj1_title: "Generator Documente PDF pt. Sisteme ATS",
-                proj1_summary: "Platformă inteligentă de generare dinamică a documentelor tehnice și a CV-urilor, prelucrând date structurate JSON. A redus timpul manual de redactare de la 20 de minute la mai puțin de 5 secunde, garantând parsare completă pentru algoritmii de recrutare automată (ATS).",
+                proj1_tag: "SaaS & Arhitectură Serverless Securizată",
+                proj1_title: "CV Builder Pro & ATS Analyzer (SaaS)",
+                proj1_summary: "Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Puppeteer) ranforsate împotriva SSRF/XSS, export hibrid cu fallback nativ și procesare automată plăți prin Stripe Webhook.",
                 proj2_tag: "Web Application & E-Commerce Real-Time",
                 proj2_title: "Magazin Online cu Chat Live (Florărie)",
                 proj2_summary: "Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC. Include catalog dinamic de produse, coș de cumpărături securizat și modul de Live Chat în timp real bazat pe WebSockets pentru a converti vizitatorii în clienți direct pe site.",
@@ -309,9 +309,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj_badge: "Case Studies & Live Projects",
                 proj_title: "Web Projects & Applications",
                 proj_subtitle: "Here are real-world software solutions built to automate workflows, sell online, and manage service requests in real time.",
-                proj1_tag: "Automation & Business Logic",
-                proj1_title: "ATS-Compatible PDF Document Generator",
-                proj1_summary: "Dynamic PDF rendering platform parsing structured JSON data. Slashed manual drafting cycles from 20 minutes to under 5 seconds, ensuring 100% compliance with automated applicant tracking algorithms (ATS).",
+                proj1_tag: "SaaS & Hardened Serverless Architecture",
+                proj1_title: "CV Builder Pro & ATS Analyzer (SaaS)",
+                proj1_summary: "Real-time SaaS CV builder and ATS scoring engine featuring vector PDF rendering via serverless microservices (Puppeteer) hardened against SSRF/XSS, hybrid print fallbacks, and automated Stripe webhook billing.",
                 proj2_tag: "Web Application & Real-Time E-Commerce",
                 proj2_title: "Online Store with Live Chat (Florist)",
                 proj2_summary: "Full-scale e-commerce web application for a local florist built with MVC architecture. Features real-time WebSockets live chat, dynamic product catalogs, and secure checkout to drive online sales conversions.",
@@ -1516,14 +1516,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 ro: {
                     title: "CV Builder Pro & ATS Analyzer (SaaS)",
                     desc: "O aplicație web avansată (SaaS) dezvoltată de la zero, care permite utilizatorilor să-și construiască, vizeze și analizeze CV-urile în timp real. Platforma include un sistem complet de monetizare, autentificare sigură și generare de PDF-uri direct din cloud.",
-                    architecture: "Frontend Zero-Dependency (Vanilla JS, CSS Grid). Backend complet Serverless pe Google Firebase: Hosting, Firestore (NoSQL Live) și Authentication (Google OAuth). Include Microservicii pe Firebase Cloud Functions (Node.js 22) pentru validarea plăților prin Stripe Webhook și generarea securizată de PDF-uri cu Puppeteer.",
-                    results: "• Arhitectură complet Serverless (0 mentenanță), auto-scalabilă.<br>• Integrare completă Stripe (Abonamente & Checkout) și funcționare autonomă end-to-end.<br>• Algoritm client-side pentru scoring ATS în funcție de cuvinte cheie."
+                    architecture: "Frontend Zero-Dependency (Vanilla JS, CSS Grid). Backend complet Serverless pe Google Firebase: Hosting, Firestore (NoSQL Live cu izolare multi-tenant) și Authentication (Google OAuth). Include Microservicii pe Firebase Cloud Functions (Node.js 22) securizate Red-Team (anti-SSRF, blocare acces metadata cloud 169.254, prevenire memory leaks prin lifecycle determinist) pentru validarea plăților prin Stripe Webhook și generarea securizată de PDF-uri cu Puppeteer.",
+                    results: "• Arhitectură Serverless auto-scalabilă cu zero costuri de mentenanță pasivă.<br>• Securizare Red-Team completă împotriva SSRF/XSS și izolare a drepturilor de scriere pe baza de date.<br>• Integrare completă Stripe (Abonamente & Checkout) și flux autonom end-to-end.<br>• Algoritm client-side pentru scoring ATS în funcție de cuvinte cheie și export hibrid (Cloud + dialog nativ)."
                 },
                 en: {
                     title: "CV Builder Pro & ATS Analyzer (SaaS)",
                     desc: "An advanced SaaS web application built from scratch, allowing users to build, preview, and analyze their CVs in real-time. Features a full monetization system, secure authentication, and cloud-based PDF generation.",
-                    architecture: "Zero-Dependency Frontend (Vanilla JS, CSS Grid). Full Serverless Backend on Google Firebase: Hosting, Firestore (Real-time NoSQL), and Authentication (Google OAuth). Includes Node.js 22 Firebase Cloud Functions for Stripe Webhook validation and secure PDF rendering via headless Puppeteer.",
-                    results: "• Fully Serverless architecture (zero maintenance), auto-scalable.<br>• Complete Stripe integration (Subscriptions & Checkout) for an autonomous end-to-end flow.<br>• Client-side ATS scoring algorithm based on keyword matching."
+                    architecture: "Zero-Dependency Frontend (Vanilla JS, CSS Grid). Full Serverless Backend on Google Firebase: Hosting, Firestore (Real-time NoSQL with multi-tenant isolation), and Authentication (Google OAuth). Features Node.js 22 Firebase Cloud Functions with Red-Team hardening (anti-SSRF, blocked cloud metadata access 169.254, deterministic lifecycle cleanup) for Stripe Webhooks and headless Puppeteer PDF rendering.",
+                    results: "• Fully Serverless architecture (zero maintenance), auto-scalable.<br>• Complete Red-Team security against SSRF/XSS with strict database write boundaries.<br>• Complete Stripe integration (Subscriptions & Checkout) for an autonomous end-to-end flow.<br>• Client-side ATS scoring algorithm based on keyword matching and hybrid export fallback."
                 },
                 github: "https://github.com/tiberiumilitaru89/cv-builder-ats"
             },
