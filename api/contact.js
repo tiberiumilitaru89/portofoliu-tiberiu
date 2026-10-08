@@ -97,7 +97,7 @@ function buildAdminEmailHtml({ name, email, service, message, dateFormatted, cli
   <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
     <div style="background: #0f172a; padding: 20px 24px; border-bottom: 3px solid #06b6d4;">
       <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: #38bdf8;">
-        Portofoliu Tiberiu Militaru &bull; Alertă Mesaj Nou
+        Portofoliu Militaru Tiberiu Nicolae &bull; Alertă Mesaj Nou
       </div>
       <h1 style="margin: 8px 0 0 0; font-size: 19px; font-weight: 700; color: #ffffff;">
         Solicitare nouă: ${escapeHtml(service)}
@@ -304,7 +304,7 @@ export default async function handler(req, res) {
         const dateFormatted = new Date().toLocaleString('ro-RO', { timeZone: 'Europe/Bucharest' });
 
         // 6. Expediere Alerta Administrator (Critică)
-        const adminSubject = `[Portofoliu] Mesaj nou de la ${sanitizedName} (${sanitizedType})`;
+        const adminSubject = `[Militaru Tiberiu Nicolae] Mesaj nou de la ${sanitizedName} (${sanitizedType})`;
         const adminEmailHtml = buildAdminEmailHtml({
             name: sanitizedName,
             email: sanitizedEmail,

@@ -1,6 +1,6 @@
 "use strict";
 /**
- * script.js - Portofoliu & CV Tiberiu Nicolae Militaru
+ * script.js - Portofoliu & CV Militaru Tiberiu Nicolae
  * Arhitectură modulară, securizată, optimizată pentru performanță & Vercel
  */
 

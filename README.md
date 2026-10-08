@@ -43,12 +43,12 @@ Site-ul utilizează o infrastructură modernă de email de înaltă fiabilitate 
 ### Arhitectura Dual-Dispatch:
 1. **Alertă Administrator (Către Tiberiu):**
    - Destinatar: `tiberiumilitaru89@gmail.com`
-   - Subiect: `[Portofoliu] Mesaj nou de la {Nume} ({Serviciu})`
+   - Subiect: `[Militaru Tiberiu Nicolae] Mesaj nou de la {Nume} ({Serviciu})`
    - Corp email structurat: Date complete expeditor, serviciu solicitat, mesaj complet, timestamp (București), IP client.
    - Antet `reply_to` configurat direct pe emailul clientului: când apeși „Reply / Răspunde” în Gmail pe telefon sau PC, răspunzi instantaneu clientului.
 2. **Confirmare Automată Client (Auto-responder profesional):**
    - Destinatar: adresa de email a clientului.
-   - Subiect: `Confirmare primire mesaj — Tiberiu Nicolae Militaru`
+   - Subiect: `Confirmare primire mesaj — Militaru Tiberiu Nicolae`
    - Design modern Dark/Cyan sincronizat cu tema portofoliului.
    - Confirmă preluarea solicitării (răspuns în maxim 24h) și include link direct de WhatsApp (`https://wa.me/40720955119`) pentru urgențe.
 
@@ -60,8 +60,8 @@ Site-ul utilizează o infrastructură modernă de email de înaltă fiabilitate 
    - `RESEND_API_KEY`: Cheia ta secretă Resend (`re_...`).
    - `ADMIN_NOTIFICATION_EMAIL`: `tiberiumilitaru89@gmail.com`
    - `NOTIFICATION_FROM_EMAIL`:
-     - Dacă ai conectat un domeniu verificat în Resend: `Tiberiu Militaru <contact@tiberiumilitaru.ro>`
-     - Sau fallback universal: `Tiberiu Militaru Portofoliu <onboarding@resend.dev>`
+     - Dacă ai conectat un domeniu verificat în Resend: `Militaru Tiberiu Nicolae <contact@tiberiumilitaru.ro>`
+     - Sau fallback universal: `Militaru Tiberiu Nicolae Portofoliu <onboarding@resend.dev>`
 5. Apasă pe **Save** și efectuează un nou Deploy (sau `git push origin main`). Formularul este acum complet operațional!
 
 ---
@@ -76,7 +76,7 @@ Deschide un terminal (PowerShell / Git Bash) în acest folder:
 cd "d:\Antigravity\portofoliu-tiberiu"
 git init
 git add .
-git commit -m "Initial commit - Portofoliu Tiberiu Nicolae Militaru"
+git commit -m "Initial commit - Portofoliu Militaru Tiberiu Nicolae"
 ```
 
 ### Pasul 2: Creează un depozit pe GitHub
