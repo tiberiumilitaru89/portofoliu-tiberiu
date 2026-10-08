@@ -294,7 +294,7 @@ export default async function handler(req, res) {
         const rawKey = process.env.RESEND_API_KEY || process.env.RESENDAPIKEY || '';
         const apiKey = typeof rawKey === 'string' ? rawKey.trim() : '';
         const adminRecipient = process.env.ADMIN_NOTIFICATION_EMAIL || 'tiberiumilitaru89@gmail.com';
-        const fromEmail = process.env.NOTIFICATION_FROM_EMAIL || 'Tiberiu Militaru Portofoliu <onboarding@resend.dev>';
+        const fromEmail = process.env.NOTIFICATION_FROM_EMAIL || 'Tiberiu Militaru <contact@tiberiumilitaru.ro>';
 
         if (!apiKey) {
             logStructured('error', 'Configuration error: RESEND_API_KEY is missing in environment variables', correlationId);
