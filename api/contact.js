@@ -216,7 +216,7 @@ function buildClientEmailHtml({ name, service, dateFormatted }) {
       <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid #1e293b; color: #94a3b8; font-size: 13px; line-height: 1.6;">
         <strong style="color: #f1f5f9;">Militaru Tiberiu Nicolae</strong><br />
         <span style="color: #64748b; font-size: 12px;">Web Developer &amp; IT Consultant</span><br />
-        <span style="color: #64748b; font-size: 12px;">Website: <a href="https://www.tiberiumilitaru.ro" style="color: #38bdf8; text-decoration: none;">www.tiberiumilitaru.ro</a> &bull; Telefon: +40 720 955 119</span>
+        <span style="color: #64748b; font-size: 12px;">Website: <a href="https://www.tiberiumilitaru.ro" style="color: #38bdf8; text-decoration: none;">www.tiberiumilitaru.ro</a> &bull; Email: <a href="mailto:contact@tiberiumilitaru.ro" style="color: #38bdf8; text-decoration: none;">contact@tiberiumilitaru.ro</a> &bull; Telefon: +40 720 955 119</span>
       </div>
     </div>
     <div style="background: #090e1a; padding: 14px 24px; text-align: center; border-top: 1px solid #1e293b; font-size: 11px; color: #64748b;">

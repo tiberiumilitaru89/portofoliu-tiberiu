@@ -1370,7 +1370,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 case 'contact':
                     printLine('WhatsApp: (+40) 720 955 119 (wa.me/40720955119)', 't-succ');
-                    printLine('Email: tiberiumilitaru89@gmail.com', 't-succ');
+                    printLine('Email: contact@tiberiumilitaru.ro', 't-succ');
                     printLine('LinkedIn: https://www.linkedin.com/in/tiberiu-militaru-nicolae89', 't-succ');
                     printLine('Location: Ploiesti, Prahova / Remote', 't-out');
                     break;
