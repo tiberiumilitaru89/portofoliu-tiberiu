@@ -146,7 +146,7 @@ function buildAdminEmailHtml({ name, email, service, message, dateFormatted, cli
       </div>
     </div>
     <div style="background: #f8fafc; padding: 14px 24px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8;">
-      Platforma Portofoliu Tiberiu Nicolae Militaru &bull; <a href="https://www.tiberiumilitaru.ro" style="color: #0284c7; text-decoration: none;">www.tiberiumilitaru.ro</a>
+      Platforma Portofoliu Militaru Tiberiu Nicolae &bull; <a href="https://www.tiberiumilitaru.ro" style="color: #0284c7; text-decoration: none;">www.tiberiumilitaru.ro</a>
     </div>
   </div>
 </body>
@@ -159,13 +159,13 @@ function buildClientEmailHtml({ name, service, dateFormatted }) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmare primire mesaj — Tiberiu Nicolae Militaru</title>
+  <title>Confirmare primire mesaj — Militaru Tiberiu Nicolae</title>
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #070d19; padding: 24px 12px; margin: 0; color: #f1f5f9;">
   <div style="max-width: 600px; margin: 0 auto; background: #0f172a; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #1e293b;">
     <div style="background: #0b1120; padding: 24px; border-bottom: 3px solid #06b6d4; text-align: center;">
       <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: #38bdf8;">
-        Tiberiu Nicolae Militaru &bull; Web &amp; IT Solutions
+        Militaru Tiberiu Nicolae &bull; Web &amp; IT Solutions
       </div>
       <h1 style="margin: 10px 0 0 0; font-size: 20px; font-weight: 700; color: #ffffff;">
         Confirmare Primire Mesaj
@@ -214,7 +214,7 @@ function buildClientEmailHtml({ name, service, dateFormatted }) {
 
       <!-- Signature -->
       <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid #1e293b; color: #94a3b8; font-size: 13px; line-height: 1.6;">
-        <strong style="color: #f1f5f9;">Tiberiu Nicolae Militaru</strong><br />
+        <strong style="color: #f1f5f9;">Militaru Tiberiu Nicolae</strong><br />
         <span style="color: #64748b; font-size: 12px;">Web Developer &amp; IT Consultant</span><br />
         <span style="color: #64748b; font-size: 12px;">Website: <a href="https://www.tiberiumilitaru.ro" style="color: #38bdf8; text-decoration: none;">www.tiberiumilitaru.ro</a> &bull; Telefon: +40 720 955 119</span>
       </div>
@@ -294,7 +294,7 @@ export default async function handler(req, res) {
         const rawKey = process.env.RESEND_API_KEY || process.env.RESENDAPIKEY || '';
         const apiKey = typeof rawKey === 'string' ? rawKey.trim() : '';
         const adminRecipient = process.env.ADMIN_NOTIFICATION_EMAIL || 'tiberiumilitaru89@gmail.com';
-        const fromEmail = process.env.NOTIFICATION_FROM_EMAIL || 'Tiberiu Militaru <contact@tiberiumilitaru.ro>';
+        const fromEmail = process.env.NOTIFICATION_FROM_EMAIL || 'Militaru Tiberiu Nicolae <contact@tiberiumilitaru.ro>';
 
         if (!apiKey) {
             logStructured('error', 'Configuration error: RESEND_API_KEY is missing in environment variables', correlationId);
@@ -354,7 +354,7 @@ export default async function handler(req, res) {
 
         // 7. Expediere Confirmare Automată Client (Dual-Dispatch Non-Blocant)
         try {
-            const clientSubject = 'Confirmare primire mesaj — Tiberiu Nicolae Militaru';
+            const clientSubject = 'Confirmare primire mesaj — Militaru Tiberiu Nicolae';
             const clientEmailHtml = buildClientEmailHtml({
                 name: sanitizedName,
                 service: sanitizedType,
