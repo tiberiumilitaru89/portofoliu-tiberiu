@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let NavModule = null;
     let StatsModule = null;
     let TerminalModule = null;
+    let ProjectFilterModule = null;
     let ModalModule = null;
     let ToastModule = null;
     let ContactFormModule = null;
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 pill_consulting: "Consultanță IT & Suport",
                 btn_talk: "Hai să vorbim pe WhatsApp",
                 btn_download_cv: "Descarcă CV (PDF)",
+                btn_view_projects: "Vezi Proiectele",
                 btn_cli: "Terminal CLI",
 
                 // Profile Card
@@ -98,9 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 s1_pt3: "Integrare plăți online, autentificare securizată & webhooks",
 
                 s2_title: "Baze de Date, Arhitectură & Backend Sigur",
-                s2_desc: "Proiectez și optimizez infrastructuri de date (PostgreSQL, MySQL, MS SQL) și servicii backend securizate, capabile să susțină fluxuri mari de date și tranzacții concurente cu disponibilitate garantată 99.9%.",
+                s2_desc: "Proiectez și optimizez infrastructuri de date (PostgreSQL, MySQL, MS SQL) și servicii backend securizate, capabile să susțină fluxuri mari de date și tranzacții concurente cu înaltă disponibilitate și reziliență.",
                 s2_pt1: "Modelare scheme relaționale & constrângeri de integritate",
-                s2_pt2: "Optimizare interogări SQL complexe (reducere timpi până la 40%)",
+                s2_pt2: "Optimizare interogări SQL complexe, indexare structurală și timpi minimi de latență",
                 s2_pt3: "Politici riguroase de securitate, indexare și backup automat",
 
                 s3_title: "Sisteme CRM & Automatizări de Procese",
@@ -119,15 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 about_badge: "Profil Profesional & Viziune",
                 about_title: "Cine Sunt și Cum Lucrez",
                 about_p1: "Sunt un <strong>consultant IT și dezvoltator cu orientare pragmatică spre rezultate de business</strong>, îmbinând formarea superioară în management cu expertiza practică acumulată în peste 5 ani de menținere a sistemelor critice. În prezent, îmi consolidez cunoștințele de algoritmi, structuri de date și programare orientată pe obiecte (C#, C++) ca <strong>Analist Programator (Nivel 5)</strong> la <strong>Colegiul Tehnic „Elie Radu” din Ploiești</strong>.",
-                about_p2: "În activitatea mea am văzut cât de mult costă o pană de sistem sau un proces operațional blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, sigure și menținute la o disponibilitate de 99.9%.",
+                about_p2: "În activitatea mea am văzut cât de mult costă o pană de sistem sau un proces operațional blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, sigure și concepute pentru disponibilitate continuă.",
                 h1_title: "Orientat pe Rezultate",
                 h1_desc: "Fiecare linie de cod sau piesă hardware montată are un scop clar: să economisească timp și bani.",
                 h2_title: "Comunicare Transparentă",
                 h2_desc: "Fără jargon tehnic inutil. Știi întotdeauna stadiul lucrărilor și ce soluții sunt cele mai bune.",
                 stats_card_title: "Cifre & Indicatori de Performanță",
                 stat_exp_lbl: "Ani Experiență IT & Suport Sisteme",
-                stat_uptime_lbl: "Uptime Menținut pe Sisteme de Baze de Date",
-                stat_perf_lbl: "Reducere Timp Execuție Interogări SQL",
+                stat_uptime_lbl: "Disponibilitate Continuă pe Sisteme de Baze de Date",
+                stat_perf_lbl: "Optimizare & Accelerare Interogări SQL",
                 stat_tech_lbl: "Tehnologii, Limbaje & Baze de Date Stăpânite",
                 stats_quote: "„Securitatea, viteza și simplitatea în utilizare nu sunt opționale.”",
 
@@ -135,6 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj_badge: "Studii de Caz & Soluții Livrate",
                 proj_title: "Proiecte Web & Aplicații",
                 proj_subtitle: "Iată câteva exemple concrete de soluții software construite pentru a automatiza fluxuri, vinde online și gestiona comenzi în timp real.",
+                filter_all: "Toate",
+                filter_saas: "SaaS & Cloud Apps",
+                filter_ecommerce: "E-Commerce & Live Web",
+                filter_crm: "Sisteme CRM & B2B",
+                filter_civic: "Civic Tech & Platforme Publice",
                 proj1_tag: "SaaS & Arhitectură Serverless Securizată",
                 proj1_title: "CV Builder Pro & ATS Analyzer (SaaS)",
                 proj1_summary: "Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Puppeteer) ranforsate împotriva SSRF/XSS, export hibrid cu fallback nativ și procesare automată plăți prin Stripe Webhook.",
@@ -146,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj3_summary: "Platformă pe măsură pentru o firmă de instalații sanitare și meseriași. Asigură preluarea comenzilor clienților, alocarea tehnicienilor pe teren, alerte automate SLA și gestiunea istoricului de intervenții printr-un API RESTful securizat și baze relaționale SQL.",
                 proj4_tag: "Civic Tech & Platforme Digitale",
                 proj4_title: "Platformă Civică & Audit Urban (Viziune Urbană Ploiești)",
-                proj4_summary: "Platformă web civică Full-Stack modernă dezvoltată în Next.js 15, TypeScript și Supabase (PostgreSQL). Include autentificare securizată prin sesiuni HMAC-SHA256, infrastructură de notificări tranzacționale prin Resend cu autentificare DKIM/SPF pe domeniu via Vercel DNS, rutare automată alerte coordonator și confirmări cetățeni cu număr unic de dosar, export borderou oficial ANAF (Formular 230) și filtrare interactivă pe cartiere.",
+                proj4_summary: "Platformă civică Full-Stack (Next.js 15, TypeScript, Supabase PostgreSQL) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timing-safe și notificări tranzacționale DKIM/SPF.",
                 btn_details: "Detalii Tehnice",
                 proj_cta_text: "Ai o idee de proiect sau vrei să optimizezi un flux de lucru existent?",
                 proj_cta_btn: "Discută Proiectul Tău pe WhatsApp",
@@ -174,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 exp_subtitle: "Un parcurs solid format din responsabilități reale în sisteme critice, completat de studii riguroase de programare și management.",
                 exp1_period: "Ianuarie 2026 – Prezent",
                 exp1_role: "Administrator Baze de Date (DBA)",
-                exp1_d1: "Administrez și optimizez baze de date de producție (PostgreSQL, MySQL) pentru peste 200 de utilizatori activi, garantând disponibilitate 99.9%.",
+                exp1_d1: "Administrez și optimizez baze de date de producție (PostgreSQL, MySQL) pentru peste 200 de utilizatori activi, asigurând integritate și disponibilitate continuă a serviciilor.",
                 exp1_d2: "Am refăcut strategiile de indexare și optimizare a interogărilor SQL complexe, reducând timpii medii de execuție cu 40%.",
                 exp1_d3: "Asigur proiectarea schemelor relaționale pentru noi module funcționale, monitorizarea proactivă și rezolvarea anomaliilor în timp real.",
                 exp2_role: "Asistent Manager & Coordonator Digitalizare",
@@ -253,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 pill_consulting: "IT Consulting & Support",
                 btn_talk: "Let's Talk on WhatsApp",
                 btn_download_cv: "Download CV (PDF)",
+                btn_view_projects: "View Projects",
                 btn_cli: "Terminal CLI",
 
                 // Profile Card
@@ -272,9 +280,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 s1_pt3: "Online payment processing, secure authentication & webhooks",
 
                 s2_title: "Secure Backend & Database Architecture",
-                s2_desc: "The backbone of high-traffic digital products. I design relational schemas (PostgreSQL, MySQL, MS SQL) and secure backend services capable of handling concurrent transactions with 99.9% uptime.",
+                s2_desc: "The backbone of high-traffic digital products. I design relational schemas (PostgreSQL, MySQL, MS SQL) and secure backend services capable of handling concurrent transactions with high availability and resilience.",
                 s2_pt1: "Relational schema design & data integrity constraints",
-                s2_pt2: "Complex SQL query optimization (latency reduced by up to 40%)",
+                s2_pt2: "Complex SQL query optimization, structural indexing, and low-latency performance",
                 s2_pt3: "Strict security practices, smart indexing & automated backups",
 
                 s3_title: "Custom CRM & Process Automation",
@@ -293,15 +301,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 about_badge: "Professional Background & Vision",
                 about_title: "Who I Am & How I Work",
                 about_p1: "I am an <strong>IT consultant and software developer with a pragmatic focus on business outcomes</strong>, combining higher education in management with 5+ years of hands-on experience maintaining critical enterprise systems. Currently consolidating my knowledge of algorithms, data structures, and object-oriented programming (C#, C++) as a <strong>Programmer Analyst (Level 5)</strong> at the <strong>'Elie Radu' Technical College</strong>.",
-                about_p2: "Throughout my career, I've seen firsthand how costly system downtime and paperwork bottlenecks can be. That's why my approach is <strong>pragmatic and results-driven</strong>: I listen to your exact needs, explain solutions in plain language, and build systems with 99.9% uptime availability.",
+                about_p2: "Throughout my career, I've seen firsthand how costly system downtime and paperwork bottlenecks can be. That's why my approach is <strong>pragmatic and results-driven</strong>: I listen to your exact needs, explain solutions in plain language, and build systems engineered for continuous availability and operational safety.",
                 h1_title: "Results-Oriented",
                 h1_desc: "Every line of code and hardware component configured serves a single purpose: saving time and money.",
                 h2_title: "Clear Communication",
                 h2_desc: "No unnecessary technical jargon. You always know the status of your project and which options suit you best.",
                 stats_card_title: "Key Performance Indicators",
                 stat_exp_lbl: "Years in IT Systems & Infrastructure",
-                stat_uptime_lbl: "Maintained Uptime on Production DBs",
-                stat_perf_lbl: "Reduction in Complex SQL Query Times",
+                stat_uptime_lbl: "Continuous High Availability on Production DBs",
+                stat_perf_lbl: "SQL Query Performance Tuning & Acceleration",
                 stat_tech_lbl: "Technologies, Languages & DBs Mastered",
                 stats_quote: "“Security, speed, and ease of use are never optional.”",
 
@@ -309,6 +317,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj_badge: "Case Studies & Live Projects",
                 proj_title: "Web Projects & Applications",
                 proj_subtitle: "Here are real-world software solutions built to automate workflows, sell online, and manage service requests in real time.",
+                filter_all: "All",
+                filter_saas: "SaaS & Cloud Apps",
+                filter_ecommerce: "E-Commerce & Live Web",
+                filter_crm: "CRM Systems & B2B",
+                filter_civic: "Civic Tech & Public Platforms",
                 proj1_tag: "SaaS & Hardened Serverless Architecture",
                 proj1_title: "CV Builder Pro & ATS Analyzer (SaaS)",
                 proj1_summary: "Real-time SaaS CV builder and ATS scoring engine featuring vector PDF rendering via serverless microservices (Puppeteer) hardened against SSRF/XSS, hybrid print fallbacks, and automated Stripe webhook billing.",
@@ -320,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj3_summary: "Tailored CRM application for plumbing contractors and field technicians. Handles customer work orders, technician scheduling, automatic SLA alerts, and service history tracking through secure REST APIs and SQL.",
                 proj4_tag: "Civic Tech & Cloud Platforms",
                 proj4_title: "Civic Platform & Urban Audit (Viziune Urbană Ploiești)",
-                proj4_summary: "Full-Stack modern civic platform built with Next.js 15, TypeScript, and Supabase (PostgreSQL). Features hardened server-side HMAC-SHA256 auth sessions, transactional email delivery via Resend with verified custom-domain DKIM/SPF on Vercel DNS, automated coordinator dispatch, citizen confirmation dossiers, official ANAF Form 230 borderou export, and interactive neighborhood filtering.",
+                proj4_summary: "Modern Full-Stack civic platform built with Next.js 15, TypeScript, and Supabase (PostgreSQL). Features a public dossier tracker (/status) with a 5-step visual FSM stepper, 6-module admin dashboard, secure image uploads to storage, official A4 noticeboard sheet generator, ANAF Form 230 CSV/Excel exports with BOM, timing-safe HMAC-SHA256 server sessions, and verified custom-domain transactional emails via Resend.",
                 btn_details: "Technical Details",
                 proj_cta_text: "Have a project idea or want to optimize an existing workflow?",
                 proj_cta_btn: "Discuss Your Project on WhatsApp",
@@ -348,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 exp_subtitle: "A solid track record of enterprise responsibilities backed by academic foundations in computer analysis and management.",
                 exp1_period: "January 2026 – Present",
                 exp1_role: "Database Administrator (DBA)",
-                exp1_d1: "Administer and tune production databases (PostgreSQL, MySQL) for 200+ active users, maintaining 99.9% uptime.",
+                exp1_d1: "Administer and tune production databases (PostgreSQL, MySQL) for 200+ active users, ensuring high data integrity and continuous availability.",
                 exp1_d2: "Redesigned indexing strategies and optimized complex SQL queries, decreasing average execution latency by 40%.",
                 exp1_d3: "Lead relational schema design for new features, proactive monitoring, and real-time anomaly debugging.",
                 exp2_role: "Assistant Manager & Digitalization Lead",
@@ -1341,16 +1354,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 case 'services':
                     printLine('1. 🚀 MVP & Platforme SaaS: React, Node.js, Arhitecturi scalabile, REST APIs', 't-succ');
-                    printLine('2. 🗄️ Baze de Date & Backend Sigur: PostgreSQL, MySQL, Optimizare SQL (-40% latență)', 't-succ');
+                    printLine('2. 🗄️ Baze de Date & Backend Sigur: PostgreSQL, MySQL, Optimizare SQL & Latență Minimă', 't-succ');
                     printLine('3. ⚡ Sisteme CRM & Automatizări: Aplicații dedicate, generare PDF, sincronizări date', 't-succ');
-                    printLine('4. 🛠️ Consultanță IT & Mentenanță: Diagnoză tehnică, selecție stack, securitate & uptime 99.9%', 't-succ');
+                    printLine('4. 🛠️ Consultanță IT & Mentenanță: Diagnoză tehnică, selecție stack, securitate & stabilitate 24/7', 't-succ');
                     break;
 
                 case 'projects':
                     printLine('• [ATS PDF Gen]: 20min manual work cut to 5 sec (JSON parsing, PHP/Node)', 't-out');
                     printLine('• [E-Commerce Florist]: Live chat, WebSockets, MVC, React storefront', 't-out');
                     printLine('• [Field Service CRM]: Technician scheduling, SQL backend, REST API', 't-out');
-                    printLine('• [Viziune Urbană Ploiești]: Civic platform, Next.js 15, TypeScript, Supabase, HMAC Auth, Resend DKIM/SPF & ANAF Export', 't-out');
+                    printLine('• [Viziune Urbană Ploiești]: Civic platform, Next.js 15, TypeScript, Supabase, HMAC timing-safe auth, /status FSM tracker, admin storage & ANAF exports', 't-out');
                     const projTarget = document.getElementById('projects');
                     if (typeof projTarget?.scrollIntoView === 'function') projTarget.scrollIntoView({ behavior: 'smooth' });
                     break;
@@ -1472,31 +1485,127 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        const openTerminal = (smoothScroll = true) => {
+            const termSection = document.getElementById('terminal');
+            if (!termSection) return;
+
+            termSection.style.display = 'block';
+            if (smoothScroll) {
+                termSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            setTimeout(() => {
+                if (input) input.focus();
+            }, 300);
+        };
+
+        const hideTerminal = () => {
+            const termSection = document.getElementById('terminal');
+            if (!termSection) return;
+            termSection.style.display = 'none';
+            if (isMatrixActive) toggleMatrix();
+        };
+
+        const toggleTerminal = () => {
+            const termSection = document.getElementById('terminal');
+            if (!termSection) return;
+            if (termSection.style.display === 'none' || getComputedStyle(termSection).display === 'none') {
+                openTerminal(true);
+                ToastModule?.show("Terminal CLI Activat", 'info');
+            } else {
+                hideTerminal();
+            }
+        };
+
+        // Sincronizare automata cu toate linkurile catre #terminal (meniu desktop, drawer mobil)
+        document.querySelectorAll('a[href="#terminal"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openTerminal(true);
+                if (history.pushState) {
+                    history.pushState(null, '', '#terminal');
+                }
+            });
+        });
+
+        // Sincronizare cu butoanele dedicate din Hero sau din pagina
+        document.querySelectorAll('#heroTerminalBtn, .terminal-trigger').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openTerminal(true);
+            });
+        });
+
         // Topbar buttons
         termMin?.addEventListener('click', () => { if (output) output.innerHTML = ''; });
         termMax?.addEventListener('click', () => ThemeModule.toggle());
         termClose?.addEventListener('click', () => {
-            if (output) output.innerHTML = '<div class="t-line t-sys">[SYSTEM] Terminal reset. Type \'help\' for assistance.</div>';
-            if (isMatrixActive) toggleMatrix();
+            hideTerminal();
+            ToastModule?.show("Terminal închis", 'info');
         });
 
-        // Easter Egg: Ctrl+K / Cmd+K to toggle Terminal visibility
+        // Scurtatura de tastatura: Ctrl+K / Cmd+K
         document.addEventListener('keydown', (e) => {
             if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
                 e.preventDefault();
-                const termSection = document.getElementById('terminal');
-                if (termSection) {
-                    if (termSection.style.display === 'none') {
-                        termSection.style.display = 'block';
-                        termSection.scrollIntoView({ behavior: 'smooth' });
-                        setTimeout(() => input?.focus(), 500);
-                        ToastModule.show("Terminal Hacker Mode Activat", 'success');
-                    } else {
-                        termSection.style.display = 'none';
-                    }
-                }
+                toggleTerminal();
             }
         });
+
+        // Deschidere automata daca utilizatorul acceseaza direct #terminal din URL
+        if (window.location.hash === '#terminal') {
+            openTerminal(false);
+        }
+
+        return {
+            open: openTerminal,
+            hide: hideTerminal,
+            toggle: toggleTerminal
+        };
+    })();
+
+
+    // ==========================================================================
+    // 7.5. PROJECT FILTER MODULE (Varianta A)
+    // ==========================================================================
+    ProjectFilterModule = (() => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        if (!filterBtns.length || !projectCards.length) return null;
+
+        const setFilter = (category) => {
+            filterBtns.forEach(btn => {
+                const isActive = btn.getAttribute('data-filter') === category;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            projectCards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                const shouldShow = category === 'all' || cardCat === category;
+
+                if (shouldShow) {
+                    card.classList.remove('is-hidden');
+                    card.style.animation = 'none';
+                    void card.offsetHeight; // trigger reflow for animation
+                    card.style.animation = 'projectFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+                } else {
+                    card.classList.add('is-hidden');
+                }
+            });
+        };
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetFilter = btn.getAttribute('data-filter');
+                if (targetFilter) {
+                    setFilter(targetFilter);
+                }
+            });
+        });
+
+        return {
+            setFilter
+        };
     })();
 
 
@@ -1559,16 +1668,16 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             proj4: {
                 ro: {
-                    title: "Viziune Urbană Ploiești — Platformă Civică, Securitate Zero-Trust & Cloud Database",
-                    desc: "Proiect civic amplu dezvoltat pentru municipiul Ploiești, destinat transparentizării auditurilor tehnice la asociațiile de proprietari, atragerii de fonduri și digitalizării complete a fluxurilor comunitare cu standarde stricte de securitate și conformitate fiscală.",
-                    architecture: "Arhitectură Full-Stack pe <strong>Next.js 15.5</strong> (App Router, React 19) cu <strong>TypeScript</strong>, integrată cu <strong>Supabase (PostgreSQL)</strong>. Include: strat de autentificare server-side bazat pe <strong>HMAC-SHA256</strong> cu cookie-uri <code>HttpOnly</code> și verificare timing-safe; protecție <strong>Sliding-Window Rate Limiting pe IP</strong> (`/lib/rateLimit.ts`); validare matematică algoritmică națională a <strong>CNP-urilor</strong> conform standardelor MAI/ANAF (`/lib/cnp.ts`); neutralizare invizibilă anti-bot prin capcane <strong>Honeypot</strong>; export centralizator oficial de <strong>Borderou ANAF</strong> (CSV cu UTF-8 BOM pentru compatibilitate nativă Excel); modul inteligent de clasificare și filtrare pe <strong>cartierele din Ploiești</strong> (`/lib/neighborhoods.ts`); infrastructură de email de producție integrată prin <strong>Resend API</strong> cu autentificare criptografică <strong>DKIM & SPF</strong> pe domeniu autorizat via Vercel DNS, rutare bidirecțională <code>Reply-To</code> direct către coordonatorul tehnic (`/lib/email.ts`), apeluri izolate prin timeout determinist (`AbortSignal.timeout`) și confirmări automate cetățeni cu <strong>Număr Unic de Înregistrare dosar</strong>; arhivare istorică non-destructivă (Soft Delete) și validare Zod la runtime.",
-                    results: "• <strong>Securitate & Auth:</strong> Sesiuni server criptografice HMAC-SHA256, zero-trust pe rutele de date și protecție activă anti-bruteforce.<br>• <strong>Infrastructură Email de Producție:</strong> Pipeline tranzacțional integrat prin Resend API cu DKIM & SPF verificate pe domeniu propriu, rutare instantanee alerte coordonator și confirmări automate cetățeni.<br>• <strong>Conformitate Fiscală ANAF:</strong> Export automat al borderoului centralizator pentru Formularul 230 cu diacritice corecte în Excel.<br>• <strong>Geolocalizare & Comunitate:</strong> Filtrare pe cartierele din Ploiești (Nord, Vest, Centru, Malu Roșu, Sud, etc.) cu contorizare în timp real.<br>• <strong>Integritate Date:</strong> Validare matematică a cifrei de control CNP și capcane honeypot anti-spam.<br>• <strong>Performanță Extremă:</strong> 14 rute hibride optimizate, compilare Next.js 15 fără erori și distribuire globală Vercel Edge."
+                    title: "Viziune Urbană Ploiești — Platformă Civică, Portal Status FSM, Securitate Zero-Trust & Cloud Storage",
+                    desc: "Proiect civic de anvergură dezvoltat pentru municipiul Ploiești, dedicat transparentizării auditurilor tehnice la asociațiile de proprietari, modernizării rețelelor de termoficare, atragerii de fonduri și digitalizării complete a fluxurilor comunitare cu standarde stricte de securitate și conformitate fiscală.",
+                    architecture: "Arhitectură Full-Stack pe <strong>Next.js 15.5</strong> (App Router, React 19) cu <strong>TypeScript</strong>, integrată cu <strong>Supabase (PostgreSQL & Storage)</strong>. Punctele cheie de arhitectură includ: strat de autentificare server-side bazat pe <strong>HMAC-SHA256</strong> cu verificare <code>timingSafeEqual</code> și cookie-uri <code>HttpOnly</code>; <strong>Portal Public de Urmărire (/status)</strong> cu căutare după număr dosar unic (format <code>DOSAR-PH-XXX</code>), persistență automată în Supabase și <strong>Stepper vizual FSM</strong> în 5 pași determiniști; <strong>Panou Administrativ complet (/admin)</strong> structurat în 6 module (Asociații, Parteneri Oficiali, Galerie Lucrări, Metrici Globale, Formulare 230, Donații); modul securizat de <strong>Upload Imagini în Supabase Storage</strong> (validare strictă MIME, plafon 5MB); <strong>Generator Oficial de Fișe de Avizier (A4 Print/PDF)</strong> pentru asociațiile de locatari; modul de export multi-registru <strong>Borderou Oficial ANAF (Formular 230)</strong> în CSV cu UTF-8 BOM pentru compatibilitate nativă Excel; protecție <strong>Sliding-Window Rate Limiting pe IP</strong>; validare matematică algoritmică a <strong>CNP-urilor</strong> conform standardelor oficiale MAI/ANAF; capcane invizibile anti-spam <strong>Honeypot</strong>; pipeline tranzacțional de email prin <strong>Resend API</strong> cu autentificare criptografică <strong>DKIM & SPF</strong> pe domeniu autorizat via Vercel DNS și rutare automată a răspunsurilor către coordonatorul tehnic.",
+                    results: "• <strong>Portal Public Urmărire Dosar (/status):</strong> Stepper vizual interactiv în 5 pași (FSM), căutare instantă după dosar/bloc și zero scurgere de date PII.<br>• <strong>Panou Admin Centralizat & Fișe Avizier:</strong> 6 tab-uri operaționale, upload direct securizat de imagini în Supabase Storage și generator automat de fișe de avizier A4 cu QR code.<br>• <strong>Securitate & Zero-Trust:</strong> Sesiuni server HMAC-SHA256 timing-safe împotriva atacurilor de tip side-channel, rate limiting pe IP și capcane honeypot anti-bot.<br>• <strong>Infrastructură Tranzacțională Resend:</strong> Pipeline de email de producție cu DKIM & SPF verificate pe domeniu propriu, compatibilitate Yahoo și rutare bidirecțională coordonator.<br>• <strong>Conformitate Fiscală ANAF:</strong> Export automat al borderoului centralizator pentru Formularul 230 cu diacritice corecte în Excel.<br>• <strong>Identitate Vizuală Heritage:</strong> Design glassmorphism translucid, fundal responsiv adaptiv (panoramic 16:9 desktop vs. portret mobil 9:16) și contrast WCAG AAA (Navy pe Fildeș)."
                 },
                 en: {
-                    title: "Viziune Urbană Ploiești — Civic Platform, Zero-Trust Security & Cloud Database",
-                    desc: "A large-scale civic platform engineered for the municipality of Ploiești to streamline technical audits for homeowners associations, drive fundraising, and digitize community workflows with banking-grade security and fiscal compliance.",
-                    architecture: "Full-Stack architecture built on <strong>Next.js 15.5</strong> (App Router, React 19) with <strong>TypeScript</strong>, backed by <strong>Supabase (PostgreSQL)</strong>. Key components include: server-side <strong>HMAC-SHA256</strong> cryptographic session management with <code>HttpOnly</code> cookies and timing-safe checks; IP-based <strong>Sliding-Window Rate Limiting</strong> (`/lib/rateLimit.ts`); official national algorithmic <strong>CNP checksum verification</strong> (`/lib/cnp.ts`); invisible anti-bot <strong>Honeypot traps</strong>; official <strong>ANAF fiscal borderou export</strong> (CSV with UTF-8 BOM for Excel); intelligent <strong>Ploiești neighborhood classification</strong> and filtering (`/lib/neighborhoods.ts`); production-grade transactional email pipeline via <strong>Resend API</strong> with cryptographic <strong>DKIM & SPF authentication</strong> on custom domain via Vercel DNS, bidirectional <code>Reply-To</code> dispatch to field coordinator (`/lib/email.ts`), deterministic network timeouts (`AbortSignal.timeout`), and automated citizen confirmations with <strong>Unique Tracking Numbers</strong>; and historical Soft-Delete archiving.",
-                    results: "• <strong>Security & Auth:</strong> Cryptographic HMAC-SHA256 server sessions, zero-trust endpoint protection, and IP sliding-window rate limiting.<br>• <strong>Production Email Infrastructure:</strong> Transactional email pipeline via Resend API with verified DKIM/SPF custom-domain records on Vercel DNS, instant coordinator dispatch, and automated citizen confirmations.<br>• <strong>Fiscal Compliance:</strong> Automated official ANAF Form 230 collective borderou generation with native Excel UTF-8 support.<br>• <strong>Community Geospatial Filter:</strong> Dynamic filtering across Ploiești neighborhoods (North, West, Center, Malu Roșu, South, etc.).<br>• <strong>Data Integrity:</strong> Official 13-digit mathematical CNP checksum validation and honeypot bot neutralization.<br>• <strong>Production Performance:</strong> 14 optimized hybrid routes, flawless Next.js 15 build, and Vercel Edge caching."
+                    title: "Viziune Urbană Ploiești — Civic Platform, FSM Status Tracker, Zero-Trust Security & Cloud Storage",
+                    desc: "A large-scale civic platform engineered for the municipality of Ploiești to streamline technical audits for homeowners associations, modernize district heating networks, drive fundraising, and digitize community workflows with banking-grade security and fiscal compliance.",
+                    architecture: "Full-Stack architecture built on <strong>Next.js 15.5</strong> (App Router, React 19) with <strong>TypeScript</strong>, backed by <strong>Supabase (PostgreSQL & Storage)</strong>. Key components include: server-side <strong>HMAC-SHA256</strong> session management with <code>timingSafeEqual</code> verification and <code>HttpOnly</code> cookies; <strong>Public Dossier Tracker (/status)</strong> with search by unique case number (format <code>DOSAR-PH-XXX</code>), auto-persistence in Supabase, and a <strong>5-step visual FSM stepper</strong>; <strong>Centralized Admin Dashboard (/admin)</strong> with 6 operational modules (Associations, Official Partners, Gallery, Global Metrics, Form 230, Donations); secure <strong>Image Upload pipeline to Supabase Storage</strong> (strict MIME validation, 5MB limit); <strong>Official A4 Noticeboard Sheet Generator (Print/PDF)</strong> with embedded QR code; multi-registry <strong>Official ANAF Form 230 collective borderou export</strong> in CSV with UTF-8 BOM for native Excel support; IP-based <strong>Sliding-Window Rate Limiting</strong>; official national algorithmic <strong>CNP checksum verification</strong>; invisible anti-bot <strong>Honeypot traps</strong>; and production-grade transactional email via <strong>Resend API</strong> with cryptographic <strong>DKIM & SPF authentication</strong> on custom domain via Vercel DNS with field coordinator dispatch.",
+                    results: "• <strong>Public Case Tracking Portal (/status):</strong> 5-step visual FSM stepper, instant lookup by case number/block, and zero PII data leakage.<br>• <strong>Admin Dashboard & Noticeboard Generator:</strong> 6 operational tabs, direct secure image upload to Supabase Storage, and automated printable A4 noticeboard sheets with QR code.<br>• <strong>Security & Zero-Trust:</strong> Timing-safe HMAC-SHA256 server sessions resilient against side-channel attacks, IP rate limiting, and honeypot traps.<br>• <strong>Transactional Email Pipeline:</strong> Production email infrastructure via Resend API with verified DKIM/SPF domain records, Yahoo compatibility, and bidirectional coordinator routing.<br>• <strong>Fiscal Compliance:</strong> Automated official ANAF Form 230 collective borderou generation with native Excel UTF-8 support.<br>• <strong>Civic Heritage Design:</strong> Translucent glassmorphism UI, adaptive responsive background (panoramic 16:9 desktop vs. 9:16 mobile), and WCAG AAA contrast (Imperial Navy on Ivory)."
                 },
                 github: "https://github.com/tiberiumilitaru89/viziune-urbana-ploiesti"
             }
@@ -1686,7 +1795,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contactForm');
         if (!form) return;
 
-        const formInitTime = Date.now();
+        let formInitTime = Date.now();
 
         const nameInput = document.getElementById('senderName');
         const emailInput = document.getElementById('senderEmail');
@@ -1782,25 +1891,45 @@ document.addEventListener('DOMContentLoaded', () => {
                         'success'
                     );
                     form.reset();
+                    formInitTime = Date.now();
                 } else {
-                    // Fallback prietenos în cazul unei erori neprevăzute la nivel de furnizor
-                    ToastModule.show(
-                        lang === 'ro'
-                            ? "Mesajul a fost recepționat! Îmi poți scrie oricând direct și pe WhatsApp la (+40) 720 955 119."
-                            : "Message received! You can also reach me directly on WhatsApp at (+40) 720 955 119.",
-                        'success',
-                        6000
-                    );
-                    form.reset();
+                    let errPayload = null;
+                    try {
+                        errPayload = await response.json();
+                    } catch (_) {
+                        errPayload = null;
+                    }
+
+                    if (response.status === 429) {
+                        ToastModule.show(
+                            lang === 'ro'
+                                ? "Ai depășit limita temporară de mesaje. Te rog să aștepți un minut sau să mă contactezi direct pe WhatsApp la (+40) 720 955 119."
+                                : "Rate limit exceeded. Please wait a minute or contact me directly via WhatsApp at (+40) 720 955 119.",
+                            'warning',
+                            7000
+                        );
+                    } else if (response.status === 400) {
+                        const errorMsg = errPayload?.error || (lang === 'ro' ? "Te rog să verifici corectitudinea câmpurilor completate." : "Please check your form inputs.");
+                        ToastModule.show(errorMsg, 'error', 6000);
+                    } else {
+                        ToastModule.show(
+                            lang === 'ro'
+                                ? "Serviciul de email a întâmpinat o eroare temporară. Mesajul a rămas salvat în formular — mă poți contacta direct pe WhatsApp la (+40) 720 955 119!"
+                                : "The email service experienced a temporary error. Your message is preserved in the form — contact me on WhatsApp at (+40) 720 955 119!",
+                            'error',
+                            8000
+                        );
+                    }
+                    // Notă: NU apelăm form.reset() pentru ca vizitatorul să nu piardă textul tastat!
                 }
             } catch (error) {
-                // Dacă rețeaua e offline sau blocată de extensii, oferim alternativa pe WhatsApp
+                // Dacă rețeaua e offline sau blocată de extensii, textul rămâne intact în formular
                 ToastModule.show(
                     lang === 'ro'
-                        ? "Eroare de conexiune la trimitere directă. Te rog să mă contactezi pe WhatsApp la (+40) 720 955 119 sau prin email!"
-                        : "Network error sending message. Please contact me directly on WhatsApp at (+40) 720 955 119 or via email!",
-                    'info',
-                    6000
+                        ? "Eroare de conexiune la rețea. Mesajul tău a rămas salvat în formular — mă poți contacta direct pe WhatsApp la (+40) 720 955 119 sau prin email!"
+                        : "Network connection error. Your message is preserved in the form — please contact me on WhatsApp at (+40) 720 955 119 or via email!",
+                    'error',
+                    8000
                 );
             } finally {
                 submitBtn.disabled = false;

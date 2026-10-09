@@ -13,9 +13,8 @@ Thumbs.db
 .env
 .env.local
 
-# Lockfile
-package-lock.json
+# Lockfile (comited for reproducible builds)
 
 # Internal Documentation (agent rules, OKF knowledge base)
 .knowledge/
-README.md
+

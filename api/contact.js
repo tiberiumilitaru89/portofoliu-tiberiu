@@ -242,9 +242,11 @@ export default async function handler(req, res) {
 
     // 2.1 Sliding Window Rate Limiting (Anti-flood / DoS defense)
     const forwarded = req.headers['x-forwarded-for'];
-    const clientIp = typeof forwarded === 'string'
-        ? forwarded.split(',')[0].trim()
-        : (req.headers['x-real-ip'] || req.socket?.remoteAddress || 'unknown');
+    const clientIp = req.headers['x-real-ip']
+        || req.headers['x-vercel-ip']
+        || (typeof forwarded === 'string' ? forwarded.split(',')[0].trim() : null)
+        || req.socket?.remoteAddress
+        || 'unknown';
 
     if (isRateLimited(clientIp)) {
         logStructured('warn', 'Rate limit exceeded for IP', correlationId, { ip: maskIp(clientIp) });
@@ -261,9 +263,9 @@ export default async function handler(req, res) {
             return res.status(200).json({ success: true, message: 'Mesajul a fost recepționat.' });
         }
 
-        // 4.1 Time-based bot defense (Submisiile mai rapide de 2.5s sunt ignorate)
-        if (typeof body._formDuration === 'number' && body._formDuration < MIN_HUMAN_INTERACTION_MS) {
-            logStructured('warn', 'Bot trapped via submission time threshold', correlationId, {
+        // 4.1 Time-based bot defense (Submisiile fără durată sau mai rapide de 2.5s sunt neutralizate silențios)
+        if (typeof body._formDuration !== 'number' || body._formDuration < MIN_HUMAN_INTERACTION_MS) {
+            logStructured('warn', 'Bot trapped via invalid or missing submission duration threshold', correlationId, {
                 ip: maskIp(clientIp),
                 durationMs: body._formDuration
             });
@@ -295,6 +297,10 @@ export default async function handler(req, res) {
         const apiKey = typeof rawKey === 'string' ? rawKey.trim() : '';
         const adminRecipient = process.env.ADMIN_NOTIFICATION_EMAIL || 'tiberiumilitaru89@gmail.com';
         const fromEmail = process.env.NOTIFICATION_FROM_EMAIL || 'Militaru Tiberiu Nicolae <contact@tiberiumilitaru.ro>';
+
+        if (!process.env.ADMIN_NOTIFICATION_EMAIL) {
+            logStructured('warn', 'Using fallback admin email recipient', correlationId, { recipient: maskEmail(adminRecipient) });
+        }
 
         if (!apiKey) {
             logStructured('error', 'Configuration error: RESEND_API_KEY is missing in environment variables', correlationId);

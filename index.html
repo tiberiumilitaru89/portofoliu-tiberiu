@@ -314,6 +314,10 @@
                             <a href="#projects" class="btn btn-ghost" id="heroProjectsBtn">
                                 <i class="fa-solid fa-code"></i> <span data-i18n="btn_view_projects">Vezi Proiectele</span>
                             </a>
+
+                            <a href="#terminal" class="btn btn-ghost hero-terminal-btn" id="heroTerminalBtn" title="Deschide consola interactivă CLI">
+                                <i class="fa-solid fa-terminal"></i> <span data-i18n="btn_cli">Terminal CLI</span>
+                            </a>
                         </div>
                     </div>
 
@@ -400,11 +404,11 @@
                         </div>
                         <h3 class="service-card-title" data-i18n="s2_title">Baze de Date, Arhitectură & Backend Sigur</h3>
                         <p class="service-card-desc" data-i18n="s2_desc">
-                            Proiectez și optimizez infrastructuri de date (PostgreSQL, MySQL, MS SQL) și servicii backend securizate, capabile să susțină fluxuri mari de date și tranzacții concurente cu disponibilitate garantată 99.9%.
+                            Proiectez și optimizez infrastructuri de date (PostgreSQL, MySQL, MS SQL) și servicii backend securizate, capabile să susțină fluxuri mari de date și tranzacții concurente cu înaltă disponibilitate și reziliență.
                         </p>
                         <ul class="service-points">
                             <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_pt1">Modelare scheme relaționale & constrângeri de integritate</span></li>
-                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_pt2">Optimizare interogări SQL complexe (reducere timpi până la 40%)</span></li>
+                            <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_pt2">Optimizare interogări SQL complexe, indexare structurală și timpi minimi de latență</span></li>
                             <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_pt3">Politici riguroase de securitate, indexare și backup automat</span></li>
                         </ul>
                     </div>
@@ -462,7 +466,7 @@
                                 Sunt un <strong>consultant IT și dezvoltator software orientat spre eficiență operațională</strong>, îmbinând studiile superioare în management cu peste 5 ani de experiență practică în menținerea sistemelor informatice critice. În prezent, îmi consolidez cunoștințele de algoritmi, structuri de date și programare orientată pe obiecte (C#, C++) ca <strong>Analist Programator (Nivel 5)</strong> în cadrul <strong>Colegiului Tehnic „Elie Radu” din Ploiești</strong>.
                             </p>
                             <p data-i18n="about_p2">
-                                În carieră am văzut cât de mult costă o pană de sistem sau un proces administrativ blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, ușor de folosit și menținute la o disponibilitate de 99.9%.
+                                În carieră am văzut cât de mult costă o pană de sistem sau un proces administrativ blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, sigure și concepute pentru disponibilitate continuă.
                             </p>
                         </div>
 
@@ -534,10 +538,29 @@
                     </p>
                 </div>
 
+                <!-- Project Category Filters (Varianta A) -->
+                <div class="projects-filter-bar" role="tablist" aria-label="Filtrare proiecte">
+                    <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                        <i class="fa-solid fa-layer-group"></i> <span data-i18n="filter_all">Toate</span> <span class="filter-count">(4)</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="saas" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-cloud"></i> <span data-i18n="filter_saas">SaaS & Cloud Apps</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="ecommerce" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-cart-shopping"></i> <span data-i18n="filter_ecommerce">E-Commerce & Live Web</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="crm" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-chart-line"></i> <span data-i18n="filter_crm">Sisteme CRM & B2B</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="civic" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-landmark"></i> <span data-i18n="filter_civic">Civic Tech & Platforme Publice</span>
+                    </button>
+                </div>
+
                 <div class="projects-grid">
                     
                     <!-- Proiectul 1: ATS / PDF Generator -->
-                    <div class="project-card" data-project="proj1" data-tilt>
+                    <div class="project-card" data-project="proj1" data-category="saas" data-tilt>
                         <div class="project-header">
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-file-pdf"></i>
@@ -569,7 +592,7 @@
                     </div>
 
                     <!-- Proiectul 2: Florărie E-Commerce Live Chat -->
-                    <div class="project-card" data-project="proj2" data-tilt>
+                    <div class="project-card" data-project="proj2" data-category="ecommerce" data-tilt>
                         <div class="project-header">
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-store"></i>
@@ -598,7 +621,7 @@
                     </div>
 
                     <!-- Proiectul 3: CRM Instalații & Gestiune Servicii -->
-                    <div class="project-card" data-project="proj3" data-tilt>
+                    <div class="project-card" data-project="proj3" data-category="crm" data-tilt>
                         <div class="project-header">
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-toolbox"></i>
@@ -629,7 +652,7 @@
                     </div>
 
                     <!-- Proiectul 4: Viziune Urbană Noua Ploiești -->
-                    <div class="project-card" data-project="proj4" data-tilt>
+                    <div class="project-card" data-project="proj4" data-category="civic" data-tilt>
                         <div class="project-header">
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-city"></i>
@@ -638,17 +661,20 @@
                         </div>
                         <h3 class="project-title" data-i18n="proj4_title">Platformă Civică & Audit Urban (Viziune Urbană Ploiești)</h3>
                         <p class="project-desc" data-i18n="proj4_summary">
-                            Platformă web civică Full-Stack modernă dezvoltată în Next.js 15, TypeScript și Supabase (PostgreSQL). Include autentificare securizată prin sesiuni HMAC-SHA256, infrastructură de notificări tranzacționale prin Resend cu autentificare DKIM/SPF pe domeniu via Vercel DNS, rutare automată alerte coordonator și confirmări cetățeni cu număr unic de dosar, export borderou oficial ANAF (Formular 230) și filtrare interactivă pe cartiere.
+                            Platformă civică Full-Stack (Next.js 15, TypeScript, Supabase PostgreSQL) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timing-safe și notificări tranzacționale DKIM/SPF.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Next.js 15</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">Supabase (PostgreSQL)</span>
-                            <span class="tech-tag">HMAC Auth</span>
+                            <span class="tech-tag">HMAC Auth (timingSafe)</span>
+                            <span class="tech-tag">Portal /status (FSM)</span>
+                            <span class="tech-tag">Admin Dashboard (6 Taburi)</span>
+                            <span class="tech-tag">Fișe Avizier A4</span>
+                            <span class="tech-tag">Supabase Storage</span>
                             <span class="tech-tag">Resend (DKIM/SPF)</span>
+                            <span class="tech-tag">ANAF 230 Export</span>
                             <span class="tech-tag">Rate Limiting</span>
-                            <span class="tech-tag">ANAF Borderou</span>
-                            <span class="tech-tag">Zod</span>
                             <span class="tech-tag">Tailwind CSS</span>
                         </div>
                         <div class="project-actions">
@@ -824,7 +850,7 @@
                             </div>
                             <h3 class="timeline-role" data-i18n="exp1_role">Administrator Baze de Date (DBA)</h3>
                             <ul class="timeline-list">
-                                <li data-i18n="exp1_d1">Administrez și optimizez baze de date de producție (PostgreSQL, MySQL) pentru peste 200 de utilizatori activi, garantând disponibilitate 99.9%.</li>
+                                <li data-i18n="exp1_d1">Administrez și optimizez baze de date de producție (PostgreSQL, MySQL) pentru peste 200 de utilizatori activi, asigurând integritate și disponibilitate continuă a serviciilor.</li>
                                 <li data-i18n="exp1_d2">Am refăcut strategiile de indexare și optimizare a interogărilor SQL complexe, reducând timpii medii de execuție cu 40%.</li>
                                 <li data-i18n="exp1_d3">Asigur proiectarea schemelor relaționale pentru noi module funcționale, monitorizarea proactivă și rezolvarea anomaliilor în timp real.</li>
                             </ul>
@@ -939,7 +965,7 @@
                 <div class="terminal-shell">
                     <div class="terminal-topbar">
                         <div class="terminal-traffic-lights">
-                            <button class="term-btn term-close" id="termClose" title="Resetează terminalul" aria-label="Resetează terminalul"></button>
+                            <button class="term-btn term-close" id="termClose" title="Închide terminalul" aria-label="Închide terminalul"></button>
                             <button class="term-btn term-min" id="termMin" title="Golește ecranul" aria-label="Golește ecranul"></button>
                             <button class="term-btn term-max" id="termMax" title="Comută tema" aria-label="Comută tema"></button>
                         </div>
