@@ -430,11 +430,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? "Militaru Tiberiu Nicolae | IT Consultant • Full-Stack Solutions" 
                 : "Militaru Tiberiu Nicolae | IT Consultant • Full-Stack Solutions";
 
-            // Update all DOM elements with data-i18n attribute
+            // Update all DOM elements with data-i18n attribute (Defensive DOM rendering)
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
+                const translation = translations[lang] ? translations[lang][key] : null;
+                if (translation !== undefined && translation !== null) {
+                    if (translation.includes('<')) {
+                        el.innerHTML = translation;
+                    } else {
+                        el.textContent = translation;
+                    }
                 }
             });
 
@@ -635,14 +640,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
 
         const canvas = document.createElement('canvas');
-        canvas.style.position = 'absolute';
-        canvas.style.top = '0';
-        canvas.style.left = '0';
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-        canvas.style.pointerEvents = 'none';
-        container.innerHTML = '';
-        container.appendChild(canvas);
+        canvas.className = 'particle-canvas';
+        container.replaceChildren(canvas);
 
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
@@ -1245,7 +1244,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!output) return;
             const div = document.createElement('div');
             div.className = `t-line ${cssClass}`;
-            div.innerHTML = content;
+            if (typeof content === 'string' && content.includes('<')) {
+                div.innerHTML = content;
+            } else {
+                div.textContent = content;
+            }
             output.appendChild(div);
             if (body) body.scrollTop = body.scrollHeight;
         };
@@ -1416,7 +1419,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
 
                 case 'clear':
-                    if (output) output.innerHTML = '';
+                    if (output) output.replaceChildren();
                     break;
 
                 default:
@@ -1536,7 +1539,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Topbar buttons
-        termMin?.addEventListener('click', () => { if (output) output.innerHTML = ''; });
+        termMin?.addEventListener('click', () => { if (output) output.replaceChildren(); });
         termMax?.addEventListener('click', () => ThemeModule.toggle());
         termClose?.addEventListener('click', () => {
             hideTerminal();
@@ -1683,6 +1686,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        const createProjectGroup = (iconClass, labelText, contentText, isEmerald = false) => {
+            const group = document.createElement('div');
+            group.className = 'project-modal-group';
+
+            const h4 = document.createElement('h4');
+            h4.className = isEmerald ? 'project-modal-heading results-heading' : 'project-modal-heading';
+            const icon = document.createElement('i');
+            icon.className = iconClass;
+            h4.append(icon, document.createTextNode(' ' + labelText));
+
+            const p = document.createElement('p');
+            if (isEmerald) p.className = 'project-modal-results';
+            p.textContent = contentText;
+
+            group.append(h4, p);
+            return group;
+        };
+
         const openModal = (id) => {
             const data = projectData[id];
             if (!data || !modal) return;
@@ -1692,41 +1713,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (modalTitle) modalTitle.textContent = info.title;
             if (modalBody) {
-                modalBody.innerHTML = `
-                    <div style="margin-bottom: 16px;">
-                        <h4 style="color: var(--accent-cyan); margin-bottom: 6px; font-size: 1.05rem;"><i class="fa-solid fa-bullseye"></i> Problema Rezolvată:</h4>
-                        <p>${info.desc}</p>
-                    </div>
-                    <div style="margin-bottom: 16px;">
-                        <h4 style="color: var(--accent-cyan); margin-bottom: 6px; font-size: 1.05rem;"><i class="fa-solid fa-code"></i> Arhitectură & Implementare:</h4>
-                        <p>${info.architecture}</p>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--accent-emerald); margin-bottom: 6px; font-size: 1.05rem;"><i class="fa-solid fa-chart-line"></i> Rezultate Tangibile:</h4>
-                        <p style="line-height: 1.8;">${info.results}</p>
-                    </div>
-                `;
+                const labelProblem = lang === 'en' ? 'Problem Solved:' : 'Problema Rezolvată:';
+                const labelArch = lang === 'en' ? 'Architecture & Stack:' : 'Arhitectură & Implementare:';
+                const labelResults = lang === 'en' ? 'Tangible Results:' : 'Rezultate Tangibile:';
+
+                modalBody.replaceChildren(
+                    createProjectGroup('fa-solid fa-bullseye', labelProblem, info.desc),
+                    createProjectGroup('fa-solid fa-code', labelArch, info.architecture),
+                    createProjectGroup('fa-solid fa-chart-line', labelResults, info.results, true)
+                );
             }
 
             if (githubLink) {
                 if (data.github) {
-                    githubLink.style.display = 'inline-flex';
+                    githubLink.classList.remove('hidden');
                     githubLink.href = data.github;
                 } else {
-                    githubLink.style.display = 'none';
+                    githubLink.classList.add('hidden');
                 }
             }
 
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open');
         };
 
         const closeModal = () => {
             if (!modal) return;
             modal.classList.remove('active');
             modal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
+            document.body.classList.remove('modal-open');
         };
 
         document.querySelectorAll('.btn-project-modal').forEach(btn => {
@@ -1854,9 +1870,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!validate()) return;
 
             const lang = I18nModule.getCurrentLang();
-            const originalBtnHTML = submitBtn.innerHTML;
+            const originalBtnContent = Array.from(submitBtn.childNodes).map(n => n.cloneNode(true));
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> ${lang === 'ro' ? 'Se trimite...' : 'Sending...'}`;
+            const spinner = document.createElement('i');
+            spinner.className = 'fa-solid fa-spinner fa-spin';
+            submitBtn.replaceChildren(spinner, document.createTextNode(lang === 'ro' ? ' Se trimite...' : ' Sending...'));
 
             const interactionDuration = Date.now() - formInitTime;
 
@@ -1933,7 +1951,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 );
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnHTML;
+                submitBtn.replaceChildren(...originalBtnContent);
             }
         });
     })();

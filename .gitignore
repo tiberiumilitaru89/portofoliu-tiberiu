@@ -15,6 +15,3 @@ Thumbs.db
 
 # Lockfile (comited for reproducible builds)
 
-# Internal Documentation (agent rules, OKF knowledge base)
-.knowledge/
-
