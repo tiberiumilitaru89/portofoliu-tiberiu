@@ -1,7 +1,7 @@
 ---
 id: profile-and-services
 domain: business-rules
-last_verified: 2026-10-09
+last_verified: 2026-10-10
 dependencies: ["portfolio-root-index"]
 ---
 
@@ -19,7 +19,7 @@ dependencies: ["portfolio-root-index"]
    - Dezvoltare completă de la idee la produs funcțional (React.js, Node.js).
    - Arhitecturi scalabile, design responsive, magazine online și aplicații interactive.
 2. **Baze de Date & Arhitectură Sigură:**
-   - Proiectare scheme relaționale: PostgreSQL, MySQL, MS SQL.
+   - Proiectare scheme relaționale: PostgreSQL, MySQL, MS SQL, SQLite/LibSQL.
    - Optimizare interogări lente, API-uri REST securizate, disponibilitate 99.9%.
 3. **Sisteme CRM & Automatizări de Procese:**
    - Aplicații pe măsură pentru gestionarea comenzilor și a echipelor pe teren.
@@ -43,8 +43,8 @@ dependencies: ["portfolio-root-index"]
 
 ## 5. Registrul Oficial al Proiectelor de Portofoliu & Sistemul de Filtrare
 * **Mecanism de Filtrare (Varianta A - Categorie per Tip Soluție):**
-  - `all` (`Toate` / `All`): Afișează toate cele 4 proiecte din portofoliu.
-  - `saas` (`SaaS & Cloud Apps`): Filtru activ pentru **CV Builder Pro & ATS Analyzer**.
+  - `all` (`Toate` / `All`): Afișează toate cele 5 proiecte din portofoliu.
+  - `saas` (`SaaS & Cloud Apps`): Filtru activ pentru **CV Builder Pro & ATS Analyzer** și **Portofoliu Tiberiu & Universal 3D Engine**.
   - `ecommerce` (`E-Commerce & Live Web`): Filtru activ pentru **Magazin Florărie cu Chat Live**.
   - `crm` (`Sisteme CRM & B2B`): Filtru activ pentru **Aplicație CRM & Gestiune Servicii (Instalbloc)**.
   - `civic` (`Civic Tech & Platforme Publice`): Filtru activ pentru **Viziune Urbană Ploiești**.
@@ -52,10 +52,11 @@ dependencies: ["portfolio-root-index"]
   - Suport bilingv sincronizat automat la comutarea limbii (RO/EN) fără alterarea iconițelor FontAwesome sau a contoarelor.
 
 * **Lista Proiectelor:**
-1. **CV Builder Pro & ATS Analyzer (SaaS):** Live pe Firebase (`cvsmartats.web.app`), depozit public `cv-builder-ats`.
-2. **Magazin Florărie cu Chat Live (E-Commerce):** Soluție comercială client cu cod proprietar protejat prin acord de confidențialitate (NDA / Cod Privat).
-3. **Aplicație CRM & Gestiune Servicii (Instalbloc):** Depozit dedicat pe GitHub `github.com/tiberiumilitaru89/instalbloc`.
-4. **Platformă Civică & Audit Urban (Viziune Urbană Ploiești):** Platformă Full-Stack pe Next.js 15.5 / TypeScript & Supabase (PostgreSQL & Storage). Include: portal public de urmărire dosare (`/status`) cu căutare instantă după număr dosar unic (`DOSAR-PH-XXX`) și stepper FSM în 5 pași deterministi; panou admin complet (`/admin`) structurat în 6 module operaționale (Asociații, Parteneri Oficiali, Galerie Lucrări, Metrici Globale, Formulare 230 ANAF, Donații & Sponsorizări); upload direct securizat de imagini în Supabase Storage (`/api/admin/upload`, validare strictă MIME, limită 5MB); generator oficial de Fișe de Avizier (format A4 Print/PDF cu QR code); modul de export multi-registru borderou oficial ANAF (Formular 230) în CSV cu UTF-8 BOM; securitate avansată zero-trust (sesiuni server HMAC-SHA256 cu `timingSafeEqual`, rate limiting pe IP, honeypot anti-bot, validare matematică algoritmică CNP MAI/ANAF); pipeline tranzacțional integrat prin Resend API cu DKIM & SPF pe domeniu autorizat via Vercel DNS, rutare bidirecțională `Reply-To` coordonator tehnic și confirmări automate cetățeni; depozit dedicat `github.com/tiberiumilitaru89/viziune-urbana-ploiesti`, domeniu oficial `viziuneurbanaploiesti.ro`.
+1. **CV Builder Pro & ATS Analyzer (SaaS):** Live pe Firebase (`cvsmartats.web.app`), depozit public `github.com/tiberiumilitaru89/cv-builder-ats`. Ranforsat cu: CSP strictă fără `'unsafe-inline'`, mutații Zero-Trust DOM (`replaceChildren`), eliminare stiluri inline, microservicii Cloud Functions pe Node.js 22 cu Puppeteer anti-SSRF (blocare 169.254), logging forensic JSON structurat cu correlation IDs, barieră mecanică Gatekeeper și documentație OKF.
+2. **Magazin Florărie cu Chat Live (E-Commerce):** Soluție comercială client cu cod proprietar protejat prin acord de confidențialitate (NDA / Cod Privat). Arhitectură MVC decuplată, WebSockets în timp real, sanitizare Zero-Trust.
+3. **Aplicație CRM & Gestiune Servicii (Instalbloc):** Depozit dedicat pe GitHub `github.com/tiberiumilitaru89/instalbloc`. Re-arhitecturat la standarde Zero-Defect: 100% Zero-any TypeScript cu regulă fatală ESLint, barieră mecanică Gatekeeper (tsc + eslint max-warnings 0), cron automat de triaj și alerte SLA (`/api/cron/check-sla`), logging forensic structurat JSON cu mascare automată PII și ID de corelare, persistență Drizzle ORM peste SQLite/LibSQL cu izolare pe asociație.
+4. **Platformă Civică & Audit Urban (Viziune Urbană Ploiești):** Depozit dedicat `github.com/tiberiumilitaru89/viziune-urbana-ploiesti`, domeniu oficial `viziuneurbanaploiesti.ro`. Platformă Full-Stack pe Next.js 15.5 / TypeScript Zero-Any & Supabase (PostgreSQL & Storage). Include: portal public de urmărire dosare (`/status`) cu căutare instantă după dosar unic (`DOSAR-PH-XXX`) și stepper FSM în 5 pași deterministi; panou admin complet (`/admin`) structurat în 6 module operaționale; upload direct securizat de imagini în Supabase Storage (`/api/admin/upload`, validare strictă MIME, limită 5MB); generator oficial de Fișe de Avizier (format A4 Print/PDF cu QR code); modul de export multi-registru borderou oficial ANAF (Formular 230) în CSV cu UTF-8 BOM; securitate zero-trust (sesiuni server HMAC-SHA256 cu `timingSafeEqual`, rate limiting pe IP, honeypot anti-bot, validare matematică algoritmică CNP MAI/ANAF); pipeline tranzacțional integrat prin Resend API cu DKIM & SPF pe domeniu autorizat via Vercel DNS, rutare bidirecțională `Reply-To` coordonator tehnic; barieră mecanică Gatekeeper.
+5. **Portofoliu Tiberiu & Universal 3D Engine:** Depozit dedicat `github.com/tiberiumilitaru89/portofoliu-tiberiu`, domeniu oficial `tiberiumilitaru.ro`. Platformă web de prezentare și testbench de securitate: Vite, Three.js (redare GPU particule 3D interactive la 60 FPS), Vanilla JS ES6+, Content Security Policy strictă fără `'unsafe-inline'` în `script-src`, mutație Zero-Trust DOM (`replaceChildren`), separare absolută CSS/JS fără atribute de stil inline dinamice, terminal CLI sandboxat direct în browser, sistem bilingv instantaneu (RO/EN), barieră mecanică Gatekeeper (`vite build`) și documentare OKF.
 
 ## 6. Roadmap Funcționalități & Instrumente Viitoare (De implementat la cerere)
 1. **Simulator Interactiv de Proiect / Estimator de Cost:**

@@ -541,7 +541,7 @@
                 <!-- Project Category Filters (Varianta A) -->
                 <div class="projects-filter-bar" role="tablist" aria-label="Filtrare proiecte">
                     <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
-                        <i class="fa-solid fa-layer-group"></i> <span data-i18n="filter_all">Toate</span> <span class="filter-count">(4)</span>
+                        <i class="fa-solid fa-layer-group"></i> <span data-i18n="filter_all">Toate</span> <span class="filter-count">(5)</span>
                     </button>
                     <button type="button" class="filter-btn" data-filter="saas" role="tab" aria-selected="false">
                         <i class="fa-solid fa-cloud"></i> <span data-i18n="filter_saas">SaaS & Cloud Apps</span>
@@ -565,18 +565,24 @@
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-file-pdf"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj1_tag">SaaS & Arhitectură Serverless Securizată</span>
+                            <span class="project-category" data-i18n="proj1_tag">SaaS, CSP Strict & Microservicii Serverless</span>
                         </div>
                         <h3 class="project-title" data-i18n="proj1_title">CV Builder Pro & ATS Analyzer (SaaS)</h3>
                         <p class="project-desc" data-i18n="proj1_summary">
-                            Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Puppeteer) ranforsate împotriva SSRF/XSS, export hibrid cu fallback nativ și procesare automată plăți prin Stripe Webhook.
+                            Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Node 22 Puppeteer) ranforsate anti-SSRF/XSS, Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (replaceChildren), zero stiluri inline, logging structurat JSON cu ID de corelare și procesare plăți prin Stripe Webhooks.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Vanilla JS ES6+</span>
+                            <span class="tech-tag">Strict CSP (No Unsafe-Inline)</span>
+                            <span class="tech-tag">Zero-Trust DOM</span>
+                            <span class="tech-tag">Zero Inline CSS</span>
                             <span class="tech-tag">Firebase Hosting & Rules</span>
                             <span class="tech-tag">Cloud Functions (Node 22)</span>
+                            <span class="tech-tag">Forensic JSON Logger</span>
                             <span class="tech-tag">Puppeteer (Anti-SSRF)</span>
                             <span class="tech-tag">Stripe Webhooks</span>
+                            <span class="tech-tag">Gatekeeper</span>
+                            <span class="tech-tag">OKF SSOT</span>
                         </div>
                         <div class="project-actions">
                             <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj1" aria-label="Detalii tehnice despre Generator PDF">
@@ -601,13 +607,14 @@
                         </div>
                         <h3 class="project-title" data-i18n="proj2_title">Magazin Online cu Chat Live (Florărie)</h3>
                         <p class="project-desc" data-i18n="proj2_summary">
-                            Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC. Include catalog dinamic de produse, coș de cumpărături securizat și modul de Live Chat în timp real bazat pe WebSockets pentru a converti vizitatorii în clienți direct pe site.
+                            Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC decuplată. Include catalog dinamic de produse, coș de cumpărături securizat cu validare strictă și modul de Live Chat în timp real bazat pe WebSockets pentru asistență instantanee și conversii crescute pe mobile.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">React.js</span>
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">WebSockets</span>
-                            <span class="tech-tag">MVC</span>
+                            <span class="tech-tag">MVC Architecture</span>
+                            <span class="tech-tag">Zero-Trust Sanitization</span>
                             <span class="tech-tag">Responsive UI</span>
                         </div>
                         <div class="project-actions">
@@ -620,26 +627,32 @@
                         </div>
                     </div>
 
-                    <!-- Proiectul 3: CRM Instalații & Gestiune Servicii -->
+                    <!-- Proiectul 3: CRM Instalații & Gestiune Servicii (Instalbloc) -->
                     <div class="project-card" data-project="proj3" data-category="crm" data-tilt>
                         <div class="project-header">
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-toolbox"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj3_tag">Sisteme CRM & Baze de Date SQL</span>
+                            <span class="project-category" data-i18n="proj3_tag">Sistem CRM Enterprise, Zero-Any & Baze Relaționale</span>
                         </div>
-                        <h3 class="project-title" data-i18n="proj3_title">Aplicație CRM & Gestiune Servicii</h3>
+                        <h3 class="project-title" data-i18n="proj3_title">Aplicație CRM & Gestiune Servicii (Instalbloc)</h3>
                         <p class="project-desc" data-i18n="proj3_summary">
-                            Platformă pe măsură pentru o firmă de instalații sanitare și meseriași. Asigură preluarea comenzilor clienților, alocarea tehnicienilor pe teren, alerte automate SLA și gestiunea istoricului de intervenții printr-un API RESTful securizat și baze relaționale SQL.
+                            Platformă enterprise dedicată firmelor de instalații sanitare și intervenții tehnice. Re-arhitecturată la standarde Zero-Defect: 100% Zero-any type safety cu regulă fatală ESLint, barieră mecanică Gatekeeper (tsc & eslint max-warnings 0), cron automat de triaj și alerte SLA (/api/cron/check-sla), logging forensic structurat JSON cu mascare automată PII și persistență Drizzle ORM pe SQLite/LibSQL cu izolare pe asociație.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Next.js 16</span>
                             <span class="tech-tag">React 19</span>
-                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">TypeScript (Zero-Any)</span>
+                            <span class="tech-tag">Gatekeeper Barrier</span>
+                            <span class="tech-tag">SLA Cron Dispatcher</span>
+                            <span class="tech-tag">Forensic JSON Logger</span>
+                            <span class="tech-tag">PII Masking</span>
                             <span class="tech-tag">Drizzle ORM</span>
                             <span class="tech-tag">SQLite / LibSQL</span>
-                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Zod Validation</span>
+                            <span class="tech-tag">Tailwind CSS v4</span>
                             <span class="tech-tag">Sentry</span>
+                            <span class="tech-tag">OKF SSOT</span>
                         </div>
                         <div class="project-actions">
                             <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj3" aria-label="Detalii tehnice despre Aplicație CRM">
@@ -657,25 +670,27 @@
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-city"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj4_tag">Civic Tech & Platforme Digitale</span>
+                            <span class="project-category" data-i18n="proj4_tag">Civic Tech, Audit Urban & Securitate Zero-Trust</span>
                         </div>
                         <h3 class="project-title" data-i18n="proj4_title">Platformă Civică & Audit Urban (Viziune Urbană Ploiești)</h3>
                         <p class="project-desc" data-i18n="proj4_summary">
-                            Platformă civică Full-Stack (Next.js 15, TypeScript, Supabase PostgreSQL) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timing-safe și notificări tranzacționale DKIM/SPF.
+                            Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Next.js 15</span>
-                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">TypeScript (Zero-Any)</span>
+                            <span class="tech-tag">Gatekeeper Barrier</span>
                             <span class="tech-tag">Supabase (PostgreSQL)</span>
                             <span class="tech-tag">HMAC Auth (timingSafe)</span>
-                            <span class="tech-tag">Portal /status (FSM)</span>
-                            <span class="tech-tag">Admin Dashboard (6 Taburi)</span>
-                            <span class="tech-tag">Fișe Avizier A4</span>
+                            <span class="tech-tag">Portal /status (FSM Stepper)</span>
+                            <span class="tech-tag">Admin Dashboard (6 Module)</span>
+                            <span class="tech-tag">Fișe Avizier A4 (QR Code)</span>
                             <span class="tech-tag">Supabase Storage</span>
-                            <span class="tech-tag">Resend (DKIM/SPF)</span>
-                            <span class="tech-tag">ANAF 230 Export</span>
+                            <span class="tech-tag">ANAF 230 CSV (UTF-8 BOM)</span>
+                            <span class="tech-tag">Resend (DKIM & SPF)</span>
                             <span class="tech-tag">Rate Limiting</span>
                             <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">OKF SSOT</span>
                         </div>
                         <div class="project-actions">
                             <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj4" aria-label="Detalii tehnice despre Viziune Urbană Ploiești">
@@ -685,6 +700,43 @@
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
                             </a>
                             <a href="https://github.com/tiberiumilitaru89/viziune-urbana-ploiesti" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi depozitul pe GitHub">
+                                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Proiectul 5: Portofoliu Tiberiu & Arhitectură Zero-Defect -->
+                    <div class="project-card" data-project="proj5" data-category="saas" data-tilt>
+                        <div class="project-header">
+                            <div class="project-icon-badge">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <span class="project-category" data-i18n="proj5_tag">Arhitectură Zero-Defect & Audit Red-Team</span>
+                        </div>
+                        <h3 class="project-title" data-i18n="proj5_title">Portofoliu Tiberiu & Universal 3D Engine</h3>
+                        <p class="project-desc" data-i18n="proj5_summary">
+                            Platformă web ultra-performantă (Vite, Three.js, Vanilla ES6+), proiectată pe standarde Zero-Defect: Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (replaceChildren), separare absolută CSS/JS fără stiluri inline, univers 3D interactiv pe GPU, terminal CLI sandboxat, barieră mecanică Gatekeeper și documentare OKF.
+                        </p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">Three.js (3D Particles)</span>
+                            <span class="tech-tag">Vanilla JS ES6+</span>
+                            <span class="tech-tag">Strict CSP (No Unsafe-Inline)</span>
+                            <span class="tech-tag">Zero-Trust DOM</span>
+                            <span class="tech-tag">Zero Inline CSS</span>
+                            <span class="tech-tag">Interactive CLI Terminal</span>
+                            <span class="tech-tag">i18n (RO / EN)</span>
+                            <span class="tech-tag">Gatekeeper Barrier</span>
+                            <span class="tech-tag">OKF SSOT</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj5" aria-label="Detalii tehnice despre Portofoliu Tiberiu">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            </button>
+                            <a href="https://tiberiumilitaru.ro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan" title="Vezi Platforma Online">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/tiberiumilitaru89/portofoliu-tiberiu" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi depozitul pe GitHub">
                                 <i class="fa-brands fa-github"></i> <span>GitHub</span>
                             </a>
                         </div>
@@ -952,7 +1004,7 @@
         <!-- ================================================================= -->
         <!-- 7. TERMINAL CLI INTERACTIV (Easter Egg & Tech Showcase) -->
         <!-- ================================================================= -->
-        <section class="section terminal-section" id="terminal" style="display: none;">
+        <section class="section terminal-section hidden" id="terminal">
             <div class="container">
                 <div class="section-header text-center">
                     <span class="section-badge" data-i18n="term_badge">Consolă Interactivă</span>

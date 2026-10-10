@@ -1111,6 +1111,10 @@ img {
     display: none !important;
 }
 
+.project-card.fade-in {
+    animation: projectFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 @keyframes projectFadeIn {
     from {
         opacity: 0;
@@ -2004,6 +2008,15 @@ img {
 .project-modal-results {
     line-height: 1.8;
 }
+.project-modal-list {
+    margin: 8px 0 0 18px;
+    padding: 0;
+    list-style-type: disc;
+}
+.project-modal-list li {
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
 body.modal-open {
     overflow: hidden;
 }
@@ -2064,6 +2077,11 @@ body.modal-open {
 @keyframes toastSlideIn {
     from { transform: translateX(-40px); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
+}
+.toast.toast--hide {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* ==========================================================================
