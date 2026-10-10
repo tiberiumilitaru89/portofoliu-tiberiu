@@ -36,6 +36,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Zero-Trust DOM Sanitizer (Defense-in-depth against XSS and raw innerHTML injection)
+    const safeSetHTML = (container, htmlString) => {
+        if (!container) return;
+        container.replaceChildren();
+        if (typeof htmlString !== 'string' || !htmlString.includes('<')) {
+            container.textContent = htmlString || '';
+            return;
+        }
+        const template = document.createElement('template');
+        template.innerHTML = htmlString;
+        const allowedTags = new Set(['STRONG', 'EM', 'SPAN', 'B', 'I', 'BR', 'A', 'P', 'DIV', 'CODE']);
+        const allowedAttrs = new Set(['class', 'href', 'target', 'rel', 'title']);
+        const sanitizeNode = (node) => {
+            for (let i = node.children.length - 1; i >= 0; i--) {
+                const child = node.children[i];
+                if (!allowedTags.has(child.tagName)) {
+                    child.remove();
+                } else {
+                    for (let j = child.attributes.length - 1; j >= 0; j--) {
+                        const attr = child.attributes[j];
+                        if (!allowedAttrs.has(attr.name.toLowerCase())) {
+                            child.removeAttribute(attr.name);
+                        }
+                    }
+                    sanitizeNode(child);
+                }
+            }
+        };
+        sanitizeNode(template.content);
+        container.appendChild(template.content);
+    };
+
     // Hoisted module declarations (eliminates Temporal Dead Zone cross-module dependencies)
     let I18nModule = null;
     let ThemeModule = null;
@@ -441,11 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const key = el.getAttribute('data-i18n');
                 const translation = translations[lang] ? translations[lang][key] : null;
                 if (translation !== undefined && translation !== null) {
-                    if (translation.includes('<')) {
-                        el.innerHTML = translation;
-                    } else {
-                        el.textContent = translation;
-                    }
+                    safeSetHTML(el, translation);
                 }
             });
 
@@ -545,8 +573,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 setTheme(nextTheme, true);
 
-                toggleBtn.style.transform = 'scale(0.85)';
-                setTimeout(() => { toggleBtn.style.transform = ''; }, 160);
+                toggleBtn.classList.add('theme-toggle--animating');
+                setTimeout(() => { toggleBtn.classList.remove('theme-toggle--animating'); }, 160);
             });
         }
 
@@ -1090,10 +1118,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                card.style.transform = `perspective(1000px) rotateX(${-y * 0.035}deg) rotateY(${x * 0.035}deg) translateY(-6px)`;
+                card.style.setProperty('--tilt-x', `${-y * 0.035}deg`);
+                card.style.setProperty('--tilt-y', `${x * 0.035}deg`);
+                card.style.setProperty('--tilt-y-trans', '-6px');
             });
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+                card.style.removeProperty('--tilt-x');
+                card.style.removeProperty('--tilt-y');
+                card.style.removeProperty('--tilt-y-trans');
             });
         });
     })();
@@ -1124,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Progress bar
                     if (scrollBar && docHeight > 0) {
-                        scrollBar.style.width = `${(scrollY / docHeight) * 100}%`;
+                        scrollBar.style.setProperty('--scroll-progress', `${(scrollY / docHeight) * 100}%`);
                     }
 
                     // Back to top
@@ -1165,7 +1197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburgerBtn.classList.toggle('active', isActive);
             mobileDrawer.classList.toggle('active', isActive);
             hamburgerBtn.setAttribute('aria-expanded', isActive);
-            document.body.style.overflow = isActive ? 'hidden' : '';
+            document.body.classList.toggle('modal-open', isActive);
         };
 
         if (hamburgerBtn && mobileDrawer) {
@@ -1250,11 +1282,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!output) return;
             const div = document.createElement('div');
             div.className = `t-line ${cssClass}`;
-            if (typeof content === 'string' && content.includes('<')) {
-                div.innerHTML = content;
-            } else {
-                div.textContent = content;
-            }
+            safeSetHTML(div, content);
             output.appendChild(div);
             if (body) body.scrollTop = body.scrollHeight;
         };
