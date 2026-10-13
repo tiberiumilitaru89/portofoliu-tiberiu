@@ -63,9 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             child.removeAttribute(attr.name);
                         } else if (attrName === 'href') {
                             const val = attr.value.trim();
-                            if (!safeUrlPattern.test(val) || /^javascript:/i.test(val)) {
+                            if (!safeUrlPattern.test(val)) {
                                 child.removeAttribute(attr.name);
                             }
+                        } else if (attrName === 'target' && attr.value.toLowerCase() === '_blank') {
+                            // Enforce reverse tabnabbing protection (rel="noopener noreferrer")
+                            child.setAttribute('rel', 'noopener noreferrer');
                         }
                     }
                     sanitizeNode(child);
