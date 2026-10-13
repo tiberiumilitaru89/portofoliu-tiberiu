@@ -182,7 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj2_summary: "Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC decuplată. Include catalog dinamic de produse, coș de cumpărături securizat cu validare strictă și modul de Live Chat în timp real bazat pe WebSockets pentru asistență instantanee și conversii crescute pe mobile.",
                 proj3_tag: "Sistem CRM Enterprise, Zero-Any & Baze Relaționale",
                 proj3_title: "Aplicație CRM & Gestiune Servicii (Instalbloc)",
-                proj3_summary: "Platformă enterprise dedicată firmelor de instalații sanitare și intervenții tehnice. Re-arhitecturată la standarde Zero-Defect: 100% Zero-any type safety cu regulă fatală ESLint, barieră mecanică Gatekeeper (tsc & eslint max-warnings 0), cron automat de triaj și alerte SLA (/api/cron/check-sla), logging forensic structurat JSON cu mascare automată PII și persistență Drizzle ORM pe SQLite/LibSQL cu izolare pe asociație.",
+                proj3_status: "În lucru",
+                proj3_summary: "Platformă enterprise dedicată asociațiilor de proprietari și firmelor de instalații sanitare / termice. Arhitectură Cloud Zero-Defect: Next.js 15 Serverless pe Vercel, persistență relațională pe Turso Cloud (LibSQL) cu Drizzle ORM, FSM determinist în 4 etape (Avarie -> Ofertare -> Lucrare în curs -> Finalizat & Recepționat), SLA garantat 96h, dispecerat avarii și rapoarte de intervenție cu mascare PII și tipizare strictă Zero-Any.",
                 proj4_tag: "Civic Tech, Audit Urban & Securitate Zero-Trust",
                 proj4_title: "Platformă Civică & Audit Urban (Viziune Urbană Ploiești)",
                 proj4_summary: "Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.",
@@ -365,7 +366,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj2_summary: "Full-scale e-commerce web application for a local florist built with decoupled MVC architecture. Features real-time WebSockets live chat, dynamic product catalogs, and secure checkout to drive mobile sales conversions.",
                 proj3_tag: "Enterprise CRM, Zero-Any & Relational Databases",
                 proj3_title: "Service Management & CRM Tool (Instalbloc)",
-                proj3_summary: "Enterprise field service CRM for plumbing contractors. Hardened to Zero-Defect standards: 100% Zero-any type safety, mechanical Gatekeeper barrier (tsc & eslint 0 warnings), automated SLA violation cron dispatcher (/api/cron/check-sla), structured forensic JSON logging with PII masking, and Drizzle ORM over LibSQL/SQLite.",
+                proj3_status: "In Progress",
+                proj3_summary: "Enterprise platform engineered for property associations and plumbing/heating contractors. Zero-Defect Cloud architecture: Next.js 15 Serverless on Vercel, distributed relational persistence on Turso Cloud (LibSQL) via Drizzle ORM, deterministic 4-stage FSM workflow (Open -> Bidding -> Accepted -> Completed), automated 96h SLA dispatcher, field intervention reports, strict Zero-Any type safety, and mechanical Gatekeeper barrier.",
                 proj4_tag: "Civic Tech, Urban Audit & Zero-Trust Security",
                 proj4_title: "Civic Platform & Urban Audit (Viziune Urbană Ploiești)",
                 proj4_summary: "Full-Stack civic platform built with Next.js 15, Zero-Any TypeScript, and Supabase (PostgreSQL & Storage). Features a public dossier tracker (/status) with a 5-step visual FSM stepper, 6-module admin dashboard, secure image storage pipeline, official A4 noticeboard sheet generator, ANAF Form 230 collective borderou CSV export (UTF-8 BOM), timing-safe HMAC-SHA256 server sessions, and verified Resend DKIM/SPF email.",
@@ -1399,7 +1401,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'projects':
                     printLine('• [CV Builder Pro & ATS Analyzer]: SaaS Serverless, strict CSP without unsafe-inline, zero-trust DOM, Puppeteer anti-SSRF, Stripe webhooks, structured JSON logger', 't-out');
                     printLine('• [Magazin Online Florărie]: Live chat, WebSockets, decoupled MVC architecture, React storefront', 't-out');
-                    printLine('• [Instalbloc CRM]: Next.js 16, React 19, zero-any architecture, Gatekeeper, automated SLA cron, forensic JSON logger, Drizzle ORM', 't-out');
+                    printLine('• [Instalbloc CRM]: Next.js 15, Turso Cloud DB (LibSQL), Zero-Any architecture, Gatekeeper, 4-stage FSM, 96h SLA cron, forensic JSON logger, Drizzle ORM [Status: În lucru]', 't-out');
                     printLine('• [Viziune Urbană Ploiești]: Civic platform, Next.js 15, TypeScript zero-any, Supabase PostgreSQL & Storage, HMAC timing-safe auth, /status FSM tracker, admin storage & ANAF exports, Gatekeeper', 't-out');
                     printLine('• [Portofoliu Tiberiu]: Vite, Three.js 3D universe, strict CSP, zero inline styling, zero-trust DOM, Gatekeeper, OKF SSOT', 't-out');
                     const projTarget = document.getElementById('projects');
@@ -1716,28 +1718,32 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             proj3: {
                 ro: {
-                    title: "Aplicație CRM & Gestiune Servicii (Instalbloc)",
-                    desc: "Platformă enterprise dezvoltată pentru companii de instalații sanitare și intervenții tehnice pe teren, eliminând suprapunerile de programări și întârzierile de intervenție.",
-                    architecture: "Full-Stack Next.js 16 cu React 19 și TypeScript în regim strict Zero-Any. Persistență de înaltă performanță prin Drizzle ORM peste SQLite / LibSQL, validare cu Zod, interfață stilizată cu Tailwind CSS v4 și monitorizare cu Sentry. Sistemul include cron automat de triaj și alerte SLA (/api/cron/check-sla), logging forensic structurat JSON (logger.ts) cu mascare automată a datelor PII și ID-uri de corelare, precum și barieră mecanică Gatekeeper (tsc + eslint cu 0 avertismente).",
+                    title: "Aplicație CRM & Gestiune Servicii (Instalbloc) — În lucru",
+                    desc: "Platformă enterprise dezvoltată pentru asociațiile de proprietari și companiile de instalații sanitare și intervenții tehnice pe teren, eliminând suprapunerile de programări și întârzierile de intervenție.",
+                    architecture: "Full-Stack Next.js 15 Serverless pe Vercel cu React 19 și TypeScript în regim strict Zero-Any. Persistență distribuită de înaltă performanță prin Drizzle ORM peste Turso Cloud (LibSQL), validare la runtime cu Zod, interfață stilizată cu Tailwind CSS și monitorizare cu Sentry. Sistemul include FSM determinist în 4 etape, cron automat de triaj și alerte SLA de 96h (/api/cron/check-sla), logging forensic structurat JSON (logger.ts) cu mascare automată PII și ID-uri de corelare, precum și barieră mecanică Gatekeeper (tsc + eslint cu 0 avertismente). Statusul curent al proiectului este „În lucru”.",
                     results: [
+                        "Status curent: În lucru — arhitectură live pe Vercel conectată la Turso Cloud DB.",
                         "Tipizare absolută garantată la compilare (Zero-Any) pe întreaga bază de cod și server actions.",
                         "Barieră mecanică Gatekeeper integrată în pipeline (tsc --noEmit && eslint max-warnings 0).",
+                        "Flux FSM determinist în 4 etape: Avarie Deschisă -> În Ofertare -> Acceptată (SLA 96h) -> Finalizată cu Raport Tehnic & PV.",
                         "Cron automat (/api/cron/check-sla) cu detectare proactivă a depășirilor de SLA și alerte de dispecerat.",
                         "Modul forensic de logging structurat JSON cu mascare automată a datelor cu caracter personal (PII).",
-                        "Persistență tranzacțională optimizată prin Drizzle ORM cu interogări ultra-rapide și izolare pe asociație.",
+                        "Persistență relațională pe Turso Cloud (LibSQL) cu izolare strictă pe asociații și tranzacționalitate.",
                         "Standardizare arhitecturală completă guvernată prin Open Knowledge Format (OKF)."
                     ]
                 },
                 en: {
-                    title: "Service Management & CRM Tool (Instalbloc)",
-                    desc: "Enterprise field service CRM engineered for plumbing and technical maintenance contractors, eliminating scheduling overlaps and dispatch delays.",
-                    architecture: "Full-Stack Next.js 16 with React 19 and strict Zero-Any TypeScript. High-performance persistence through Drizzle ORM over SQLite / LibSQL, runtime schema validation with Zod, modern styling with Tailwind CSS v4, and observability via Sentry. Engineered with an automated SLA check cron dispatcher (/api/cron/check-sla), structured forensic JSON logger (logger.ts) with automatic PII masking and correlation IDs, and a mechanical Gatekeeper build barrier (tsc + eslint with 0 warnings).",
+                    title: "Service Management & CRM Tool (Instalbloc) — In Progress",
+                    desc: "Enterprise field service platform engineered for property associations and plumbing contractors, eliminating scheduling overlaps and dispatch delays.",
+                    architecture: "Full-Stack Next.js 15 Serverless on Vercel with React 19 and strict Zero-Any TypeScript. High-performance distributed persistence through Drizzle ORM over Turso Cloud (LibSQL), runtime schema validation with Zod, modern styling with Tailwind CSS, and observability via Sentry. Engineered with a deterministic 4-stage FSM, automated 96h SLA check cron dispatcher (/api/cron/check-sla), structured forensic JSON logger (logger.ts) with automatic PII masking and correlation IDs, and a mechanical Gatekeeper build barrier (tsc + eslint with 0 warnings). Current development status is 'In Progress'.",
                     results: [
+                        "Current status: In Progress — live production build on Vercel connected to Turso Cloud DB.",
                         "Absolute compile-time type safety (Zero-Any) across all server actions, models, and UI components.",
                         "Deterministic Gatekeeper barrier halting builds on any TypeScript or ESLint warning.",
+                        "Deterministic 4-stage FSM: Open Incident -> Bidding -> Accepted (96h SLA) -> Completed with Technical Report.",
                         "Automated SLA cron dispatcher (/api/cron/check-sla) detecting schedule breaches before impact.",
                         "Forensic JSON structured logging with automatic PII masking (names, phones, IBANs, emails).",
-                        "Optimized relational persistence with Drizzle ORM delivering zero-latency queries and association isolation.",
+                        "Optimized relational persistence with Drizzle ORM over Turso Cloud LibSQL with association isolation.",
                         "Complete architectural alignment and governance under Open Knowledge Format (OKF)."
                     ]
                 },

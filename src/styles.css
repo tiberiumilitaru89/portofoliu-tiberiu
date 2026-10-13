@@ -1224,6 +1224,21 @@ img {
 .btn-private-tag i {
     color: var(--accent-amber, #f59e0b);
 }
+.btn-in-progress-tag {
+    cursor: default;
+    border-style: solid;
+    border-color: rgba(245, 158, 11, 0.4);
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.08);
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+.btn-in-progress-tag i {
+    color: #f59e0b;
+}
 
 .projects-cta {
     background: var(--bg-surface);
