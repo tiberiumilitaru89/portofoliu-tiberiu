@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Zero-Trust DOM Sanitizer (Defense-in-depth against XSS and raw innerHTML injection)
+    // Zero-Trust DOM Sanitizer (Defense-in-depth against XSS, raw innerHTML and protocol hijacking)
     const safeSetHTML = (container, htmlString) => {
         if (!container) return;
         container.replaceChildren();
@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         template.innerHTML = htmlString;
         const allowedTags = new Set(['STRONG', 'EM', 'SPAN', 'B', 'I', 'BR', 'A', 'P', 'DIV', 'CODE']);
         const allowedAttrs = new Set(['class', 'href', 'target', 'rel', 'title']);
+        const safeUrlPattern = /^(?:(?:https?|mailto|tel):|\/|#)/i;
+
         const sanitizeNode = (node) => {
             for (let i = node.children.length - 1; i >= 0; i--) {
                 const child = node.children[i];
@@ -56,8 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     for (let j = child.attributes.length - 1; j >= 0; j--) {
                         const attr = child.attributes[j];
-                        if (!allowedAttrs.has(attr.name.toLowerCase())) {
+                        const attrName = attr.name.toLowerCase();
+                        if (!allowedAttrs.has(attrName)) {
                             child.removeAttribute(attr.name);
+                        } else if (attrName === 'href') {
+                            const val = attr.value.trim();
+                            if (!safeUrlPattern.test(val) || /^javascript:/i.test(val)) {
+                                child.removeAttribute(attr.name);
+                            }
                         }
                     }
                     sanitizeNode(child);
@@ -860,6 +868,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Main Animation Loop
         let frameCount = 0;
         const maxSynapseDist = 135;
+        const maxSynapseDistSq = maxSynapseDist * maxSynapseDist;
 
         const render = () => {
             if (isPaused) {
@@ -960,9 +969,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const n2 = neurons[j];
                     const dx = n1.x - n2.x;
                     const dy = n1.y - n2.y;
-                    const dist = Math.hypot(dx, dy);
+                    const distSq = dx * dx + dy * dy;
 
-                    if (dist < maxSynapseDist) {
+                    // O(N^2) Optimization: early exit using squared distance without Math.hypot/sqrt
+                    if (distSq < maxSynapseDistSq) {
+                        const dist = Math.sqrt(distSq);
                         n1.connections.push(n2);
                         n2.connections.push(n1);
 
@@ -976,9 +987,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         // Boost if near mouse
                         if (mouse.active) {
-                            const dMouse1 = Math.hypot(n1.x - mouse.x, n1.y - mouse.y);
-                            const dMouse2 = Math.hypot(n2.x - mouse.x, n2.y - mouse.y);
-                            if (dMouse1 < mouse.radius || dMouse2 < mouse.radius) {
+                            const dMouse1Sq = (n1.x - mouse.x) ** 2 + (n1.y - mouse.y) ** 2;
+                            const dMouse2Sq = (n2.x - mouse.x) ** 2 + (n2.y - mouse.y) ** 2;
+                            const mouseRadiusSq = mouse.radius * mouse.radius;
+                            if (dMouse1Sq < mouseRadiusSq || dMouse2Sq < mouseRadiusSq) {
                                 alpha = Math.min(alpha + 0.35, 0.85);
                             }
                         }
@@ -1001,9 +1013,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (mouse.active) {
                     const dxm = mouse.x - n1.x;
                     const dym = mouse.y - n1.y;
-                    const distMouse = Math.hypot(dxm, dym);
+                    const distMouseSq = dxm * dxm + dym * dym;
+                    const mouseRadiusSq = mouse.radius * mouse.radius;
 
-                    if (distMouse < mouse.radius) {
+                    if (distMouseSq < mouseRadiusSq) {
+                        const distMouse = Math.sqrt(distMouseSq);
                         const mouseProximity = 1 - distMouse / mouse.radius;
                         const beamAlpha = mouseProximity * palette.mouseLineAlpha;
 
