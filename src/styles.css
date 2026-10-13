@@ -2268,10 +2268,22 @@ body.modal-open {
         grid-template-columns: 1fr;
     }
     .projects-filter-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 6px;
         gap: 8px;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
+        justify-content: flex-start;
+    }
+    .projects-filter-bar::-webkit-scrollbar {
+        display: none;
     }
     .filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
         padding: 8px 14px;
         font-size: 0.82rem;
     }
@@ -2302,6 +2314,17 @@ body.modal-open {
     }
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    .project-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .project-actions .btn,
+    .project-actions .btn-in-progress-tag,
+    .project-actions .btn-private-tag {
+        font-size: 0.78rem;
+        padding: 6px 11px;
     }
     .skills-grid {
         grid-template-columns: 1fr;
