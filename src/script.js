@@ -182,20 +182,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 filter_civic: "Civic Tech & Platforme Publice",
                 proj1_tag: "SaaS, CSP Strict & Microservicii Serverless",
                 proj1_title: "CV Builder Pro & ATS Analyzer (SaaS)",
-                proj1_summary: "Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Node 22 Puppeteer) ranforsate anti-SSRF/XSS, Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (replaceChildren), zero stiluri inline, logging structurat JSON cu ID de corelare și procesare plăți prin Stripe Webhooks.",
+                proj1_summary: "Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Node 22 Puppeteer) ranforsate anti-SSRF/XSS, tranzacții atomice Firestore pe scăderea creditelor (anti-race condition), barieră de idempotență deterministă Stripe (colecție dedicată processed_stripe_events), CORS restrâns pe origini autorizate, Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (DOMPurify DOMFragment & replaceChildren), zero stiluri inline, logging structurat JSON cu ID de corelare și barieră Gatekeeper.",
                 proj2_tag: "Aplicație Web & E-Commerce Real-Time",
                 proj2_title: "Magazin Online cu Chat Live (Florărie)",
                 proj2_summary: "Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC decuplată. Include catalog dinamic de produse, coș de cumpărături securizat cu validare strictă și modul de Live Chat în timp real bazat pe WebSockets pentru asistență instantanee și conversii crescute pe mobile.",
                 proj3_tag: "Sistem CRM Enterprise, Zero-Any & Baze Relaționale",
                 proj3_title: "Aplicație CRM & Gestiune Servicii (Instalbloc)",
                 proj3_status: "Live / Operațional",
-                proj3_summary: "Platformă enterprise Full-Stack dedicată asociațiilor de proprietari și companiilor de instalații sanitare / termice. Arhitectură Cloud Zero-Defect: Next.js 16 Serverless pe Vercel cu React 19, persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, FSM determinist în 4 etape (Avarie Deschisă -> În Ofertare -> Acceptată -> Finalizată cu PV și Recenzie), modul avizier QR fără cont, dispecerat cron SLA 96h, telemetrie Sentry și arhitectură de securitate ranforsată cu Content Security Policy strictă.",
+                proj3_summary: "Platformă enterprise Full-Stack dedicată asociațiilor de proprietari și companiilor de instalații sanitare / termice. Arhitectură Cloud Zero-Defect: Next.js 16 Serverless pe Vercel cu React 19, persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și coduri OTP CSPRNG (crypto.randomInt), FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h, componentă printare conformă CSP, telemetrie Sentry și conformitate strictă OKF.",
                 proj4_tag: "Civic Tech, Audit Urban & Securitate Zero-Trust",
                 proj4_title: "Platformă Civică & Audit Urban (Viziune Urbană Ploiești)",
-                proj4_summary: "Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.",
+                proj4_summary: "Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, validare Fail-Fast în env.ts (Zod), separare absolută CSS/JS (Zero inline styles), barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.",
                 proj5_tag: "Arhitectură Zero-Defect & Audit Red-Team",
                 proj5_title: "Portofoliu Tiberiu & Universal 3D Engine",
-                proj5_summary: "Platformă web ultra-performantă (Vite, Three.js, Vanilla ES6+), proiectată pe standarde Zero-Defect: Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (replaceChildren), separare absolută CSS/JS fără stiluri inline, univers 3D interactiv pe GPU, terminal CLI sandboxat, barieră mecanică Gatekeeper și documentare OKF.",
+                proj5_summary: "Platformă web ultra-performantă (Vite, Three.js, Vanilla ES6+), proiectată pe standarde Zero-Defect: Content Security Policy strictă fără 'unsafe-inline', parsare sigură DOMParser fără innerHTML vulnerabil, mutație Zero-Trust DOM (replaceChildren), separare absolută CSS/JS fără stiluri inline, univers 3D interactiv pe GPU, terminal CLI sandboxat, barieră mecanică deterministă Gatekeeper (ESLint zero warnings + Vite build) și guvernanță OKF.",
                 btn_details: "Detalii Tehnice",
                 proj_cta_text: "Ai o idee de proiect sau vrei să optimizezi un flux de lucru existent?",
                 proj_cta_btn: "Discută Proiectul Tău pe WhatsApp",
@@ -366,20 +366,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 filter_civic: "Civic Tech & Public Platforms",
                 proj1_tag: "SaaS, Hardened CSP & Serverless Microservices",
                 proj1_title: "CV Builder Pro & ATS Analyzer (SaaS)",
-                proj1_summary: "Production SaaS resume builder and real-time ATS scoring engine with vector PDF microservices on Node 22 Puppeteer hardened against SSRF/XSS, strict Content Security Policy without 'unsafe-inline', Zero-Trust DOM mutations (replaceChildren), zero dynamic inline styling, structured JSON logging with correlation IDs, and automated Stripe billing.",
+                proj1_summary: "Production SaaS resume builder and real-time ATS scoring platform with vector PDF microservices on Node 22 Puppeteer hardened against SSRF/XSS, atomic Firestore transactions for credit deduction (race condition prevention), Stripe webhook idempotency ledger (processed_stripe_events), restricted CORS origin gating, strict Content Security Policy without 'unsafe-inline', Zero-Trust DOM mutations (DOMPurify DOMFragment & replaceChildren), zero inline styling, structured JSON logging with correlation IDs, and mechanical Gatekeeper barrier.",
                 proj2_tag: "Web Application & Real-Time E-Commerce",
                 proj2_title: "Online Store with Live Chat (Florist)",
                 proj2_summary: "Full-scale e-commerce web application for a local florist built with decoupled MVC architecture. Features real-time WebSockets live chat, dynamic product catalogs, and secure checkout to drive mobile sales conversions.",
                 proj3_tag: "Enterprise CRM, Zero-Any & Relational Databases",
                 proj3_title: "Service Management & CRM Tool (Instalbloc)",
                 proj3_status: "Live / Operational",
-                proj3_summary: "Enterprise Full-Stack platform designed for property associations and plumbing/heating contractors. Cloud Zero-Defect architecture: Next.js 16 Serverless on Vercel with React 19, distributed relational persistence on Turso Cloud (LibSQL) via Drizzle ORM, deterministic 4-stage FSM (Open Incident -> Bidding -> Accepted -> Completed with Inspection Report & Review), noticeboard QR reporting module without account, automated 96h SLA cron dispatcher, Sentry telemetry, and hardened security architecture with strict Content Security Policy.",
+                proj3_summary: "Enterprise Full-Stack platform designed for property associations and plumbing contractors. Cloud Zero-Defect architecture: Next.js 16 Serverless on Vercel with React 19, distributed relational persistence on Turso Cloud (LibSQL) via Drizzle ORM, secure HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP generation (crypto.randomInt), deterministic 4-stage FSM, noticeboard QR reporting module without account, automated 96h SLA cron dispatcher, CSP-compliant print trigger component, Sentry telemetry, and strict OKF governance.",
                 proj4_tag: "Civic Tech, Urban Audit & Zero-Trust Security",
                 proj4_title: "Civic Platform & Urban Audit (Viziune Urbană Ploiești)",
-                proj4_summary: "Full-Stack civic platform built with Next.js 15, Zero-Any TypeScript, and Supabase (PostgreSQL & Storage). Features a public dossier tracker (/status) with a 5-step visual FSM stepper, 6-module admin dashboard, secure image storage pipeline, official A4 noticeboard sheet generator, ANAF Form 230 collective borderou CSV export (UTF-8 BOM), timing-safe HMAC-SHA256 server sessions, and verified Resend DKIM/SPF email.",
+                proj4_summary: "Full-Stack civic platform (Next.js 15, Zero-Any TypeScript, Supabase PostgreSQL & Storage) for technical audits and residential building rehabilitation in Ploiești. Features a public dossier tracker (/status) with a 5-step FSM stepper and DOSAR-PH-XXX lookup, 6-module admin dashboard, secure image upload pipeline, official A4 noticeboard sheet generator, ANAF Form 230 collective borderou export (CSV BOM), timing-safe HMAC-SHA256 server sessions, Fail-Fast environment validation in env.ts (Zod), absolute CSS/JS decoupling (zero inline styles), mechanical Gatekeeper barrier, and verified Resend DKIM/SPF email.",
                 proj5_tag: "Zero-Defect Architecture & Red-Team Audit",
                 proj5_title: "Tiberiu Portfolio & Universal 3D Engine",
-                proj5_summary: "Ultra-fast portfolio platform (Vite, Three.js, Vanilla ES6+) built on Zero-Defect principles: strict Content Security Policy without 'unsafe-inline', zero dynamic inline styling, Zero-Trust DOM mutations (replaceChildren), interactive GPU particle universe, sandboxed CLI terminal, mechanical Gatekeeper build barrier, and Open Knowledge Format (OKF) governance.",
+                proj5_summary: "Ultra-fast portfolio platform (Vite, Three.js, Vanilla ES6+) engineered on Zero-Defect standards: strict Content Security Policy without 'unsafe-inline', secure DOMParser sanitization eliminating vulnerable innerHTML, Zero-Trust DOM mutations (replaceChildren), absolute CSS/JS decoupling with zero inline styles, interactive GPU particle universe, sandboxed CLI terminal, deterministic Gatekeeper build barrier (ESLint zero warnings + Vite build), and Open Knowledge Format (OKF) governance.",
                 btn_details: "Technical Details",
                 proj_cta_text: "Have a project idea or want to optimize an existing workflow?",
                 proj_cta_btn: "Discuss Your Project on WhatsApp",
@@ -1677,26 +1677,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 ro: {
                     title: "CV Builder Pro & ATS Analyzer (SaaS)",
                     desc: "Platformă SaaS de redactare CV și analiză ATS în timp real, cu monetizare integrată, randare vectorială PDF pe microservicii serverless și flux complet automatizat.",
-                    architecture: "Frontend Vanilla JS ES6+ decuplat, fără dependențe grele. Arhitectură Cloud Serverless pe Firebase (Hosting, Firestore Live, Firebase Auth) și microservicii Cloud Functions (Node.js 22) cu Puppeteer ranforsat anti-SSRF/XSS. Ranforsat pe standarde Zero-Defect: Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (replaceChildren), eliminarea completă a stilurilor inline dinamice prin clase BEM, logging structurat JSON cu ID-uri de corelare și procesare plăți prin Stripe Webhooks.",
+                    architecture: "Frontend Vanilla JS ES6+ decuplat, fără dependențe grele. Arhitectură Cloud Serverless pe Firebase (Hosting, Firestore Live, Firebase Auth) și microservicii Cloud Functions (Node.js 22) cu Puppeteer ranforsat anti-SSRF/XSS. Ranforsat pe standarde Zero-Defect: tranzacții atomice Firestore pe scăderea creditelor pentru eliminarea race condition-urilor de debitare concurentă, barieră de idempotență deterministă Stripe prin registrul dedicat processed_stripe_events, CORS restrâns strict pe origini autorizate, Content Security Policy fără 'unsafe-inline', mutație Zero-Trust DOM via DOMPurify cu RETURN_DOM_FRAGMENT (zero innerHTML), eliminarea completă a stilurilor inline dinamice prin clase BEM, logging structurat JSON cu ID-uri de corelare și barieră mecanică Gatekeeper.",
                     results: [
                         "Arhitectură Serverless auto-scalabilă cu costuri minime de rulare pasivă și cold-start optimizat.",
-                        "Politici CSP de nivel bancar (zero 'unsafe-inline' în script-src) și mutații DOM sanitizate la nivel de nod.",
+                        "Tranzacții atomice Firestore pe balanța de credite, garantând protecție matematică împotriva double-spend-ului și a accesului concurent.",
+                        "Registru tranzacțional de idempotență pentru webhook-urile Stripe (processed_stripe_events) cu protecție împotriva livrărilor repetate.",
+                        "Politici CSP de nivel bancar (zero 'unsafe-inline' în script-src) și mutații DOM sanitizate la nivel de nod prin DOMPurify DocumentFragment.",
+                        "Restricționare strictă a originilor CORS în Cloud Functions (anti-Cross-Origin abuse).",
                         "Protecție Red-Team Puppeteer anti-SSRF cu blocare acces la metadata cloud (169.254.169.254) și izolare rețea.",
                         "Sistem de logging forensic JSON (functions.logger) cu correlation ID unificat pentru auditabilitate completă.",
-                        "Integrare Stripe Checkout & Webhooks idempotențiale pentru activarea instantă a planurilor PRO.",
                         "Barieră mecanică deterministă Gatekeeper și documentație arhitecturală sincronizată în Open Knowledge Format (OKF)."
                     ]
                 },
                 en: {
                     title: "CV Builder Pro & ATS Analyzer (SaaS)",
                     desc: "Production SaaS CV builder and real-time ATS scoring platform featuring serverless vector PDF rendering, integrated subscriptions, and automated workflows.",
-                    architecture: "Decoupled Vanilla JS ES6+ frontend with zero heavy runtime dependencies. Serverless cloud backend on Firebase (Hosting, Firestore Real-time, Firebase Auth) and Node.js 22 Cloud Functions running Puppeteer hardened against SSRF/XSS. Built to Zero-Defect standards: strict Content Security Policy without 'unsafe-inline', Zero-Trust DOM mutations (replaceChildren), complete removal of dynamic inline styling via semantic BEM classes, structured forensic JSON logging with correlation IDs, and automated Stripe webhook billing.",
+                    architecture: "Decoupled Vanilla JS ES6+ frontend with zero heavy runtime dependencies. Serverless cloud backend on Firebase (Hosting, Firestore Real-time, Firebase Auth) and Node.js 22 Cloud Functions running Puppeteer hardened against SSRF/XSS. Hardened to Zero-Defect standards: atomic Firestore transactions for credit deduction preventing concurrent debit race conditions, deterministic Stripe idempotency ledger with a dedicated processed_stripe_events collection, strict CORS origin gating, strict Content Security Policy without 'unsafe-inline', Zero-Trust DOM mutations via DOMPurify with RETURN_DOM_FRAGMENT (zero innerHTML), complete removal of dynamic inline styling via BEM classes, structured forensic JSON logging with correlation IDs, and mechanical Gatekeeper build barrier.",
                     results: [
                         "Self-scaling serverless architecture with near-zero idle maintenance costs and optimized warm starts.",
-                        "Strict Content Security Policy (no 'unsafe-inline') and DOM mutations sanitized at programmatic node level.",
+                        "Atomic Firestore transactions on user credit balance guaranteeing mathematical protection against double-spending and race conditions.",
+                        "Idempotency ledger for Stripe webhooks (processed_stripe_events) mitigating duplicate event delivery risks.",
+                        "Strict Content Security Policy (no 'unsafe-inline') and DOM mutations sanitized at node level using DOMPurify DocumentFragment.",
+                        "Strict CORS origin allowlisting across all serverless Cloud Function entrypoints.",
                         "Red-Team Puppeteer hardening with blocked cloud metadata access (169.254.169.254) and network isolation.",
                         "Structured JSON logging pipeline (functions.logger) with unified correlation IDs for auditability.",
-                        "Idempotent Stripe Checkout and webhook dispatcher for instantaneous PRO plan provisioning.",
                         "Deterministic Gatekeeper mechanical build barrier and SSOT architectural governance via Open Knowledge Format (OKF)."
                     ]
                 },
@@ -1731,14 +1735,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 ro: {
                     title: "Aplicație CRM & Gestiune Servicii (Instalbloc) — Live / Operațional",
                     desc: "Platformă enterprise Full-Stack dezvoltată pentru asociațiile de proprietari și companiile de instalații sanitare și intervenții tehnice pe teren, eliminând suprapunerile de programări și întârzierile de intervenție.",
-                    architecture: "Full-Stack Next.js 16 Serverless pe Vercel cu React 19 și TypeScript în regim strict Zero-Any. Persistență distribuită de înaltă performanță prin Drizzle ORM peste Turso Cloud (LibSQL), validare la runtime cu Zod, interfață stilizată cu Tailwind CSS și monitorizare cu Sentry. Sistemul include FSM determinist în 4 etape, cron automat de triaj și alerte SLA de 96h (/api/cron/check-sla), modul de raportare avarii fără cont prin scanare cod QR de avizier, logging forensic structurat JSON (logger.ts) cu mascare automată PII și ID-uri de corelare, precum și barieră mecanică Gatekeeper cu autentificare protejată.",
+                    architecture: "Full-Stack Next.js 16 Serverless pe Vercel cu React 19 și TypeScript în regim strict Zero-Any. Persistență distribuită de înaltă performanță prin Drizzle ORM peste Turso Cloud (LibSQL), validare la runtime cu Zod, interfață stilizată cu Tailwind CSS și monitorizare cu Sentry. Sistemul include: strat de autentificare server-side prin sesiuni criptografice HMAC-SHA256 cu timingSafeEqual și cookie-uri HttpOnly; generator OTP securizat prin CSPRNG nativ (crypto.randomInt); FSM determinist în 4 etape; cron automat de triaj și alerte SLA de 96h (/api/cron/check-sla); modul de raportare avarii fără cont prin scanare cod QR de avizier; componentă PrintTrigger conformă CSP fără script injection; disciplină financiară împotriva rotunjirilor IEEE 754; logging forensic structurat JSON (logger.ts) cu mascare automată PII și ID-uri de corelare; barieră mecanică Gatekeeper și documentare OKF.",
                     results: [
                         "Status: Live / Operațional pe Vercel, conectat la Turso Cloud DB.",
+                        "Autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și generare de coduri OTP prin CSPRNG (crypto.randomInt).",
                         "Persistență relațională scalabilă cu roluri active: Super Admin, Admin Asociație, Prestator și Locatar.",
                         "Modul QR Code de avizier dedicat pentru sesizări instant fără cont, cu optimizare foto pe client.",
                         "Tipizare absolută garantată la compilare (Zero-Any) pe întreaga bază de cod și server actions.",
                         "Flux FSM determinist în 4 etape: Avarie Deschisă -> În Ofertare -> Acceptată (SLA 96h) -> Finalizată cu Raport Tehnic & PV.",
                         "Cron automat (/api/cron/sla-check) cu detectare proactivă a depășirilor de SLA și alerte de dispecerat.",
+                        "Componente de tipărire rapoarte (PrintTrigger) conforme CSP strict, fără execuție de cod inline.",
                         "Arhitectură de securitate ranforsată cu Content Security Policy strictă și protecție automată anti-abuz.",
                         "Standardizare arhitecturală completă guvernată prin Open Knowledge Format (OKF)."
                     ]
@@ -1746,14 +1752,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 en: {
                     title: "Service Management & CRM Tool (Instalbloc) — Live / Operational",
                     desc: "Enterprise Full-Stack field service platform engineered for property associations and plumbing contractors, eliminating scheduling overlaps and dispatch delays.",
-                    architecture: "Full-Stack Next.js 16 Serverless on Vercel with React 19 and strict Zero-Any TypeScript. High-performance distributed persistence through Drizzle ORM over Turso Cloud (LibSQL), runtime schema validation with Zod, modern styling with Tailwind CSS, and observability via Sentry. Engineered with a deterministic 4-stage FSM, automated 96h SLA check cron dispatcher (/api/cron/sla-check), noticeboard QR reporting module without account, structured forensic JSON logger (logger.ts) with automatic PII masking and correlation IDs, and a mechanical Gatekeeper build barrier with protected staging authentication.",
+                    architecture: "Full-Stack Next.js 16 Serverless on Vercel with React 19 and strict Zero-Any TypeScript. High-performance distributed persistence through Drizzle ORM over Turso Cloud (LibSQL), runtime schema validation with Zod, modern styling with Tailwind CSS, and observability via Sentry. Engineered with: server-side cryptographic HMAC-SHA256 sessions with timingSafeEqual and HttpOnly cookies; secure CSPRNG OTP generation (crypto.randomInt); deterministic 4-stage FSM; automated 96h SLA check cron dispatcher (/api/cron/sla-check); noticeboard QR reporting module without account; CSP-compliant PrintTrigger component without inline script injection; financial discipline eliminating IEEE 754 floating-point rounding errors; structured forensic JSON logger (logger.ts) with automatic PII masking and correlation IDs; mechanical Gatekeeper build barrier, and OKF governance.",
                     results: [
                         "Status: Live & Operational on Vercel, connected to Turso Cloud DB.",
+                        "Hardened authentication via HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP code generation (crypto.randomInt).",
                         "Scalable relational persistence with active roles: Super Admin, Association Admin, Service Provider, and Resident.",
                         "Dedicated noticeboard QR code module for fast reporting without account and client-side photo optimization.",
                         "Absolute compile-time type safety (Zero-Any) across all server actions, models, and UI components.",
                         "Deterministic 4-stage FSM: Open Incident -> Bidding -> Accepted (96h SLA) -> Completed with Technical Report.",
                         "Automated SLA cron dispatcher (/api/cron/sla-check) detecting schedule breaches before impact.",
+                        "Strict CSP-compliant report printing (PrintTrigger) without inline script injection.",
                         "Hardened security architecture with strict Content Security Policy and anti-abuse safeguards.",
                         "Complete architectural alignment and governance under Open Knowledge Format (OKF)."
                     ]
@@ -1764,9 +1772,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ro: {
                     title: "Viziune Urbană Ploiești — Platformă Civică, Portal Status FSM, Securitate Zero-Trust & Cloud Storage",
                     desc: "Platformă civică de anvergură pentru municipiul Ploiești, dedicată transparentizării auditurilor tehnice la asociațiile de proprietari, modernizării termoficării și digitalizării fluxurilor comunitare.",
-                    architecture: "Full-Stack pe Next.js 15.5 cu React 19 și TypeScript strict Zero-Any, conectat la Supabase (PostgreSQL & Storage). Include: strat de autentificare server-side pe bază de HMAC-SHA256 cu timingSafeEqual și cookie-uri HttpOnly; Portal Public de Urmărire (/status) cu căutare după număr dosar unic (DOSAR-PH-XXX) și Stepper FSM în 5 pași determiniști; Panou Administrativ complet (/admin) cu 6 module (Asociații, Parteneri Oficiali, Galerie Lucrări, Metrici Globale, Formulare 230, Donații); pipeline securizat de upload imagini în Supabase Storage (validare MIME strictă, 5MB); generator oficial de Fișe de Avizier (A4 Print/PDF cu QR Code); export borderou centralizator ANAF Formular 230 în CSV cu UTF-8 BOM; sliding-window rate limiting pe IP; validare algoritmică a CNP-urilor; capcane invizibile Honeypot; pipeline de email tranzacțional prin Resend API cu DKIM & SPF verificate și rutare coordonator; barieră mecanică Gatekeeper și documentare OKF.",
+                    architecture: "Full-Stack pe Next.js 15.5 cu React 19 și TypeScript strict Zero-Any, conectat la Supabase (PostgreSQL & Storage). Include: strat de autentificare server-side pe bază de HMAC-SHA256 cu timingSafeEqual și cookie-uri HttpOnly; validare Fail-Fast a variabilelor de mediu în src/env.ts (Zod) cu eliminarea oricărui fallback nesigur în producție; separare absolută CSS/JS (Zero inline styles) prin clase utilitare Tailwind și fișiere CSS dedicate; Portal Public de Urmărire (/status) cu căutare după număr dosar unic (DOSAR-PH-XXX) și Stepper FSM în 5 pași determiniști; Panou Administrativ complet (/admin) cu 6 module (Asociații, Parteneri Oficiali, Galerie Lucrări, Metrici Globale, Formulare 230, Donații); pipeline securizat de upload imagini în Supabase Storage (validare MIME strictă, 5MB); generator oficial de Fișe de Avizier (A4 Print/PDF cu QR Code); export borderou centralizator ANAF Formular 230 în CSV cu UTF-8 BOM; sliding-window rate limiting pe IP; validare algoritmică a CNP-urilor; capcane invizibile Honeypot; pipeline de email tranzacțional prin Resend API cu DKIM & SPF verificate; barieră mecanică Gatekeeper și documentare OKF.",
                     results: [
                         "Portal public transparent (/status) cu stepper FSM determinist în 5 pași și căutare instantă fără scurgeri PII.",
+                        "Separare absolută CSS/JS (Zero inline styling) garantând conformitatea deplină cu Content Security Policy strictă.",
+                        "Validare Fail-Fast a configurației de mediu (src/env.ts) împiedicând pornirea aplicației cu secrete implicite.",
                         "Panou de control centralizat cu 6 secțiuni administrative, upload Supabase Storage și generator fișe avizier A4.",
                         "Securitate de nivel enterprise: sesiuni server HMAC-SHA256 cu timingSafeEqual, protecție împotriva atacurilor side-channel și rate limiting pe IP.",
                         "Pipeline de email Resend cu livrabilitate maximă garantată prin chei criptografice DKIM & SPF pe domeniu autorizat.",
@@ -1777,9 +1787,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 en: {
                     title: "Viziune Urbană Ploiești — Civic Platform, FSM Status Tracker, Zero-Trust Security & Cloud Storage",
                     desc: "Large-scale civic platform engineered for the municipality of Ploiești to modernize technical audits for homeowners associations, drive district heating upgrades, and digitize community governance.",
-                    architecture: "Full-Stack on Next.js 15.5 with React 19 and strict Zero-Any TypeScript, backed by Supabase (PostgreSQL & Storage). Features: server-side HMAC-SHA256 sessions with timingSafeEqual and HttpOnly cookies; Public Case Tracking Portal (/status) with unique case search (DOSAR-PH-XXX) and a 5-step deterministic FSM stepper; 6-module Admin Dashboard (/admin); secure direct image upload to Supabase Storage (strict MIME filtering, 5MB ceiling); official A4 noticeboard sheet generator with QR code; collective ANAF Form 230 borderou export in CSV with UTF-8 BOM; IP sliding-window rate limiting; algorithmic CNP verification; Honeypot anti-bot traps; transactional email through Resend API with verified DKIM/SPF keys; mechanical Gatekeeper build barrier, and OKF SSOT governance.",
+                    architecture: "Full-Stack on Next.js 15.5 with React 19 and strict Zero-Any TypeScript, backed by Supabase (PostgreSQL & Storage). Features: server-side HMAC-SHA256 sessions with timingSafeEqual and HttpOnly cookies; Fail-Fast runtime validation of environment variables in src/env.ts (Zod) with zero insecure production fallbacks; absolute CSS/JS decoupling (zero inline styles) via semantic Tailwind utilities and dedicated stylesheets; Public Case Tracking Portal (/status) with unique case search (DOSAR-PH-XXX) and a 5-step deterministic FSM stepper; 6-module Admin Dashboard (/admin); secure direct image upload to Supabase Storage (strict MIME filtering, 5MB ceiling); official A4 noticeboard sheet generator with QR code; collective ANAF Form 230 borderou export in CSV with UTF-8 BOM; IP sliding-window rate limiting; algorithmic CNP verification; Honeypot anti-bot traps; transactional email through Resend API with verified DKIM/SPF keys; mechanical Gatekeeper build barrier, and OKF SSOT governance.",
                     results: [
                         "Public dossier tracking portal (/status) with a 5-step deterministic FSM stepper and zero PII exposure.",
+                        "Absolute CSS/JS separation (zero inline styling) ensuring complete compliance with strict Content Security Policy.",
+                        "Fail-Fast environment validation (src/env.ts) prohibiting startup with default or unverified credentials.",
                         "Comprehensive admin suite with 6 operational modules, direct Supabase Storage uploads, and printable A4 noticeboard sheets.",
                         "Enterprise Zero-Trust security: timing-safe HMAC-SHA256 server sessions, side-channel attack mitigation, and IP rate limiting.",
                         "Transactional Resend email infrastructure with verified DKIM and SPF records for optimal inbox delivery.",
@@ -1793,27 +1805,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 ro: {
                     title: "Portofoliu Tiberiu & Universal 3D Engine",
                     desc: "Platformă web ultra-performantă de prezentare profesională și demonstrare de capabilități tehnice, construită de la zero pe principii de arhitectură Zero-Defect.",
-                    architecture: "Build toolchain Vite cu Vanilla ES6+ și Three.js pentru redarea pe GPU a unui univers interactiv de particule reactive. Structurat pe standarde Zero-Defect: Content Security Policy strictă fără 'unsafe-inline' în script-src, mutații DOM Zero-Trust prin API-uri native (replaceChildren, createTextNode), separare completă CSS/JS fără atribute de stil inline dinamice, terminal CLI interactiv integrat cu sandboxare de comenzi, sistem bilingv complet (RO/EN) prin I18nModule, barieră mecanică Gatekeeper și guvernanță Open Knowledge Format (OKF).",
+                    architecture: "Build toolchain Vite cu Vanilla ES6+ și Three.js pentru redarea pe GPU a unui univers interactiv de particule reactive. Structurat pe standarde Zero-Defect: Content Security Policy strictă fără 'unsafe-inline' în script-src, parsare sigură a template-urilor prin DOMParser eliminând orice folosire de innerHTML nesanitizat, mutații DOM Zero-Trust prin API-uri native (replaceChildren, createTextNode), separare completă CSS/JS fără atribute de stil inline dinamice, terminal CLI interactiv integrat cu sandboxare de comenzi, sistem bilingv complet (RO/EN) prin I18nModule, barieră mecanică Gatekeeper (ESLint zero warnings + Vite build) și guvernanță Open Knowledge Format (OKF).",
                     results: [
-                        "Scor de performanță și securitate maxim în auditurile Lighthouse și SAST/DAST (fără vulnerabilități CSP).",
-                        "Zero stiluri dinamice inline și Zero innerHTML vulnerabil în întreaga logică de client.",
+                        "Scor de performanță și securitate maxim în auditurile Lighthouse și SAST/DAST (fără diluări CSP).",
+                        "Parsare DOM securizată via DOMParser fără innerHTML vulnerabil în întreaga logică de randare dinamică.",
+                        "Zero stiluri dinamice inline și separare completă conformă cu cele mai rigide standarde CSP.",
                         "Motor 3D optimizat pe GPU cu Three.js capabil de 60 FPS constant pe dispozitive desktop și mobile.",
                         "Terminal CLI funcțional direct în browser pentru inspecția stack-ului și navigare prin comenzi.",
                         "Sincronizare bilingvă instantanee (RO/EN) fără refacerea arborelui DOM sau pâlpâire vizuală.",
-                        "Verificare mecanică deterministă la build prin scriptul Gatekeeper și trasabilitate OKF în .knowledge/."
+                        "Verificare mecanică deterministă la build prin scriptul Gatekeeper (ESLint + Vite) și trasabilitate OKF în .knowledge/."
                     ]
                 },
                 en: {
                     title: "Tiberiu Portfolio & Universal 3D Engine",
                     desc: "Ultra-fast professional engineering portfolio and technical demonstration platform, engineered from scratch adhering to Zero-Defect principles.",
-                    architecture: "Vite build toolchain with Vanilla ES6+ and Three.js rendering an interactive, GPU-accelerated particle universe. Hardened to Zero-Defect standards: strict Content Security Policy without 'unsafe-inline' in script-src, Zero-Trust DOM mutations through native APIs (replaceChildren, createTextNode), complete CSS/JS decoupling with zero dynamic inline styles, interactive client-side CLI terminal, full bilingual support (RO/EN) via I18nModule, mechanical Gatekeeper barrier, and Open Knowledge Format (OKF) governance.",
+                    architecture: "Vite build toolchain with Vanilla ES6+ and Three.js rendering an interactive, GPU-accelerated particle universe. Hardened to Zero-Defect standards: strict Content Security Policy without 'unsafe-inline' in script-src, secure DOMParser template parsing eliminating unsanitized innerHTML, Zero-Trust DOM mutations through native APIs (replaceChildren, createTextNode), complete CSS/JS decoupling with zero dynamic inline styles, interactive client-side CLI terminal, full bilingual support (RO/EN) via I18nModule, mechanical Gatekeeper barrier (ESLint zero warnings + Vite build), and Open Knowledge Format (OKF) governance.",
                     results: [
                         "Maximum performance and security scores across Lighthouse and SAST/DAST audits with zero CSP dilution.",
-                        "Zero dynamic inline styling and Zero innerHTML vulnerabilities across all client-side modules.",
+                        "Hardened DOM parsing via DOMParser with zero vulnerable innerHTML throughout all dynamic UI modules.",
+                        "Zero dynamic inline styling and absolute decoupling adhering to strict CSP standards.",
                         "GPU-accelerated Three.js particle engine delivering sustained 60 FPS across desktop and mobile devices.",
                         "Interactive browser CLI terminal providing immediate stack inspection and keyboard-driven navigation.",
                         "Seamless bilingual state switching (RO/EN) without DOM re-instantiation or visual layout shift.",
-                        "Deterministic Gatekeeper verification at build time and complete architectural traceability via OKF."
+                        "Deterministic Gatekeeper verification at build time (ESLint + Vite) and complete architectural traceability via OKF."
                     ]
                 },
                 github: "https://github.com/tiberiumilitaru89/portofoliu-tiberiu"

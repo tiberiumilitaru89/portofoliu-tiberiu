@@ -569,20 +569,20 @@
                         </div>
                         <h3 class="project-title" data-i18n="proj3_title">Aplicație CRM & Gestiune Servicii (Instalbloc)</h3>
                         <p class="project-desc" data-i18n="proj3_summary">
-                            Platformă enterprise Full-Stack dedicată asociațiilor de proprietari și companiilor de instalații sanitare / termice. Arhitectură Cloud Zero-Defect: Next.js 16 Serverless pe Vercel cu React 19, persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, FSM determinist în 4 etape (Avarie Deschisă -> În Ofertare -> Acceptată -> Finalizată cu PV și Recenzie), modul avizier QR fără cont, dispecerat cron SLA 96h, telemetrie Sentry și arhitectură de securitate ranforsată cu Content Security Policy strictă.
+                            Platformă enterprise Full-Stack dedicată asociațiilor de proprietari și companiilor de instalații sanitare / termice. Arhitectură Cloud Zero-Defect: Next.js 16 Serverless pe Vercel cu React 19, persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și coduri OTP CSPRNG (crypto.randomInt), FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h, componentă printare conformă CSP, telemetrie Sentry și conformitate strictă OKF.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Next.js 16</span>
                             <span class="tech-tag">Turso Cloud (LibSQL)</span>
                             <span class="tech-tag">Drizzle ORM</span>
                             <span class="tech-tag">TypeScript (Zero-Any)</span>
-                            <span class="tech-tag">Securitate CSP & Anti-Abuz</span>
+                            <span class="tech-tag">HMAC-SHA256 Auth</span>
+                            <span class="tech-tag">CSPRNG OTP</span>
+                            <span class="tech-tag">Securitate CSP & Print</span>
                             <span class="tech-tag">FSM 4 Etape</span>
                             <span class="tech-tag">SLA 96h Dispatcher</span>
                             <span class="tech-tag">Cod QR Avizier</span>
                             <span class="tech-tag">Sentry Telemetry</span>
-                            <span class="tech-tag">Vercel Serverless</span>
-                            <span class="tech-tag">Tailwind CSS</span>
                             <span class="tech-tag">OKF SSOT</span>
                         </div>
                         <div class="project-actions">
@@ -608,7 +608,7 @@
                         </div>
                         <h3 class="project-title" data-i18n="proj4_title">Platformă Civică & Audit Urban (Viziune Urbană Ploiești)</h3>
                         <p class="project-desc" data-i18n="proj4_summary">
-                            Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.
+                            Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, validare Fail-Fast în env.ts (Zod), separare absolută CSS/JS (Zero inline styles), barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Next.js 15</span>
@@ -616,14 +616,14 @@
                             <span class="tech-tag">Gatekeeper Barrier</span>
                             <span class="tech-tag">Supabase (PostgreSQL)</span>
                             <span class="tech-tag">HMAC Auth (timingSafe)</span>
+                            <span class="tech-tag">Fail-Fast env (Zod)</span>
+                            <span class="tech-tag">Zero Inline CSS</span>
                             <span class="tech-tag">Portal /status (FSM Stepper)</span>
                             <span class="tech-tag">Admin Dashboard (6 Module)</span>
                             <span class="tech-tag">Fișe Avizier A4 (QR Code)</span>
                             <span class="tech-tag">Supabase Storage</span>
                             <span class="tech-tag">ANAF 230 CSV (UTF-8 BOM)</span>
                             <span class="tech-tag">Resend (DKIM & SPF)</span>
-                            <span class="tech-tag">Rate Limiting</span>
-                            <span class="tech-tag">Tailwind CSS</span>
                             <span class="tech-tag">OKF SSOT</span>
                         </div>
                         <div class="project-actions">
@@ -649,19 +649,19 @@
                         </div>
                         <h3 class="project-title" data-i18n="proj1_title">CV Builder Pro & ATS Analyzer (SaaS)</h3>
                         <p class="project-desc" data-i18n="proj1_summary">
-                            Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Node 22 Puppeteer) ranforsate anti-SSRF/XSS, Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (replaceChildren), zero stiluri inline, logging structurat JSON cu ID de corelare și procesare plăți prin Stripe Webhooks.
+                            Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Node 22 Puppeteer) ranforsate anti-SSRF/XSS, tranzacții atomice Firestore pe scăderea creditelor (anti-race condition), barieră de idempotență deterministă Stripe (colecție dedicată processed_stripe_events), CORS restrâns pe origini autorizate, Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (DOMPurify DOMFragment & replaceChildren), zero stiluri inline, logging structurat JSON cu ID de corelare și barieră Gatekeeper.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Vanilla JS ES6+</span>
                             <span class="tech-tag">Strict CSP (No Unsafe-Inline)</span>
-                            <span class="tech-tag">Zero-Trust DOM</span>
+                            <span class="tech-tag">Tranzacții Atomice Firestore</span>
+                            <span class="tech-tag">Stripe Idempotency Ledger</span>
+                            <span class="tech-tag">CORS Origin Gating</span>
+                            <span class="tech-tag">Zero-Trust DOM (DOMPurify)</span>
                             <span class="tech-tag">Zero Inline CSS</span>
-                            <span class="tech-tag">Firebase Hosting & Rules</span>
                             <span class="tech-tag">Cloud Functions (Node 22)</span>
-                            <span class="tech-tag">Forensic JSON Logger</span>
                             <span class="tech-tag">Puppeteer (Anti-SSRF)</span>
-                            <span class="tech-tag">Stripe Webhooks</span>
-                            <span class="tech-tag">Gatekeeper</span>
+                            <span class="tech-tag">Gatekeeper Barrier</span>
                             <span class="tech-tag">OKF SSOT</span>
                         </div>
                         <div class="project-actions">
@@ -717,18 +717,19 @@
                         </div>
                         <h3 class="project-title" data-i18n="proj5_title">Portofoliu Tiberiu & Universal 3D Engine</h3>
                         <p class="project-desc" data-i18n="proj5_summary">
-                            Platformă web ultra-performantă (Vite, Three.js, Vanilla ES6+), proiectată pe standarde Zero-Defect: Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (replaceChildren), separare absolută CSS/JS fără stiluri inline, univers 3D interactiv pe GPU, terminal CLI sandboxat, barieră mecanică Gatekeeper și documentare OKF.
+                            Platformă web ultra-performantă (Vite, Three.js, Vanilla ES6+), proiectată pe standarde Zero-Defect: Content Security Policy strictă fără 'unsafe-inline', parsare sigură DOMParser fără innerHTML vulnerabil, mutație Zero-Trust DOM (replaceChildren), separare absolută CSS/JS fără stiluri inline, univers 3D interactiv pe GPU, terminal CLI sandboxat, barieră mecanică deterministă Gatekeeper (ESLint zero warnings + Vite build) și guvernanță OKF.
                         </p>
                         <div class="project-tech-tags">
                             <span class="tech-tag">Vite</span>
                             <span class="tech-tag">Three.js (3D Particles)</span>
                             <span class="tech-tag">Vanilla JS ES6+</span>
                             <span class="tech-tag">Strict CSP (No Unsafe-Inline)</span>
+                            <span class="tech-tag">DOMParser Sanitizer (Zero-innerHTML)</span>
                             <span class="tech-tag">Zero-Trust DOM</span>
                             <span class="tech-tag">Zero Inline CSS</span>
                             <span class="tech-tag">Interactive CLI Terminal</span>
                             <span class="tech-tag">i18n (RO / EN)</span>
-                            <span class="tech-tag">Gatekeeper Barrier</span>
+                            <span class="tech-tag">Gatekeeper (ESLint + Vite)</span>
                             <span class="tech-tag">OKF SSOT</span>
                         </div>
                         <div class="project-actions">
