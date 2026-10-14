@@ -1740,28 +1740,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     desc: "Platformă enterprise Full-Stack dezvoltată pentru asociațiile de proprietari și companiile de instalații sanitare și intervenții tehnice pe teren, eliminând suprapunerile de programări și întârzierile de intervenție.",
                     architecture: "Full-Stack Next.js 16 Serverless pe Vercel cu React 19 și TypeScript în regim strict Zero-Any. Persistență distribuită de înaltă performanță prin Drizzle ORM peste Turso Cloud (LibSQL), validare la runtime cu Zod, interfață stilizată cu Tailwind CSS și monitorizare cu Sentry. Sistemul include FSM determinist în 4 etape, cron automat de triaj și alerte SLA de 96h (/api/cron/check-sla), modul de raportare avarii fără cont prin scanare cod QR de avizier, logging forensic structurat JSON (logger.ts) cu mascare automată PII și ID-uri de corelare, precum și barieră mecanică Gatekeeper cu autentificare protejată.",
                     results: [
-                        "Status: Live / Operațional pe Vercel, conectat la Turso Cloud DB (Acces Demo: User: george / Parolă: Instalbloc2026).",
-                        "Sincronizare completă a bazei de date cu roluri active: Super Admin George, Admin Asociație Bloc 14, Prestator și Locatar.",
-                        "Modul QR Code de avizier dedicat (cod: bloc-14) pentru sesizări instant fără cont, cu optimizare foto pe client.",
+                        "Status: Live / Operațional pe Vercel, conectat la Turso Cloud DB.",
+                        "Persistență relațională scalabilă cu roluri active: Super Admin, Admin Asociație, Prestator și Locatar.",
+                        "Modul QR Code de avizier dedicat pentru sesizări instant fără cont, cu optimizare foto pe client.",
                         "Tipizare absolută garantată la compilare (Zero-Any) pe întreaga bază de cod și server actions.",
                         "Flux FSM determinist în 4 etape: Avarie Deschisă -> În Ofertare -> Acceptată (SLA 96h) -> Finalizată cu Raport Tehnic & PV.",
-                        "Cron automat (/api/cron/check-sla) cu detectare proactivă a depășirilor de SLA și alerte de dispecerat.",
-                        "Barieră de securitate Staging Gatekeeper cu forțare HTTP Basic Auth și curățare de token rezidual.",
+                        "Cron automat (/api/cron/sla-check) cu detectare proactivă a depășirilor de SLA și alerte de dispecerat.",
+                        "Arhitectură de securitate ranforsată cu Content Security Policy strictă și protecție automată anti-abuz.",
                         "Standardizare arhitecturală completă guvernată prin Open Knowledge Format (OKF)."
                     ]
                 },
                 en: {
                     title: "Service Management & CRM Tool (Instalbloc) — Live / Operational",
                     desc: "Enterprise Full-Stack field service platform engineered for property associations and plumbing contractors, eliminating scheduling overlaps and dispatch delays.",
-                    architecture: "Full-Stack Next.js 16 Serverless on Vercel with React 19 and strict Zero-Any TypeScript. High-performance distributed persistence through Drizzle ORM over Turso Cloud (LibSQL), runtime schema validation with Zod, modern styling with Tailwind CSS, and observability via Sentry. Engineered with a deterministic 4-stage FSM, automated 96h SLA check cron dispatcher (/api/cron/check-sla), noticeboard QR reporting module without account, structured forensic JSON logger (logger.ts) with automatic PII masking and correlation IDs, and a mechanical Gatekeeper build barrier with protected staging authentication.",
+                    architecture: "Full-Stack Next.js 16 Serverless on Vercel with React 19 and strict Zero-Any TypeScript. High-performance distributed persistence through Drizzle ORM over Turso Cloud (LibSQL), runtime schema validation with Zod, modern styling with Tailwind CSS, and observability via Sentry. Engineered with a deterministic 4-stage FSM, automated 96h SLA check cron dispatcher (/api/cron/sla-check), noticeboard QR reporting module without account, structured forensic JSON logger (logger.ts) with automatic PII masking and correlation IDs, and a mechanical Gatekeeper build barrier with protected staging authentication.",
                     results: [
-                        "Status: Live & Operational on Vercel, connected to Turso Cloud DB (Demo Access: Username: george / Password: Instalbloc2026).",
-                        "Complete database sync with active roles: Super Admin George, Association Admin, Service Provider, and Resident.",
-                        "Dedicated noticeboard QR code module (code: bloc-14) for fast reporting without account and client-side photo optimization.",
+                        "Status: Live & Operational on Vercel, connected to Turso Cloud DB.",
+                        "Scalable relational persistence with active roles: Super Admin, Association Admin, Service Provider, and Resident.",
+                        "Dedicated noticeboard QR code module for fast reporting without account and client-side photo optimization.",
                         "Absolute compile-time type safety (Zero-Any) across all server actions, models, and UI components.",
                         "Deterministic 4-stage FSM: Open Incident -> Bidding -> Accepted (96h SLA) -> Completed with Technical Report.",
-                        "Automated SLA cron dispatcher (/api/cron/check-sla) detecting schedule breaches before impact.",
-                        "Staging Gatekeeper barrier enforcing HTTP Basic Auth and residual token purging.",
+                        "Automated SLA cron dispatcher (/api/cron/sla-check) detecting schedule breaches before impact.",
+                        "Hardened security architecture with strict Content Security Policy and anti-abuse safeguards.",
                         "Complete architectural alignment and governance under Open Knowledge Format (OKF)."
                     ]
                 },
