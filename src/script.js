@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const val = window.localStorage.getItem(key);
                     return val !== null ? val : fallback;
                 }
-            } catch (e) {
+            } catch (_e) {
                 // Storage blocked or opaque origin (file:///)
             }
             return key in memCache ? memCache[key] : fallback;
@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.localStorage.setItem(key, value);
                     return;
                 }
-            } catch (e) {
+            } catch (_e) {
                 // Storage blocked or opaque origin (file:///)
             }
             memCache[key] = String(value);
         }
     };
 
-    // Zero-Trust DOM Sanitizer (Defense-in-depth against XSS, raw innerHTML and protocol hijacking)
+    // Zero-Trust DOM Sanitizer (Defense-in-depth against XSS, raw innerHTML and protocol hijacking via DOMParser)
     const safeSetHTML = (container, htmlString) => {
         if (!container) return;
         container.replaceChildren();
@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
             container.textContent = htmlString || '';
             return;
         }
-        const template = document.createElement('template');
-        template.innerHTML = htmlString;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlString, 'text/html');
         const allowedTags = new Set(['STRONG', 'EM', 'SPAN', 'B', 'I', 'BR', 'A', 'P', 'DIV', 'CODE']);
         const allowedAttrs = new Set(['class', 'href', 'target', 'rel', 'title']);
         const safeUrlPattern = /^(?:(?:https?|mailto|tel):|\/|#)/i;
@@ -76,23 +76,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         };
-        sanitizeNode(template.content);
-        container.appendChild(template.content);
+        sanitizeNode(doc.body);
+        while (doc.body.firstChild) {
+            container.appendChild(doc.body.firstChild);
+        }
     };
 
     // Hoisted module declarations (eliminates Temporal Dead Zone cross-module dependencies)
     let I18nModule = null;
     let ThemeModule = null;
     let TypingModule = null;
-    let ThreeDParticleUniverseModule = null;
-    let NavModule = null;
-    let StatsModule = null;
-    let TerminalModule = null;
-    let ProjectFilterModule = null;
-    let ModalModule = null;
     let ToastModule = null;
-    let ContactFormModule = null;
-    let PrintCvModule = null;
 
     // ==========================================================================
     // 1. DICTIONAR BILINGV (Internationalization - i18n)
@@ -681,7 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 4. NEURAL NETWORK & SYNAPSE UNIVERSE (Adaptive Dark/Light & Mouse Hotspot)
     // ==========================================================================
-    ThreeDParticleUniverseModule = (() => {
+    (() => {
         // isMobile este acum definit mai jos în interior pentru a fi dinamic, nu distrugem canvas-ul
         const container = document.getElementById('canvas-container');
         
@@ -1155,9 +1149,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 5. NAVIGATION, SCROLL PROGRESS & MOBILE DRAWER
     // ==========================================================================
-    NavModule = (() => {
-        const header = document.getElementById('header');
-        const scrollBar = document.getElementById('scrollProgress');
+    (() => {
+                const scrollBar = document.getElementById('scrollProgress');
         const backToTopBtn = document.getElementById('backToTopBtn');
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileDrawer = document.getElementById('mobileDrawer');
@@ -1240,7 +1233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 6. ANIMATED NUMERICAL COUNTERS
     // ==========================================================================
-    StatsModule = (() => {
+    (() => {
         const statsSection = document.querySelector('.about-stats-col');
         if (!statsSection) return;
 
@@ -1280,7 +1273,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 7. TERMINAL CLI & MATRIX RAIN EASTER EGG
     // ==========================================================================
-    TerminalModule = (() => {
+    (() => {
         const input = document.getElementById('terminalInput');
         const output = document.getElementById('terminalOutput');
         const body = document.getElementById('terminalBody');
@@ -1625,7 +1618,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 7.5. PROJECT FILTER MODULE (Varianta A)
     // ==========================================================================
-    ProjectFilterModule = (() => {
+    (() => {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
         if (!filterBtns.length || !projectCards.length) return null;
@@ -1671,7 +1664,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 8. PROJECT DETAILS MODAL
     // ==========================================================================
-    ModalModule = (() => {
+    (() => {
         const modal = document.getElementById('projectModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalBody = document.getElementById('modalBody');
@@ -1959,7 +1952,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 10. SECURE CONTACT FORM (With Honeypot, Validation & Email Delivery)
     // ==========================================================================
-    ContactFormModule = (() => {
+    (() => {
         const form = document.getElementById('contactForm');
         if (!form) return;
 
@@ -2066,7 +2059,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     let errPayload = null;
                     try {
                         errPayload = await response.json();
-                    } catch (_) {
+                    } catch (_err) {
                         errPayload = null;
                     }
 
@@ -2092,7 +2085,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     // Notă: NU apelăm form.reset() pentru ca vizitatorul să nu piardă textul tastat!
                 }
-            } catch (error) {
+            } catch (_error) {
                 // Dacă rețeaua e offline sau blocată de extensii, textul rămâne intact în formular
                 ToastModule.show(
                     lang === 'ro'
@@ -2112,7 +2105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 11. PRINT / DOWNLOAD CV CONTROLLER
     // ==========================================================================
-    PrintCvModule = (() => {
+    (() => {
         const triggers = document.querySelectorAll('.print-cv-trigger, #quickCvBtn');
         triggers.forEach(trigger => {
             trigger.addEventListener('click', () => {

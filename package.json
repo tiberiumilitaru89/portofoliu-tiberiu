@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "gatekeeper": "vite build",
+    "gatekeeper": "eslint . --max-warnings=0 && vite build",
     "preview": "vite preview"
   },
   "repository": {
@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/tiberiumilitaru89/portofoliu-tiberiu#readme",
   "devDependencies": {
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
     "qrcode": "^1.5.4",
     "sharp": "^0.35.4",
     "vite": "^8.3.1"
