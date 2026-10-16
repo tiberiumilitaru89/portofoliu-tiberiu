@@ -1,3 +1,5 @@
+import { TiberiuSwarmEngine } from './swarm/SwarmEngine.js';
+
 "use strict";
 /**
  * script.js - Portofoliu & CV Militaru Tiberiu Nicolae
@@ -863,6 +865,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isPaused && !animId) render();
         });
 
+        // Swarm Engine pause & resume listeners (prevents dual-canvas GPU thrashing)
+        window.addEventListener('swarm:pause-bg', () => {
+            isPaused = true;
+            if (animId) {
+                cancelAnimationFrame(animId);
+                animId = null;
+            }
+        });
+
+        window.addEventListener('swarm:resume-bg', () => {
+            isPaused = false;
+            if (!animId) render();
+        });
+
         // Main Animation Loop
         let frameCount = 0;
         const maxSynapseDist = 135;
@@ -1287,7 +1303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let isMatrixActive = false;
         let matrixAnimId = null;
 
-        const commandsList = ['help', 'services', 'projects', 'skills', 'experience', 'contact', 'cv', 'matrix', 'theme', 'lang', 'clear'];
+        const commandsList = ['help', 'services', 'projects', 'skills', 'experience', 'contact', 'cv', 'matrix', 'theme', 'lang', 'clear', 'swarm', 'supernova'];
 
         const escapeHTML = (str) => String(str).replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;' })[m]);
 
@@ -1399,6 +1415,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     printLine('  <span class="highlight-cyan">matrix</span>     - Toggle secret Matrix rain overlay');
                     printLine('  <span class="highlight-cyan">theme</span>      - Switch dark / light theme');
                     printLine('  <span class="highlight-cyan">lang</span>       - Toggle between RO and EN');
+                    printLine('  <span class="highlight-cyan">swarm</span>      - Launch 3D Neural Swarm Singularity (GPU Heavy)');
+                    printLine('  <span class="highlight-cyan">supernova</span>  - Detonate 3D Architecture directly');
                     printLine('  <span class="highlight-cyan">clear</span>      - Clear terminal window');
                     break;
 
@@ -1464,6 +1482,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'lang':
                     I18nModule.toggle();
                     printLine(`Language switched to: ${I18nModule.getCurrentLang().toUpperCase()}`, 't-sys');
+                    break;
+
+                case 'swarm':
+                case 'supernova':
+                    if (typeof window.launchSwarmSingularity === 'function') {
+                        printLine(window.launchSwarmSingularity(), 't-succ');
+                    } else {
+                        printLine('[SWARM_ENGINE] Initializing 3D Singularity...', 't-succ');
+                    }
                     break;
 
                 case 'clear':
@@ -2134,5 +2161,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     })();
+
+    // ==========================================================================
+    // 12. SWARM 3D NEURAL ENGINE INITIALIZATION
+    // ==========================================================================
+    const swarmEngine = new TiberiuSwarmEngine();
+    swarmEngine.init();
 
 });
