@@ -19,32 +19,38 @@ const UI_TEXT = {
     modalTag: 'AVERTISMENT: SARCINĂ GPU EXTREMĂ',
     modalCode: 'SYS_TEMP_CRITICAL // 0x7F',
     modalTitle: 'Ești pe cale să colapsezi DOM-ul într-o singularitate 3D.',
-    modalDesc:
-      'Acest modul dezactivează site-ul clasic și pornește o simulare fizică WebGL cu zeci de mii de particule, galaxii îndepărtate, rețele neurale și telemetrie în timp real. Dacă ești pe un telefon mai vechi sau ai bateria slabă, o să-ți transforme bateria într-un prăjitor de pâine.',
+    modalDescBase:
+      'Acest modul dezactivează site-ul clasic și pornește o simulare fizică WebGL cu zeci de mii de particule, galaxii îndepărtate, rețele neurale și telemetrie în timp real.',
+    modalDescMobile:
+      ' Dacă ești pe un telefon mai vechi si/sau cu bateria slaba , o sa-ti transforme dispozitiul intr un prajitor de paine :)))))',
     btnCancel: '[ Înapoi la site-ul cuminte ]',
     btnConfirm: '[ Dă-i foc / Detonează ]',
     exitBtn: '◄ ÎNAPOI',
     swarm00Title: '00 SWARM',
-    swarm00Sub: '181 noduri · 7 secțiuni · nimic citit încă',
+    swarm00Sub: '181 noduri · 7 rubrici din site · nimic citit încă',
     ship08Title: '08 SHIP',
-    ship08Sub: '181 noduri citite · 12 validate critic · 0 ghicite',
-    controlsHint: '[DRAG: 360° ORBIT] · [SCROLL/PINCH: ZOOM] · [◄/►: ETAPE] · [SPACE: PAUZĂ] · [ESC: IEȘIRE]'
+    ship08Sub: '181 noduri citite · 7 rubrici sincronizate 1:1 · 0 ghicite',
+    controlsHint:
+      '[DRAG: 360° ORBIT] · [SCROLL/PINCH: ZOOM] · [CLICK STEA/CARD: DETALII & LINK] · [SPACE: PAUZĂ] · [ESC: IEȘIRE]'
   },
   en: {
     btnTitle: 'Launch 3D Neural Architecture (Swarm Engine)',
     modalTag: 'WARNING: EXTREME GPU LOAD',
     modalCode: 'SYS_TEMP_CRITICAL // 0x7F',
     modalTitle: 'You are about to collapse the DOM into a 3D singularity.',
-    modalDesc:
-      'This module deconstructs the standard website into a real-time WebGL simulation with tens of thousands of particles, distant galaxies, neural splines, and live telemetry. On older phones or low battery, this will drain your battery faster than a space heater.',
+    modalDescBase:
+      'This module deconstructs the standard website into a real-time WebGL simulation with tens of thousands of particles, distant galaxies, neural splines, and live telemetry.',
+    modalDescMobile:
+      ' If you are on an older phone and/or with low battery, it will turn your device into a toaster :)))))',
     btnCancel: '[ Stay on safe website ]',
     btnConfirm: '[ Burn the GPU / Detonate ]',
     exitBtn: '◄ BACK',
     swarm00Title: '00 SWARM',
-    swarm00Sub: '181 words · 7 sections · nothing read yet',
+    swarm00Sub: '181 words · 7 site sections · nothing read yet',
     ship08Title: '08 SHIP',
-    ship08Sub: '181 words read · 12 flagged · 0 guessed',
-    controlsHint: '[DRAG: 360° ORBIT] · [SCROLL/PINCH: ZOOM] · [◄/►: STEP] · [SPACE: PAUSE] · [ESC: EXIT]'
+    ship08Sub: '181 words read · 7 sections synced 1:1 · 0 guessed',
+    controlsHint:
+      '[DRAG: 360° ORBIT] · [SCROLL/PINCH: ZOOM] · [CLICK STAR/CARD: DETAILS & LINK] · [SPACE: PAUSE] · [ESC: EXIT]'
   }
 };
 
@@ -107,217 +113,714 @@ const DISTANT_GALAXIES = [
   }
 ];
 
+// Cele 7 Nebuloase mapate 1-la-1 cu rubricile și cardurile din index.html
 const SWARM_CLUSTERS = [
   {
-    id: 'role',
+    id: 'home',
     rgb: [0.176, 0.831, 0.749],
     colorCss: '#2dd4bf',
     targetSelector: '#home',
     pos: { x: -18, y: 11, z: 6 },
     wordCount: 25,
     ro: {
-      tab: 'rol',
-      title: '01 ROL & IDENTITATE',
-      subtitle: 'pentru cine construiește arhitectul · profil tehnic',
+      tab: 'acasă',
+      title: '01 ACASĂ · PROFIL & VIZIUNE',
+      subtitle: 'Militaru Tiberiu Nicolae · IT Consultant · Full-Stack Solutions',
       nodes: [
-        { label: 'Militaru Tiberiu Nicolae', kind: 'owner', dx: -4.5, dy: 3.2, dz: 2, matchKey: 'github' },
-        { label: 'IT Consultant · Full-Stack', kind: 'role', dx: 5.2, dy: 2.4, dz: -2 },
-        { label: '5+ Ani Experiență', kind: 'claim', dx: -6.0, dy: -3.1, dz: 4 },
-        { label: '99.9% Uptime Garantat', kind: 'spec', dx: 6.1, dy: -3.8, dz: 1 },
-        { label: '40% Reducere Timp SQL', kind: 'claim', dx: 1.2, dy: -6.2, dz: -3 },
-        { label: '100% Soluții Dedicate', kind: 'approval', dx: -3.2, dy: 6.0, dz: -2 },
-        { label: 'Analist Programator', kind: 'owner', dx: 7.0, dy: 4.5, dz: 3 }
+        {
+          label: 'Militaru Tiberiu Nicolae',
+          kind: 'owner',
+          dx: -5.2,
+          dy: 3.6,
+          dz: 2.0,
+          matchKey: 'github',
+          desc: 'IT Consultant • Full-Stack Solutions. Transform ideile complexe în soluții digitale sigure, rapide și scalabile.',
+          tags: ['IT Consultant', 'Full-Stack', 'Ploiești / Remote']
+        },
+        {
+          label: 'Soluții Web & Automatizări',
+          kind: 'role',
+          dx: 5.6,
+          dy: 2.8,
+          dz: -2.0,
+          desc: 'Dezvoltare aplicații web moderne, platforme SaaS și automatizări de fluxuri operaționale.',
+          tags: ['Web Apps', 'SaaS', 'Automatizări']
+        },
+        {
+          label: 'Baze de Date & Backend',
+          kind: 'spec',
+          dx: -6.2,
+          dy: -3.2,
+          dz: 3.5,
+          desc: 'Arhitectură relațională SQL/NoSQL, securizare API și optimizare interogări critice.',
+          tags: ['PostgreSQL', 'MS SQL', 'Node.js']
+        },
+        {
+          label: 'Suport IT & Mentenanță',
+          kind: 'approval',
+          dx: 6.2,
+          dy: -3.8,
+          dz: 1.2,
+          desc: 'Consultanță tehnică, audit de infrastructură, depanare hardware/software și SLA garantat.',
+          tags: ['SLA 99.9%', 'RCA Tier 1/2', 'Audit IT']
+        },
+        {
+          label: '5+ Ani · 99.9% Uptime · 100% Dedicat',
+          kind: 'claim',
+          dx: 0.8,
+          dy: -6.2,
+          dz: -2.8,
+          desc: 'Peste 5 ani de experiență în IT, 99.9% uptime pe baze de date și 100% soluții personalizate.',
+          tags: ['5+ Ani IT', '99.9% Uptime', '100% Soluții Dedicate']
+        },
+        {
+          label: 'Solicită o Discuție · CV PDF',
+          kind: 'release',
+          dx: -0.6,
+          dy: 6.2,
+          dz: -2.2,
+          matchKey: 'cv_pdf',
+          desc: 'Inițiază o discuție directă sau descarcă CV-ul complet în format PDF.',
+          tags: ['CV PDF', 'WhatsApp', 'Contact Direct']
+        }
       ]
     },
     en: {
-      tab: 'role',
-      title: '01 ROLE & IDENTITY',
-      subtitle: 'who the architect works for · core profile',
+      tab: 'home',
+      title: '01 HOME · PROFILE & VISION',
+      subtitle: 'Militaru Tiberiu Nicolae · IT Consultant · Full-Stack Solutions',
       nodes: [
-        { label: 'Militaru Tiberiu Nicolae', kind: 'owner', dx: -4.5, dy: 3.2, dz: 2, matchKey: 'github' },
-        { label: 'IT Consultant · Full-Stack', kind: 'role', dx: 5.2, dy: 2.4, dz: -2 },
-        { label: '5+ Years Experience', kind: 'claim', dx: -6.0, dy: -3.1, dz: 4 },
-        { label: '99.9% Guaranteed Uptime', kind: 'spec', dx: 6.1, dy: -3.8, dz: 1 },
-        { label: '40% SQL Query Speedup', kind: 'claim', dx: 1.2, dy: -6.2, dz: -3 },
-        { label: '100% Custom Solutions', kind: 'approval', dx: -3.2, dy: 6.0, dz: -2 },
-        { label: 'Programmer Analyst', kind: 'owner', dx: 7.0, dy: 4.5, dz: 3 }
+        {
+          label: 'Militaru Tiberiu Nicolae',
+          kind: 'owner',
+          dx: -5.2,
+          dy: 3.6,
+          dz: 2.0,
+          matchKey: 'github',
+          desc: 'IT Consultant • Full-Stack Solutions. Turning complex requirements into secure, fast, and scalable digital systems.',
+          tags: ['IT Consultant', 'Full-Stack', 'Ploiesti / Remote']
+        },
+        {
+          label: 'Web Solutions & Automation',
+          kind: 'role',
+          dx: 5.6,
+          dy: 2.8,
+          dz: -2.0,
+          desc: 'Modern web applications, SaaS platforms, and operational workflow automation.',
+          tags: ['Web Apps', 'SaaS', 'Automation']
+        },
+        {
+          label: 'Databases & Backend',
+          kind: 'spec',
+          dx: -6.2,
+          dy: -3.2,
+          dz: 3.5,
+          desc: 'Relational SQL/NoSQL architecture, API hardening, and critical query optimization.',
+          tags: ['PostgreSQL', 'MS SQL', 'Node.js']
+        },
+        {
+          label: 'IT Support & Maintenance',
+          kind: 'approval',
+          dx: 6.2,
+          dy: -3.8,
+          dz: 1.2,
+          desc: 'Technical consulting, infrastructure auditing, hardware/software troubleshooting, and SLA.',
+          tags: ['99.9% SLA', 'Tier 1/2 RCA', 'IT Audit']
+        },
+        {
+          label: '5+ Yrs · 99.9% Uptime · 100% Custom',
+          kind: 'claim',
+          dx: 0.8,
+          dy: -6.2,
+          dz: -2.8,
+          desc: 'Over 5 years of hands-on IT experience, 99.9% database uptime, and 100% tailored solutions.',
+          tags: ['5+ Yrs IT', '99.9% Uptime', '100% Custom']
+        },
+        {
+          label: 'Book a Call · Download CV PDF',
+          kind: 'release',
+          dx: -0.6,
+          dy: 6.2,
+          dz: -2.2,
+          matchKey: 'cv_pdf',
+          desc: 'Start a direct conversation or download the full resume in PDF format.',
+          tags: ['CV PDF', 'WhatsApp', 'Direct Contact']
+        }
       ]
     }
   },
   {
-    id: 'objective',
+    id: 'services',
     rgb: [0.22, 0.741, 0.973],
     colorCss: '#38bdf8',
     targetSelector: '#services',
     pos: { x: -4, y: 17, z: -8 },
-    wordCount: 22,
+    wordCount: 24,
     ro: {
-      tab: 'obiectiv',
-      title: '02 OBIECTIV & SERVICII',
-      subtitle: 'livrabile critice · arhitectură scalabilă',
+      tab: 'servicii',
+      title: '02 SERVICII & SOLUȚII IT',
+      subtitle: 'cele 4 carduri de servicii din site · de la arhitectură la mentenanță',
       nodes: [
-        { label: 'Aplicații Web, MVP & SaaS', kind: 'release', dx: -5.2, dy: 4.0, dz: 2 },
-        { label: 'Baze de Date & Backend Sigur', kind: 'spec', dx: 5.4, dy: 3.1, dz: -2 },
-        { label: 'Sisteme CRM & Automatizări', kind: 'claim', dx: -4.3, dy: -4.8, dz: 3 },
-        { label: 'Consultanță IT & Mentenanță', kind: 'approval', dx: 6.0, dy: -3.2, dz: 1 },
-        { label: 'Diagnosticare RCA Tier 1/2', kind: 'spec', dx: 0.4, dy: 6.2, dz: -4 },
-        { label: 'Optimizare Fluxuri Date', kind: 'release', dx: -6.2, dy: 0.2, dz: -2 }
+        {
+          label: 'Aplicații Web, MVP & Platforme SaaS',
+          kind: 'release',
+          dx: -5.8,
+          dy: 4.1,
+          dz: 2.2,
+          desc: 'Dezvolt aplicații web moderne, rapide și scalabile (React, Next.js, TypeScript), cu arhitectură curată, autentificare securizată și integrare plăți Stripe.',
+          tags: ['React & Next.js', 'MVP Rapid', 'Plăți Stripe', 'UI/UX Responsive']
+        },
+        {
+          label: 'Baze de Date, Arhitectură & Backend Sigur',
+          kind: 'spec',
+          dx: 5.8,
+          dy: 3.4,
+          dz: -2.0,
+          desc: 'Proiectez, optimizez și administrez baze de date relaționale și NoSQL (PostgreSQL, MySQL, MS SQL, Supabase). Elimin blocajele de performanță și asigur integritatea datelor.',
+          tags: ['PostgreSQL / MSSQL', 'Optimizare SQL', 'API REST', 'Backup & Securitate']
+        },
+        {
+          label: 'Sisteme CRM & Automatizări de Procese',
+          kind: 'claim',
+          dx: -5.4,
+          dy: -4.4,
+          dz: 3.0,
+          desc: 'Înlocuiesc fișierele Excel haotice cu aplicații interne personalizate, panouri de control (dashboards), generare automată de documente PDF și raportare în timp real.',
+          tags: ['CRM Custom', 'Generare PDF', 'Dashboards', 'Fluxuri Automate']
+        },
+        {
+          label: 'Consultanță IT, Diagnoză & Mentenanță',
+          kind: 'approval',
+          dx: 5.9,
+          dy: -3.8,
+          dz: 1.4,
+          desc: 'Ofer suport tehnic dedicat (Tier 1/2), diagnosticare Root Cause Analysis (RCA), configurare rețele/sisteme și mentenanță proactivă pentru continuitatea afacerii.',
+          tags: ['Suport Tier 1/2', 'Diagnoză RCA', 'Hardware & Rețea', 'Mentenanță SLA']
+        }
       ]
     },
     en: {
-      tab: 'objective',
-      title: '02 OBJECTIVE & SERVICES',
-      subtitle: 'one release · production-grade deliverables',
+      tab: 'services',
+      title: '02 IT SERVICES & SOLUTIONS',
+      subtitle: 'the 4 service cards from the site · architecture to maintenance',
       nodes: [
-        { label: 'Web Apps, MVP & SaaS', kind: 'release', dx: -5.2, dy: 4.0, dz: 2 },
-        { label: 'Databases & Secure Backend', kind: 'spec', dx: 5.4, dy: 3.1, dz: -2 },
-        { label: 'CRM Systems & Automation', kind: 'claim', dx: -4.3, dy: -4.8, dz: 3 },
-        { label: 'IT Consulting & Maintenance', kind: 'approval', dx: 6.0, dy: -3.2, dz: 1 },
-        { label: 'RCA Diagnostics Tier 1/2', kind: 'spec', dx: 0.4, dy: 6.2, dz: -4 },
-        { label: 'Data Pipeline Optimization', kind: 'release', dx: -6.2, dy: 0.2, dz: -2 }
+        {
+          label: 'Web Apps, MVP & SaaS Platforms',
+          kind: 'release',
+          dx: -5.8,
+          dy: 4.1,
+          dz: 2.2,
+          desc: 'Building fast, scalable modern web apps (React, Next.js, TypeScript) with clean architecture, secure auth, and Stripe billing integration.',
+          tags: ['React & Next.js', 'Rapid MVP', 'Stripe Billing', 'Responsive UI/UX']
+        },
+        {
+          label: 'Databases, Architecture & Secure Backend',
+          kind: 'spec',
+          dx: 5.8,
+          dy: 3.4,
+          dz: -2.0,
+          desc: 'Designing, tuning, and administering relational and NoSQL databases (PostgreSQL, MySQL, MS SQL, Supabase) with high availability and integrity.',
+          tags: ['PostgreSQL / MSSQL', 'SQL Tuning', 'REST APIs', 'Backup & Security']
+        },
+        {
+          label: 'CRM Systems & Process Automation',
+          kind: 'claim',
+          dx: -5.4,
+          dy: -4.4,
+          dz: 3.0,
+          desc: 'Replacing chaotic spreadsheets with custom internal tools, live dashboards, automated PDF generation, and real-time reporting.',
+          tags: ['Custom CRM', 'PDF Generation', 'Dashboards', 'Automated Flows']
+        },
+        {
+          label: 'IT Consulting, Diagnostics & Maintenance',
+          kind: 'approval',
+          dx: 5.9,
+          dy: -3.8,
+          dz: 1.4,
+          desc: 'Dedicated Tier 1/2 technical support, Root Cause Analysis (RCA) diagnostics, network/system setup, and proactive SLA maintenance.',
+          tags: ['Tier 1/2 Support', 'RCA Diagnostics', 'Hardware & Net', 'SLA Maintenance']
+        }
       ]
     }
   },
   {
-    id: 'context',
-    rgb: [0.984, 0.443, 0.522],
-    colorCss: '#fb7185',
-    targetSelector: '#skills',
+    id: 'about',
+    rgb: [0.29, 0.871, 0.502],
+    colorCss: '#4ade80',
+    targetSelector: '#about',
     pos: { x: 22, y: 9, z: -4 },
-    wordCount: 35,
+    wordCount: 25,
     ro: {
-      tab: 'context',
-      title: '03 CONTEXT & STACK TEHNIC',
-      subtitle: 'surse · motoare de execuție · infrastructură',
+      tab: 'despre mine',
+      title: '03 DESPRE MINE · VIZIUNE & METRICI',
+      subtitle: 'cardurile și statisticile din rubrica Despre Mine (#about)',
       nodes: [
-        { label: 'React 19 · Next.js 16', kind: 'file', dx: -5.0, dy: 4.1, dz: 3 },
-        { label: 'TypeScript · ES6+ Vanilla', kind: 'spec', dx: 6.1, dy: 3.0, dz: -1 },
-        { label: 'Node.js · Express · PHP', kind: 'claim', dx: -6.2, dy: -4.0, dz: 2 },
-        { label: 'PostgreSQL · MySQL · MS SQL', kind: 'file', dx: 5.3, dy: -5.1, dz: -3 },
-        { label: 'Turso LibSQL · Drizzle ORM', kind: 'spec', dx: 0.0, dy: 6.2, dz: 4 },
-        { label: 'Supabase · Firestore Tx', kind: 'approval', dx: 7.1, dy: 0.2, dz: 2 },
-        { label: 'WebGL Shaders · Vite 8', kind: 'file', dx: -4.2, dy: -1.8, dz: -5 }
+        {
+          label: 'Orientat pe Rezultate',
+          kind: 'rule',
+          dx: -5.4,
+          dy: 4.2,
+          dz: 2.5,
+          desc: 'Fiecare linie de cod și fiecare interogare SQL sunt scrise cu un scop clar: viteză, securitate și valoare măsurabilă pentru afacerea ta.',
+          tags: ['Performanță', 'Securitate', 'Valoare Măsurabilă']
+        },
+        {
+          label: 'Comunicare Transparentă',
+          kind: 'approval',
+          dx: 5.8,
+          dy: 3.4,
+          dz: -1.8,
+          desc: 'Fără jargon tehnic inutil. Explic soluțiile pe înțelesul tău, ofer estimări reale și te țin la curent în fiecare etapă a proiectului.',
+          tags: ['Fără Jargon', 'Estimări Reale', 'Transparență']
+        },
+        {
+          label: '5+ Ani Experiență IT',
+          kind: 'claim',
+          dx: -6.2,
+          dy: -3.8,
+          dz: 2.2,
+          desc: 'Peste 5 ani de experiență continuă în suport tehnic, digitalizare, administrare baze de date și dezvoltare Full-Stack.',
+          tags: ['5+ Ani', 'Full-Stack', 'Enterprise IT']
+        },
+        {
+          label: '99.9% Uptime Baze de Date',
+          kind: 'spec',
+          dx: 5.5,
+          dy: -4.6,
+          dz: -2.4,
+          desc: 'Disponibilitate critică asigurată prin monitorizare proactivă, indecși optimizați și politici stricte de backup & recovery.',
+          tags: ['99.9% Uptime', 'Zero Data Loss', 'High Availability']
+        },
+        {
+          label: '40% Reducere Timp SQL',
+          kind: 'claim',
+          dx: 0.2,
+          dy: 6.2,
+          dz: 3.4,
+          desc: 'Optimizare demonstrată a timpilor de răspuns la interogări complexe și raportări prin refactoring SQL și indexare.',
+          tags: ['-40% Query Time', 'SQL Tuning', 'Indexare']
+        },
+        {
+          label: '15+ Tehnologii & Limbaje',
+          kind: 'file',
+          dx: -0.4,
+          dy: -6.2,
+          dz: -3.2,
+          desc: 'Ecosistem tehnic complet: JavaScript/TypeScript, React, Next.js, Node.js, SQL, Python, PHP, C++ și infrastructură cloud.',
+          tags: ['15+ Tehnologii', 'Frontend & Backend', 'Cloud & DevOps']
+        }
       ]
     },
     en: {
-      tab: 'context',
-      title: '03 CONTEXT & TECH STACK',
-      subtitle: 'sources · files · runtime infrastructure',
+      tab: 'about me',
+      title: '03 ABOUT ME · VISION & METRICS',
+      subtitle: 'highlights and metric cards from About Me (#about)',
       nodes: [
-        { label: 'React 19 · Next.js 16', kind: 'file', dx: -5.0, dy: 4.1, dz: 3 },
-        { label: 'TypeScript · ES6+ Vanilla', kind: 'spec', dx: 6.1, dy: 3.0, dz: -1 },
-        { label: 'Node.js · Express · PHP', kind: 'claim', dx: -6.2, dy: -4.0, dz: 2 },
-        { label: 'PostgreSQL · MySQL · MS SQL', kind: 'file', dx: 5.3, dy: -5.1, dz: -3 },
-        { label: 'Turso LibSQL · Drizzle ORM', kind: 'spec', dx: 0.0, dy: 6.2, dz: 4 },
-        { label: 'Supabase · Firestore Tx', kind: 'approval', dx: 7.1, dy: 0.2, dz: 2 },
-        { label: 'WebGL Shaders · Vite 8', kind: 'file', dx: -4.2, dy: -1.8, dz: -5 }
+        {
+          label: 'Results-Driven Engineering',
+          kind: 'rule',
+          dx: -5.4,
+          dy: 4.2,
+          dz: 2.5,
+          desc: 'Every line of code and SQL query is written with a clear goal: speed, security, and measurable business value.',
+          tags: ['Performance', 'Security', 'Measurable ROI']
+        },
+        {
+          label: 'Transparent Communication',
+          kind: 'approval',
+          dx: 5.8,
+          dy: 3.4,
+          dz: -1.8,
+          desc: 'No unnecessary jargon. Clear explanations, realistic estimates, and transparent progress updates at every stage.',
+          tags: ['Clear Comms', 'Realistic Estimates', 'Transparency']
+        },
+        {
+          label: '5+ Years IT Experience',
+          kind: 'claim',
+          dx: -6.2,
+          dy: -3.8,
+          dz: 2.2,
+          desc: 'Over 5 years of continuous experience across IT support, digitalization, database administration, and Full-Stack development.',
+          tags: ['5+ Years', 'Full-Stack', 'Enterprise IT']
+        },
+        {
+          label: '99.9% Database Uptime',
+          kind: 'spec',
+          dx: 5.5,
+          dy: -4.6,
+          dz: -2.4,
+          desc: 'Mission-critical availability backed by proactive monitoring, tuned indexes, and strict backup & recovery policies.',
+          tags: ['99.9% Uptime', 'Zero Data Loss', 'High Availability']
+        },
+        {
+          label: '40% SQL Query Speedup',
+          kind: 'claim',
+          dx: 0.2,
+          dy: 6.2,
+          dz: 3.4,
+          desc: 'Proven reduction in complex query and reporting execution times through SQL refactoring and indexing.',
+          tags: ['-40% Query Time', 'SQL Tuning', 'Indexing']
+        },
+        {
+          label: '15+ Technologies & Languages',
+          kind: 'file',
+          dx: -0.4,
+          dy: -6.2,
+          dz: -3.2,
+          desc: 'Full technical stack: JavaScript/TypeScript, React, Next.js, Node.js, SQL, Python, PHP, C++, and cloud tooling.',
+          tags: ['15+ Technologies', 'Frontend & Backend', 'Cloud & DevOps']
+        }
       ]
     }
   },
   {
-    id: 'roles',
+    id: 'projects',
     rgb: [0.98, 0.8, 0.082],
     colorCss: '#facc15',
     targetSelector: '#projects',
     pos: { x: 16, y: -11, z: 8 },
     wordCount: 42,
     ro: {
-      tab: 'proiecte',
-      title: '04 PROIECTE ÎN PRODUCȚIE',
-      subtitle: 'cinci arhitecturi majore · studii de caz reale',
+      tab: 'portofoliu',
+      title: '04 PORTOFOLIU · PROIECTE ÎN PRODUCȚIE',
+      subtitle: 'cele 5 proiecte din site · click pe [↗ LIVE] / [↗ GITHUB] sau pe card',
       nodes: [
-        { label: 'Instalbloc.ro (CRM & SLA 96h)', kind: 'owner', dx: -6.1, dy: 4.2, dz: 2, matchKey: 'instalbloc' },
-        { label: 'Viziune Urbană Ploiești (Civic)', kind: 'file', dx: 6.2, dy: 3.1, dz: -2, matchKey: 'viziune' },
-        { label: 'CV Builder Pro & ATS Analyzer', kind: 'spec', dx: -5.2, dy: -5.0, dz: 4, matchKey: 'cv builder' },
-        { label: 'E-Commerce Florărie (Live Chat)', kind: 'claim', dx: 5.4, dy: -4.2, dz: 1, matchKey: 'florărie' },
-        { label: 'Universal 3D Engine Portfolio', kind: 'file', dx: 0.0, dy: 6.3, dz: -3, matchKey: 'portofoliu tiberiu' },
-        { label: 'Stripe Webhook Idempotency', kind: 'approval', dx: 7.0, dy: -1.0, dz: -4, matchKey: 'cv builder' },
-        { label: 'Puppeteer PDF Microservice', kind: 'spec', dx: -7.1, dy: 0.2, dz: -2, matchKey: 'cv builder' }
+        {
+          label: 'Aplicație CRM & Gestiune Servicii (Instalbloc)',
+          kind: 'release',
+          dx: -6.8,
+          dy: 4.5,
+          dz: 2.4,
+          matchKey: 'instalbloc',
+          desc: 'Platformă B2B pentru digitalizarea asociațiilor de proprietari și a firmelor de instalații. Automatizează raportarea avariilor cu SLA 96h, devizele și evidența lucrărilor.',
+          tags: ['Next.js 16', 'Turso LibSQL', 'Drizzle ORM', 'HMAC Auth', 'Vercel']
+        },
+        {
+          label: 'Platformă Civică & Audit Urban (Viziune Urbană Ploiești)',
+          kind: 'file',
+          dx: 6.8,
+          dy: 4.1,
+          dz: -2.0,
+          matchKey: 'viziune',
+          desc: 'Platformă interactivă de raportare civică și monitorizare a infrastructurii urbane, cu hartă dinamică, clasificare sesizări și panou transparent de audit.',
+          tags: ['React 19', 'TypeScript', 'Hărți Interactive', 'Civic Tech']
+        },
+        {
+          label: 'CV Builder Pro & ATS Analyzer (SaaS)',
+          kind: 'spec',
+          dx: -6.4,
+          dy: -4.8,
+          dz: 3.6,
+          matchKey: 'cv builder',
+          desc: 'Aplicație SaaS completă pentru crearea CV-urilor optimizate ATS, cu scor de compatibilitate în timp real, export PDF prin microserviciu Puppeteer și plăți Stripe.',
+          tags: ['React', 'Firebase / Firestore', 'Stripe Webhooks', 'Puppeteer PDF']
+        },
+        {
+          label: 'Magazin Online cu Chat Live (Florărie)',
+          kind: 'claim',
+          dx: 6.4,
+          dy: -4.6,
+          dz: 1.5,
+          matchKey: 'florărie',
+          desc: 'Sistem e-commerce complet cu gestiune stocuri în timp real, coș de cumpărături, panou de administrare comenzi și suport clienți prin chat live WebSockets.',
+          tags: ['Node.js', 'WebSockets', 'MySQL', 'E-Commerce', 'Cod Privat (Client)']
+        },
+        {
+          label: 'Portofoliu Tiberiu & Universal 3D Engine',
+          kind: 'owner',
+          dx: 0.0,
+          dy: 6.6,
+          dz: -3.0,
+          matchKey: 'portofoliu tiberiu',
+          desc: 'Platforma curentă: arhitectură Vanilla Vite ultra-rapidă, conformă Strict CSP (Zero-innerHTML), cu emulator CLI și motor WebGL 3D Neural Swarm.',
+          tags: ['Vanilla ES6+', 'WebGL Shaders', 'Strict CSP', 'Vite 8']
+        }
       ]
     },
     en: {
-      tab: 'projects',
-      title: '04 PRODUCTION PROJECTS',
-      subtitle: 'five flagship systems · verified case studies',
+      tab: 'portfolio',
+      title: '04 PORTFOLIO · PRODUCTION PROJECTS',
+      subtitle: 'the 5 site projects · click [↗ LIVE] / [↗ GITHUB] or card to open',
       nodes: [
-        { label: 'Instalbloc.ro (CRM & 96h SLA)', kind: 'owner', dx: -6.1, dy: 4.2, dz: 2, matchKey: 'instalbloc' },
-        { label: 'Viziune Urbana Ploiesti (Civic)', kind: 'file', dx: 6.2, dy: 3.1, dz: -2, matchKey: 'viziune' },
-        { label: 'CV Builder Pro & ATS Analyzer', kind: 'spec', dx: -5.2, dy: -5.0, dz: 4, matchKey: 'cv builder' },
-        { label: 'E-Commerce Flower Shop (WS)', kind: 'claim', dx: 5.4, dy: -4.2, dz: 1, matchKey: 'florărie' },
-        { label: 'Universal 3D Engine Portfolio', kind: 'file', dx: 0.0, dy: 6.3, dz: -3, matchKey: 'portofoliu tiberiu' },
-        { label: 'Stripe Webhook Idempotency', kind: 'approval', dx: 7.0, dy: -1.0, dz: -4, matchKey: 'cv builder' },
-        { label: 'Puppeteer PDF Microservice', kind: 'spec', dx: -7.1, dy: 0.2, dz: -2, matchKey: 'cv builder' }
+        {
+          label: 'CRM & Service Management App (Instalbloc)',
+          kind: 'release',
+          dx: -6.8,
+          dy: 4.5,
+          dz: 2.4,
+          matchKey: 'instalbloc',
+          desc: 'B2B platform digitizing homeowner associations and installation companies. Automates 96h SLA incident tracking, estimates, and work logs.',
+          tags: ['Next.js 16', 'Turso LibSQL', 'Drizzle ORM', 'HMAC Auth', 'Vercel']
+        },
+        {
+          label: 'Civic Platform & Urban Audit (Viziune Urbana Ploiesti)',
+          kind: 'file',
+          dx: 6.8,
+          dy: 4.1,
+          dz: -2.0,
+          matchKey: 'viziune',
+          desc: 'Interactive civic reporting and urban infrastructure monitoring platform with dynamic mapping, issue tracking, and public audit dashboard.',
+          tags: ['React 19', 'TypeScript', 'Interactive Maps', 'Civic Tech']
+        },
+        {
+          label: 'CV Builder Pro & ATS Analyzer (SaaS)',
+          kind: 'spec',
+          dx: -6.4,
+          dy: -4.8,
+          dz: 3.6,
+          matchKey: 'cv builder',
+          desc: 'Full SaaS application for building ATS-optimized resumes with live compatibility scoring, Puppeteer microservice PDF export, and Stripe billing.',
+          tags: ['React', 'Firebase / Firestore', 'Stripe Webhooks', 'Puppeteer PDF']
+        },
+        {
+          label: 'E-Commerce Store with Live Chat (Flower Shop)',
+          kind: 'claim',
+          dx: 6.4,
+          dy: -4.6,
+          dz: 1.5,
+          matchKey: 'florărie',
+          desc: 'Complete e-commerce system featuring real-time inventory management, shopping cart, order admin panel, and live WebSocket customer chat.',
+          tags: ['Node.js', 'WebSockets', 'MySQL', 'E-Commerce', 'Private Client Code']
+        },
+        {
+          label: 'Tiberiu Portfolio & Universal 3D Engine',
+          kind: 'owner',
+          dx: 0.0,
+          dy: 6.6,
+          dz: -3.0,
+          matchKey: 'portofoliu tiberiu',
+          desc: 'This platform: ultra-fast Vanilla Vite architecture, Strict CSP compliant (Zero-innerHTML), interactive CLI, and native WebGL 3D Neural Swarm.',
+          tags: ['Vanilla ES6+', 'WebGL Shaders', 'Strict CSP', 'Vite 8']
+        }
       ]
     }
   },
   {
-    id: 'rules',
-    rgb: [0.29, 0.871, 0.502],
-    colorCss: '#4ade80',
-    targetSelector: '#about',
+    id: 'skills',
+    rgb: [0.984, 0.443, 0.522],
+    colorCss: '#fb7185',
+    targetSelector: '#skills',
     pos: { x: -20, y: -9, z: -5 },
-    wordCount: 25,
+    wordCount: 33,
     ro: {
-      tab: 'reguli',
-      title: '05 REGULI & SECURITATE',
-      subtitle: 'verifică · izolează · blochează · raportează',
+      tab: 'competențe',
+      title: '05 COMPETENȚE & ARSENAL TEHNIC',
+      subtitle: 'cele 4 carduri de competențe + limbi străine din #skills',
       nodes: [
-        { label: 'Strict CSP (No Unsafe-Inline)', kind: 'rule', dx: -5.1, dy: 4.0, dz: 2 },
-        { label: 'Zero-Trust DOM (DOMParser)', kind: 'approval', dx: 5.2, dy: 3.1, dz: -2 },
-        { label: 'HMAC-SHA256 timingSafeEqual', kind: 'spec', dx: -6.0, dy: -4.2, dz: 3 },
-        { label: 'Zero-Any TypeScript Strict', kind: 'rule', dx: 6.1, dy: -3.0, dz: 1 },
-        { label: 'Gatekeeper Barrier (0 Warnings)', kind: 'approval', dx: 0.0, dy: 6.1, dz: -3 },
-        { label: 'OKF SSOT Governance', kind: 'claim', dx: -3.2, dy: -6.0, dz: -2 }
+        {
+          label: 'Dezvoltare Frontend & UI',
+          kind: 'file',
+          dx: -5.6,
+          dy: 4.1,
+          dz: 2.5,
+          desc: 'Construiesc interfețe rapide, responsive și accesibile: HTML5/CSS3 (95%), JavaScript ES6+/TypeScript (90%), React & Next.js (85%), Tailwind & Bootstrap (90%).',
+          tags: ['HTML5 & CSS3 (95%)', 'JS ES6+ / TS (90%)', 'React & Next.js (85%)', 'Tailwind (90%)']
+        },
+        {
+          label: 'Backend & Baze de Date',
+          kind: 'spec',
+          dx: 5.8,
+          dy: 3.4,
+          dz: -2.0,
+          desc: 'Arhitectură server-side și gestiune date: SQL PostgreSQL/MySQL/MS SQL (90%), Node.js & Express (85%), PHP & Python (80%), Supabase/Firebase/Turso (85%).',
+          tags: ['SQL: PG / MySQL / MSSQL (90%)', 'Node.js & Express (85%)', 'PHP & Python (80%)', 'Supabase / Turso (85%)']
+        },
+        {
+          label: 'Hardware, Suport & Mentenanță',
+          kind: 'approval',
+          dx: -5.8,
+          dy: -4.2,
+          dz: 2.8,
+          desc: 'Diagnosticare și asamblare PC/Laptop (95%), Administrare Windows/Linux/Server (90%), Rețelistică LAN/WAN/VPN/Routing (85%), Securitate & Backup (90%).',
+          tags: ['Diagnoză PC/Laptop (95%)', 'Win / Linux Server (90%)', 'Rețelistică VPN (85%)', 'Backup & Security (90%)']
+        },
+        {
+          label: 'DevOps, Limbaje OOP & Unelte',
+          kind: 'rule',
+          dx: 5.8,
+          dy: -4.0,
+          dz: -1.8,
+          desc: 'Ecosistem complet de inginerie software: Git & GitHub, C/C++, Java (OOP), RESTful APIs, Postman, Linux CLI, Vercel, Docker și ERP/CRM Systems.',
+          tags: ['Git & GitHub', 'C/C++ & Java OOP', 'REST APIs', 'Docker & Vercel', 'ERP / CRM']
+        },
+        {
+          label: 'Limbi Străine: RO · EN (C1) · DE (B2)',
+          kind: 'claim',
+          dx: 0.0,
+          dy: 6.1,
+          dz: -3.2,
+          desc: 'Comunicare tehnică și de business: Română (Limbă Maternă), Engleză (C1 — Utilizator Experimentat), Germană (B2 — Utilizator Independent).',
+          tags: ['Română (Nativ)', 'Engleză (C1 Avansat)', 'Germană (B2 Intermediar)']
+        }
       ]
     },
     en: {
-      tab: 'rules',
-      title: '05 RULES & SECURITY',
-      subtitle: 'verify · sanitize · enforce · report',
+      tab: 'skills',
+      title: '05 SKILLS & TECHNICAL ARSENAL',
+      subtitle: 'the 4 skill category cards + languages from #skills',
       nodes: [
-        { label: 'Strict CSP (No Unsafe-Inline)', kind: 'rule', dx: -5.1, dy: 4.0, dz: 2 },
-        { label: 'Zero-Trust DOM (DOMParser)', kind: 'approval', dx: 5.2, dy: 3.1, dz: -2 },
-        { label: 'HMAC-SHA256 timingSafeEqual', kind: 'spec', dx: -6.0, dy: -4.2, dz: 3 },
-        { label: 'Zero-Any TypeScript Strict', kind: 'rule', dx: 6.1, dy: -3.0, dz: 1 },
-        { label: 'Gatekeeper Barrier (0 Warnings)', kind: 'approval', dx: 0.0, dy: 6.1, dz: -3 },
-        { label: 'OKF SSOT Governance', kind: 'claim', dx: -3.2, dy: -6.0, dz: -2 }
+        {
+          label: 'Frontend & UI Development',
+          kind: 'file',
+          dx: -5.6,
+          dy: 4.1,
+          dz: 2.5,
+          desc: 'Fast, responsive, accessible interfaces: HTML5/CSS3 (95%), JavaScript ES6+/TypeScript (90%), React & Next.js (85%), Tailwind & Bootstrap (90%).',
+          tags: ['HTML5 & CSS3 (95%)', 'JS ES6+ / TS (90%)', 'React & Next.js (85%)', 'Tailwind (90%)']
+        },
+        {
+          label: 'Backend & Databases',
+          kind: 'spec',
+          dx: 5.8,
+          dy: 3.4,
+          dz: -2.0,
+          desc: 'Server-side & data engineering: SQL PostgreSQL/MySQL/MS SQL (90%), Node.js & Express (85%), PHP & Python (80%), Supabase/Firebase/Turso (85%).',
+          tags: ['SQL: PG / MySQL / MSSQL (90%)', 'Node.js & Express (85%)', 'PHP & Python (80%)', 'Supabase / Turso (85%)']
+        },
+        {
+          label: 'Hardware, Support & Maintenance',
+          kind: 'approval',
+          dx: -5.8,
+          dy: -4.2,
+          dz: 2.8,
+          desc: 'PC/Laptop Diagnostics & Assembly (95%), Windows/Linux/Server Admin (90%), LAN/WAN/VPN Networking (85%), Security & Backup (90%).',
+          tags: ['PC Diagnostics (95%)', 'Win / Linux Server (90%)', 'VPN Networking (85%)', 'Backup & Security (90%)']
+        },
+        {
+          label: 'DevOps, OOP Languages & Tooling',
+          kind: 'rule',
+          dx: 5.8,
+          dy: -4.0,
+          dz: -1.8,
+          desc: 'Software engineering ecosystem: Git & GitHub, C/C++, Java (OOP), RESTful APIs, Postman, Linux CLI, Vercel, Docker, and ERP/CRM Systems.',
+          tags: ['Git & GitHub', 'C/C++ & Java OOP', 'REST APIs', 'Docker & Vercel', 'ERP / CRM']
+        },
+        {
+          label: 'Languages: RO · EN (C1) · DE (B2)',
+          kind: 'claim',
+          dx: 0.0,
+          dy: 6.1,
+          dz: -3.2,
+          desc: 'Technical and business fluency: Romanian (Native), English (C1 — Proficient User), German (B2 — Independent User).',
+          tags: ['Romanian (Native)', 'English (C1 Advanced)', 'German (B2 Intermediate)']
+        }
       ]
     }
   },
   {
-    id: 'review',
+    id: 'experience',
     rgb: [0.655, 0.545, 0.98],
     colorCss: '#a78bfa',
     targetSelector: '#experience',
     pos: { x: -2, y: -17, z: 5 },
     wordCount: 18,
     ro: {
-      tab: 'parcurs',
-      title: '06 PARCURS & CREDENȚIALE',
-      subtitle: 'fiecare afirmație este trasabilă în producție?',
+      tab: 'experiență',
+      title: '06 EXPERIENȚĂ & EDUCAȚIE',
+      subtitle: 'cele 5 carduri cronologice din rubrica Experiență (#experience)',
       nodes: [
-        { label: 'DBA @ Corpul Experților (2026)', kind: 'owner', dx: -5.1, dy: 3.2, dz: 2 },
-        { label: 'Digitalizare @ SIATI SRL (6 ani)', kind: 'claim', dx: 6.0, dy: 2.1, dz: -2 },
-        { label: 'IT Support Tier 1/2 @ GFR', kind: 'claim', dx: -4.2, dy: -5.0, dz: 3 },
-        { label: 'Analist Programator @ Elie Radu', kind: 'approval', dx: 5.1, dy: -4.1, dz: 1 },
-        { label: 'Master Management @ Bioterra', kind: 'approval', dx: 0.0, dy: 5.3, dz: -3 }
+        {
+          label: 'Administrator Baze de Date (DBA) · Corpul Experților',
+          kind: 'owner',
+          dx: -5.6,
+          dy: 3.6,
+          dz: 2.2,
+          desc: '2026 - Prezent: Administrare, optimizare și securizare baze de date, automatizare raportări SQL și asigurarea integrității și disponibilității datelor.',
+          tags: ['DBA', 'SQL Tuning', 'Securitate Date', '2026 - Prezent']
+        },
+        {
+          label: 'Asistent Manager & Coordonator Digitalizare · SIATI SRL',
+          kind: 'claim',
+          dx: 5.8,
+          dy: 2.6,
+          dz: -2.0,
+          desc: '2018 - 2024 (6 ani): Coordonarea proceselor de digitalizare, implementare soluții ERP/CRM, gestiune baze de date clienți și optimizare fluxuri operaționale.',
+          tags: ['Digitalizare', 'ERP / CRM', 'Gestiune Date', '2018 - 2024']
+        },
+        {
+          label: 'Tehnician IT (Suport Nivel 1 și 2) · GFR',
+          kind: 'spec',
+          dx: -4.8,
+          dy: -4.8,
+          dz: 3.0,
+          desc: 'Grup Feroviar Român: Suport tehnic hardware/software pentru infrastructură critică, depanare rețele, configurare stații de lucru și rezolvare tichete SLA.',
+          tags: ['IT Support Tier 1/2', 'Rețelistică', 'Hardware', 'Grup Feroviar Român']
+        },
+        {
+          label: 'Studii Analist Programator (Nivel 5) · Colegiul „Elie Radu”',
+          kind: 'approval',
+          dx: 5.4,
+          dy: -4.2,
+          dz: 1.2,
+          desc: '2024 - 2026: Specializare postliceală în proiectarea algoritmilor, baze de date relaționale, programare orientată pe obiecte (OOP) și dezvoltare software.',
+          tags: ['Analist Programator', 'Algoritmi & OOP', 'Baze de Date', '2024 - 2026']
+        },
+        {
+          label: 'Master & Licență în Management · Univ. Bioterra',
+          kind: 'approval',
+          dx: 0.0,
+          dy: 5.8,
+          dz: -3.0,
+          desc: 'Formare academică în management organizațional, analiză economică, gestiunea proiectelor și optimizarea resurselor.',
+          tags: ['Master Management', 'Inginerie Economică', 'Project Management']
+        }
       ]
     },
     en: {
-      tab: 'review',
-      title: '06 CAREER & CREDENTIALS',
-      subtitle: 'does every claim trace to real experience?',
+      tab: 'experience',
+      title: '06 EXPERIENCE & EDUCATION',
+      subtitle: 'the 5 timeline cards from Experience & Education (#experience)',
       nodes: [
-        { label: 'DBA @ Corpul Expertilor (2026)', kind: 'owner', dx: -5.1, dy: 3.2, dz: 2 },
-        { label: 'Digitalization @ SIATI (6 yrs)', kind: 'claim', dx: 6.0, dy: 2.1, dz: -2 },
-        { label: 'IT Support Tier 1/2 @ GFR', kind: 'claim', dx: -4.2, dy: -5.0, dz: 3 },
-        { label: 'Programmer Analyst @ Elie Radu', kind: 'approval', dx: 5.1, dy: -4.1, dz: 1 },
-        { label: 'MSc Management @ Bioterra', kind: 'approval', dx: 0.0, dy: 5.3, dz: -3 }
+        {
+          label: 'Database Administrator (DBA) · Corpul Expertilor',
+          kind: 'owner',
+          dx: -5.6,
+          dy: 3.6,
+          dz: 2.2,
+          desc: '2026 - Present: Database administration, query tuning, security hardening, automated SQL reporting, and high-availability data governance.',
+          tags: ['DBA', 'SQL Tuning', 'Data Security', '2026 - Present']
+        },
+        {
+          label: 'Assistant Manager & Digitalization Coordinator · SIATI',
+          kind: 'claim',
+          dx: 5.8,
+          dy: 2.6,
+          dz: -2.0,
+          desc: '2018 - 2024 (6 yrs): Led company digitalization, ERP/CRM implementation, client database management, and operational workflow automation.',
+          tags: ['Digitalization', 'ERP / CRM', 'Data Management', '2018 - 2024']
+        },
+        {
+          label: 'IT Technician (Tier 1 & 2 Support) · GFR',
+          kind: 'spec',
+          dx: -4.8,
+          dy: -4.8,
+          dz: 3.0,
+          desc: 'Grup Feroviar Roman: Hardware/software technical support for critical infrastructure, network troubleshooting, workstation setup, and SLA ticketing.',
+          tags: ['Tier 1/2 Support', 'Networking', 'Hardware', 'Critical Infra']
+        },
+        {
+          label: 'Programmer Analyst Studies (Level 5) · Elie Radu College',
+          kind: 'approval',
+          dx: 5.4,
+          dy: -4.2,
+          dz: 1.2,
+          desc: '2024 - 2026: Advanced specialization in algorithm design, relational databases, object-oriented programming (OOP), and software development.',
+          tags: ['Programmer Analyst', 'Algorithms & OOP', 'Databases', '2024 - 2026']
+        },
+        {
+          label: 'MSc & BSc in Management · Bioterra University',
+          kind: 'approval',
+          dx: 0.0,
+          dy: 5.8,
+          dz: -3.0,
+          desc: 'Academic degree in organizational management, economic analysis, project management, and resource optimization.',
+          tags: ['MSc Management', 'Economic Engineering', 'Project Management']
+        }
       ]
     }
   },
   {
-    id: 'start',
+    id: 'contact',
     rgb: [0.984, 0.573, 0.235],
     colorCss: '#fb923c',
     targetSelector: '#contact',
@@ -325,26 +828,134 @@ const SWARM_CLUSTERS = [
     wordCount: 14,
     ro: {
       tab: 'contact',
-      title: '07 INIȚIERE & CONTACT',
-      subtitle: 'cel mai rapid canal de execuție primul',
+      title: '07 CONTACT & CANALE DIRECTE',
+      subtitle: 'toate canalele din rubrica Contact (#contact) · click pentru acțiune',
       nodes: [
-        { label: 'WhatsApp: +40 720 955 119', kind: 'release', dx: -5.0, dy: 3.1, dz: 2, matchKey: 'whatsapp' },
-        { label: 'contact@tiberiumilitaru.ro', kind: 'owner', dx: 5.2, dy: 3.0, dz: -1, matchKey: 'email' },
-        { label: 'Terminal CLI v3.0 Interactive', kind: 'spec', dx: -4.1, dy: -4.2, dz: 3 },
-        { label: 'CV-Militaru-Tiberiu.pdf', kind: 'file', dx: 5.0, dy: -4.0, dz: -2, matchKey: 'cv_pdf' },
-        { label: 'LinkedIn · GitHub Repositories', kind: 'approval', dx: 0.0, dy: 5.2, dz: -3, matchKey: 'linkedin' }
+        {
+          label: 'WhatsApp Direct: +40 720 955 119',
+          kind: 'release',
+          dx: -5.4,
+          dy: 3.4,
+          dz: 2.2,
+          matchKey: 'whatsapp',
+          desc: 'Canalul cel mai rapid pentru discuții tehnice, estimări de proiect sau urgențe IT.',
+          tags: ['WhatsApp Instant', '+40 720 955 119', 'Răspuns Rapid']
+        },
+        {
+          label: 'Telefon: +40 720 955 119',
+          kind: 'owner',
+          dx: 5.6,
+          dy: 3.2,
+          dz: -1.4,
+          matchKey: 'phone',
+          desc: 'Apel telefonic direct pentru consultanță IT, arhitectură software și suport.',
+          tags: ['Apel Direct', '+40 720 955 119', 'Ploiești / Remote']
+        },
+        {
+          label: 'Email: contact@tiberiumilitaru.ro',
+          kind: 'spec',
+          dx: -5.2,
+          dy: -4.2,
+          dz: 2.8,
+          matchKey: 'email',
+          desc: 'Trimite specificațiile proiectului sau solicitarea de ofertă pe adresa oficială.',
+          tags: ['contact@tiberiumilitaru.ro', 'Ofertă Tehnică', 'B2B / B2C']
+        },
+        {
+          label: 'Descarcă CV Complet (PDF)',
+          kind: 'file',
+          dx: 5.4,
+          dy: -4.0,
+          dz: -2.0,
+          matchKey: 'cv_pdf',
+          desc: 'Versiunea oficială PDF a CV-ului cu întregul istoric profesional, proiecte și competențe.',
+          tags: ['CV-Militaru-Tiberiu.pdf', 'Download Direct', 'PDF']
+        },
+        {
+          label: 'LinkedIn & GitHub Repositories',
+          kind: 'approval',
+          dx: 0.0,
+          dy: 5.6,
+          dz: -2.8,
+          matchKey: 'linkedin',
+          desc: 'Profilul profesional LinkedIn și codul sursă al proiectelor publice pe GitHub.',
+          tags: ['LinkedIn', 'GitHub Open-Source', 'Portofoliu Cod']
+        },
+        {
+          label: 'Formular Contact Direct (#contact)',
+          kind: 'claim',
+          dx: 0.2,
+          dy: -5.8,
+          dz: 1.8,
+          desc: 'Completează formularul securizat din pagină pentru a trimite un mesaj direct în inbox.',
+          tags: ['Formular Web', 'Anti-Spam', 'Răspuns < 24h']
+        }
       ]
     },
     en: {
-      tab: 'start',
-      title: '07 INITIATION & CONTACT',
-      subtitle: 'smallest release first · direct channels',
+      tab: 'contact',
+      title: '07 CONTACT & DIRECT CHANNELS',
+      subtitle: 'all channels from the Contact section (#contact) · click for action',
       nodes: [
-        { label: 'WhatsApp: +40 720 955 119', kind: 'release', dx: -5.0, dy: 3.1, dz: 2, matchKey: 'whatsapp' },
-        { label: 'contact@tiberiumilitaru.ro', kind: 'owner', dx: 5.2, dy: 3.0, dz: -1, matchKey: 'email' },
-        { label: 'Terminal CLI v3.0 Interactive', kind: 'spec', dx: -4.1, dy: -4.2, dz: 3 },
-        { label: 'CV-Militaru-Tiberiu.pdf', kind: 'file', dx: 5.0, dy: -4.0, dz: -2, matchKey: 'cv_pdf' },
-        { label: 'LinkedIn · GitHub Repositories', kind: 'approval', dx: 0.0, dy: 5.2, dz: -3, matchKey: 'linkedin' }
+        {
+          label: 'WhatsApp Direct: +40 720 955 119',
+          kind: 'release',
+          dx: -5.4,
+          dy: 3.4,
+          dz: 2.2,
+          matchKey: 'whatsapp',
+          desc: 'Fastest channel for technical discussions, project estimates, or urgent IT support.',
+          tags: ['Instant WhatsApp', '+40 720 955 119', 'Fast Reply']
+        },
+        {
+          label: 'Phone: +40 720 955 119',
+          kind: 'owner',
+          dx: 5.6,
+          dy: 3.2,
+          dz: -1.4,
+          matchKey: 'phone',
+          desc: 'Direct phone call for IT consulting, software architecture, and support.',
+          tags: ['Direct Call', '+40 720 955 119', 'Ploiesti / Remote']
+        },
+        {
+          label: 'Email: contact@tiberiumilitaru.ro',
+          kind: 'spec',
+          dx: -5.2,
+          dy: -4.2,
+          dz: 2.8,
+          matchKey: 'email',
+          desc: 'Send your project specifications or RFP to the official email address.',
+          tags: ['contact@tiberiumilitaru.ro', 'Technical Quote', 'B2B / B2C']
+        },
+        {
+          label: 'Download Full Resume (PDF)',
+          kind: 'file',
+          dx: 5.4,
+          dy: -4.0,
+          dz: -2.0,
+          matchKey: 'cv_pdf',
+          desc: 'Official PDF resume containing the complete professional history, projects, and skills.',
+          tags: ['CV-Militaru-Tiberiu.pdf', 'Direct Download', 'PDF']
+        },
+        {
+          label: 'LinkedIn & GitHub Repositories',
+          kind: 'approval',
+          dx: 0.0,
+          dy: 5.6,
+          dz: -2.8,
+          matchKey: 'linkedin',
+          desc: 'Professional LinkedIn profile and public open-source repositories on GitHub.',
+          tags: ['LinkedIn', 'GitHub Open-Source', 'Code Portfolio']
+        },
+        {
+          label: 'Direct Contact Form (#contact)',
+          kind: 'claim',
+          dx: 0.2,
+          dy: -5.8,
+          dz: 1.8,
+          desc: 'Fill out the secure on-page contact form to send a message straight to the inbox.',
+          tags: ['Web Form', 'Anti-Spam', 'Reply < 24h']
+        }
       ]
     }
   }
@@ -362,17 +973,17 @@ const KIND_STYLES = {
 };
 
 const GATEKEEPER_CODE_LINES = [
-  '# gatekeeper.ts · reads arch graph',
-  'graph = load("tiberiumilitaru.ro")',
+  '# gatekeeper.ts · 1:1 site DOM graph',
+  'graph = sync_dom("tiberiumilitaru.ro")',
   'spider = Crawler(legs=16, tent=22)',
-  'for section in graph.sections:',
-  '  spider.walk_to(section)',
-  '  for node in section.nodes:',
-  '    spider.read(node)',
-  '    if node.kind == "rule":',
-  '      enforce_strict_csp(node)',
-  '    if node.kind == "claim":',
-  '      trace_production_proof(node)',
+  'for rubric in graph.rubrics_7:',
+  '  spider.walk_to(rubric.star_core)',
+  '  for card in rubric.emerge_cards():',
+  '    spider.bind_synapse(card)',
+  '    if card.section == "portofoliu":',
+  '      attach_live_project_link(card)',
+  '    if card.kind == "rule":',
+  '      enforce_strict_csp(card)',
   'return verify_release(score=98)'
 ];
 
@@ -743,6 +1354,9 @@ export class TiberiuSwarmEngine {
     this.currentStageIdx = -1;
     this.stageTimer = 0;
     this.autoPlay = true;
+    this.clusterActivatedAt = {};
+    this.hoveredStarIdx = null;
+    this.lastFrameTime = 0;
 
     this.orbitYaw = 0;
     this.orbitPitch = 0.05;
@@ -808,19 +1422,60 @@ export class TiberiuSwarmEngine {
   }
 
   /**
+   * Detectează dacă utilizatorul accesează site-ul de pe un dispozitiv mobil / tabletă
+   * pentru afișarea condiționată a avertismentului despre baterie („prăjitor de pâine”).
+   */
+  isMobileDevice() {
+    const ua = navigator.userAgent || '';
+    const isTouch =
+      window.matchMedia('(pointer: coarse)').matches ||
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0;
+    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+    const isSmallScreen = window.innerWidth <= 900;
+    return isMobileUA || (isTouch && isSmallScreen);
+  }
+
+  getModalDescription() {
+    const t = UI_TEXT[this.lang];
+    return this.isMobileDevice() ? `${t.modalDescBase}${t.modalDescMobile}` : t.modalDescBase;
+  }
+
+  /**
    * Scanează cardurile reale din #projects și #contact din index.html
-   * și copiază exact adresele URL (Live Demo, GitHub, WhatsApp, Email, CV PDF).
+   * și copiază exact adresele URL (Live Demo, GitHub, WhatsApp, Email, Telefon, CV PDF).
    */
   harvestDOMLinks() {
     this.harvestedLinks = {
       whatsapp: { live: 'https://wa.me/40720955119', github: null },
+      phone: { live: 'tel:+40720955119', github: null },
       email: { live: 'mailto:contact@tiberiumilitaru.ro', github: null },
       cv_pdf: { live: '/CV-Militaru-Tiberiu.pdf', github: null },
       linkedin: {
         live: 'https://www.linkedin.com/in/tiberiu-militaru-nicolae89',
         github: 'https://github.com/tiberiumilitaru89'
       },
-      github: { live: null, github: 'https://github.com/tiberiumilitaru89' }
+      github: { live: null, github: 'https://github.com/tiberiumilitaru89' },
+      instalbloc: {
+        live: 'https://instalbloc.ro',
+        github: 'https://github.com/tiberiumilitaru89/Instalbloc'
+      },
+      viziune: {
+        live: 'https://tiberiumilitaru89.github.io/primarie/',
+        github: 'https://github.com/tiberiumilitaru89/primarie'
+      },
+      'cv builder': {
+        live: 'https://tiberiumilitaru89.github.io/generator-cv-pro/',
+        github: 'https://github.com/tiberiumilitaru89/generator-cv-pro'
+      },
+      'florărie': {
+        live: 'https://tiberiumilitaru89.github.io/florarie/',
+        github: 'https://github.com/tiberiumilitaru89/florarie'
+      },
+      'portofoliu tiberiu': {
+        live: 'https://tiberiumilitaru.ro',
+        github: 'https://github.com/tiberiumilitaru89/portofoliu-tiberiu'
+      }
     };
 
     const projectSection = document.getElementById('projects');
@@ -848,8 +1503,11 @@ export class TiberiuSwarmEngine {
         });
 
         ['instalbloc', 'viziune', 'cv builder', 'florărie', 'portofoliu tiberiu'].forEach((key) => {
-          if (titleTxt.includes(key)) {
-            this.harvestedLinks[key] = { live: liveUrl, github: githubUrl };
+          if (titleTxt.includes(key) && (liveUrl || githubUrl)) {
+            this.harvestedLinks[key] = {
+              live: liveUrl || (this.harvestedLinks[key] && this.harvestedLinks[key].live) || null,
+              github: githubUrl || (this.harvestedLinks[key] && this.harvestedLinks[key].github) || null
+            };
           }
         });
       });
@@ -886,7 +1544,7 @@ export class TiberiuSwarmEngine {
     }
     if (this.dom.modalTag) this.dom.modalTag.textContent = t.modalTag;
     if (this.dom.modalTitle) this.dom.modalTitle.textContent = t.modalTitle;
-    if (this.dom.modalDesc) this.dom.modalDesc.textContent = t.modalDesc;
+    if (this.dom.modalDesc) this.dom.modalDesc.textContent = this.getModalDescription();
     if (this.dom.btnCancel) this.dom.btnCancel.textContent = t.btnCancel;
     if (this.dom.btnConfirm) this.dom.btnConfirm.textContent = t.btnConfirm;
     if (this.dom.langBtn) {
@@ -1008,7 +1666,7 @@ export class TiberiuSwarmEngine {
 
     const mDesc = document.createElement('p');
     mDesc.className = 'swarm-modal-desc';
-    mDesc.textContent = t.modalDesc;
+    mDesc.textContent = this.getModalDescription();
 
     const telemetryBox = document.createElement('div');
     telemetryBox.className = 'swarm-telemetry-box';
@@ -1148,7 +1806,7 @@ export class TiberiuSwarmEngine {
     bHint.textContent = t.controlsHint;
     banner.append(bTitle, bSub, bHint);
 
-    // --- 3. HOLOGRAPHIC NODE INSPECTOR (CU LINK-URI EXTERNE DIN CARDURILE REALE) ---
+    // --- 3. HOLOGRAPHIC NODE INSPECTOR (1:1 CU CARDURILE SITE-ULUI + LINK-URI EXTERNE) ---
     const inspector = document.createElement('aside');
     inspector.className = 'swarm-inspector-card';
 
@@ -1170,6 +1828,12 @@ export class TiberiuSwarmEngine {
 
     const insTitle = document.createElement('h3');
     insTitle.className = 'swarm-inspector-title';
+
+    const insDesc = document.createElement('p');
+    insDesc.className = 'swarm-inspector-desc';
+
+    const insTags = document.createElement('div');
+    insTags.className = 'swarm-inspector-tags';
 
     const insMeta = document.createElement('p');
     insMeta.className = 'swarm-inspector-meta';
@@ -1209,7 +1873,7 @@ export class TiberiuSwarmEngine {
     });
 
     insActions.append(extRow, insJump);
-    inspector.append(insHead, insTitle, insMeta, insActions);
+    inspector.append(insHead, insTitle, insDesc, insTags, insMeta, insActions);
 
     // --- 4. BOTTOM 6-PANEL TELEMETRY HUD ---
     const bottomHud = document.createElement('section');
@@ -1291,6 +1955,8 @@ export class TiberiuSwarmEngine {
       inspector,
       insKind,
       insTitle,
+      insDesc,
+      insTags,
       insMeta,
       insLiveLink,
       insGitLink,
@@ -1604,8 +2270,28 @@ export class TiberiuSwarmEngine {
   }
 
   setStage(idx) {
+    const now = performance.now();
     this.currentStageIdx = idx;
-    this.stageTimer = performance.now();
+    this.stageTimer = now;
+
+    if (idx === -1) {
+      this.clusterActivatedAt = {};
+    } else if (idx >= 0 && idx < SWARM_CLUSTERS.length) {
+      // Când activăm o stea, declanșăm animația radială de ieșire a cardurilor din nucleul stelei
+      this.clusterActivatedAt[idx] = now;
+      for (let prev = 0; prev < idx; prev++) {
+        if (!this.clusterActivatedAt[prev]) {
+          this.clusterActivatedAt[prev] = now - 900;
+        }
+      }
+    } else if (idx === 7) {
+      SWARM_CLUSTERS.forEach((_c, cIdx) => {
+        if (!this.clusterActivatedAt[cIdx]) {
+          this.clusterActivatedAt[cIdx] = now;
+        }
+      });
+    }
+
     this.audio.playPing('stage');
     this.updateStageBanner();
 
@@ -1620,7 +2306,8 @@ export class TiberiuSwarmEngine {
       this.camTargetLook = { x: c.pos.x, y: c.pos.y, z: c.pos.z };
       this.targetYaw = -c.pos.x * 0.008;
       this.targetPitch = c.pos.y * 0.006;
-      this.targetDist = 24;
+      // La rubrica 04 Portofoliu (idx === 3) apropiem ușor camera pentru vizibilitate maximă pe cardurile cu link
+      this.targetDist = idx === 3 ? 21.5 : 24;
       this.spiderTarget3D = { ...c.pos };
       this.pushLog('walk', `-> ${c[this.lang].tab}`);
     } else {
@@ -1716,16 +2403,86 @@ export class TiberiuSwarmEngine {
       ctx.fillText(`⊹ ${gal.designation}`, gp.x, gp.y);
     });
 
-    // 1. Titlurile celor 7 Nebuloase Principale
+    // 0.5. Filamente Sinaptice Multi-Strand între Stelele Vizitate (ca în înregistrarea video)
+    const maxEdgeIdx =
+      this.currentStageIdx === 7
+        ? SWARM_CLUSTERS.length - 1
+        : Math.min(this.currentStageIdx, SWARM_CLUSTERS.length - 1);
+
+    for (let i = 0; i < maxEdgeIdx; i++) {
+      const cA = SWARM_CLUSTERS[i];
+      const cB = SWARM_CLUSTERS[i + 1];
+      const pA = this.cam.projectPoint(cA.pos.x, cA.pos.y, cA.pos.z);
+      const pB = this.cam.projectPoint(cB.pos.x, cB.pos.y, cB.pos.z);
+      if (pA.visible && pB.visible) {
+        const mx = (pA.x + pB.x) * 0.5;
+        const my = (pA.y + pB.y) * 0.5;
+        for (let s = -1; s <= 1; s++) {
+          const wave = Math.sin(now * 0.0022 + i * 1.7 + s * 1.3) * (12 + Math.abs(s) * 9);
+          const cpx = mx + wave * 0.65;
+          const cpy = my - Math.abs(s) * 14 + wave;
+          ctx.strokeStyle =
+            s === 0 ? 'rgba(45, 212, 191, 0.36)' : 'rgba(148, 163, 184, 0.16)';
+          ctx.lineWidth = s === 0 ? 1.25 : 0.75;
+          ctx.beginPath();
+          ctx.moveTo(pA.x, pA.y);
+          ctx.quadraticCurveTo(cpx, cpy, pB.x, pB.y);
+          ctx.stroke();
+
+          if (s === 0) {
+            const pt = (now * 0.00045 + i * 0.23) % 1;
+            const inv = 1 - pt;
+            const px = inv * inv * pA.x + 2 * inv * pt * cpx + pt * pt * pB.x;
+            const py = inv * inv * pA.y + 2 * inv * pt * cpy + pt * pt * pB.y;
+            ctx.fillStyle = cB.colorCss;
+            ctx.beginPath();
+            ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+      }
+    }
+
+    // 1. Nucleul & Titlurile celor 7 Nebuloase Principale (cu Hit-Testing pt. click direct pe stea)
+    this.hoveredStarIdx = null;
     SWARM_CLUSTERS.forEach((c, idx) => {
+      const coreP = this.cam.projectPoint(c.pos.x, c.pos.y, c.pos.z);
       const p = this.cam.projectPoint(c.pos.x, c.pos.y + 7.2, c.pos.z);
-      if (!p.visible) return;
+      if (!p.visible || !coreP.visible) return;
 
       const isCurr = idx === this.currentStageIdx;
-      const isDone = idx < this.currentStageIdx;
+      const isDone = idx < this.currentStageIdx || this.currentStageIdx === 7;
 
-      ctx.font = isCurr ? '700 15px "JetBrains Mono", monospace' : '700 12px "JetBrains Mono", monospace';
-      ctx.fillStyle = isCurr ? '#ffffff' : isDone ? c.colorCss : 'rgba(226, 232, 240, 0.5)';
+      const distCore = Math.hypot(this.mouseX - coreP.x, this.mouseY - coreP.y);
+      const distLabel = Math.hypot(this.mouseX - p.x, this.mouseY - (p.y + 4));
+      if (!this.isDragging && (distCore < 22 || distLabel < 34)) {
+        this.hoveredStarIdx = idx;
+      }
+      const isStarHov = this.hoveredStarIdx === idx;
+
+      // Halo luminos în nucleul stelei din care ies cardurile
+      const pulseR = (isCurr ? 9.5 : isDone ? 6.5 : 4.2) + Math.sin(now * 0.004 + idx) * 1.6;
+      ctx.save();
+      ctx.strokeStyle = isCurr || isStarHov ? '#ffffff' : c.colorCss;
+      ctx.globalAlpha = isCurr || isStarHov ? 0.85 : isDone ? 0.5 : 0.24;
+      ctx.lineWidth = isCurr || isStarHov ? 1.6 : 1.0;
+      ctx.beginPath();
+      ctx.arc(coreP.x, coreP.y, pulseR, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.fillStyle = c.colorCss;
+      ctx.globalAlpha = isCurr || isStarHov ? 0.95 : isDone ? 0.65 : 0.3;
+      ctx.beginPath();
+      ctx.arc(coreP.x, coreP.y, isCurr ? 3.6 : 2.4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.font =
+        isCurr || isStarHov
+          ? '700 15px "JetBrains Mono", monospace'
+          : '700 12px "JetBrains Mono", monospace';
+      ctx.fillStyle =
+        isCurr || isStarHov ? '#ffffff' : isDone ? c.colorCss : 'rgba(226, 232, 240, 0.5)';
       ctx.fillText(c[this.lang].tab, p.x, p.y);
 
       ctx.font = '400 9px "JetBrains Mono", monospace';
@@ -1811,41 +2568,73 @@ export class TiberiuSwarmEngine {
       ctx.stroke();
     }
 
-    // 3. Cardurile 3D ([ label · kind ]) + Anti-Overlap + Hit-Testing
+    // 3. Cardurile 3D care ies radial din stea ([ label · kind ] + buton direct [↗ LIVE] pe proiecte)
     this.projectedCards = [];
     ctx.font = '600 10px "JetBrains Mono", monospace';
 
     SWARM_CLUSTERS.forEach((c, cIdx) => {
       if (this.currentStageIdx < cIdx && this.currentStageIdx !== 7) return;
       const centerP = this.cam.projectPoint(c.pos.x, c.pos.y, c.pos.z);
+      const actStart = this.clusterActivatedAt[cIdx] || 0;
 
       c[this.lang].nodes.forEach((nd, nIdx) => {
-        const floatY = Math.sin(now * 0.002 + nIdx * 1.4 + cIdx) * 0.4;
-        const wx = c.pos.x + nd.dx;
-        const wy = c.pos.y + nd.dy + floatY;
-        const wz = c.pos.z + nd.dz;
+        // Staggered radial emergence din centrul stelei (0 -> 1 cu cubic ease-out)
+        const rawT = Math.max(0, (now - actStart - nIdx * 95) / 680);
+        if (rawT <= 0.01) return;
+        const clampedT = Math.min(1, rawT);
+        const emerge = 1 - (1 - clampedT) ** 3;
+
+        const floatY = Math.sin(now * 0.002 + nIdx * 1.4 + cIdx) * 0.4 * emerge;
+        const wx = c.pos.x + nd.dx * emerge;
+        const wy = c.pos.y + nd.dy * emerge + floatY;
+        const wz = c.pos.z + nd.dz * emerge;
         const p = this.cam.projectPoint(wx, wy, wz);
         if (!p.visible) return;
 
+        const urls =
+          nd.matchKey && this.harvestedLinks[nd.matchKey]
+            ? this.harvestedLinks[nd.matchKey]
+            : null;
+        const primaryUrl = urls ? urls.live || urls.github : null;
+        let linkBadge = null;
+        if (primaryUrl) {
+          if (nd.matchKey === 'whatsapp') linkBadge = '↗ WHATSAPP';
+          else if (nd.matchKey === 'cv_pdf') linkBadge = '↗ CV PDF';
+          else if (urls.live) linkBadge = '↗ LIVE';
+          else linkBadge = '↗ GITHUB';
+        }
+
         const fullText = `${nd.label} · ${nd.kind}`;
-        const boxW = ctx.measureText(fullText).width + 16;
+        const mainTextW = ctx.measureText(fullText).width;
+        const badgeW = linkBadge ? ctx.measureText(linkBadge).width + 14 : 0;
+        const boxW = mainTextW + 18 + (badgeW ? badgeW + 6 : 0);
+        const boxH = linkBadge ? 22 : 20;
 
         this.projectedCards.push({
           id: `${c.id}-${nIdx}`,
+          clusterIdx: cIdx,
           clusterId: c.id,
           clusterTitle: c[this.lang].title,
+          clusterColor: c.colorCss,
           targetSelector: c.targetSelector,
           matchKey: nd.matchKey || null,
+          primaryUrl,
+          linkBadge,
+          badgeW,
+          mainTextW,
           label: nd.label,
           kind: nd.kind,
+          desc: nd.desc || '',
+          tags: nd.tags || [],
           fullText,
+          emerge,
           x: p.x,
           y: p.y,
           cx: centerP.x,
           cy: centerP.y,
           zDepth: p.z,
           boxW,
-          boxH: 20,
+          boxH,
           worldX: wx,
           worldY: wy,
           worldZ: wz,
@@ -1860,8 +2649,8 @@ export class TiberiuSwarmEngine {
       for (let j = i + 1; j < this.projectedCards.length; j++) {
         const a = this.projectedCards[i];
         const b = this.projectedCards[j];
-        if (Math.abs(a.x - b.x) < (a.boxW + b.boxW) * 0.48 && Math.abs(a.y - b.y) < 22) {
-          const push = (22 - Math.abs(a.y - b.y)) * 0.5;
+        if (Math.abs(a.x - b.x) < (a.boxW + b.boxW) * 0.48 && Math.abs(a.y - b.y) < 24) {
+          const push = (24 - Math.abs(a.y - b.y)) * 0.5;
           if (a.y <= b.y) {
             a.y -= push;
             b.y += push;
@@ -1893,40 +2682,88 @@ export class TiberiuSwarmEngine {
       this.audio.playPing('hover');
     }
     this.hoveredCard = hoverHit;
-    this.dom.hudCanvas.classList.toggle('is-pointer', Boolean(hoverHit) && !this.isDragging);
+    this.dom.hudCanvas.classList.toggle(
+      'is-pointer',
+      (Boolean(hoverHit) || this.hoveredStarIdx !== null) && !this.isDragging
+    );
 
     this.projectedCards.forEach((c) => {
       const st = KIND_STYLES[c.kind] || KIND_STYLES.claim;
       const isHov = this.hoveredCard && this.hoveredCard.id === c.id;
+      const isSel = this.selectedCard && this.selectedCard.id === c.id;
 
       ctx.save();
-      ctx.globalAlpha = c.isCurrent || isHov ? 1.0 : 0.42;
+      ctx.globalAlpha = (c.isCurrent || isHov || isSel ? 1.0 : 0.42) * c.emerge;
 
-      ctx.strokeStyle = isHov ? '#ffffff' : st.border;
-      ctx.lineWidth = isHov ? 1.5 : 0.75;
-      ctx.setLineDash(isHov ? [] : [3, 3]);
+      // Filamentul sinaptic care leagă nucleul stelei de cardul ieșit în orbită
+      const ctrlX = (c.cx + c.x) * 0.5;
+      const ctrlY = c.cy + (c.y - c.cy) * 0.25;
+      ctx.strokeStyle = isHov || isSel ? '#00f0ff' : st.border;
+      ctx.lineWidth = isHov || isSel ? 1.65 : 0.85;
+      ctx.setLineDash(isHov || isSel ? [] : [3, 3]);
       ctx.beginPath();
       ctx.moveTo(c.cx, c.cy);
-      ctx.quadraticCurveTo((c.cx + c.x) * 0.5, c.cy, c.x, c.y);
+      ctx.quadraticCurveTo(ctrlX, ctrlY, c.x, c.y);
       ctx.stroke();
       ctx.setLineDash([]);
 
+      // Impuls luminos care călătorește din nucleul stelei către cardul proiectului
+      if (c.isCurrent || isHov) {
+        const pulseT = (now * 0.0009 + c.worldX * 0.07) % 1;
+        const inv = 1 - pulseT;
+        const px = inv * inv * c.cx + 2 * inv * pulseT * ctrlX + pulseT * pulseT * c.x;
+        const py = inv * inv * c.cy + 2 * inv * pulseT * ctrlY + pulseT * pulseT * c.y;
+        ctx.fillStyle = isHov ? '#00f0ff' : c.clusterColor;
+        ctx.beginPath();
+        ctx.arc(px, py, isHov ? 2.4 : 1.7, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
       const rx = c.x - c.boxW * 0.5;
       const ry = c.y - c.boxH * 0.5;
-      ctx.fillStyle = isHov ? 'rgba(15, 23, 42, 0.96)' : 'rgba(6, 9, 14, 0.86)';
+      ctx.fillStyle = isHov || isSel ? 'rgba(15, 23, 42, 0.96)' : 'rgba(6, 9, 14, 0.88)';
       ctx.fillRect(rx, ry, c.boxW, c.boxH);
       ctx.fillStyle = st.fill;
       ctx.fillRect(rx, ry, c.boxW, c.boxH);
 
-      ctx.strokeStyle = isHov ? '#00f0ff' : st.border;
-      ctx.lineWidth = isHov ? 1.6 : 1.0;
+      ctx.strokeStyle = isHov || isSel ? '#00f0ff' : st.border;
+      ctx.lineWidth = isHov || isSel ? 1.7 : 1.0;
       ctx.strokeRect(rx, ry, c.boxW, c.boxH);
 
-      ctx.font = isHov ? '700 10.5px "JetBrains Mono", monospace' : '500 10px "JetBrains Mono", monospace';
-      ctx.fillStyle = isHov ? '#ffffff' : st.text;
-      ctx.textAlign = 'center';
+      ctx.font =
+        isHov || isSel
+          ? '700 10.5px "JetBrains Mono", monospace'
+          : '500 10px "JetBrains Mono", monospace';
+      ctx.fillStyle = isHov || isSel ? '#ffffff' : st.text;
       ctx.textBaseline = 'middle';
-      ctx.fillText(c.fullText, c.x, c.y + 0.5);
+
+      if (c.linkBadge) {
+        ctx.textAlign = 'left';
+        ctx.fillText(c.fullText, rx + 8, c.y + 0.5);
+
+        // Butonul-insignă [↗ LIVE] integrat direct în partea dreaptă a cardului ieșit din stea
+        const bx = rx + c.boxW - c.badgeW - 4;
+        const by = ry + 3;
+        const bh = c.boxH - 6;
+        const isBadgeHov = isHov && this.mouseX >= bx - 2;
+
+        ctx.fillStyle = isBadgeHov
+          ? 'rgba(0, 240, 255, 0.32)'
+          : 'rgba(45, 212, 191, 0.16)';
+        ctx.fillRect(bx, by, c.badgeW, bh);
+        ctx.strokeStyle = isBadgeHov ? '#ffffff' : '#2dd4bf';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(bx, by, c.badgeW, bh);
+
+        ctx.font = '700 8.5px "JetBrains Mono", monospace';
+        ctx.fillStyle = isBadgeHov ? '#ffffff' : '#2dd4bf';
+        ctx.textAlign = 'center';
+        ctx.fillText(c.linkBadge, bx + c.badgeW * 0.5, c.y + 0.5);
+      } else {
+        ctx.textAlign = 'center';
+        ctx.fillText(c.fullText, c.x, c.y + 0.5);
+      }
+
       ctx.restore();
     });
   }
@@ -1989,6 +2826,11 @@ export class TiberiuSwarmEngine {
       });
     }
 
+    const shortTags =
+      this.lang === 'ro'
+        ? ['ACA', 'SER', 'DES', 'POR', 'COM', 'EXP', 'CON']
+        : ['HOM', 'SER', 'ABO', 'POR', 'SKI', 'EXP', 'CON'];
+
     // Panoul 3: COVERAGE RADAR
     const radPack = this.panelCtxs.radar;
     if (radPack) {
@@ -1997,7 +2839,6 @@ export class TiberiuSwarmEngine {
       const cx = w * 0.5;
       const cy = h * 0.44;
       const rad = Math.min(w, h) * 0.33;
-      const tags = ['ROLE', 'OBJ', 'CON', 'PRO', 'RUL', 'REV', 'STA'];
 
       [0.35, 0.7, 1.0].forEach((s) => {
         ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
@@ -2021,7 +2862,7 @@ export class TiberiuSwarmEngine {
       for (let i = 0; i < 7; i++) {
         const a = (i / 7) * Math.PI * 2 - Math.PI * 0.5;
         ctx.fillStyle = '#64748b';
-        ctx.fillText(tags[i], cx + Math.cos(a) * (rad + 10), cy + Math.sin(a) * (rad + 10));
+        ctx.fillText(shortTags[i], cx + Math.cos(a) * (rad + 10), cy + Math.sin(a) * (rad + 10));
 
         let v = 0.08;
         if (this.currentStageIdx > i || this.currentStageIdx === 7) v = 0.92;
@@ -2042,10 +2883,10 @@ export class TiberiuSwarmEngine {
       ctx.font = '500 8px "JetBrains Mono", monospace';
       ctx.fillStyle = '#94a3b8';
       ctx.textAlign = 'left';
-      ctx.fillText(`claims ${Math.min(18, cCount * 3)}`, 2, h - 15);
-      ctx.fillText(`owners ${Math.min(11, cCount * 2)}`, 2, h - 5);
+      ctx.fillText(`cards ${Math.min(36, cCount * 5)}`, 2, h - 15);
+      ctx.fillText(`links ${Math.min(14, cCount * 2)}`, 2, h - 5);
       ctx.textAlign = 'right';
-      ctx.fillText(`approvals ${Math.min(15, cCount * 2)}`, w - 2, h - 5);
+      ctx.fillText(`verified ${Math.min(7, cCount)}/7`, w - 2, h - 5);
     }
 
     // Panoul 4: WORD HEAT
@@ -2053,7 +2894,6 @@ export class TiberiuSwarmEngine {
     if (heatPack) {
       const { ctx, w, h } = heatPack;
       ctx.clearRect(0, 0, w, h);
-      const tags = ['ROL', 'OBJ', 'CON', 'PRO', 'RUL', 'REV', 'STA'];
       ctx.font = '500 7.5px "JetBrains Mono", monospace';
       ctx.textBaseline = 'middle';
 
@@ -2062,7 +2902,7 @@ export class TiberiuSwarmEngine {
         const ry = 8 + rIdx * 9.5;
         ctx.fillStyle = '#64748b';
         ctx.textAlign = 'left';
-        ctx.fillText(tags[rIdx], 2, ry);
+        ctx.fillText(shortTags[rIdx], 2, ry);
 
         const cells = Math.min(16, Math.ceil(c.wordCount / 2));
         let r = 0;
@@ -2144,8 +2984,8 @@ export class TiberiuSwarmEngine {
   }
 
   /**
-   * Deschide Inspectorul Holografic și populează butoanele Live Demo / GitHub
-   * folosind adresele URL recoltate din cardurile reale ale site-ului.
+   * Deschide Inspectorul Holografic 1-la-1 cu cardul din site (titlu, descriere, tag-uri)
+   * și populează butoanele Live Demo / GitHub / Contact folosind adresele URL recoltate.
    */
   openInspectorForCard(c) {
     this.selectedCard = c;
@@ -2154,9 +2994,20 @@ export class TiberiuSwarmEngine {
     const isRo = this.lang === 'ro';
     this.dom.insKind.textContent = `${c.clusterId.toUpperCase()} · [${c.kind}]`;
     this.dom.insTitle.textContent = c.label;
+    this.dom.insDesc.textContent = c.desc || '';
+
+    const tagFrag = document.createDocumentFragment();
+    (c.tags || []).forEach((tagTxt) => {
+      const pill = document.createElement('span');
+      pill.className = 'swarm-inspector-tag';
+      pill.textContent = tagTxt;
+      tagFrag.appendChild(pill);
+    });
+    this.dom.insTags.replaceChildren(tagFrag);
+
     this.dom.insMeta.textContent = isRo
-      ? `Nod verificat în "${c.clusterTitle}". Coordonate 3D: (${c.worldX.toFixed(1)}, ${c.worldY.toFixed(1)}, ${c.worldZ.toFixed(1)}) · Status: TRACED & VALIDATED.`
-      : `Verified node in "${c.clusterTitle}". 3D Coords: (${c.worldX.toFixed(1)}, ${c.worldY.toFixed(1)}, ${c.worldZ.toFixed(1)}) · Status: TRACED & VALIDATED.`;
+      ? `Rubrica: "${c.clusterTitle}" · Coordonate 3D: (${c.worldX.toFixed(1)}, ${c.worldY.toFixed(1)}, ${c.worldZ.toFixed(1)})`
+      : `Section: "${c.clusterTitle}" · 3D Coords: (${c.worldX.toFixed(1)}, ${c.worldY.toFixed(1)}, ${c.worldZ.toFixed(1)})`;
     this.dom.insJump.textContent = isRo
       ? `▸ Vezi în Pagină (${c.targetSelector})`
       : `▸ Jump to Section (${c.targetSelector})`;
@@ -2166,11 +3017,19 @@ export class TiberiuSwarmEngine {
 
     if (urls && urls.live) {
       this.dom.insLiveLink.href = urls.live;
-      this.dom.insLiveLink.textContent = c.matchKey === 'whatsapp'
-        ? '↗ WHATSAPP'
-        : c.matchKey === 'cv_pdf'
-        ? '↗ CV PDF'
-        : '↗ LIVE DEMO';
+      if (c.matchKey === 'whatsapp') {
+        this.dom.insLiveLink.textContent = '↗ WHATSAPP';
+      } else if (c.matchKey === 'phone') {
+        this.dom.insLiveLink.textContent = isRo ? '↗ APELEAZĂ' : '↗ CALL';
+      } else if (c.matchKey === 'email') {
+        this.dom.insLiveLink.textContent = '↗ EMAIL';
+      } else if (c.matchKey === 'cv_pdf') {
+        this.dom.insLiveLink.textContent = '↗ CV PDF';
+      } else if (c.matchKey === 'linkedin') {
+        this.dom.insLiveLink.textContent = '↗ LINKEDIN';
+      } else {
+        this.dom.insLiveLink.textContent = isRo ? '↗ DESCHIDE PROIECT LIVE' : '↗ OPEN LIVE PROJECT';
+      }
       this.dom.insLiveLink.classList.remove('is-hidden');
     } else {
       this.dom.insLiveLink.classList.add('is-hidden');
@@ -2178,7 +3037,7 @@ export class TiberiuSwarmEngine {
 
     if (urls && urls.github) {
       this.dom.insGitLink.href = urls.github;
-      this.dom.insGitLink.textContent = '↗ GITHUB';
+      this.dom.insGitLink.textContent = '↗ GITHUB REPO';
       this.dom.insGitLink.classList.remove('is-hidden');
     } else {
       this.dom.insGitLink.classList.add('is-hidden');
@@ -2233,9 +3092,24 @@ export class TiberiuSwarmEngine {
     this.isDragging = false;
     if (this.dom.hudCanvas) this.dom.hudCanvas.classList.remove('is-grabbing');
 
-    // Dacă utilizatorul a făcut click scurt (< 6px mișcare) pe un card 3D, deschidem Inspectorul
-    if (this.dragMovedPx < 6 && this.hoveredCard) {
-      this.openInspectorForCard(this.hoveredCard);
+    if (this.dragMovedPx < 6) {
+      if (this.hoveredCard) {
+        const c = this.hoveredCard;
+        const rx = c.x - c.boxW * 0.5;
+        const badgeStartX = rx + c.boxW - c.badgeW - 6;
+
+        // Dacă utilizatorul dă click direct pe butonul [↗ LIVE] de pe cardul ieșit din stea, deschidem direct linkul proiectului!
+        if (c.primaryUrl && c.linkBadge && this.mouseX >= badgeStartX) {
+          this.openInspectorForCard(c);
+          window.open(c.primaryUrl, '_blank', 'noopener,noreferrer');
+          return;
+        }
+        this.openInspectorForCard(c);
+      } else if (this.hoveredStarIdx !== null) {
+        // Click direct pe o stea din constelație -> zboară camera și păianjenul la acea rubrică
+        this.switchToManualRoam();
+        this.setStage(this.hoveredStarIdx);
+      }
     }
   }
 
@@ -2300,7 +3174,8 @@ export class TiberiuSwarmEngine {
   onTouchEnd() {
     if (this.state !== 'SWARM_LIVE') return;
     if (this.isDragging && this.dragMovedPx < 8) {
-      // Tap scurt pe mobil: căutăm dacă degetul a atins un card 3D
+      // Tap scurt pe mobil: căutăm dacă degetul a atins un card 3D sau butonul [↗ LIVE]
+      let hitCard = false;
       for (let i = this.projectedCards.length - 1; i >= 0; i--) {
         const c = this.projectedCards[i];
         if (
@@ -2309,9 +3184,26 @@ export class TiberiuSwarmEngine {
           this.mouseY >= c.y - c.boxH * 0.65 &&
           this.mouseY <= c.y + c.boxH * 0.65
         ) {
+          const rx = c.x - c.boxW * 0.5;
+          const badgeStartX = rx + c.boxW - c.badgeW - 8;
           this.openInspectorForCard(c);
+          if (c.primaryUrl && c.linkBadge && this.mouseX >= badgeStartX) {
+            window.open(c.primaryUrl, '_blank', 'noopener,noreferrer');
+          }
+          hitCard = true;
           break;
         }
+      }
+
+      if (!hitCard) {
+        // Verificăm dacă utilizatorul a atins nucleul unei stele
+        SWARM_CLUSTERS.forEach((c, idx) => {
+          const coreP = this.cam.projectPoint(c.pos.x, c.pos.y, c.pos.z);
+          if (coreP.visible && Math.hypot(this.mouseX - coreP.x, this.mouseY - coreP.y) < 28) {
+            this.switchToManualRoam();
+            this.setStage(idx);
+          }
+        });
       }
     }
     this.isDragging = false;
@@ -2358,6 +3250,9 @@ export class TiberiuSwarmEngine {
 
   onResize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    if (this.dom.modalDesc) {
+      this.dom.modalDesc.textContent = this.getModalDescription();
+    }
     if (this.dom.hudCanvas && this.dom.ctx2d) {
       this.dom.hudCanvas.width = window.innerWidth * dpr;
       this.dom.hudCanvas.height = window.innerHeight * dpr;
@@ -2383,6 +3278,9 @@ export class TiberiuSwarmEngine {
   }
 
   loop(now) {
+    const dt = this.lastFrameTime ? Math.min(100, now - this.lastFrameTime) : 16;
+    this.lastFrameTime = now;
+
     const ctx = this.dom.ctx2d;
     const w = window.innerWidth;
     const h = window.innerHeight;
@@ -2469,7 +3367,14 @@ export class TiberiuSwarmEngine {
       this.dom.mTime.textContent = ((now - this.bootTime) / 1000).toFixed(2);
       this.dom.mFrame.textContent = String(this.frameCount).padStart(4, '0');
 
-      if (this.autoPlay && now - this.stageTimer > 3400) {
+      // Dacă utilizatorul ține mouse-ul pe un card ieșit din stea sau pe o stea, înghețăm cronometrul
+      // de auto-crawl pentru a putea da click liniștit pe proiect fără ca scena să sară la altă stea
+      if (this.hoveredCard || this.hoveredStarIdx !== null) {
+        this.stageTimer += dt;
+      }
+
+      const stageDuration = this.currentStageIdx === 3 ? 4400 : 3500;
+      if (this.autoPlay && now - this.stageTimer > stageDuration) {
         if (this.currentStageIdx < 7) {
           this.setStage(this.currentStageIdx + 1);
         } else {
