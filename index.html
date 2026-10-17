@@ -565,14 +565,17 @@
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-toolbox"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj3_tag">Sistem CRM Enterprise, Zero-Any & Baze Relaționale</span>
+                            <span class="project-category" data-i18n="proj3_tag">Edge SSR, Cloudflare R2 & Baze Relaționale</span>
                         </div>
                         <h3 class="project-title" data-i18n="proj3_title">Aplicație CRM & Gestiune Servicii (Instalbloc)</h3>
                         <p class="project-desc" data-i18n="proj3_summary">
-                            Platformă enterprise Full-Stack dedicată asociațiilor de proprietari și companiilor de instalații sanitare / termice. Arhitectură Cloud Zero-Defect: Next.js 16 Serverless pe Vercel cu React 19, persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și coduri OTP CSPRNG (crypto.randomInt), FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h, componentă printare conformă CSP, telemetrie Sentry și conformitate strictă OKF.
+                            Platformă enterprise Full-Stack dedicată asociațiilor de proprietari și companiilor de instalații sanitare / termice. Arhitectură Cloud Zero-Defect: Next.js 15 Edge SSR pe Cloudflare Workers cu OpenNext, stocare foto în Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client (Canvas API), persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și coduri OTP CSPRNG (crypto.randomInt), FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h, componentă printare conformă CSP, telemetrie Sentry și conformitate strictă OKF.
                         </p>
                         <div class="project-tech-tags">
-                            <span class="tech-tag">Next.js 16</span>
+                            <span class="tech-tag">Next.js 15 (Edge SSR)</span>
+                            <span class="tech-tag">Cloudflare Workers</span>
+                            <span class="tech-tag">Cloudflare R2 Storage</span>
+                            <span class="tech-tag">Client WebP (Canvas)</span>
                             <span class="tech-tag">Turso Cloud (LibSQL)</span>
                             <span class="tech-tag">Drizzle ORM</span>
                             <span class="tech-tag">TypeScript (Zero-Any)</span>
@@ -582,14 +585,14 @@
                             <span class="tech-tag">FSM 4 Etape</span>
                             <span class="tech-tag">SLA 96h Dispatcher</span>
                             <span class="tech-tag">Cod QR Avizier</span>
-                            <span class="tech-tag">Sentry Telemetry</span>
+                            <span class="tech-tag">Zero-Cost Infra (0€)</span>
                             <span class="tech-tag">OKF SSOT</span>
                         </div>
                         <div class="project-actions">
                             <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj3" aria-label="Detalii tehnice despre Aplicație CRM">
                                 <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
                             </button>
-                            <a href="https://instalbloc.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan" title="Vezi Live Demo (Instalbloc pe Vercel)">
+                            <a href="https://instalbloc.ro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan" title="Vezi Live Demo (Instalbloc pe Cloudflare Workers)">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
                             </a>
                             <a href="https://github.com/tiberiumilitaru89/instalbloc" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi depozitul pe GitHub">

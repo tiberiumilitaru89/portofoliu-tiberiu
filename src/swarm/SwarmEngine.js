@@ -492,8 +492,8 @@ const SWARM_CLUSTERS = [
           dy: 4.5,
           dz: 2.4,
           matchKey: 'instalbloc',
-          desc: 'Platformă B2B pentru digitalizarea asociațiilor de proprietari și a firmelor de instalații. Automatizează raportarea avariilor cu SLA 96h, devizele și evidența lucrărilor.',
-          tags: ['Next.js 16', 'Turso LibSQL', 'Drizzle ORM', 'HMAC Auth', 'Vercel']
+          desc: 'Platformă B2B Edge SSR pe Cloudflare Workers & R2 pentru digitalizarea asociațiilor de proprietari. Raportare avarii cu SLA 96h, compresie foto WebP și 0€ costuri hosting.',
+          tags: ['Next.js 15', 'Cloudflare Workers', 'Cloudflare R2', 'Turso LibSQL', 'Drizzle ORM']
         },
         {
           label: 'Platformă Civică & Audit Urban (Viziune Urbană Ploiești)',
@@ -549,8 +549,8 @@ const SWARM_CLUSTERS = [
           dy: 4.5,
           dz: 2.4,
           matchKey: 'instalbloc',
-          desc: 'B2B platform digitizing homeowner associations and installation companies. Automates 96h SLA incident tracking, estimates, and work logs.',
-          tags: ['Next.js 16', 'Turso LibSQL', 'Drizzle ORM', 'HMAC Auth', 'Vercel']
+          desc: 'B2B platform running Edge SSR on Cloudflare Workers & R2 for homeowner associations. 96h SLA incidents, client-side WebP compression, and zero hosting costs.',
+          tags: ['Next.js 15', 'Cloudflare Workers', 'Cloudflare R2', 'Turso LibSQL', 'Drizzle ORM']
         },
         {
           label: 'Civic Platform & Urban Audit (Viziune Urbana Ploiesti)',
