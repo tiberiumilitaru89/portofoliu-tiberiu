@@ -16,15 +16,111 @@
   --sw-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 }
 
-body.swarm-consumed {
+body.swarm-consumed,
+body.swarm-imploding,
+body.swarm-restoring {
   overflow: hidden !important;
   user-select: none;
 }
 
-body.swarm-consumed > *:not(.swarm-root) {
+body.swarm-consumed:not(.swarm-crunching) > *:not(.swarm-root) {
   opacity: 0 !important;
   pointer-events: none !important;
-  transition: opacity 0.2s ease;
+}
+
+body.swarm-crunching > *:not(.swarm-root):not(.header) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.swarm-imploding > .header,
+body.swarm-crunching > .header,
+body.swarm-restoring > .header {
+  opacity: 1 !important;
+  pointer-events: none !important;
+  z-index: 100001 !important;
+}
+
+body.swarm-imploding > *:not(.swarm-root):not(.header) {
+  pointer-events: none !important;
+  transform-origin: center top;
+  animation: swPortalImplode 0.88s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+body.swarm-restoring > *:not(.swarm-root):not(.header) {
+  pointer-events: none !important;
+  animation: swPortalEmerge 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Materializare 3D calmă și precisă în cascadă a cardurilor și secțiunilor sincronizată cu proiecția din atom */
+.swarm-emerge-item-0,
+.swarm-emerge-item-1,
+.swarm-emerge-item-2,
+.swarm-emerge-item-3,
+.swarm-emerge-item-4,
+.swarm-emerge-item-5,
+.swarm-emerge-item-6,
+.swarm-emerge-item-7 {
+  transform-origin: center top;
+  will-change: transform, filter, opacity;
+  animation: swDomBlockEjectFromAtom 0.82s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.swarm-emerge-item-0 { animation-delay: 0ms; }
+.swarm-emerge-item-1 { animation-delay: 50ms; }
+.swarm-emerge-item-2 { animation-delay: 100ms; }
+.swarm-emerge-item-3 { animation-delay: 150ms; }
+.swarm-emerge-item-4 { animation-delay: 200ms; }
+.swarm-emerge-item-5 { animation-delay: 250ms; }
+.swarm-emerge-item-6 { animation-delay: 300ms; }
+.swarm-emerge-item-7 { animation-delay: 350ms; }
+
+@keyframes swDomBlockEjectFromAtom {
+  0% {
+    opacity: 0;
+    transform: perspective(1100px) translate3d(0, -14px, -36px) scale(0.955);
+    filter: brightness(1.75) saturate(1.4) drop-shadow(0 0 12px rgba(0, 240, 255, 0.55)) blur(4px);
+  }
+  55% {
+    opacity: 1;
+    transform: perspective(1100px) translate3d(0, 2px, 4px) scale(1.004);
+    filter: brightness(1.12) saturate(1.1) blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1100px) translate3d(0, 0, 0) scale(1);
+    filter: brightness(1) saturate(1) blur(0px);
+  }
+}
+
+@keyframes swPortalImplode {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1) blur(0px);
+  }
+  55% {
+    opacity: 0.45;
+    transform: scale(0.988);
+    filter: brightness(1.45) saturate(1.4) blur(3px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.972);
+    filter: brightness(2.1) blur(10px);
+  }
+}
+
+@keyframes swPortalEmerge {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -46,6 +142,33 @@ body.swarm-consumed > *:not(.swarm-root) {
   transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
   flex-shrink: 0;
+}
+
+.swarm-atomic-btn.is-portal-flare {
+  animation: swBtnPortalFlare 1.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes swBtnPortalFlare {
+  0% {
+    transform: scale(1.45);
+    border-color: #00f0ff;
+    box-shadow: 0 0 28px #00f0ff, 0 0 55px rgba(45, 212, 191, 0.8);
+  }
+  32% {
+    transform: scale(2.35) rotate(180deg);
+    border-color: #ffffff;
+    box-shadow: 0 0 64px #00f0ff, 0 0 110px #facc15, inset 0 0 24px #ffffff;
+  }
+  68% {
+    transform: scale(1.38) rotate(340deg);
+    border-color: var(--sw-amber);
+    box-shadow: 0 0 36px rgba(250, 204, 21, 0.9), 0 0 68px rgba(0, 240, 255, 0.7);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    border-color: rgba(0, 240, 255, 0.45);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+  }
 }
 
 .swarm-atomic-btn:hover,
@@ -170,6 +293,30 @@ body.swarm-consumed > *:not(.swarm-root) {
 .swarm-root.is-active .swarm-webgl-canvas,
 .swarm-root.is-active .swarm-hud-canvas {
   opacity: 1;
+}
+
+.swarm-root.is-active .swarm-webgl-canvas.is-imploding-to-atom {
+  animation: swWebglSuckToAtom 0.54s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+.swarm-root.is-active .swarm-webgl-canvas.is-restoring {
+  opacity: 0 !important;
+  transition: opacity 0.22s ease !important;
+}
+
+@keyframes swWebglSuckToAtom {
+  0% {
+    opacity: 1;
+    filter: brightness(1) saturate(1) blur(0px);
+  }
+  65% {
+    opacity: 0.96;
+    filter: brightness(1.85) saturate(1.6) blur(0.5px);
+  }
+  100% {
+    opacity: 0;
+    filter: brightness(3.2) saturate(2.2) blur(4px);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -569,10 +716,13 @@ body.swarm-consumed > *:not(.swarm-root) {
 .swarm-inspector-ext-row {
   display: flex;
   gap: 7px;
+  flex-wrap: wrap;
 }
 
 .swarm-inspector-link,
-.swarm-inspector-jump {
+.swarm-inspector-jump,
+.swarm-inspector-btn-case,
+.swarm-inspector-btn-extra {
   display: block;
   flex: 1;
   text-align: center;
@@ -598,8 +748,47 @@ body.swarm-consumed > *:not(.swarm-root) {
   color: #000;
 }
 
-.swarm-inspector-link.is-hidden {
+.swarm-inspector-link.is-hidden,
+.swarm-inspector-btn-case.is-hidden,
+.swarm-inspector-btn-extra.is-hidden,
+.swarm-inspector-badge-nda.is-hidden {
   display: none;
+}
+
+.swarm-inspector-badge-nda {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: var(--sw-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 6px 8px;
+  background: rgba(251, 113, 133, 0.14);
+  border: 1px dashed #fb7185;
+  color: #fecdd3;
+  letter-spacing: 0.04em;
+}
+
+.swarm-inspector-btn-case {
+  background: rgba(45, 212, 191, 0.16);
+  border: 1px solid var(--sw-teal);
+  color: #99f6e4;
+}
+
+.swarm-inspector-btn-case:hover {
+  background: var(--sw-teal);
+  color: #000;
+}
+
+.swarm-inspector-btn-extra {
+  background: rgba(168, 85, 247, 0.18);
+  border: 1px solid #c084fc;
+  color: #f3e8ff;
+}
+
+.swarm-inspector-btn-extra:hover {
+  background: #c084fc;
+  color: #000;
 }
 
 .swarm-inspector-jump {
@@ -613,9 +802,475 @@ body.swarm-consumed > *:not(.swarm-root) {
   color: #000;
 }
 
+.swarm-hud-btn-cv {
+  border-color: rgba(250, 204, 21, 0.55);
+  color: var(--sw-amber);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.swarm-hud-btn-cv:hover {
+  background: var(--sw-amber);
+  color: #000;
+}
+
+.swarm-hud-btn-cli {
+  border-color: rgba(74, 222, 128, 0.55);
+  color: #4ade80;
+}
+
+.swarm-hud-btn-cli:hover {
+  background: #4ade80;
+  color: #000;
+}
+
 /* --------------------------------------------------------------------------
-   6. BOTTOM 6-PANEL TELEMETRY HUD
+   5B. PORTFOLIO CATEGORY FILTER BAR & HOLOGRAPHIC STAR CARD DOCK (CAROUSEL)
    -------------------------------------------------------------------------- */
+.swarm-portfolio-filter-bar {
+  display: none;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+  pointer-events: auto;
+}
+
+.swarm-portfolio-filter-bar.is-visible {
+  display: flex;
+}
+
+.swarm-portfolio-filter-bar.is-hidden {
+  display: none;
+}
+
+.swarm-filter-pill {
+  font-family: var(--sw-mono);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  background: rgba(7, 10, 15, 0.9);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  color: #cbd5e1;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.18s ease;
+}
+
+.swarm-filter-pill:hover {
+  border-color: var(--sw-amber);
+  color: #fff;
+}
+
+.swarm-filter-pill.is-active {
+  background: var(--sw-amber);
+  color: #000;
+  border-color: var(--sw-amber);
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+}
+
+.swarm-card-dock {
+  position: absolute;
+  bottom: 188px;
+  left: 14px;
+  right: 14px;
+  z-index: 14;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(5, 8, 13, 0.92);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.65);
+  padding: 5px 8px;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, bottom 0.25s ease;
+}
+
+.swarm-card-dock.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.swarm-dock-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--sw-teal);
+  white-space: nowrap;
+  padding-right: 4px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+}
+
+.swarm-dock-nav,
+.swarm-dock-nav-btn {
+  font-family: var(--sw-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  color: var(--sw-cyan);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+}
+
+.swarm-dock-nav:hover,
+.swarm-dock-nav-btn:hover {
+  background: var(--sw-cyan);
+  color: #000;
+}
+
+.swarm-dock-list {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow-x: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  padding: 2px 0;
+}
+
+.swarm-dock-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sw-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 4px 9px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  color: #cbd5e1;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+}
+
+.swarm-dock-pill:hover {
+  border-color: var(--sw-cyan);
+  color: #ffffff;
+}
+
+.swarm-dock-pill.is-selected,
+.swarm-dock-pill.is-active {
+  background: rgba(0, 240, 255, 0.18);
+  border-color: var(--sw-cyan);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+}
+
+.swarm-dock-pill-live {
+  border-color: rgba(250, 204, 21, 0.48);
+  color: #fef08a;
+}
+
+.swarm-dock-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 5px;
+  font-size: 8.5px;
+  font-weight: 700;
+  background: rgba(45, 212, 191, 0.2);
+  border: 1px solid var(--sw-teal);
+  color: var(--sw-teal);
+  border-radius: 2px;
+  transition: all 0.15s ease;
+}
+
+.swarm-dock-pill-badge:hover {
+  background: var(--sw-amber);
+  border-color: var(--sw-amber);
+  color: #000;
+}
+
+/* --------------------------------------------------------------------------
+   5C. HOLOGRAPHIC OVERLAY DRAWERS (CASE STUDY, CONTACT FORM, CLI TERMINAL)
+   -------------------------------------------------------------------------- */
+.swarm-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(2, 4, 8, 0.84);
+  backdrop-filter: blur(7px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.swarm-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.swarm-drawer-modal {
+  width: 100%;
+  max-width: 660px;
+  max-height: 86vh;
+  overflow-y: auto;
+  background: rgba(7, 10, 16, 0.97);
+  border: 1px solid var(--sw-cyan);
+  box-shadow: 0 0 42px rgba(0, 240, 255, 0.22);
+  padding: 18px 20px;
+  color: var(--sw-text);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.swarm-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.swarm-drawer-tag,
+.swarm-drawer-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  background: rgba(0, 240, 255, 0.16);
+  border: 1px solid var(--sw-cyan);
+  color: var(--sw-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.swarm-drawer-close {
+  font-family: var(--sw-mono);
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 42, 84, 0.16);
+  border: 1px solid var(--sw-crimson);
+  color: #fff;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.swarm-drawer-close:hover {
+  background: var(--sw-crimson);
+  color: #000;
+}
+
+.swarm-drawer-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+}
+
+.swarm-drawer-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.swarm-case-block,
+.swarm-drawer-section {
+  background: rgba(15, 23, 42, 0.55);
+  border-left: 3px solid var(--sw-teal);
+  padding: 10px 12px;
+}
+
+.swarm-case-block-amber {
+  border-left-color: var(--sw-amber);
+}
+
+.swarm-case-block-cyan {
+  border-left-color: var(--sw-cyan);
+}
+
+.swarm-case-heading,
+.swarm-drawer-sec-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sw-teal);
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.swarm-case-text,
+.swarm-drawer-sec-text {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.swarm-case-list,
+.swarm-drawer-list {
+  margin: 6px 0 0 0;
+  padding-left: 16px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: #cbd5e1;
+}
+
+.swarm-case-list li,
+.swarm-drawer-list li {
+  margin-bottom: 4px;
+}
+
+.swarm-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.swarm-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.swarm-form-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--sw-teal);
+  text-transform: uppercase;
+}
+
+.swarm-form-input,
+.swarm-form-textarea {
+  font-family: var(--sw-mono);
+  font-size: 11.5px;
+  padding: 8px 10px;
+  background: rgba(3, 5, 9, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: #fff;
+  outline: none;
+}
+
+.swarm-form-input:focus,
+.swarm-form-textarea:focus {
+  border-color: var(--sw-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+}
+
+.swarm-form-textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.swarm-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.swarm-form-status {
+  font-size: 11px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--sw-cyan);
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--sw-text);
+}
+
+.swarm-form-status.is-hidden {
+  display: none;
+}
+
+.swarm-form-status.is-error {
+  border-left-color: var(--sw-crimson);
+  color: #fecdd3;
+}
+
+.swarm-form-status.is-success {
+  border-left-color: #4ade80;
+  color: #bbf7d0;
+}
+
+.swarm-cli-output {
+  background: rgba(2, 4, 7, 0.95);
+  border: 1px solid rgba(45, 212, 191, 0.28);
+  padding: 10px 12px;
+  height: 240px;
+  overflow-y: auto;
+  font-size: 11px;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.swarm-cli-line {
+  color: #cbd5e1;
+  word-break: break-word;
+}
+
+.swarm-cli-line-cmd {
+  color: var(--sw-amber);
+  font-weight: 700;
+}
+
+.swarm-cli-line-sys {
+  color: var(--sw-teal);
+}
+
+.swarm-cli-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(2, 4, 7, 0.95);
+  border: 1px solid var(--sw-cyan);
+  padding: 6px 10px;
+}
+
+.swarm-cli-prompt {
+  color: #4ade80;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.swarm-cli-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: var(--sw-mono);
+  font-size: 11.5px;
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. BOTTOM 6-PANEL TELEMETRY HUD & MOBILE COLLAPSIBLE TOGGLE
+   -------------------------------------------------------------------------- */
+.swarm-hud-mobile-toggle {
+  display: none;
+  position: absolute;
+  bottom: 150px;
+  right: 12px;
+  z-index: 15;
+  font-family: var(--sw-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: rgba(5, 8, 14, 0.94);
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  color: var(--sw-teal);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: bottom 0.25s ease;
+}
+
 .swarm-bottom-hud {
   position: absolute;
   bottom: 0;
@@ -630,13 +1285,19 @@ body.swarm-consumed > *:not(.swarm-root) {
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease, height 0.25s ease;
 }
 
 .swarm-bottom-hud.is-visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+.swarm-bottom-hud.is-collapsed {
+  height: 0 !important;
+  border-top: none;
+  overflow: hidden;
 }
 
 .swarm-hud-panel {
@@ -745,6 +1406,9 @@ body.swarm-consumed > *:not(.swarm-root) {
     grid-template-columns: repeat(3, 1fr);
     height: 165px;
   }
+  .swarm-card-dock {
+    bottom: 171px;
+  }
   .swarm-hud-panel:nth-child(4),
   .swarm-hud-panel:nth-child(5),
   .swarm-hud-panel:nth-child(6) {
@@ -757,21 +1421,49 @@ body.swarm-consumed > *:not(.swarm-root) {
     grid-template-columns: repeat(4, 1fr);
   }
   .swarm-stage-banner {
-    top: 106px;
+    top: 108px;
+    left: 10px;
+    right: 10px;
+  }
+  .swarm-stage-title {
+    font-size: 12.5px;
+  }
+  .swarm-stage-subtitle {
+    font-size: 10px;
   }
   .swarm-stage-controls-hint {
-    font-size: 8.5px;
+    font-size: 8px;
+  }
+  .swarm-hud-mobile-toggle.is-visible {
+    display: inline-block;
+  }
+  .swarm-hud-mobile-toggle.is-collapsed {
+    bottom: 8px;
+  }
+  .swarm-card-dock {
+    left: 8px;
+    right: 8px;
+    bottom: 148px;
+    padding: 4px 6px;
+  }
+  .swarm-card-dock.is-hud-collapsed {
+    bottom: 38px;
   }
   .swarm-inspector-card {
     top: auto;
-    bottom: 162px;
-    left: 10px;
-    right: 10px;
+    bottom: 188px;
+    left: 8px;
+    right: 8px;
     width: auto;
+    max-height: 52vh;
+    overflow-y: auto;
+  }
+  .swarm-inspector-card.is-hud-collapsed {
+    bottom: 78px;
   }
   .swarm-bottom-hud {
     grid-template-columns: repeat(2, 1fr);
-    height: 150px;
+    height: 142px;
   }
   .swarm-hud-panel:nth-child(3) {
     display: none;

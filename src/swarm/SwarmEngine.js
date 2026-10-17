@@ -483,7 +483,7 @@ const SWARM_CLUSTERS = [
     ro: {
       tab: 'portofoliu',
       title: '04 PORTOFOLIU · PROIECTE ÎN PRODUCȚIE',
-      subtitle: 'cele 5 proiecte din site · click pe [↗ LIVE] / [↗ GITHUB] sau pe card',
+      subtitle: 'cele 5 proiecte din site · click pe [↗ LIVE] / [↗ GITHUB] / [📋 STUDIU CAZ]',
       nodes: [
         {
           label: 'Aplicație CRM & Gestiune Servicii (Instalbloc)',
@@ -491,7 +491,9 @@ const SWARM_CLUSTERS = [
           dx: -6.8,
           dy: 4.5,
           dz: 2.4,
-          matchKey: 'instalbloc',
+          matchKey: 'proj3',
+          projectKey: 'proj3',
+          category: 'crm',
           desc: 'Platformă B2B Edge SSR pe Cloudflare Workers & R2 pentru digitalizarea asociațiilor de proprietari. Raportare avarii cu SLA 96h, compresie foto WebP și 0€ costuri hosting.',
           tags: ['Next.js 15', 'Cloudflare Workers', 'Cloudflare R2', 'Turso LibSQL', 'Drizzle ORM']
         },
@@ -501,7 +503,9 @@ const SWARM_CLUSTERS = [
           dx: 6.8,
           dy: 4.1,
           dz: -2.0,
-          matchKey: 'viziune',
+          matchKey: 'proj4',
+          projectKey: 'proj4',
+          category: 'civic',
           desc: 'Platformă interactivă de raportare civică și monitorizare a infrastructurii urbane, cu hartă dinamică, clasificare sesizări și panou transparent de audit.',
           tags: ['React 19', 'TypeScript', 'Hărți Interactive', 'Civic Tech']
         },
@@ -511,7 +515,9 @@ const SWARM_CLUSTERS = [
           dx: -6.4,
           dy: -4.8,
           dz: 3.6,
-          matchKey: 'cv builder',
+          matchKey: 'proj1',
+          projectKey: 'proj1',
+          category: 'saas',
           desc: 'Aplicație SaaS completă pentru crearea CV-urilor optimizate ATS, cu scor de compatibilitate în timp real, export PDF prin microserviciu Puppeteer și plăți Stripe.',
           tags: ['React', 'Firebase / Firestore', 'Stripe Webhooks', 'Puppeteer PDF']
         },
@@ -521,7 +527,9 @@ const SWARM_CLUSTERS = [
           dx: 6.4,
           dy: -4.6,
           dz: 1.5,
-          matchKey: 'florărie',
+          matchKey: 'proj2',
+          projectKey: 'proj2',
+          category: 'ecommerce',
           desc: 'Sistem e-commerce complet cu gestiune stocuri în timp real, coș de cumpărături, panou de administrare comenzi și suport clienți prin chat live WebSockets.',
           tags: ['Node.js', 'WebSockets', 'MySQL', 'E-Commerce', 'Cod Privat (Client)']
         },
@@ -531,7 +539,9 @@ const SWARM_CLUSTERS = [
           dx: 0.0,
           dy: 6.6,
           dz: -3.0,
-          matchKey: 'portofoliu tiberiu',
+          matchKey: 'proj5',
+          projectKey: 'proj5',
+          category: 'saas',
           desc: 'Platforma curentă: arhitectură Vanilla Vite ultra-rapidă, conformă Strict CSP (Zero-innerHTML), cu emulator CLI și motor WebGL 3D Neural Swarm.',
           tags: ['Vanilla ES6+', 'WebGL Shaders', 'Strict CSP', 'Vite 8']
         }
@@ -540,7 +550,7 @@ const SWARM_CLUSTERS = [
     en: {
       tab: 'portfolio',
       title: '04 PORTFOLIO · PRODUCTION PROJECTS',
-      subtitle: 'the 5 site projects · click [↗ LIVE] / [↗ GITHUB] or card to open',
+      subtitle: 'the 5 site projects · click [↗ LIVE] / [↗ GITHUB] / [📋 CASE STUDY]',
       nodes: [
         {
           label: 'CRM & Service Management App (Instalbloc)',
@@ -548,7 +558,9 @@ const SWARM_CLUSTERS = [
           dx: -6.8,
           dy: 4.5,
           dz: 2.4,
-          matchKey: 'instalbloc',
+          matchKey: 'proj3',
+          projectKey: 'proj3',
+          category: 'crm',
           desc: 'B2B platform running Edge SSR on Cloudflare Workers & R2 for homeowner associations. 96h SLA incidents, client-side WebP compression, and zero hosting costs.',
           tags: ['Next.js 15', 'Cloudflare Workers', 'Cloudflare R2', 'Turso LibSQL', 'Drizzle ORM']
         },
@@ -558,7 +570,9 @@ const SWARM_CLUSTERS = [
           dx: 6.8,
           dy: 4.1,
           dz: -2.0,
-          matchKey: 'viziune',
+          matchKey: 'proj4',
+          projectKey: 'proj4',
+          category: 'civic',
           desc: 'Interactive civic reporting and urban infrastructure monitoring platform with dynamic mapping, issue tracking, and public audit dashboard.',
           tags: ['React 19', 'TypeScript', 'Interactive Maps', 'Civic Tech']
         },
@@ -568,7 +582,9 @@ const SWARM_CLUSTERS = [
           dx: -6.4,
           dy: -4.8,
           dz: 3.6,
-          matchKey: 'cv builder',
+          matchKey: 'proj1',
+          projectKey: 'proj1',
+          category: 'saas',
           desc: 'Full SaaS application for building ATS-optimized resumes with live compatibility scoring, Puppeteer microservice PDF export, and Stripe billing.',
           tags: ['React', 'Firebase / Firestore', 'Stripe Webhooks', 'Puppeteer PDF']
         },
@@ -578,7 +594,9 @@ const SWARM_CLUSTERS = [
           dx: 6.4,
           dy: -4.6,
           dz: 1.5,
-          matchKey: 'florărie',
+          matchKey: 'proj2',
+          projectKey: 'proj2',
+          category: 'ecommerce',
           desc: 'Complete e-commerce system featuring real-time inventory management, shopping cart, order admin panel, and live WebSocket customer chat.',
           tags: ['Node.js', 'WebSockets', 'MySQL', 'E-Commerce', 'Private Client Code']
         },
@@ -588,7 +606,9 @@ const SWARM_CLUSTERS = [
           dx: 0.0,
           dy: 6.6,
           dz: -3.0,
-          matchKey: 'portofoliu tiberiu',
+          matchKey: 'proj5',
+          projectKey: 'proj5',
+          category: 'saas',
           desc: 'This platform: ultra-fast Vanilla Vite architecture, Strict CSP compliant (Zero-innerHTML), interactive CLI, and native WebGL 3D Neural Swarm.',
           tags: ['Vanilla ES6+', 'WebGL Shaders', 'Strict CSP', 'Vite 8']
         }
@@ -887,6 +907,7 @@ const SWARM_CLUSTERS = [
           dx: 0.2,
           dy: -5.8,
           dz: 1.8,
+          matchKey: 'contact_form',
           desc: 'Completează formularul securizat din pagină pentru a trimite un mesaj direct în inbox.',
           tags: ['Formular Web', 'Anti-Spam', 'Răspuns < 24h']
         }
@@ -953,6 +974,7 @@ const SWARM_CLUSTERS = [
           dx: 0.2,
           dy: -5.8,
           dz: 1.8,
+          matchKey: 'contact_form',
           desc: 'Fill out the secure on-page contact form to send a message straight to the inbox.',
           tags: ['Web Form', 'Anti-Spam', 'Reply < 24h']
         }
@@ -986,6 +1008,153 @@ const GATEKEEPER_CODE_LINES = [
   '      enforce_strict_csp(card)',
   'return verify_release(score=98)'
 ];
+
+const CASE_STUDIES_DATA = {
+  ro: {
+    proj3: {
+      title: 'InstalBloc — Portal Administrare & Contorizare',
+      badge: 'SaaS / PropTech (2026)',
+      challenge:
+        'Asociațiile de proprietari pierdeau zeci de ore lunar cu centralizarea manuală a indecșilor de apă pe hârtie și WhatsApp, generând erori de calcul la întreținere și lipsă de transparență.',
+      architecture:
+        'Aplicație web modulară cu interfață intuitivă pentru locatari (raportare indecși în 15 secunde de pe mobil) și dashboard administrativ cu validare automată a consumului, istoric și export direct pentru listele de plată.',
+      results: [
+        'Timpul de colectare și verificare a indecșilor redus cu 85%',
+        'Zero erori de transcriere între contorul locatarului și tabelul centralizator',
+        'Interfață Mobile-First adaptată inclusiv pentru utilizatori non-tehnici'
+      ],
+      stack: ['HTML5 / CSS3', 'JavaScript (ES6+)', 'State Management', 'Vercel Edge', 'Responsive UI']
+    },
+    proj4: {
+      title: 'Viziune Urbană Ploiești — Platformă CivicTech',
+      badge: 'CivicTech / Smart City (2026)',
+      challenge:
+        'Cetățenii nu aveau un canal vizual și centralizat prin care să urmărească proiectele de infrastructură ale orașului sau să raporteze punctual problemele din cartiere.',
+      architecture:
+        'Portal interactiv de transparență decizională și consultare publică, structurat pe piloni de dezvoltare urbană, raportare geo-localizată a sesizărilor și afișare clară a bugetelor și stadiilor de execuție.',
+      results: [
+        'Scor 100/100 Google Lighthouse la Performanță și Accesibilitate',
+        'Arhitectură scalabilă pregătită pentru trafic civic ridicat fără latență',
+        'Design modern, instituțional și accesibil de pe orice dispozitiv'
+      ],
+      stack: ['Semantic HTML5', 'Modern CSS Grid', 'Vanilla JS', 'Web Accessibility (WCAG)', 'SEO']
+    },
+    proj1: {
+      title: 'CV Builder Pro — Generator CV compatibil ATS',
+      badge: 'HR Tech / Web App (2026)',
+      challenge:
+        'Peste 70% dintre CV-urile clasice sunt respinse automat de sistemele ATS (Applicant Tracking Systems) din cauza formatării complexe sau a lipsei structurii semantice.',
+      architecture:
+        'Single-Page Application cu randare în timp real (Live Preview), validare automată a câmpurilor, persistență locală securizată și motor de export PDF vectorial care păstrează textul 100% selectabil și lizibil pentru roboții de recrutare.',
+      results: [
+        'Compatibilitate 100% cu filtrele ATS corporatiste',
+        'Generare instantanee a PDF-ului direct în browser (fără latență de server)',
+        'Peste 15 secțiuni personalizabile în timp real'
+      ],
+      stack: ['JavaScript ES6+', 'HTML2PDF / Print Engine', 'LocalStorage State', 'Firebase Hosting']
+    },
+    proj2: {
+      title: 'Florărie E-Commerce — Magazin Online & Gestiune',
+      badge: 'E-Commerce / Retail (Proiect Privat NDA)',
+      challenge:
+        'Gestionarea comenzilor telefonice în perioadele de vârf (1–8 Martie, Valentine’s Day) ducea la blocaje operaționale și desincronizări ale stocului de flori proaspete.',
+      architecture:
+        'Platformă completă de comerț electronic cu coș de cumpărături dinamic, selector de intervale de livrare prin curier propriu, mesaj personalizat pe felicitare și panou intern de gestiune a comenzilor.',
+      results: [
+        'Creșterea valorii medii a coșului (AOV) prin upsell automat la checkout',
+        'Eliminarea suprapunerilor de comenzi în zilele cu volum critic',
+        'Notă: Codul sursă și instanța live sunt private conform clauzei de confidențialitate (NDA)'
+      ],
+      stack: ['E-Commerce UI', 'Cart State Machine', 'Order Checkout Flow', 'Responsive Mobile']
+    },
+    proj5: {
+      title: 'Portofoliu Arhitectural & 3D Swarm Engine',
+      badge: 'Zero-Trust Web & WebGL (2026)',
+      challenge:
+        'Construirea unei platforme personale care să demonstreze simultan rigoare inginerească de nivel enterprise (Zero-Trust DOM, Strict CSP) și capabilități grafice avansate (WebGL 3D) fără librării grele.',
+      architecture:
+        'Arhitectură hibridă cu 0 dependențe de runtime: site ultrarapid (Scor 100 PageSpeed) cuplat cu un motor WebGL custom (TiberiuSwarmEngine) care transformă întregul DOM într-o constelație 3D interactivă cu sintetizator audio WebAudio.',
+      results: [
+        '0 vulnerabilități XSS (fără innerHTML, fără inline styles, CSP strict)',
+        'Motor 3D cu 60.000+ particule rulat nativ în GPU prin GLSL Shaders',
+        'Pipeline CI/CD determinist validat prin Gatekeeper (ESLint + Vite Build)'
+      ],
+      stack: ['Vanilla Vite', 'Custom WebGL / GLSL', 'WebAudio Synth', 'Strict CSP', 'Node.js API']
+    }
+  },
+  en: {
+    proj3: {
+      title: 'InstalBloc — HOA Management & Metering Portal',
+      badge: 'SaaS / PropTech (2026)',
+      challenge:
+        'Homeowners associations wasted dozens of hours monthly collecting water meter readings via paper and WhatsApp, causing billing errors and lack of transparency.',
+      architecture:
+        'Modular web application featuring a 15-second mobile meter submission flow for residents and an admin dashboard with automated consumption validation, history tracking, and billing export.',
+      results: [
+        'Reduced monthly meter collection and verification time by 85%',
+        'Zero transcription errors between resident meters and master spreadsheets',
+        'Mobile-first interface tailored for non-technical users'
+      ],
+      stack: ['HTML5 / CSS3', 'JavaScript (ES6+)', 'State Management', 'Vercel Edge', 'Responsive UI']
+    },
+    proj4: {
+      title: 'Ploiești Urban Vision — CivicTech Platform',
+      badge: 'CivicTech / Smart City (2026)',
+      challenge:
+        'Citizens lacked a centralized visual hub to track municipal infrastructure projects or submit geo-targeted neighborhood issue reports.',
+      architecture:
+        'Interactive public consultation and transparency portal structured around urban development pillars, geo-tagged civic reporting, and clear budget/stage tracking.',
+      results: [
+        '100/100 Google Lighthouse score in Performance and Accessibility',
+        'Scalable static-first architecture handling high civic traffic with zero latency',
+        'Clean institutional UX accessible across all mobile and desktop devices'
+      ],
+      stack: ['Semantic HTML5', 'Modern CSS Grid', 'Vanilla JS', 'Web Accessibility (WCAG)', 'SEO']
+    },
+    proj1: {
+      title: 'CV Builder Pro — ATS-Compliant Resume Generator',
+      badge: 'HR Tech / Web App (2026)',
+      challenge:
+        'Over 70% of standard resumes are automatically rejected by corporate ATS (Applicant Tracking Systems) due to broken layouts or non-semantic formatting.',
+      architecture:
+        'Single-Page Application with real-time live preview, field validation, local state persistence, and a vector PDF export engine that keeps text 100% selectable and machine-readable.',
+      results: [
+        '100% compatibility with corporate ATS parsers',
+        'Instant client-side PDF generation with zero server latency',
+        'Over 15 customizable resume sections with real-time layout sync'
+      ],
+      stack: ['JavaScript ES6+', 'HTML2PDF / Print Engine', 'LocalStorage State', 'Firebase Hosting']
+    },
+    proj2: {
+      title: 'Flower Shop E-Commerce — Online Store & Inventory',
+      badge: 'E-Commerce / Retail (Private NDA Project)',
+      challenge:
+        'Managing phone orders during peak floral seasons (Valentine’s Day, March 1–8) caused operational bottlenecks and fresh-stock desynchronization.',
+      architecture:
+        'Full e-commerce storefront with dynamic cart state machine, delivery time-slot scheduling, custom greeting card builder, and internal order management dashboard.',
+      results: [
+        'Increased Average Order Value (AOV) via automated checkout upsells',
+        'Eliminated order collisions during peak holiday traffic',
+        'Note: Source code and live deployment are private under client NDA'
+      ],
+      stack: ['E-Commerce UI', 'Cart State Machine', 'Order Checkout Flow', 'Responsive Mobile']
+    },
+    proj5: {
+      title: 'Architectural Portfolio & 3D Swarm Engine',
+      badge: 'Zero-Trust Web & WebGL (2026)',
+      challenge:
+        'Building a personal engineering platform that simultaneously demonstrates enterprise Zero-Trust security (Strict CSP, zero innerHTML) and custom 3D WebGL graphics without heavy frameworks.',
+      architecture:
+        'Zero-dependency hybrid architecture: a 100-score PageSpeed static site paired with a custom WebGL engine (TiberiuSwarmEngine) that transforms the live DOM into an interactive 3D universe with procedural WebAudio synthesis.',
+      results: [
+        'Zero XSS surface (no innerHTML, no inline styles, strict CSP)',
+        '60,000+ particle 3D universe rendered natively on GPU via custom GLSL shaders',
+        'Deterministic Gatekeeper CI pipeline (ESLint max-warnings=0 + Vite build)'
+      ],
+      stack: ['Vanilla Vite', 'Custom WebGL / GLSL', 'WebAudio Synth', 'Strict CSP', 'Node.js API']
+    }
+  }
+};
 
 /* ==========================================================================
    2. PROCEDURAL WEB AUDIO SYNTHESIZER (ZERO EXTERNAL MP3 FILES)
@@ -1160,6 +1329,72 @@ class SwarmAudioSynth {
     gain.connect(this.master);
   }
 
+  playPortalRestore() {
+    this.init();
+    if (!this.ctx || this.isMuted) return;
+    const now = this.ctx.currentTime;
+
+    // ACT 1 (0.00s - 0.50s): Reverse Gravitational Suction into #swarmAtomicBtn
+    const suckOsc = this.ctx.createOscillator();
+    const suckFilter = this.ctx.createBiquadFilter();
+    const suckGain = this.ctx.createGain();
+
+    suckOsc.type = 'sawtooth';
+    suckOsc.frequency.setValueAtTime(520, now);
+    suckOsc.frequency.exponentialRampToValueAtTime(68, now + 0.48);
+
+    suckFilter.type = 'bandpass';
+    suckFilter.Q.value = 5.5;
+    suckFilter.frequency.setValueAtTime(1600, now);
+    suckFilter.frequency.exponentialRampToValueAtTime(140, now + 0.48);
+
+    suckGain.gain.setValueAtTime(0.01, now);
+    suckGain.gain.linearRampToValueAtTime(0.18, now + 0.22);
+    suckGain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+
+    suckOsc.connect(suckFilter);
+    suckFilter.connect(suckGain);
+    suckGain.connect(this.master);
+    suckOsc.start(now);
+    suckOsc.stop(now + 0.52);
+
+    // ACT 2 (0.46s - 0.95s): Quantum Critical Mass & Anamorphic Flash in #swarmAtomicBtn
+    const subOsc = this.ctx.createOscillator();
+    const subGain = this.ctx.createGain();
+    subOsc.type = 'sine';
+    subOsc.frequency.setValueAtTime(155, now + 0.46);
+    subOsc.frequency.exponentialRampToValueAtTime(34, now + 0.98);
+
+    subGain.gain.setValueAtTime(0.001, now + 0.46);
+    subGain.gain.linearRampToValueAtTime(0.38, now + 0.52);
+    subGain.gain.exponentialRampToValueAtTime(0.001, now + 1.05);
+
+    subOsc.connect(subGain);
+    subGain.connect(this.master);
+    subOsc.start(now + 0.46);
+    subOsc.stop(now + 1.08);
+
+    // ACT 3 (0.52s - 1.55s): Holographic Laser Projection Arpeggio (Ejecting DOM from #swarmAtomicBtn)
+    const chordNotes = [440, 554.37, 659.25, 880, 1108.73, 1318.51];
+    chordNotes.forEach((freq, idx) => {
+      const startT = now + 0.52 + idx * 0.085;
+      const chime = this.ctx.createOscillator();
+      const cGain = this.ctx.createGain();
+      chime.type = idx % 2 === 0 ? 'triangle' : 'sine';
+      chime.frequency.setValueAtTime(freq * 0.5, startT);
+      chime.frequency.exponentialRampToValueAtTime(freq, startT + 0.09);
+
+      cGain.gain.setValueAtTime(0.001, startT);
+      cGain.gain.linearRampToValueAtTime(0.085, startT + 0.04);
+      cGain.gain.exponentialRampToValueAtTime(0.001, startT + 0.48);
+
+      chime.connect(cGain);
+      cGain.connect(this.master);
+      chime.start(startT);
+      chime.stop(startT + 0.5);
+    });
+  }
+
   stopAll() {
     if (this.droneOsc1) {
       try {
@@ -1188,6 +1423,8 @@ const VERTEX_SRC = `
 
   uniform mat4 uProjView;
   uniform float uTime;
+  uniform vec2 uPortalNDC;
+  uniform float uPortalMix;
 
   varying vec3 vColor;
   varying float vAlpha;
@@ -1210,6 +1447,18 @@ const VERTEX_SRC = `
     }
 
     vec4 clip = uProjView * vec4(p, 1.0);
+    if (uPortalMix > 0.001 && clip.w > 0.0) {
+      vec2 ndc = clip.xy / clip.w;
+      vec2 delta = ndc - uPortalNDC;
+      float swirl = uPortalMix * 3.4 * (1.0 + aLayer * 0.28);
+      float c = cos(swirl);
+      float s = sin(swirl);
+      vec2 spun = vec2(delta.x * c - delta.y * s, delta.x * s + delta.y * c);
+      float pull = pow(1.0 - uPortalMix, 2.25);
+      vec2 finalNDC = uPortalNDC + spun * pull;
+      clip.xy = finalNDC * clip.w;
+      vAlpha *= (1.0 - uPortalMix * 0.65);
+    }
     float scale = (aLayer > 0.5) ? 310.0 : 225.0;
     gl_PointSize = clamp(aSize * (scale / max(1.0, clip.w)), 1.0, 22.0);
     gl_Position = clip;
@@ -1337,6 +1586,8 @@ export class TiberiuSwarmEngine {
 
     this.originX = window.innerWidth * 0.5;
     this.originY = 30;
+    this.portalMix = 0;
+    this.deviceProfile = 'desktop';
     this.vortexParticles = [];
     this.shockwaves = [];
 
@@ -1349,6 +1600,8 @@ export class TiberiuSwarmEngine {
     this.ptsPerCluster = 0;
     this.uProjViewLoc = null;
     this.uTimeLoc = null;
+    this.uPortalNDCLoc = null;
+    this.uPortalMixLoc = null;
 
     // 360° Spherical Orbit State (Yaw, Pitch, Distance around camTargetLook)
     this.currentStageIdx = -1;
@@ -1356,6 +1609,8 @@ export class TiberiuSwarmEngine {
     this.autoPlay = true;
     this.clusterActivatedAt = {};
     this.hoveredStarIdx = null;
+    this.pressedCard = null;
+    this.pressedStarIdx = null;
     this.lastFrameTime = 0;
 
     this.orbitYaw = 0;
@@ -1386,6 +1641,18 @@ export class TiberiuSwarmEngine {
 
     // Harvested External Links Map (din DOM-ul real al paginii)
     this.harvestedLinks = {};
+    this.portfolioFilter = 'all';
+    this.hudCollapsed = false;
+    this.warpBoost = 0;
+    this.restoreDomTriggered = false;
+    this.restoreJumpSelector = null;
+    this.restoreShockwaves = [];
+    this.restoreCardsSnapshot = [];
+    this.restoreStarsSnapshot = [];
+    this.restoreSpiderSnapshot = null;
+    this.restoreDomBlocks = [];
+    this.restoreEmergeEls = [];
+    this.activeDockCards = [];
 
     this.projectedCards = [];
     this.hoveredCard = null;
@@ -1422,6 +1689,69 @@ export class TiberiuSwarmEngine {
   }
 
   /**
+   * Actualizează în timp real coordonatele sub-pixel ale butonului #swarmAtomicBtn pe orice rezoluție.
+   */
+  syncAtomicOrigin() {
+    const btn = this.dom.atomicBtn || document.getElementById('swarmAtomicBtn');
+    if (btn) {
+      const rect = btn.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        this.originX = rect.left + rect.width * 0.5;
+        this.originY = rect.top + rect.height * 0.5;
+      }
+    }
+  }
+
+  /**
+   * Clasifică determinist profilul dispozitivului: 'phone' | 'tablet' | 'desktop' | 'ultrawide'.
+   */
+  getDeviceProfile() {
+    const w = window.innerWidth;
+    const h = Math.max(1, window.innerHeight);
+    if (w < 768) return 'phone';
+    if (w < 1100) return 'tablet';
+    if (w >= 1920 || w / h > 2.05) return 'ultrawide';
+    return 'desktop';
+  }
+
+  /**
+   * Execută acțiunea primară a unui card (deschidere link extern Live/GitHub, Studiu de Caz sau Formular Contact).
+   */
+  triggerCardPrimaryAction(c) {
+    if (!c) return false;
+    if (c.primaryUrl) {
+      this.openExternalUrl(c.primaryUrl);
+      return true;
+    }
+    if (c.projectKey) {
+      this.openCaseStudyDrawer(c.projectKey, c);
+      return true;
+    }
+    if (c.matchKey === 'contact_form') {
+      this.openContactDrawer();
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Deschide în siguranță o adresă URL externă sau de protocol (inclusiv pe iOS Safari / Android Chrome în touchend).
+   */
+  openExternalUrl(url) {
+    if (!url) return;
+    const a = document.createElement('a');
+    a.href = url;
+    if (!url.startsWith('mailto:') && !url.startsWith('tel:')) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    }
+    a.className = 'is-hidden';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  /**
    * Detectează dacă utilizatorul accesează site-ul de pe un dispozitiv mobil / tabletă
    * pentru afișarea condiționată a avertismentului despre baterie („prăjitor de pâine”).
    */
@@ -1443,7 +1773,8 @@ export class TiberiuSwarmEngine {
 
   /**
    * Scanează cardurile reale din #projects și #contact din index.html
-   * și copiază exact adresele URL (Live Demo, GitHub, WhatsApp, Email, Telefon, CV PDF).
+   * și copiază exact adresele URL (Live Demo, GitHub, WhatsApp, Email, Telefon, CV PDF)
+   * folosind atributul determinist data-project="proj1..proj5".
    */
   harvestDOMLinks() {
     this.harvestedLinks = {
@@ -1456,23 +1787,24 @@ export class TiberiuSwarmEngine {
         github: 'https://github.com/tiberiumilitaru89'
       },
       github: { live: null, github: 'https://github.com/tiberiumilitaru89' },
-      instalbloc: {
+      proj3: {
         live: 'https://instalbloc.ro',
-        github: 'https://github.com/tiberiumilitaru89/Instalbloc'
+        github: 'https://github.com/tiberiumilitaru89/instalbloc'
       },
-      viziune: {
-        live: 'https://tiberiumilitaru89.github.io/primarie/',
-        github: 'https://github.com/tiberiumilitaru89/primarie'
+      proj4: {
+        live: 'https://viziuneurbanaploiesti.ro',
+        github: 'https://github.com/tiberiumilitaru89/viziune-urbana-ploiesti'
       },
-      'cv builder': {
-        live: 'https://tiberiumilitaru89.github.io/generator-cv-pro/',
-        github: 'https://github.com/tiberiumilitaru89/generator-cv-pro'
+      proj1: {
+        live: 'https://cvsmartats.web.app/',
+        github: 'https://github.com/tiberiumilitaru89/cv-builder-ats'
       },
-      'florărie': {
-        live: 'https://tiberiumilitaru89.github.io/florarie/',
-        github: 'https://github.com/tiberiumilitaru89/florarie'
+      proj2: {
+        live: null,
+        github: null,
+        isPrivate: true
       },
-      'portofoliu tiberiu': {
+      proj5: {
         live: 'https://tiberiumilitaru.ro',
         github: 'https://github.com/tiberiumilitaru89/portofoliu-tiberiu'
       }
@@ -1480,11 +1812,10 @@ export class TiberiuSwarmEngine {
 
     const projectSection = document.getElementById('projects');
     if (projectSection) {
-      const cards = projectSection.querySelectorAll('.project-card, article, .card');
+      const cards = projectSection.querySelectorAll('.project-card[data-project], article[data-project]');
       cards.forEach((card) => {
-        const titleEl = card.querySelector('h3, h4, .project-title');
-        if (!titleEl) return;
-        const titleTxt = (titleEl.textContent || '').toLowerCase();
+        const projKey = card.getAttribute('data-project');
+        if (!projKey || !this.harvestedLinks[projKey]) return;
 
         let liveUrl = null;
         let githubUrl = null;
@@ -1502,16 +1833,22 @@ export class TiberiuSwarmEngine {
           }
         });
 
-        ['instalbloc', 'viziune', 'cv builder', 'florărie', 'portofoliu tiberiu'].forEach((key) => {
-          if (titleTxt.includes(key) && (liveUrl || githubUrl)) {
-            this.harvestedLinks[key] = {
-              live: liveUrl || (this.harvestedLinks[key] && this.harvestedLinks[key].live) || null,
-              github: githubUrl || (this.harvestedLinks[key] && this.harvestedLinks[key].github) || null
-            };
-          }
-        });
+        if (liveUrl || githubUrl) {
+          this.harvestedLinks[projKey] = {
+            live: liveUrl || this.harvestedLinks[projKey].live || null,
+            github: githubUrl || this.harvestedLinks[projKey].github || null,
+            isPrivate: Boolean(this.harvestedLinks[projKey].isPrivate && !liveUrl && !githubUrl)
+          };
+        }
       });
     }
+
+    // Alias-uri de siguranță
+    this.harvestedLinks.instalbloc = this.harvestedLinks.proj3;
+    this.harvestedLinks.viziune = this.harvestedLinks.proj4;
+    this.harvestedLinks['cv builder'] = this.harvestedLinks.proj1;
+    this.harvestedLinks['florărie'] = this.harvestedLinks.proj2;
+    this.harvestedLinks['portofoliu tiberiu'] = this.harvestedLinks.proj5;
   }
 
   detectLanguage() {
@@ -1527,16 +1864,25 @@ export class TiberiuSwarmEngine {
     const langSpan = document.getElementById('langCurrentText');
     if (!langSpan) return;
     const obs = new MutationObserver(() => {
-      if (this.state === 'IDLE') {
-        this.setLanguage(this.detectLanguage());
+      const detected = this.detectLanguage();
+      if (detected !== this.lang) {
+        this.setLanguage(detected, false);
       }
     });
     obs.observe(langSpan, { childList: true, characterData: true, subtree: true });
   }
 
-  setLanguage(nextLang) {
+  setLanguage(nextLang, syncParent = true) {
     this.lang = nextLang === 'en' ? 'en' : 'ro';
     const t = UI_TEXT[this.lang];
+
+    if (syncParent) {
+      const currentParentLang = this.detectLanguage();
+      if (currentParentLang !== this.lang) {
+        const parentLangBtn = document.getElementById('langToggleBtn');
+        if (parentLangBtn) parentLangBtn.click();
+      }
+    }
 
     if (this.dom.atomicBtn) {
       this.dom.atomicBtn.setAttribute('title', t.btnTitle);
@@ -1561,6 +1907,21 @@ export class TiberiuSwarmEngine {
 
     if (this.state === 'SWARM_LIVE') {
       this.updateStageBanner();
+      this.updateCardDock();
+      if (this.selectedCard) {
+        const cluster = SWARM_CLUSTERS[this.selectedCard.clusterIdx];
+        if (cluster) {
+          const nodeIdx = Number(this.selectedCard.id.split('-').pop()) || 0;
+          const updatedNode = cluster[this.lang].nodes[nodeIdx];
+          if (updatedNode) {
+            this.selectedCard.label = updatedNode.label;
+            this.selectedCard.desc = updatedNode.desc || '';
+            this.selectedCard.tags = updatedNode.tags || [];
+            this.selectedCard.clusterTitle = cluster[this.lang].title;
+            this.openInspectorForCard(this.selectedCard);
+          }
+        }
+      }
     }
   }
 
@@ -1728,6 +2089,19 @@ export class TiberiuSwarmEngine {
     const mRight = document.createElement('div');
     mRight.className = 'swarm-metrics-right';
 
+    const cvBtn = document.createElement('a');
+    cvBtn.className = 'swarm-hud-btn swarm-hud-btn-cv';
+    cvBtn.href = '/CV-Militaru-Tiberiu.pdf';
+    cvBtn.target = '_blank';
+    cvBtn.rel = 'noopener noreferrer';
+    cvBtn.textContent = '📄 CV PDF';
+
+    const cliBtn = document.createElement('button');
+    cliBtn.type = 'button';
+    cliBtn.className = 'swarm-hud-btn swarm-hud-btn-cli';
+    cliBtn.textContent = '>_ TERMINAL';
+    cliBtn.addEventListener('click', () => this.openCliDrawer());
+
     const muteBtn = document.createElement('button');
     muteBtn.type = 'button';
     muteBtn.className = 'swarm-hud-btn';
@@ -1751,7 +2125,7 @@ export class TiberiuSwarmEngine {
     langBtn.className = 'swarm-hud-btn';
     langBtn.textContent = this.lang === 'ro' ? 'RO ▸ EN' : 'EN ▸ RO';
     langBtn.addEventListener('click', () => {
-      this.setLanguage(this.lang === 'ro' ? 'en' : 'ro');
+      this.setLanguage(this.lang === 'ro' ? 'en' : 'ro', true);
     });
 
     const exitBtn = document.createElement('button');
@@ -1760,7 +2134,7 @@ export class TiberiuSwarmEngine {
     exitBtn.textContent = t.exitBtn;
     exitBtn.addEventListener('click', () => this.restoreReality());
 
-    mRight.append(muteBtn, autoBtn, langBtn, exitBtn);
+    mRight.append(cvBtn, cliBtn, muteBtn, autoBtn, langBtn, exitBtn);
     strip.append(mLeft, mRight);
 
     const tabsBar = document.createElement('div');
@@ -1804,9 +2178,40 @@ export class TiberiuSwarmEngine {
     const bHint = document.createElement('p');
     bHint.className = 'swarm-stage-controls-hint';
     bHint.textContent = t.controlsHint;
-    banner.append(bTitle, bSub, bHint);
 
-    // --- 3. HOLOGRAPHIC NODE INSPECTOR (1:1 CU CARDURILE SITE-ULUI + LINK-URI EXTERNE) ---
+    // Bară de filtrare categorii pentru rubrica 04 Portofoliu
+    const filterBar = document.createElement('div');
+    filterBar.className = 'swarm-portfolio-filter-bar';
+    this.dom.filterPills = [];
+    const filterCategories = [
+      { id: 'all', label: 'ALL (5)' },
+      { id: 'crm', label: 'CRM / B2B' },
+      { id: 'civic', label: 'CIVIC TECH' },
+      { id: 'saas', label: 'SAAS / AI' },
+      { id: 'ecommerce', label: 'E-COMMERCE' }
+    ];
+    filterCategories.forEach((cat) => {
+      const pill = document.createElement('button');
+      pill.type = 'button';
+      pill.className =
+        cat.id === 'all' ? 'swarm-filter-pill is-active' : 'swarm-filter-pill';
+      pill.textContent = cat.label;
+      pill.addEventListener('click', () => {
+        this.portfolioFilter = cat.id;
+        this.dom.filterPills.forEach((p) =>
+          p.classList.toggle('is-active', p.dataset.cat === cat.id)
+        );
+        this.audio.playPing('hover');
+        this.updateCardDock();
+      });
+      pill.dataset.cat = cat.id;
+      filterBar.appendChild(pill);
+      this.dom.filterPills.push(pill);
+    });
+
+    banner.append(bTitle, bSub, bHint, filterBar);
+
+    // --- 3. HOLOGRAPHIC NODE INSPECTOR (1:1 CU CARDURILE SITE-ULUI + LINK-URI EXTERNE + STUDII DE CAZ) ---
     const inspector = document.createElement('aside');
     inspector.className = 'swarm-inspector-card';
 
@@ -1823,6 +2228,7 @@ export class TiberiuSwarmEngine {
     insClose.addEventListener('click', () => {
       this.selectedCard = null;
       inspector.classList.remove('is-open');
+      this.updateCardDock();
     });
     insHead.append(insKind, insClose);
 
@@ -1841,6 +2247,9 @@ export class TiberiuSwarmEngine {
     const insActions = document.createElement('div');
     insActions.className = 'swarm-inspector-actions';
 
+    const insNdaBadge = document.createElement('div');
+    insNdaBadge.className = 'swarm-inspector-badge-nda is-hidden';
+
     const extRow = document.createElement('div');
     extRow.className = 'swarm-inspector-ext-row';
 
@@ -1858,22 +2267,73 @@ export class TiberiuSwarmEngine {
 
     extRow.append(insLiveLink, insGitLink);
 
+    const insCaseBtn = document.createElement('button');
+    insCaseBtn.type = 'button';
+    insCaseBtn.className = 'swarm-inspector-btn-case is-hidden';
+    insCaseBtn.addEventListener('click', () => {
+      if (this.selectedCard && this.selectedCard.projectKey) {
+        this.openCaseStudyDrawer(this.selectedCard.projectKey, this.selectedCard);
+      }
+    });
+
+    const insExtraBtn = document.createElement('button');
+    insExtraBtn.type = 'button';
+    insExtraBtn.className = 'swarm-inspector-btn-extra is-hidden';
+
     const insJump = document.createElement('button');
     insJump.type = 'button';
     insJump.className = 'swarm-inspector-jump';
     insJump.addEventListener('click', () => {
       if (this.selectedCard) {
-        const sel = this.selectedCard.targetSelector;
-        this.restoreReality();
-        setTimeout(() => {
-          const targetEl = document.querySelector(sel);
-          if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
-        }, 700);
+        this.restoreReality(this.selectedCard.targetSelector);
       }
     });
 
-    insActions.append(extRow, insJump);
+    insActions.append(insNdaBadge, extRow, insCaseBtn, insExtraBtn, insJump);
     inspector.append(insHead, insTitle, insDesc, insTags, insMeta, insActions);
+
+    // --- 3.5. HOLOGRAPHIC STAR CARD DOCK (CARUSEL ERGONOMIC PC & MOBIL) ---
+    const cardDock = document.createElement('nav');
+    cardDock.className = 'swarm-card-dock';
+    cardDock.setAttribute('aria-label', 'Star Cards Carousel');
+
+    const dockPrev = document.createElement('button');
+    dockPrev.type = 'button';
+    dockPrev.className = 'swarm-dock-nav-btn';
+    dockPrev.textContent = '◀';
+    dockPrev.setAttribute('aria-label', 'Previous card');
+    dockPrev.addEventListener('click', () => this.cycleDockCard(-1));
+
+    const dockLabel = document.createElement('span');
+    dockLabel.className = 'swarm-dock-label';
+    dockLabel.textContent = 'CARDS';
+
+    const dockList = document.createElement('div');
+    dockList.className = 'swarm-dock-list';
+
+    const dockNext = document.createElement('button');
+    dockNext.type = 'button';
+    dockNext.className = 'swarm-dock-nav-btn';
+    dockNext.textContent = '▶';
+    dockNext.setAttribute('aria-label', 'Next card');
+    dockNext.addEventListener('click', () => this.cycleDockCard(1));
+
+    cardDock.append(dockPrev, dockLabel, dockList, dockNext);
+
+    // --- 3.8. BUTON TOGGLE TELEMETRIE PE MOBIL ---
+    const hudMobileToggle = document.createElement('button');
+    hudMobileToggle.type = 'button';
+    hudMobileToggle.className = 'swarm-hud-mobile-toggle';
+    hudMobileToggle.textContent = '📊 TELEMETRIE ▾';
+    hudMobileToggle.addEventListener('click', () => {
+      this.hudCollapsed = !this.hudCollapsed;
+      bottomHud.classList.toggle('is-collapsed', this.hudCollapsed);
+      cardDock.classList.toggle('is-hud-collapsed', this.hudCollapsed);
+      inspector.classList.toggle('is-hud-collapsed', this.hudCollapsed);
+      hudMobileToggle.textContent = this.hudCollapsed
+        ? '📊 TELEMETRIE ▴'
+        : '📊 TELEMETRIE ▾';
+    });
 
     // --- 4. BOTTOM 6-PANEL TELEMETRY HUD ---
     const bottomHud = document.createElement('section');
@@ -1929,7 +2389,48 @@ export class TiberiuSwarmEngine {
     });
     pCode.panel.appendChild(codeBox);
 
-    root.append(webglCanvas, hudCanvas, headerStack, banner, inspector, bottomHud, backdrop);
+    // --- 5. HOLOGRAPHIC DRAWER MODAL (CASE STUDY, CONTACT FORM, CLI TERMINAL) ---
+    const drawerBackdrop = document.createElement('div');
+    drawerBackdrop.className = 'swarm-drawer-backdrop';
+    drawerBackdrop.addEventListener('click', (e) => {
+      if (e.target === drawerBackdrop) this.closeDrawerModal();
+    });
+
+    const drawerModal = document.createElement('div');
+    drawerModal.className = 'swarm-drawer-modal';
+
+    const drawerHead = document.createElement('div');
+    drawerHead.className = 'swarm-drawer-head';
+
+    const drawerBadge = document.createElement('span');
+    drawerBadge.className = 'swarm-drawer-badge';
+
+    const drawerClose = document.createElement('button');
+    drawerClose.type = 'button';
+    drawerClose.className = 'swarm-drawer-close';
+    drawerClose.textContent = '✕ ESC';
+    drawerClose.addEventListener('click', () => this.closeDrawerModal());
+
+    drawerHead.append(drawerBadge, drawerClose);
+
+    const drawerBody = document.createElement('div');
+    drawerBody.className = 'swarm-drawer-body';
+
+    drawerModal.append(drawerHead, drawerBody);
+    drawerBackdrop.appendChild(drawerModal);
+
+    root.append(
+      webglCanvas,
+      hudCanvas,
+      headerStack,
+      banner,
+      inspector,
+      cardDock,
+      hudMobileToggle,
+      bottomHud,
+      backdrop,
+      drawerBackdrop
+    );
     document.body.appendChild(root);
 
     Object.assign(this.dom, {
@@ -1952,22 +2453,397 @@ export class TiberiuSwarmEngine {
       bTitle,
       bSub,
       bHint,
+      filterBar,
       inspector,
       insKind,
       insTitle,
       insDesc,
       insTags,
       insMeta,
+      insNdaBadge,
       insLiveLink,
       insGitLink,
+      insCaseBtn,
+      insExtraBtn,
       insJump,
+      cardDock,
+      dockLabel,
+      dockList,
+      hudMobileToggle,
       bottomHud,
       logRate: pLog.sub,
       logList,
+      drawerBackdrop,
+      drawerBadge,
+      drawerBody,
       panelCanvases: { sections: cSec, radar: cRad, heat: cHeat, score: cScore }
     });
 
     this.onResize();
+  }
+
+  closeDrawerModal() {
+    if (this.dom.drawerBackdrop) {
+      this.dom.drawerBackdrop.classList.remove('is-open');
+    }
+  }
+
+  /**
+   * Deschide Studiul de Caz Tehnic („Detalii Tehnice”) direct în universul 3D.
+   */
+  openCaseStudyDrawer(projectKey, card) {
+    const langData = CASE_STUDIES_DATA[this.lang] || CASE_STUDIES_DATA.ro;
+    const study = langData[projectKey];
+    if (!study) return;
+
+    this.audio.playPing('stage');
+    const isRo = this.lang === 'ro';
+    this.dom.drawerBadge.textContent = `CASE STUDY · ${study.badge.toUpperCase()}`;
+
+    const frag = document.createDocumentFragment();
+
+    const title = document.createElement('h3');
+    title.className = 'swarm-drawer-title';
+    title.textContent = study.title;
+    frag.appendChild(title);
+
+    const makeSec = (lbl, txt) => {
+      const s = document.createElement('div');
+      s.className = 'swarm-drawer-section';
+      const h = document.createElement('div');
+      h.className = 'swarm-drawer-sec-label';
+      h.textContent = lbl;
+      const p = document.createElement('p');
+      p.className = 'swarm-drawer-sec-text';
+      p.textContent = txt;
+      s.append(h, p);
+      return s;
+    };
+
+    frag.appendChild(
+      makeSec(isRo ? '01 · PROVOCAREA DE BUSINESS' : '01 · BUSINESS CHALLENGE', study.challenge)
+    );
+    frag.appendChild(
+      makeSec(
+        isRo ? '02 · ARHITECTURA & SOLUȚIA TEHNICĂ' : '02 · TECHNICAL ARCHITECTURE',
+        study.architecture
+      )
+    );
+
+    const resSec = document.createElement('div');
+    resSec.className = 'swarm-drawer-section';
+    const resLbl = document.createElement('div');
+    resLbl.className = 'swarm-drawer-sec-label';
+    resLbl.textContent = isRo ? '03 · REZULTATE & IMPACT' : '03 · KEY RESULTS & IMPACT';
+    const ul = document.createElement('ul');
+    ul.className = 'swarm-drawer-list';
+    study.results.forEach((rTxt) => {
+      const li = document.createElement('li');
+      li.textContent = rTxt;
+      ul.appendChild(li);
+    });
+    resSec.append(resLbl, ul);
+    frag.appendChild(resSec);
+
+    const stSec = document.createElement('div');
+    stSec.className = 'swarm-drawer-section';
+    const stLbl = document.createElement('div');
+    stLbl.className = 'swarm-drawer-sec-label';
+    stLbl.textContent = '04 · TECH STACK';
+    const tagsWrap = document.createElement('div');
+    tagsWrap.className = 'swarm-inspector-tags';
+    study.stack.forEach((stTxt) => {
+      const sp = document.createElement('span');
+      sp.className = 'swarm-inspector-tag';
+      sp.textContent = stTxt;
+      tagsWrap.appendChild(sp);
+    });
+    stSec.append(stLbl, tagsWrap);
+    frag.appendChild(stSec);
+
+    const urls = this.harvestedLinks[projectKey];
+    const ctaRow = document.createElement('div');
+    ctaRow.className = 'swarm-inspector-ext-row';
+
+    if (urls && urls.live) {
+      const aLive = document.createElement('a');
+      aLive.className = 'swarm-inspector-link';
+      aLive.href = urls.live;
+      aLive.target = '_blank';
+      aLive.rel = 'noopener noreferrer';
+      aLive.textContent = isRo ? '↗ DESCHIDE PROIECT LIVE' : '↗ OPEN LIVE PROJECT';
+      ctaRow.appendChild(aLive);
+    }
+    if (urls && urls.github) {
+      const aGit = document.createElement('a');
+      aGit.className = 'swarm-inspector-link';
+      aGit.href = urls.github;
+      aGit.target = '_blank';
+      aGit.rel = 'noopener noreferrer';
+      aGit.textContent = '↗ GITHUB REPO';
+      ctaRow.appendChild(aGit);
+    }
+
+    const askBtn = document.createElement('button');
+    askBtn.type = 'button';
+    askBtn.className = 'swarm-inspector-btn-extra';
+    askBtn.textContent = isRo
+      ? '✉ ÎNTREABĂ DESPRE ACEST PROIECT'
+      : '✉ INQUIRE ABOUT THIS PROJECT';
+    askBtn.addEventListener('click', () => {
+      this.openContactDrawer(card ? card.label : study.title);
+    });
+
+    frag.append(ctaRow, askBtn);
+    this.dom.drawerBody.replaceChildren(frag);
+    this.dom.drawerBackdrop.classList.add('is-open');
+  }
+
+  /**
+   * Deschide Formularul de Contact Direct conectat la /api/contact fără a părăsi universul 3D.
+   */
+  openContactDrawer(prefillSubject = '') {
+    this.audio.playPing('stage');
+    const isRo = this.lang === 'ro';
+    this.dom.drawerBadge.textContent = isRo
+      ? 'TRANSMISIE DIRECTĂ · /API/CONTACT'
+      : 'DIRECT TRANSMISSION · /API/CONTACT';
+
+    const frag = document.createDocumentFragment();
+
+    const title = document.createElement('h3');
+    title.className = 'swarm-drawer-title';
+    title.textContent = isRo
+      ? 'Trimite un mesaj direct în Inbox'
+      : 'Send a Direct Message to Inbox';
+    frag.appendChild(title);
+
+    const form = document.createElement('form');
+    form.className = 'swarm-contact-form';
+
+    const makeField = (lblTxt, tag, type, name, placeholder, val = '') => {
+      const wrap = document.createElement('div');
+      wrap.className = 'swarm-form-field';
+      const lbl = document.createElement('label');
+      lbl.className = 'swarm-form-label';
+      lbl.textContent = lblTxt;
+      const input = document.createElement(tag);
+      if (tag === 'input') {
+        input.type = type;
+        input.className = 'swarm-form-input';
+      } else {
+        input.className = 'swarm-form-textarea';
+      }
+      input.name = name;
+      input.required = true;
+      input.placeholder = placeholder;
+      if (val) input.value = val;
+      wrap.append(lbl, input);
+      return { wrap, input };
+    };
+
+    const fName = makeField(
+      isRo ? 'NUME COMPLET' : 'FULL NAME',
+      'input',
+      'text',
+      'name',
+      isRo ? 'Ex: Alexandru Popescu' : 'e.g. Alex Smith'
+    );
+    const fEmail = makeField(
+      'EMAIL',
+      'input',
+      'email',
+      'email',
+      'alex@companie.ro'
+    );
+    const defaultMsg = prefillSubject
+      ? isRo
+        ? `Salut Tiberiu, sunt interesat de un proiect similar cu „${prefillSubject}”. `
+        : `Hi Tiberiu, I am interested in a project similar to "${prefillSubject}". `
+      : '';
+    const fMsg = makeField(
+      isRo ? 'DETALII PROIECT / MESAJ' : 'PROJECT DETAILS / MESSAGE',
+      'textarea',
+      'text',
+      'message',
+      isRo
+        ? 'Descrie pe scurt obiectivul tehnic, termenul sau întrebarea ta...'
+        : 'Briefly describe your technical goal, timeline, or question...',
+      defaultMsg
+    );
+
+    const submitBtn = document.createElement('button');
+    submitBtn.type = 'submit';
+    submitBtn.className = 'swarm-form-submit';
+    submitBtn.textContent = isRo ? '🚀 TRIMITE MESAJUL ACUM' : '🚀 SEND MESSAGE NOW';
+
+    const statusBox = document.createElement('div');
+    statusBox.className = 'swarm-form-status';
+
+    form.append(fName.wrap, fEmail.wrap, fMsg.wrap, submitBtn, statusBox);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const payload = {
+        name: fName.input.value.trim(),
+        email: fEmail.input.value.trim(),
+        subject: prefillSubject || 'Mesaj din 3D Swarm Engine',
+        message: fMsg.input.value.trim()
+      };
+      if (!payload.name || !payload.email || !payload.message) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = isRo ? 'SE TRANSMITE...' : 'TRANSMITTING...';
+      statusBox.className = 'swarm-form-status';
+      statusBox.textContent = '';
+
+      try {
+        const ctrl = new AbortController();
+        const tId = setTimeout(() => ctrl.abort(), 9000);
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: ctrl.signal
+        });
+        clearTimeout(tId);
+
+        if (res.ok) {
+          statusBox.className = 'swarm-form-status is-ok';
+          statusBox.textContent = isRo
+            ? '✓ Mesaj transmis cu succes! Tiberiu îți va răspunde în maximum 24h.'
+            : '✓ Message transmitted successfully! Tiberiu will reply within 24h.';
+          form.reset();
+          this.pushLog('link', 'contact · sent 200 OK');
+        } else {
+          throw new Error('HTTP_ERR');
+        }
+      } catch (_err) {
+        statusBox.className = 'swarm-form-status is-err';
+        statusBox.textContent = isRo
+          ? '⚠ Serverul local nu răspunde. Deschidem clientul de email direct...'
+          : '⚠ Local API unreachable. Opening direct email client...';
+        const mailto = `mailto:contact@tiberiumilitaru.ro?subject=${encodeURIComponent(
+          payload.subject
+        )}&body=${encodeURIComponent(
+          `${payload.name} (${payload.email}):\n\n${payload.message}`
+        )}`;
+        this.openExternalUrl(mailto);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = isRo ? '🚀 TRIMITE MESAJUL ACUM' : '🚀 SEND MESSAGE NOW';
+      }
+    });
+
+    frag.appendChild(form);
+    this.dom.drawerBody.replaceChildren(frag);
+    this.dom.drawerBackdrop.classList.add('is-open');
+  }
+
+  /**
+   * Deschide Terminalul Interactiv CLI direct în universul 3D.
+   */
+  openCliDrawer() {
+    this.audio.playPing('stage');
+    const isRo = this.lang === 'ro';
+    this.dom.drawerBadge.textContent = 'TIBERIU_OS · INTERACTIVE 3D TERMINAL';
+
+    const frag = document.createDocumentFragment();
+    const out = document.createElement('div');
+    out.className = 'swarm-cli-output';
+
+    const appendLine = (txt, cls = '') => {
+      const row = document.createElement('div');
+      if (cls) row.className = cls;
+      row.textContent = txt;
+      out.appendChild(row);
+      out.scrollTop = out.scrollHeight;
+    };
+
+    appendLine(
+      isRo
+        ? 'TiberiuOS v4.2 (3D Swarm Kernel) — Tastează "help" pentru lista de comenzi.'
+        : 'TiberiuOS v4.2 (3D Swarm Kernel) — Type "help" for available commands.',
+      'swarm-cli-res'
+    );
+
+    const form = document.createElement('form');
+    form.className = 'swarm-cli-input-row';
+
+    const promptSpan = document.createElement('span');
+    promptSpan.className = 'swarm-cli-prompt';
+    promptSpan.textContent = 'tiberiu@swarm:~$';
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'swarm-cli-input';
+    input.placeholder = 'help | projects | open instalbloc | open viziune | open cv | contact | exit';
+
+    form.append(promptSpan, input);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const raw = input.value.trim();
+      if (!raw) return;
+      input.value = '';
+      appendLine(`tiberiu@swarm:~$ ${raw}`, 'swarm-cli-cmd');
+
+      const cmd = raw.toLowerCase();
+      if (cmd === 'help') {
+        appendLine(
+          'Commands: projects, skills, contact, cv, open instalbloc, open viziune, open cvbuilder, stage 1..7, clear, exit',
+          'swarm-cli-res'
+        );
+      } else if (cmd === 'clear') {
+        out.replaceChildren();
+      } else if (cmd === 'projects') {
+        appendLine('1. InstalBloc (https://instalbloc.vercel.app)', 'swarm-cli-res');
+        appendLine('2. Viziune Urbană Ploiești (https://viziuneurbanaploiesti.ro)', 'swarm-cli-res');
+        appendLine('3. CV Builder Pro ATS (https://cvsmartats.web.app/)', 'swarm-cli-res');
+        appendLine('4. Florărie E-Commerce (Private NDA)', 'swarm-cli-res');
+        appendLine('5. Portofoliu Tiberiu (https://tiberiumilitaru.ro)', 'swarm-cli-res');
+        this.switchToManualRoam();
+        this.setStage(3);
+      } else if (cmd === 'skills') {
+        appendLine(
+          'Stack: HTML5, CSS3, JavaScript (ES6+), React, Node.js, Python, SQL, Git, Linux/Networking, Zero-Trust CSP',
+          'swarm-cli-res'
+        );
+        this.switchToManualRoam();
+        this.setStage(4);
+      } else if (cmd === 'contact') {
+        this.openContactDrawer();
+      } else if (cmd === 'cv' || cmd === 'open cv') {
+        appendLine('Opening /CV-Militaru-Tiberiu.pdf ...', 'swarm-cli-res');
+        this.openExternalUrl('/CV-Militaru-Tiberiu.pdf');
+      } else if (cmd.includes('instalbloc')) {
+        appendLine('Launching https://instalbloc.vercel.app ...', 'swarm-cli-res');
+        this.openExternalUrl('https://instalbloc.vercel.app');
+      } else if (cmd.includes('viziune')) {
+        appendLine('Launching https://viziuneurbanaploiesti.ro ...', 'swarm-cli-res');
+        this.openExternalUrl('https://viziuneurbanaploiesti.ro');
+      } else if (cmd.includes('cvbuilder')) {
+        appendLine('Launching https://cvsmartats.web.app/ ...', 'swarm-cli-res');
+        this.openExternalUrl('https://cvsmartats.web.app/');
+      } else if (cmd.startsWith('stage ')) {
+        const n = parseInt(cmd.replace('stage ', ''), 10);
+        if (n >= 1 && n <= 7) {
+          this.switchToManualRoam();
+          this.setStage(n - 1);
+          appendLine(`Flying camera to Star 0${n}...`, 'swarm-cli-res');
+        }
+      } else if (cmd === 'exit') {
+        this.closeDrawerModal();
+        this.restoreReality();
+      } else {
+        appendLine(`Unknown command: "${raw}". Type "help".`);
+      }
+    });
+
+    frag.append(out, form);
+    this.dom.drawerBody.replaceChildren(frag);
+    this.dom.drawerBackdrop.classList.add('is-open');
+    setTimeout(() => input.focus(), 60);
   }
 
   createPanelCanvas(parent) {
@@ -1999,7 +2875,7 @@ export class TiberiuSwarmEngine {
   openBatteryWarning() {
     if (this.state !== 'IDLE') return;
     this.harvestDOMLinks();
-    this.setLanguage(this.detectLanguage());
+    this.setLanguage(this.detectLanguage(), false);
     this.state = 'MODAL';
     this.dom.root.classList.add('is-active');
     this.dom.backdrop.classList.add('is-visible');
@@ -2014,11 +2890,7 @@ export class TiberiuSwarmEngine {
   }
 
   sampleDOMParticles() {
-    if (this.dom.atomicBtn) {
-      const r = this.dom.atomicBtn.getBoundingClientRect();
-      this.originX = r.left + r.width * 0.5;
-      this.originY = r.top + r.height * 0.5;
-    }
+    this.syncAtomicOrigin();
 
     const els = Array.from(
       document.querySelectorAll('header, nav, h1, h2, h3, p, a, button, span, .card, section, pre')
@@ -2045,14 +2917,18 @@ export class TiberiuSwarmEngine {
 
       const dx = x - this.originX;
       const dy = y - this.originY;
+      const homeDist = Math.hypot(dx, dy) || 1;
+      const homeAngle = Math.atan2(dy, dx);
 
       this.vortexParticles.push({
         x,
         y,
         homeX: x,
         homeY: y,
-        dist: Math.hypot(dx, dy) || 1,
-        angle: Math.atan2(dy, dx),
+        homeDist,
+        homeAngle,
+        dist: homeDist,
+        angle: homeAngle,
         vortexSpeed: 0.045 + Math.random() * 0.055,
         suction: 0.918 - Math.random() * 0.035,
         size: Math.random() < 0.15 ? 2.1 : 1.2,
@@ -2068,7 +2944,11 @@ export class TiberiuSwarmEngine {
     window.dispatchEvent(new CustomEvent('swarm:pause-bg'));
 
     this.audio.playImplosion();
-    document.body.classList.add('swarm-consumed');
+    if (this.dom.atomicBtn) {
+      this.dom.atomicBtn.classList.add('is-portal-flare');
+    }
+    document.body.classList.remove('swarm-restoring');
+    document.body.classList.add('swarm-imploding', 'swarm-consumed');
 
     this.state = 'IMPLODING';
     this.stateStart = performance.now();
@@ -2234,6 +3114,8 @@ export class TiberiuSwarmEngine {
 
     this.uProjViewLoc = gl.getUniformLocation(prog, 'uProjView');
     this.uTimeLoc = gl.getUniformLocation(prog, 'uTime');
+    this.uPortalNDCLoc = gl.getUniformLocation(prog, 'uPortalNDC');
+    this.uPortalMixLoc = gl.getUniformLocation(prog, 'uPortalMix');
 
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
@@ -2247,9 +3129,20 @@ export class TiberiuSwarmEngine {
     gl.viewport(0, 0, this.dom.webglCanvas.width, this.dom.webglCanvas.height);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
+    const w = Math.max(1, window.innerWidth);
+    const h = Math.max(1, window.innerHeight);
+    const portalNdcX = (this.originX / w) * 2.0 - 1.0;
+    const portalNdcY = 1.0 - (this.originY / h) * 2.0;
+
     gl.useProgram(this.glProgram);
     gl.uniformMatrix4fv(this.uProjViewLoc, false, this.cam.projViewMatrix);
     gl.uniform1f(this.uTimeLoc, now * 0.001);
+    if (this.uPortalNDCLoc) {
+      gl.uniform2f(this.uPortalNDCLoc, portalNdcX, portalNdcY);
+    }
+    if (this.uPortalMixLoc) {
+      gl.uniform1f(this.uPortalMixLoc, this.portalMix);
+    }
 
     gl.drawArrays(gl.POINTS, 0, this.glTotalPoints);
   }
@@ -2273,9 +3166,13 @@ export class TiberiuSwarmEngine {
     const now = performance.now();
     this.currentStageIdx = idx;
     this.stageTimer = now;
+    this.warpBoost = 1.0;
+    this.deviceProfile = this.getDeviceProfile();
 
     if (idx === -1) {
       this.clusterActivatedAt = {};
+      // Activăm pre-vizualizarea discretă a portofoliului și pe Overview pentru acces rapid din dock
+      this.clusterActivatedAt[3] = now - 600;
     } else if (idx >= 0 && idx < SWARM_CLUSTERS.length) {
       // Când activăm o stea, declanșăm animația radială de ieșire a cardurilor din nucleul stelei
       this.clusterActivatedAt[idx] = now;
@@ -2295,26 +3192,34 @@ export class TiberiuSwarmEngine {
     this.audio.playPing('stage');
     this.updateStageBanner();
 
+    if (this.dom.filterBar) {
+      this.dom.filterBar.classList.toggle('is-visible', idx === 3 || idx === 7);
+    }
+
+    const isPhone = this.deviceProfile === 'phone';
+    const isTablet = this.deviceProfile === 'tablet';
+
     if (idx === -1) {
       this.camTargetLook = { x: 0, y: 0, z: 0 };
       this.targetYaw = 0;
       this.targetPitch = 0.05;
-      this.targetDist = 54;
+      this.targetDist = isPhone ? 62 : isTablet ? 58 : 54;
       this.spiderTarget3D = { ...SWARM_CLUSTERS[0].pos };
     } else if (idx >= 0 && idx < SWARM_CLUSTERS.length) {
       const c = SWARM_CLUSTERS[idx];
       this.camTargetLook = { x: c.pos.x, y: c.pos.y, z: c.pos.z };
       this.targetYaw = -c.pos.x * 0.008;
       this.targetPitch = c.pos.y * 0.006;
-      // La rubrica 04 Portofoliu (idx === 3) apropiem ușor camera pentru vizibilitate maximă pe cardurile cu link
-      this.targetDist = idx === 3 ? 21.5 : 24;
+      // La rubrica 04 Portofoliu (idx === 3) calibrăm distanța camerei pe fiecare tip de ecran
+      const baseDist = idx === 3 ? 21.5 : 24;
+      this.targetDist = isPhone ? baseDist + 4.5 : isTablet ? baseDist + 2.0 : baseDist;
       this.spiderTarget3D = { ...c.pos };
       this.pushLog('walk', `-> ${c[this.lang].tab}`);
     } else {
       this.camTargetLook = { x: 0, y: -1, z: 0 };
       this.targetYaw = 0;
       this.targetPitch = 0.04;
-      this.targetDist = 50;
+      this.targetDist = isPhone ? 58 : isTablet ? 54 : 50;
       this.spiderTarget3D = { x: 0, y: 0, z: 10 };
       this.pushLog('link', 'ship · 181/181 verified');
     }
@@ -2356,6 +3261,132 @@ export class TiberiuSwarmEngine {
     this.dom.mWords.textContent = `${wordsRead}/181`;
     this.dom.mLinks.textContent = `${Math.min(45, Math.max(0, (idx + 1) * 6))}`;
     this.dom.mFlags.textContent = `${Math.min(12, Math.max(0, (idx + 1) * 2))}`;
+
+    this.updateCardDock();
+  }
+
+  /**
+   * Populează bara-carusel de carduri (`.swarm-card-dock`) pentru steaua activă
+   * (sau pentru cele 5 proiecte din Portofoliu când suntem în Overview / Ship),
+   * garantând acces 1-tap de pe orice telefon sau desktop fără a depinde doar de țintirea 3D.
+   */
+  updateCardDock() {
+    if (!this.dom.dockList) return;
+    const targetClusterIdx =
+      this.currentStageIdx >= 0 && this.currentStageIdx < SWARM_CLUSTERS.length
+        ? this.currentStageIdx
+        : 3;
+    const c = SWARM_CLUSTERS[targetClusterIdx];
+    const nodes = c[this.lang].nodes;
+
+    this.activeDockCards = [];
+    const frag = document.createDocumentFragment();
+
+    nodes.forEach((nd, nIdx) => {
+      if (
+        targetClusterIdx === 3 &&
+        this.portfolioFilter !== 'all' &&
+        nd.category &&
+        nd.category !== this.portfolioFilter
+      ) {
+        return;
+      }
+
+      const urls =
+        nd.matchKey && this.harvestedLinks[nd.matchKey]
+          ? this.harvestedLinks[nd.matchKey]
+          : null;
+      const primaryUrl = urls ? urls.live || urls.github : null;
+
+      const cardObj = {
+        id: `${c.id}-${nIdx}`,
+        clusterIdx: targetClusterIdx,
+        clusterId: c.id,
+        clusterTitle: c[this.lang].title,
+        clusterColor: c.colorCss,
+        targetSelector: c.targetSelector,
+        matchKey: nd.matchKey || null,
+        projectKey: nd.projectKey || null,
+        category: nd.category || null,
+        primaryUrl,
+        label: nd.label,
+        kind: nd.kind,
+        desc: nd.desc || '',
+        tags: nd.tags || [],
+        worldX: c.pos.x + nd.dx,
+        worldY: c.pos.y + nd.dy,
+        worldZ: c.pos.z + nd.dz
+      };
+      this.activeDockCards.push(cardObj);
+
+      const pill = document.createElement('button');
+      pill.type = 'button';
+      pill.className = 'swarm-dock-pill';
+      pill.dataset.cardId = cardObj.id;
+      if (this.selectedCard && this.selectedCard.id === cardObj.id) {
+        pill.classList.add('is-active', 'is-selected');
+      }
+
+      const lbl = document.createElement('span');
+      lbl.textContent = nd.label;
+      pill.appendChild(lbl);
+
+      if (primaryUrl || nd.projectKey || nd.matchKey === 'contact_form') {
+        const bdg = document.createElement('span');
+        bdg.className = 'swarm-dock-pill-badge';
+        bdg.textContent = primaryUrl ? '↗' : nd.projectKey ? '📋' : '✉';
+        bdg.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          this.switchToManualRoam();
+          if (!this.clusterActivatedAt[targetClusterIdx]) {
+            this.clusterActivatedAt[targetClusterIdx] = performance.now() - 800;
+          }
+          this.openInspectorForCard(cardObj);
+          this.triggerCardPrimaryAction(cardObj);
+        });
+        pill.appendChild(bdg);
+      }
+
+      pill.addEventListener('click', () => {
+        this.switchToManualRoam();
+        if (!this.clusterActivatedAt[targetClusterIdx]) {
+          this.clusterActivatedAt[targetClusterIdx] = performance.now() - 800;
+        }
+        const alreadySelected = Boolean(this.selectedCard && this.selectedCard.id === cardObj.id);
+        this.openInspectorForCard(cardObj);
+        if (alreadySelected) {
+          this.triggerCardPrimaryAction(cardObj);
+        }
+      });
+
+      frag.appendChild(pill);
+    });
+
+    this.dom.dockList.replaceChildren(frag);
+  }
+
+  cycleDockCard(dir) {
+    if (!this.activeDockCards || this.activeDockCards.length === 0) {
+      this.updateCardDock();
+    }
+    if (!this.activeDockCards.length) return;
+
+    this.switchToManualRoam();
+    let currIdx = this.selectedCard
+      ? this.activeDockCards.findIndex((item) => item.id === this.selectedCard.id)
+      : -1;
+    if (currIdx === -1) {
+      currIdx = dir > 0 ? 0 : this.activeDockCards.length - 1;
+    } else {
+      currIdx = (currIdx + dir + this.activeDockCards.length) % this.activeDockCards.length;
+    }
+    const chosen = this.activeDockCards[currIdx];
+    if (chosen) {
+      if (!this.clusterActivatedAt[chosen.clusterIdx]) {
+        this.clusterActivatedAt[chosen.clusterIdx] = performance.now() - 800;
+      }
+      this.openInspectorForCard(chosen);
+    }
   }
 
   pushLog(action, targetText) {
@@ -2392,6 +3423,26 @@ export class TiberiuSwarmEngine {
     const w = window.innerWidth;
     const h = window.innerHeight;
     ctx.clearRect(0, 0, w, h);
+
+    // 0.0. Efect Hyper-Warp la zborul camerei între stele
+    if (this.warpBoost > 0.02) {
+      this.warpBoost *= 0.91;
+      const cx = w * 0.5;
+      const cy = h * 0.5;
+      ctx.save();
+      ctx.strokeStyle = `rgba(0, 240, 255, ${this.warpBoost * 0.26})`;
+      ctx.lineWidth = 1.15;
+      for (let s = 0; s < 28; s++) {
+        const ang = (s / 28) * Math.PI * 2 + (s % 3) * 0.19;
+        const r1 = 80 + (s % 5) * 45 + (1 - this.warpBoost) * 140;
+        const r2 = r1 + 35 + this.warpBoost * 95;
+        ctx.beginPath();
+        ctx.moveTo(cx + Math.cos(ang) * r1, cy + Math.sin(ang) * r1);
+        ctx.lineTo(cx + Math.cos(ang) * r2, cy + Math.sin(ang) * r2);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
 
     // 0. Etichetele Astronomice ale celor 5 Galaxii Îndepărtate (Deep Space Telemetry)
     ctx.textAlign = 'center';
@@ -2455,7 +3506,7 @@ export class TiberiuSwarmEngine {
 
       const distCore = Math.hypot(this.mouseX - coreP.x, this.mouseY - coreP.y);
       const distLabel = Math.hypot(this.mouseX - p.x, this.mouseY - (p.y + 4));
-      if (!this.isDragging && (distCore < 22 || distLabel < 34)) {
+      if ((!this.isDragging || this.dragMovedPx < 6) && (distCore < 24 || distLabel < 36)) {
         this.hoveredStarIdx = idx;
       }
       const isStarHov = this.hoveredStarIdx === idx;
@@ -2573,7 +3624,10 @@ export class TiberiuSwarmEngine {
     ctx.font = '600 10px "JetBrains Mono", monospace';
 
     SWARM_CLUSTERS.forEach((c, cIdx) => {
-      if (this.currentStageIdx < cIdx && this.currentStageIdx !== 7) return;
+      const hasExplicitActivation = Boolean(this.clusterActivatedAt[cIdx]);
+      if (this.currentStageIdx < cIdx && this.currentStageIdx !== 7 && !hasExplicitActivation) {
+        return;
+      }
       const centerP = this.cam.projectPoint(c.pos.x, c.pos.y, c.pos.z);
       const actStart = this.clusterActivatedAt[cIdx] || 0;
 
@@ -2602,6 +3656,10 @@ export class TiberiuSwarmEngine {
           else if (nd.matchKey === 'cv_pdf') linkBadge = '↗ CV PDF';
           else if (urls.live) linkBadge = '↗ LIVE';
           else linkBadge = '↗ GITHUB';
+        } else if (nd.projectKey === 'proj2') {
+          linkBadge = this.lang === 'ro' ? '📋 CAZ' : '📋 CASE';
+        } else if (nd.matchKey === 'contact_form') {
+          linkBadge = this.lang === 'ro' ? '✉ MESAJ' : '✉ FORM';
         }
 
         const fullText = `${nd.label} · ${nd.kind}`;
@@ -2618,6 +3676,8 @@ export class TiberiuSwarmEngine {
           clusterColor: c.colorCss,
           targetSelector: c.targetSelector,
           matchKey: nd.matchKey || null,
+          projectKey: nd.projectKey || null,
+          category: nd.category || null,
           primaryUrl,
           linkBadge,
           badgeW,
@@ -2638,7 +3698,10 @@ export class TiberiuSwarmEngine {
           worldX: wx,
           worldY: wy,
           worldZ: wz,
-          isCurrent: cIdx === this.currentStageIdx || this.currentStageIdx === 7
+          isCurrent:
+            cIdx === this.currentStageIdx ||
+            this.currentStageIdx === 7 ||
+            (this.currentStageIdx === -1 && cIdx === 3)
         });
       });
     });
@@ -2649,8 +3712,8 @@ export class TiberiuSwarmEngine {
       for (let j = i + 1; j < this.projectedCards.length; j++) {
         const a = this.projectedCards[i];
         const b = this.projectedCards[j];
-        if (Math.abs(a.x - b.x) < (a.boxW + b.boxW) * 0.48 && Math.abs(a.y - b.y) < 24) {
-          const push = (24 - Math.abs(a.y - b.y)) * 0.5;
+        if (Math.abs(a.x - b.x) < (a.boxW + b.boxW) * 0.48 && Math.abs(a.y - b.y) < 26) {
+          const push = (26 - Math.abs(a.y - b.y)) * 0.5;
           if (a.y <= b.y) {
             a.y -= push;
             b.y += push;
@@ -2662,15 +3725,55 @@ export class TiberiuSwarmEngine {
       }
     }
 
+    // Clampăm coordonatele cardurilor în zona liberă a ecranului (evitând headerul, inspectorul și panourile HUD)
+    const isPhone = w < 640;
+    const isTablet = w >= 640 && w <= 1024;
+    const inspectorOpen =
+      this.dom.inspector && this.dom.inspector.classList.contains('is-open');
+    const rightSafeW = inspectorOpen && w > 960 ? w - 355 : w - 12;
+    const topSafeY = isPhone ? 156 : isTablet ? 148 : 142;
+    const bottomSafeY = isPhone
+      ? this.hudCollapsed
+        ? h - 102
+        : h - 220
+      : isTablet
+      ? h - 228
+      : h - 236;
+
+    this.projectedCards.forEach((c) => {
+      const halfW = Math.min(c.boxW * 0.5 + 8, w * 0.47);
+      const maxX = Math.max(halfW + 10, rightSafeW - halfW);
+      c.x = Math.max(halfW, Math.min(maxX, c.x));
+      c.y = Math.max(topSafeY, Math.min(Math.max(topSafeY + 40, bottomSafeY), c.y));
+    });
+
+    // A doua trecere anti-coliziune după clamparea în zona sigură
+    for (let i = 0; i < this.projectedCards.length; i++) {
+      for (let j = i + 1; j < this.projectedCards.length; j++) {
+        const a = this.projectedCards[i];
+        const b = this.projectedCards[j];
+        if (Math.abs(a.x - b.x) < (a.boxW + b.boxW) * 0.48 && Math.abs(a.y - b.y) < 25) {
+          const push = (25 - Math.abs(a.y - b.y)) * 0.5;
+          if (a.y <= b.y) {
+            a.y = Math.max(topSafeY - 8, a.y - push);
+            b.y = Math.min(bottomSafeY + 12, b.y + push);
+          } else {
+            a.y = Math.min(bottomSafeY + 12, a.y + push);
+            b.y = Math.max(topSafeY - 8, b.y - push);
+          }
+        }
+      }
+    }
+
     let hoverHit = null;
-    if (!this.isDragging) {
+    if (!this.isDragging || this.dragMovedPx < 6) {
       for (let i = this.projectedCards.length - 1; i >= 0; i--) {
         const c = this.projectedCards[i];
         if (
-          this.mouseX >= c.x - c.boxW * 0.5 &&
-          this.mouseX <= c.x + c.boxW * 0.5 &&
-          this.mouseY >= c.y - c.boxH * 0.5 &&
-          this.mouseY <= c.y + c.boxH * 0.5
+          this.mouseX >= c.x - c.boxW * 0.5 - 3 &&
+          this.mouseX <= c.x + c.boxW * 0.5 + 3 &&
+          this.mouseY >= c.y - c.boxH * 0.5 - 3 &&
+          this.mouseY <= c.y + c.boxH * 0.5 + 3
         ) {
           hoverHit = c;
           break;
@@ -2684,16 +3787,23 @@ export class TiberiuSwarmEngine {
     this.hoveredCard = hoverHit;
     this.dom.hudCanvas.classList.toggle(
       'is-pointer',
-      (Boolean(hoverHit) || this.hoveredStarIdx !== null) && !this.isDragging
+      (Boolean(hoverHit) || this.hoveredStarIdx !== null) &&
+        (!this.isDragging || this.dragMovedPx < 6)
     );
 
     this.projectedCards.forEach((c) => {
       const st = KIND_STYLES[c.kind] || KIND_STYLES.claim;
       const isHov = this.hoveredCard && this.hoveredCard.id === c.id;
       const isSel = this.selectedCard && this.selectedCard.id === c.id;
+      const isFilteredOut =
+        c.clusterIdx === 3 &&
+        this.portfolioFilter !== 'all' &&
+        c.category &&
+        c.category !== this.portfolioFilter;
 
       ctx.save();
-      ctx.globalAlpha = (c.isCurrent || isHov || isSel ? 1.0 : 0.42) * c.emerge;
+      const baseAlpha = isFilteredOut ? 0.16 : c.isCurrent || isHov || isSel ? 1.0 : 0.42;
+      ctx.globalAlpha = baseAlpha * c.emerge;
 
       // Filamentul sinaptic care leagă nucleul stelei de cardul ieșit în orbită
       const ctrlX = (c.cx + c.x) * 0.5;
@@ -2708,7 +3818,7 @@ export class TiberiuSwarmEngine {
       ctx.setLineDash([]);
 
       // Impuls luminos care călătorește din nucleul stelei către cardul proiectului
-      if (c.isCurrent || isHov) {
+      if ((c.isCurrent || isHov) && !isFilteredOut) {
         const pulseT = (now * 0.0009 + c.worldX * 0.07) % 1;
         const inv = 1 - pulseT;
         const px = inv * inv * c.cx + 2 * inv * pulseT * ctrlX + pulseT * pulseT * c.x;
@@ -2730,6 +3840,32 @@ export class TiberiuSwarmEngine {
       ctx.lineWidth = isHov || isSel ? 1.7 : 1.0;
       ctx.strokeRect(rx, ry, c.boxW, c.boxH);
 
+      // Reticul Holografic Target-Lock [ ⌖ ] pe cardul selectat sau survolat
+      if (isHov || isSel) {
+        const pad = 3.5;
+        const len = 5.5;
+        ctx.strokeStyle = '#00f0ff';
+        ctx.lineWidth = 1.35;
+        ctx.beginPath();
+        // Stânga-Sus
+        ctx.moveTo(rx - pad, ry - pad + len);
+        ctx.lineTo(rx - pad, ry - pad);
+        ctx.lineTo(rx - pad + len, ry - pad);
+        // Dreapta-Sus
+        ctx.moveTo(rx + c.boxW + pad - len, ry - pad);
+        ctx.lineTo(rx + c.boxW + pad, ry - pad);
+        ctx.lineTo(rx + c.boxW + pad, ry - pad + len);
+        // Stânga-Jos
+        ctx.moveTo(rx - pad, ry + c.boxH + pad - len);
+        ctx.lineTo(rx - pad, ry + c.boxH + pad);
+        ctx.lineTo(rx - pad + len, ry + c.boxH + pad);
+        // Dreapta-Jos
+        ctx.moveTo(rx + c.boxW + pad - len, ry + c.boxH + pad);
+        ctx.lineTo(rx + c.boxW + pad, ry + c.boxH + pad);
+        ctx.lineTo(rx + c.boxW + pad, ry + c.boxH + pad - len);
+        ctx.stroke();
+      }
+
       ctx.font =
         isHov || isSel
           ? '700 10.5px "JetBrains Mono", monospace'
@@ -2741,7 +3877,7 @@ export class TiberiuSwarmEngine {
         ctx.textAlign = 'left';
         ctx.fillText(c.fullText, rx + 8, c.y + 0.5);
 
-        // Butonul-insignă [↗ LIVE] integrat direct în partea dreaptă a cardului ieșit din stea
+        // Butonul-insignă [↗ LIVE] / [📋 CAZ] integrat direct în partea dreaptă a cardului ieșit din stea
         const bx = rx + c.boxW - c.badgeW - 4;
         const by = ry + 3;
         const bh = c.boxH - 6;
@@ -2985,9 +4121,10 @@ export class TiberiuSwarmEngine {
 
   /**
    * Deschide Inspectorul Holografic 1-la-1 cu cardul din site (titlu, descriere, tag-uri)
-   * și populează butoanele Live Demo / GitHub / Contact folosind adresele URL recoltate.
+   * și populează toate acțiunile (Live Demo, GitHub, Studiu de Caz Tehnic, Formular Contact, Copy Email).
    */
   openInspectorForCard(c) {
+    this.switchToManualRoam();
     this.selectedCard = c;
     this.audio.playPing('stage');
 
@@ -3005,12 +4142,73 @@ export class TiberiuSwarmEngine {
     });
     this.dom.insTags.replaceChildren(tagFrag);
 
+    const wx = typeof c.worldX === 'number' ? c.worldX : 0;
+    const wy = typeof c.worldY === 'number' ? c.worldY : 0;
+    const wz = typeof c.worldZ === 'number' ? c.worldZ : 0;
     this.dom.insMeta.textContent = isRo
-      ? `Rubrica: "${c.clusterTitle}" · Coordonate 3D: (${c.worldX.toFixed(1)}, ${c.worldY.toFixed(1)}, ${c.worldZ.toFixed(1)})`
-      : `Section: "${c.clusterTitle}" · 3D Coords: (${c.worldX.toFixed(1)}, ${c.worldY.toFixed(1)}, ${c.worldZ.toFixed(1)})`;
+      ? `Rubrica: "${c.clusterTitle}" · Coordonate 3D: (${wx.toFixed(1)}, ${wy.toFixed(1)}, ${wz.toFixed(1)})`
+      : `Section: "${c.clusterTitle}" · 3D Coords: (${wx.toFixed(1)}, ${wy.toFixed(1)}, ${wz.toFixed(1)})`;
     this.dom.insJump.textContent = isRo
       ? `▸ Vezi în Pagină (${c.targetSelector})`
       : `▸ Jump to Section (${c.targetSelector})`;
+
+    // Badge NDA pentru proiectul privat Enterprise (proj2)
+    if (this.dom.insNdaBadge) {
+      if (c.projectKey === 'proj2') {
+        this.dom.insNdaBadge.textContent = isRo
+          ? '🔒 PROIECT PRIVAT (ENTERPRISE NDA) · ARHITECTURĂ VERIFICABILĂ ÎN STUDIUL DE CAZ'
+          : '🔒 PRIVATE PROJECT (ENTERPRISE NDA) · ARCHITECTURE VERIFIABLE IN CASE STUDY';
+        this.dom.insNdaBadge.classList.remove('is-hidden');
+      } else {
+        this.dom.insNdaBadge.classList.add('is-hidden');
+      }
+    }
+
+    // Buton Studiu de Caz Tehnic complet (pentru toate cele 5 proiecte din Portofoliu)
+    if (this.dom.insCaseBtn) {
+      const langCases = CASE_STUDIES_DATA[this.lang] || CASE_STUDIES_DATA.ro;
+      if (c.projectKey && langCases && langCases[c.projectKey]) {
+        this.dom.insCaseBtn.textContent = isRo
+          ? '📋 DETALII TEHNICE / STUDIU DE CAZ'
+          : '📋 TECHNICAL DETAILS / CASE STUDY';
+        this.dom.insCaseBtn.classList.remove('is-hidden');
+      } else {
+        this.dom.insCaseBtn.classList.add('is-hidden');
+      }
+    }
+
+    // Buton contextual suplimentar (Formular Contact Direct / Copiere Email / Cerere Ofertă Serviciu)
+    if (this.dom.insExtraBtn) {
+      if (c.matchKey === 'contact_form') {
+        this.dom.insExtraBtn.textContent = isRo
+          ? '✉ DESCHIDE FORMULARUL DE CONTACT DIRECT'
+          : '✉ OPEN DIRECT CONTACT FORM';
+        this.dom.insExtraBtn.onclick = () => this.openContactDrawer();
+        this.dom.insExtraBtn.classList.remove('is-hidden');
+      } else if (c.matchKey === 'email') {
+        this.dom.insExtraBtn.textContent = isRo
+          ? '📋 COPIAZĂ ADRESA: contact@tiberiumilitaru.ro'
+          : '📋 COPY ADDRESS: contact@tiberiumilitaru.ro';
+        this.dom.insExtraBtn.onclick = () => {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText('contact@tiberiumilitaru.ro').catch(() => {});
+          }
+          this.dom.insExtraBtn.textContent = isRo
+            ? '✓ ADRESĂ EMAIL COPIATĂ ÎN CLIPBOARD!'
+            : '✓ EMAIL ADDRESS COPIED TO CLIPBOARD!';
+        };
+        this.dom.insExtraBtn.classList.remove('is-hidden');
+      } else if (c.clusterIdx === 1) {
+        this.dom.insExtraBtn.textContent = isRo
+          ? '✉ SOLICITĂ OFERTĂ PENTRU ACEST SERVICIU'
+          : '✉ REQUEST QUOTE FOR THIS SERVICE';
+        this.dom.insExtraBtn.onclick = () => this.openContactDrawer(c.label);
+        this.dom.insExtraBtn.classList.remove('is-hidden');
+      } else {
+        this.dom.insExtraBtn.onclick = null;
+        this.dom.insExtraBtn.classList.add('is-hidden');
+      }
+    }
 
     // Verificăm dacă există URL-uri externe recoltate din cardul DOM corespunzător
     const urls = c.matchKey && this.harvestedLinks[c.matchKey] ? this.harvestedLinks[c.matchKey] : null;
@@ -3043,6 +4241,15 @@ export class TiberiuSwarmEngine {
       this.dom.insGitLink.classList.add('is-hidden');
     }
 
+    // Evidențiem pastila corespunzătoare în bara-carusel de carduri
+    if (this.dom.dockList) {
+      Array.from(this.dom.dockList.children).forEach((pill) => {
+        const isCurrentPill = pill.dataset.cardId === c.id;
+        pill.classList.toggle('is-active', isCurrentPill);
+        pill.classList.toggle('is-selected', isCurrentPill);
+      });
+    }
+
     this.dom.inspector.classList.add('is-open');
   }
 
@@ -3057,12 +4264,31 @@ export class TiberiuSwarmEngine {
     }
   }
 
+  findCardAtPoint(px, py, padX = 5, padY = 5) {
+    for (let i = this.projectedCards.length - 1; i >= 0; i--) {
+      const c = this.projectedCards[i];
+      if (
+        px >= c.x - c.boxW * 0.5 - padX &&
+        px <= c.x + c.boxW * 0.5 + padX &&
+        py >= c.y - c.boxH * 0.5 - padY &&
+        py <= c.y + c.boxH * 0.5 + padY
+      ) {
+        return c;
+      }
+    }
+    return null;
+  }
+
   onMouseDown(e) {
     if (this.state !== 'SWARM_LIVE' || e.button !== 0) return;
     this.isDragging = true;
     this.dragMovedPx = 0;
     this.lastPointerX = e.clientX;
     this.lastPointerY = e.clientY;
+    this.mouseX = e.clientX;
+    this.mouseY = e.clientY;
+    this.pressedCard = this.findCardAtPoint(e.clientX, e.clientY, 5, 5);
+    this.pressedStarIdx = this.hoveredStarIdx;
     this.dom.hudCanvas.classList.add('is-grabbing');
   }
 
@@ -3087,30 +4313,49 @@ export class TiberiuSwarmEngine {
     }
   }
 
-  onMouseUp() {
+  onMouseUp(e) {
     if (!this.isDragging) return;
     this.isDragging = false;
     if (this.dom.hudCanvas) this.dom.hudCanvas.classList.remove('is-grabbing');
 
-    if (this.dragMovedPx < 6) {
-      if (this.hoveredCard) {
-        const c = this.hoveredCard;
-        const rx = c.x - c.boxW * 0.5;
-        const badgeStartX = rx + c.boxW - c.badgeW - 6;
+    if (e && typeof e.clientX === 'number') {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
+    }
 
-        // Dacă utilizatorul dă click direct pe butonul [↗ LIVE] de pe cardul ieșit din stea, deschidem direct linkul proiectului!
-        if (c.primaryUrl && c.linkBadge && this.mouseX >= badgeStartX) {
-          this.openInspectorForCard(c);
-          window.open(c.primaryUrl, '_blank', 'noopener,noreferrer');
-          return;
-        }
+    if (this.dragMovedPx < 7) {
+      const hitCard =
+        this.findCardAtPoint(this.mouseX, this.mouseY, 6, 6) ||
+        this.hoveredCard ||
+        this.pressedCard;
+
+      if (hitCard) {
+        const c = hitCard;
+        const rx = c.x - c.boxW * 0.5;
+        const badgeStartX = rx + c.boxW - c.badgeW - 10;
+        const wasAlreadySelected = Boolean(this.selectedCard && this.selectedCard.id === c.id);
+
         this.openInspectorForCard(c);
-      } else if (this.hoveredStarIdx !== null) {
+
+        // Click direct pe insigna [↗ LIVE] / [📋 CAZ] / [✉ MESAJ] SAU al doilea click pe cardul deja selectat
+        if ((c.linkBadge && this.mouseX >= badgeStartX) || wasAlreadySelected) {
+          this.triggerCardPrimaryAction(c);
+        }
+        this.pressedCard = null;
+        this.pressedStarIdx = null;
+        return;
+      }
+
+      const starIdx = this.hoveredStarIdx !== null ? this.hoveredStarIdx : this.pressedStarIdx;
+      if (starIdx !== null && starIdx !== undefined) {
         // Click direct pe o stea din constelație -> zboară camera și păianjenul la acea rubrică
         this.switchToManualRoam();
-        this.setStage(this.hoveredStarIdx);
+        this.setStage(starIdx);
       }
     }
+
+    this.pressedCard = null;
+    this.pressedStarIdx = null;
   }
 
   onWheel(e) {
@@ -3131,6 +4376,7 @@ export class TiberiuSwarmEngine {
       this.lastPointerY = t.clientY;
       this.mouseX = t.clientX;
       this.mouseY = t.clientY;
+      this.pressedCard = this.findCardAtPoint(t.clientX, t.clientY, 10, 12);
     } else if (e.touches.length === 2) {
       this.isDragging = false;
       this.lastPinchDist = Math.hypot(
@@ -3151,6 +4397,8 @@ export class TiberiuSwarmEngine {
       this.dragMovedPx += Math.hypot(dx, dy);
       this.lastPointerX = t.clientX;
       this.lastPointerY = t.clientY;
+      this.mouseX = t.clientX;
+      this.mouseY = t.clientY;
 
       if (this.dragMovedPx > 5) {
         this.switchToManualRoam();
@@ -3173,33 +4421,23 @@ export class TiberiuSwarmEngine {
 
   onTouchEnd() {
     if (this.state !== 'SWARM_LIVE') return;
-    if (this.isDragging && this.dragMovedPx < 8) {
-      // Tap scurt pe mobil: căutăm dacă degetul a atins un card 3D sau butonul [↗ LIVE]
-      let hitCard = false;
-      for (let i = this.projectedCards.length - 1; i >= 0; i--) {
-        const c = this.projectedCards[i];
-        if (
-          this.mouseX >= c.x - c.boxW * 0.55 &&
-          this.mouseX <= c.x + c.boxW * 0.55 &&
-          this.mouseY >= c.y - c.boxH * 0.65 &&
-          this.mouseY <= c.y + c.boxH * 0.65
-        ) {
-          const rx = c.x - c.boxW * 0.5;
-          const badgeStartX = rx + c.boxW - c.badgeW - 8;
-          this.openInspectorForCard(c);
-          if (c.primaryUrl && c.linkBadge && this.mouseX >= badgeStartX) {
-            window.open(c.primaryUrl, '_blank', 'noopener,noreferrer');
-          }
-          hitCard = true;
-          break;
+    if (this.isDragging && this.dragMovedPx < 12) {
+      // Tap scurt pe mobil/tabletă: căutăm dacă degetul a atins un card 3D sau butonul [↗ LIVE]
+      const c =
+        this.findCardAtPoint(this.mouseX, this.mouseY, 12, 14) || this.pressedCard;
+      if (c) {
+        const rx = c.x - c.boxW * 0.5;
+        const badgeStartX = rx + c.boxW - c.badgeW - 12;
+        const wasAlreadySelected = Boolean(this.selectedCard && this.selectedCard.id === c.id);
+        this.openInspectorForCard(c);
+        if ((c.linkBadge && this.mouseX >= badgeStartX) || wasAlreadySelected) {
+          this.triggerCardPrimaryAction(c);
         }
-      }
-
-      if (!hitCard) {
+      } else {
         // Verificăm dacă utilizatorul a atins nucleul unei stele
-        SWARM_CLUSTERS.forEach((c, idx) => {
-          const coreP = this.cam.projectPoint(c.pos.x, c.pos.y, c.pos.z);
-          if (coreP.visible && Math.hypot(this.mouseX - coreP.x, this.mouseY - coreP.y) < 28) {
+        SWARM_CLUSTERS.forEach((st, idx) => {
+          const coreP = this.cam.projectPoint(st.pos.x, st.pos.y, st.pos.z);
+          if (coreP.visible && Math.hypot(this.mouseX - coreP.x, this.mouseY - coreP.y) < 34) {
             this.switchToManualRoam();
             this.setStage(idx);
           }
@@ -3207,6 +4445,7 @@ export class TiberiuSwarmEngine {
       }
     }
     this.isDragging = false;
+    this.pressedCard = null;
     this.lastPinchDist = 0;
   }
 
@@ -3219,37 +4458,247 @@ export class TiberiuSwarmEngine {
 
     if (e.key === 'Escape') {
       e.preventDefault();
+      if (this.dom.drawerBackdrop && this.dom.drawerBackdrop.classList.contains('is-open')) {
+        this.closeDrawerModal();
+        return;
+      }
       this.restoreReality();
     } else if (e.code === 'Space') {
+      if (this.dom.drawerBackdrop && this.dom.drawerBackdrop.classList.contains('is-open')) {
+        return;
+      }
       e.preventDefault();
       this.autoPlay = !this.autoPlay;
       this.dom.autoBtn.textContent = this.autoPlay ? 'MODE: AUTO-CRAWL' : 'MODE: FREE ROAM';
     } else if (e.key === 'ArrowRight') {
+      if (this.dom.drawerBackdrop && this.dom.drawerBackdrop.classList.contains('is-open')) {
+        return;
+      }
       e.preventDefault();
       this.switchToManualRoam();
       this.setStage(Math.min(7, this.currentStageIdx + 1));
     } else if (e.key === 'ArrowLeft') {
+      if (this.dom.drawerBackdrop && this.dom.drawerBackdrop.classList.contains('is-open')) {
+        return;
+      }
       e.preventDefault();
       this.switchToManualRoam();
       this.setStage(Math.max(-1, this.currentStageIdx - 1));
     } else if (e.key === 'r' || e.key === 'R') {
+      if (this.dom.drawerBackdrop && this.dom.drawerBackdrop.classList.contains('is-open')) {
+        return;
+      }
       this.setStage(this.currentStageIdx);
     }
   }
 
-  restoreReality() {
+  /**
+   * Reface realitatea 2D printr-o secvență fizică în 3 Acte (~1.68s) ancorată în `#swarmAtomicBtn`:
+   * - Actul 1 (0ms – 520ms): "Reverse Big-Crunch" — întregul univers WebGL, cele 7 stele, cardurile 3D
+   *   și păianjenul cibernetic sunt aspirate pe curbe Bézier direct în butonul atomic `#swarmAtomicBtn`.
+   * - Actul 2 (470ms – 680ms): "Quantum Critical Mass & Anamorphic Singularity Flash" în `#swarmAtomicBtn`.
+   * - Actul 3 (490ms – 1680ms): "Holographic Laser Projection & 3D DOM Unfolding" — secțiunile și cardurile
+   *   reale ale paginii zboară fizic în perspectivă 3D din `#swarmAtomicBtn`, ghidate de raze laser și
+   *   holograme wireframe care se fixează milimetric peste DOM-ul real.
+   */
+  restoreReality(jumpSelector = null) {
+    if (this.state === 'RESTORING' || this.state === 'IDLE') return;
+
+    this.syncAtomicOrigin();
+
+    this.restoreJumpSelector = jumpSelector;
+    this.closeDrawerModal();
     this.audio.stopAll();
+    this.audio.playPortalRestore();
+
+    // Capturăm instantaneul cardurilor 3D vizibile pentru Actul 1 (nimic nu dispare brusc!)
+    this.restoreCardsSnapshot = this.projectedCards.slice(0, 18).map((c, idx) => {
+      const dx = this.originX - c.x;
+      const dy = this.originY - c.y;
+      const side = idx % 2 === 0 ? 1 : -1;
+      return {
+        x: c.x,
+        y: c.y,
+        boxW: c.boxW || 132,
+        boxH: c.boxH || 24,
+        label: c.label || '',
+        color: c.clusterColor || '#00f0ff',
+        hasLink: Boolean(c.linkBadge),
+        cpX: c.x + dx * 0.42 - dy * 0.24 * side,
+        cpY: c.y + dy * 0.42 + dx * 0.24 * side,
+        delay: idx * 14
+      };
+    });
+
+    // Capturăm pozițiile pe ecran ale celor 7 stele din constelație pentru Actul 1
+    this.restoreStarsSnapshot = SWARM_CLUSTERS.map((c, idx) => {
+      const p = this.cam.projectPoint(c.pos.x, c.pos.y, c.pos.z);
+      const sx = p.visible ? p.x : window.innerWidth * (0.16 + idx * 0.11);
+      const sy = p.visible ? p.y : window.innerHeight * 0.48;
+      const dx = this.originX - sx;
+      const dy = this.originY - sy;
+      const side = idx % 2 === 0 ? 1 : -1;
+      return {
+        x: sx,
+        y: sy,
+        color: c.colorCss,
+        title: c[this.lang].tab,
+        cpX: sx + dx * 0.36 - dy * 0.26 * side,
+        cpY: sy + dy * 0.36 + dx * 0.26 * side,
+        delay: idx * 22
+      };
+    });
+
+    // Capturăm poziția păianjenului cibernetic 3D pentru a-l aspira înapoi în butonul atomic
+    const sp = this.cam.projectPoint(this.spiderPos3D.x, this.spiderPos3D.y, this.spiderPos3D.z);
+    this.restoreSpiderSnapshot = {
+      x: sp.visible ? sp.x : window.innerWidth * 0.5,
+      y: sp.visible ? sp.y : window.innerHeight * 0.5
+    };
+
     this.dom.headerStack.classList.remove('is-visible');
     this.dom.banner.classList.remove('is-visible');
     this.dom.bottomHud.classList.remove('is-visible');
     this.dom.inspector.classList.remove('is-open');
+    if (this.dom.cardDock) this.dom.cardDock.classList.remove('is-visible');
+    if (this.dom.hudMobileToggle) this.dom.hudMobileToggle.classList.remove('is-visible');
+    if (this.dom.filterBar) this.dom.filterBar.classList.remove('is-visible');
+
+    if (this.dom.webglCanvas) {
+      this.dom.webglCanvas.classList.remove('is-restoring');
+      this.dom.webglCanvas.classList.add('is-imploding-to-atom');
+    }
+    if (this.dom.atomicBtn) {
+      this.dom.atomicBtn.classList.add('is-portal-flare');
+    }
+    document.body.classList.add('swarm-crunching');
+
+    this.restoreDomTriggered = false;
+    this.restoreDomBlocks = [];
+    this.clearRestoreEmergeClasses();
+
+    this.restoreShockwaves = [
+      { r: 4, a: 0.98, speed: 34, color: '0, 240, 255', delay: 470 },
+      { r: 2, a: 0.88, speed: 24, color: '45, 212, 191', delay: 510 },
+      { r: 1, a: 0.78, speed: 16, color: '250, 204, 21', delay: 560 }
+    ];
 
     this.state = 'RESTORING';
     this.stateStart = performance.now();
   }
 
+  /**
+   * Curăță clasele temporare `.swarm-emerge-item-0..7` de pe elementele DOM reale după finalizarea Actului 3.
+   */
+  clearRestoreEmergeClasses() {
+    if (!this.restoreEmergeEls || this.restoreEmergeEls.length === 0) return;
+    this.restoreEmergeEls.forEach((el) => {
+      for (let i = 0; i < 8; i++) {
+        el.classList.remove(`swarm-emerge-item-${i}`);
+      }
+    });
+    this.restoreEmergeEls = [];
+  }
+
+  /**
+   * Declanșat la începutul Actului 2/3 (~470ms): pregătește secțiunile și cardurile vizibile din
+   * site-ul 2D să zboare eșalonat în perspectivă 3D direct din coordonatele `#swarmAtomicBtn`
+   * și înregistrează coordonatele lor în `this.restoreDomBlocks` pentru proiecția laser holografică.
+   */
+  prepareDomEmergenceFromAtom() {
+    this.restoreDomTriggered = true;
+
+    if (this.restoreJumpSelector) {
+      const targetEl = document.querySelector(this.restoreJumpSelector);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+      this.restoreJumpSelector = null;
+    }
+
+    const candidates = Array.from(
+      document.querySelectorAll(
+        '.hero-content, .hero-visual, .section-header, .about-card, .skill-category, .project-card, .timeline-item, .cert-card, .contact-info, .contact-form-wrapper'
+      )
+    ).filter((el) => {
+      if (this.dom.root && this.dom.root.contains(el)) return false;
+      const r = el.getBoundingClientRect();
+      return r.width > 40 && r.height > 28 && r.bottom > 45 && r.top < window.innerHeight - 20;
+    });
+
+    candidates.sort((a, b) => {
+      const ra = a.getBoundingClientRect();
+      const rb = b.getBoundingClientRect();
+      if (Math.abs(ra.top - rb.top) > 36) return ra.top - rb.top;
+      return ra.left - rb.left;
+    });
+
+    const selected = candidates.slice(0, 8);
+    const beamPalette = [
+      '#00f0ff',
+      '#2dd4bf',
+      '#38bdf8',
+      '#facc15',
+      '#a855f7',
+      '#fb7185',
+      '#34d399',
+      '#60a5fa'
+    ];
+
+    // Măsurăm coordonatele reale pe ecran ÎNAINTE de a aplica transformările 3D de ieșire din buton
+    const measured = selected.map((el) => ({
+      el,
+      r: el.getBoundingClientRect()
+    }));
+
+    document.body.classList.remove('swarm-imploding', 'swarm-consumed', 'swarm-crunching');
+    document.body.classList.add('swarm-restoring');
+
+    this.restoreEmergeEls = [];
+    this.restoreDomBlocks = measured.map(({ el, r }, idx) => {
+      el.classList.add(`swarm-emerge-item-${idx}`);
+      this.restoreEmergeEls.push(el);
+
+      const cx = r.left + r.width * 0.5;
+      const cy = r.top + r.height * 0.5;
+      const dx = cx - this.originX;
+      const dy = cy - this.originY;
+      const side = idx % 2 === 0 ? 1 : -1;
+
+      return {
+        x: r.left,
+        y: r.top,
+        w: r.width,
+        h: r.height,
+        cx,
+        cy,
+        cpX: this.originX + dx * 0.46 - dy * 0.16 * side,
+        cpY: this.originY + dy * 0.46 + dx * 0.16 * side,
+        delayMs: idx * 55,
+        color: beamPalette[idx % beamPalette.length],
+        codeLabel: `DOM_NODE_0${idx + 1} // ${el.tagName}`
+      };
+    });
+  }
+
   onResize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    this.deviceProfile = this.getDeviceProfile();
+    if (this.dom.root) {
+      this.dom.root.dataset.device = this.deviceProfile;
+    }
+    this.syncAtomicOrigin();
+
+    // Adaptăm unghiul de cuprindere al camerei 3D (FOV) în funcție de orientarea și profilul dispozitivului
+    const aspect = window.innerWidth / Math.max(1, window.innerHeight);
+    if (aspect < 0.72) {
+      this.cam.fovRad = (68 * Math.PI) / 180;
+    } else if (aspect < 1.05) {
+      this.cam.fovRad = (63 * Math.PI) / 180;
+    } else {
+      this.cam.fovRad = (58 * Math.PI) / 180;
+    }
+
     if (this.dom.modalDesc) {
       this.dom.modalDesc.textContent = this.getModalDescription();
     }
@@ -3328,7 +4777,10 @@ export class TiberiuSwarmEngine {
       }
     } else if (this.state === 'EXPLODING') {
       ctx.clearRect(0, 0, w, h);
+      this.syncAtomicOrigin();
       const t = Math.min(1, elapsed / 1100);
+      // Toate cele 52.000 de particule WebGL țâșnesc direct din coordonatele sub-pixel ale #swarmAtomicBtn
+      this.portalMix = (1 - t) ** 2.1;
 
       this.cam.pos.x = 0;
       this.cam.pos.y = 0;
@@ -3352,16 +4804,24 @@ export class TiberiuSwarmEngine {
       });
 
       if (t >= 1) {
+        this.portalMix = 0;
         this.state = 'SWARM_LIVE';
         this.bootTime = now;
         this.frameCount = 0;
+        document.body.classList.remove('swarm-imploding');
+        if (this.dom.atomicBtn) {
+          this.dom.atomicBtn.classList.remove('is-portal-flare');
+        }
         this.dom.headerStack.classList.add('is-visible');
         this.dom.banner.classList.add('is-visible');
         this.dom.bottomHud.classList.add('is-visible');
+        if (this.dom.cardDock) this.dom.cardDock.classList.add('is-visible');
+        if (this.dom.hudMobileToggle) this.dom.hudMobileToggle.classList.add('is-visible');
         this.onResize();
         this.setStage(-1);
       }
     } else if (this.state === 'SWARM_LIVE') {
+      this.portalMix = 0;
       this.frameCount++;
 
       this.dom.mTime.textContent = ((now - this.bootTime) / 1000).toFixed(2);
@@ -3417,22 +4877,387 @@ export class TiberiuSwarmEngine {
       this.render2DProjection(now);
       this.updateBottomTelemetry(now);
     } else if (this.state === 'RESTORING') {
-      ctx.fillStyle = 'rgba(3, 4, 7, 0.38)';
-      ctx.fillRect(0, 0, w, h);
-      const t = Math.min(1, elapsed / 620);
-      const ease = 1 - (1 - t) ** 3;
+      const duration = 1680;
+      const t = Math.min(1, elapsed / duration);
 
-      for (let i = 0; i < this.vortexParticles.length; i++) {
-        const p = this.vortexParticles[i];
-        const cx = this.originX + (p.homeX - this.originX) * ease;
-        const cy = this.originY + (p.homeY - this.originY) * ease;
-        ctx.fillStyle = p.color;
-        ctx.fillRect(cx, cy, p.size, p.size);
+      // Actualizăm în timp real poziția butonului atomic (#swarmAtomicBtn) din navbar pe orice ecran
+      this.syncAtomicOrigin();
+
+      // În Actul 1 (0ms - 520ms) aspirăm întregul univers WebGL în vortex direct în #swarmAtomicBtn
+      if (elapsed < 530) {
+        this.portalMix = Math.min(1, (elapsed / 490) ** 1.65);
+        this.orbitYaw += 0.032;
+        this.cam.pos.x = this.cam.target.x + this.orbitDist * Math.sin(this.orbitYaw);
+        this.cam.pos.z = this.cam.target.z + this.orbitDist * Math.cos(this.orbitYaw);
+        this.cam.updateMatrix();
+        this.renderWebGL(now);
+      }
+
+      // La 470ms (Masa Critică în #swarmAtomicBtn) declanșăm Actul 2 & 3: ieșirea site-ului real din buton!
+      if (elapsed >= 470 && !this.restoreDomTriggered) {
+        this.prepareDomEmergenceFromAtom();
+      }
+
+      ctx.clearRect(0, 0, w, h);
+
+      const maxScreenRadius =
+        Math.hypot(Math.max(this.originX, w - this.originX), Math.max(this.originY, h - this.originY)) *
+        1.15;
+
+      // --- FUNDAL & APERTURĂ PORTAL RADIAL CENTRATĂ PE #swarmAtomicBtn ---
+      if (elapsed < 470) {
+        // În Actul 1 păstrăm un voal cosmic semitransparent peste WebGL-ul care se comprimă în buton
+        const act1T = elapsed / 470;
+        ctx.fillStyle = `rgba(3, 4, 7, ${0.28 + act1T * 0.58})`;
+        ctx.fillRect(0, 0, w, h);
+      } else {
+        // În Actele 2 și 3 deschidem o apertură radială fizică exact din (this.originX, this.originY)
+        const portalT = Math.min(1, (elapsed - 470) / 1080);
+        const portalEase = 1 - (1 - portalT) ** 3.2;
+        const innerR = portalEase * maxScreenRadius;
+        const outerR = innerR + 140 + (1 - portalT) * 90;
+
+        if (innerR < maxScreenRadius) {
+          const grad = ctx.createRadialGradient(
+            this.originX,
+            this.originY,
+            Math.max(1, innerR * 0.88),
+            this.originX,
+            this.originY,
+            Math.max(2, outerR)
+          );
+          const rimAlpha = Math.max(0, (1 - portalT) * 0.55);
+          const voidAlpha = Math.max(0, (1 - portalT * 0.85) * 0.92);
+          grad.addColorStop(0, 'rgba(3, 4, 7, 0)');
+          grad.addColorStop(0.35, `rgba(0, 240, 255, ${rimAlpha})`);
+          grad.addColorStop(0.55, `rgba(45, 212, 191, ${rimAlpha * 0.65})`);
+          grad.addColorStop(1, `rgba(3, 4, 7, ${voidAlpha})`);
+
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, w, h);
+        }
+      }
+
+      // =========================================================================
+      // ACTUL 1 (0ms – 520ms): REVERSE BIG-CRUNCH ÎN BUTONUL ATOMIC (#swarmAtomicBtn)
+      // =========================================================================
+      if (elapsed < 540) {
+        const crunchT = Math.min(1, elapsed / 500);
+        const crunchEase = crunchT * crunchT * (3 - 2 * crunchT);
+
+        // 1A. Inele de acreție gravitațională care se strâng în #swarmAtomicBtn
+        for (let ring = 0; ring < 3; ring++) {
+          const rProg = ((elapsed * 0.004 + ring * 0.33) % 1);
+          const ringRad = (1 - rProg) * (160 - ring * 32);
+          ctx.save();
+          ctx.strokeStyle =
+            ring % 2 === 0
+              ? `rgba(0, 240, 255, ${rProg * 0.65})`
+              : `rgba(250, 204, 21, ${rProg * 0.55})`;
+          ctx.lineWidth = 1.8;
+          ctx.beginPath();
+          ctx.arc(this.originX, this.originY, Math.max(2, ringRad), 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // 1B. Cele 7 Stele din constelație sunt aspirate pe curbe Bézier direct în #swarmAtomicBtn
+        this.restoreStarsSnapshot.forEach((st) => {
+          const stLocal = Math.max(0, Math.min(1, (elapsed - st.delay) / (460 - st.delay)));
+          const sEase = stLocal * stLocal;
+          const inv = 1 - sEase;
+
+          const curX = inv * inv * st.x + 2 * inv * sEase * st.cpX + sEase * sEase * this.originX;
+          const curY = inv * inv * st.y + 2 * inv * sEase * st.cpY + sEase * sEase * this.originY;
+
+          // Dâră luminoasă tip cometă spre butonul atomic
+          ctx.save();
+          ctx.strokeStyle = st.color;
+          ctx.globalAlpha = (1 - stLocal * 0.5) * 0.75;
+          ctx.lineWidth = 2.4 * (1 - stLocal * 0.6);
+          ctx.beginPath();
+          ctx.moveTo(st.x + (curX - st.x) * 0.55, st.y + (curY - st.y) * 0.55);
+          ctx.lineTo(curX, curY);
+          ctx.stroke();
+
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(curX, curY, Math.max(1.5, 6.5 * (1 - stLocal * 0.75)), 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        });
+
+        // 1C. Cardurile 3D din Swarm se îndoaie și zboară pe curbe Bézier direct în #swarmAtomicBtn
+        this.restoreCardsSnapshot.forEach((card) => {
+          const cLocal = Math.max(0, Math.min(1, (elapsed - card.delay) / (470 - card.delay)));
+          const cEase = cLocal ** 1.85;
+          const inv = 1 - cEase;
+
+          const cx = inv * inv * card.x + 2 * inv * cEase * card.cpX + cEase * cEase * this.originX;
+          const cy = inv * inv * card.y + 2 * inv * cEase * card.cpY + cEase * cEase * this.originY;
+          const scale = Math.max(0.06, 1 - cEase * 0.94);
+
+          // Filament de tractor-beam între butonul atomic și cardul aspirat
+          ctx.save();
+          ctx.strokeStyle = card.hasLink ? 'rgba(250, 204, 21, 0.35)' : 'rgba(0, 240, 255, 0.28)';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(this.originX, this.originY);
+          ctx.lineTo(cx, cy);
+          ctx.stroke();
+
+          ctx.translate(cx, cy);
+          ctx.rotate(cEase * 0.65 * (card.hasLink ? 1 : -1));
+          ctx.scale(scale, scale);
+
+          const hw = card.boxW * 0.5;
+          const hh = card.boxH * 0.5;
+          ctx.fillStyle = 'rgba(7, 13, 25, 0.88)';
+          ctx.strokeStyle = card.hasLink ? '#facc15' : card.color;
+          ctx.lineWidth = 1.6;
+          ctx.fillRect(-hw, -hh, card.boxW, card.boxH);
+          ctx.strokeRect(-hw, -hh, card.boxW, card.boxH);
+          ctx.restore();
+        });
+
+        // 1D. Păianjenul Cibernetic 3D este tras cu fire de lumină înapoi în butonul atomic
+        if (this.restoreSpiderSnapshot) {
+          const spX =
+            this.restoreSpiderSnapshot.x +
+            (this.originX - this.restoreSpiderSnapshot.x) * crunchEase;
+          const spY =
+            this.restoreSpiderSnapshot.y +
+            (this.originY - this.restoreSpiderSnapshot.y) * crunchEase;
+          const spScale = Math.max(0.1, 1 - crunchEase * 0.9);
+
+          ctx.save();
+          ctx.strokeStyle = 'rgba(0, 240, 255, 0.6)';
+          ctx.lineWidth = 1.4;
+          ctx.beginPath();
+          ctx.moveTo(this.originX, this.originY);
+          ctx.lineTo(spX, spY);
+          ctx.stroke();
+
+          ctx.fillStyle = '#00f0ff';
+          ctx.beginPath();
+          ctx.arc(spX, spY, 5.5 * spScale, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      // =========================================================================
+      // ACTUL 2 (420ms – 880ms): ANAMORPHIC QUANTUM LENS FLARE ÎN #swarmAtomicBtn
+      // =========================================================================
+      if (elapsed >= 420 && elapsed <= 920) {
+        const flareT = (elapsed - 420) / 500;
+        const flareIntensity = Math.sin(Math.min(1, flareT) * Math.PI);
+
+        if (flareIntensity > 0.02) {
+          ctx.save();
+          // Rază orizontală anamorfică de cinema (Cyan + Miez Alb)
+          const streakW = (180 + flareIntensity * 460) * (w < 768 ? 0.65 : 1);
+          const hGrad = ctx.createLinearGradient(
+            this.originX - streakW,
+            this.originY,
+            this.originX + streakW,
+            this.originY
+          );
+          hGrad.addColorStop(0, 'rgba(0, 240, 255, 0)');
+          hGrad.addColorStop(0.35, `rgba(0, 240, 255, ${flareIntensity * 0.65})`);
+          hGrad.addColorStop(0.5, `rgba(255, 255, 255, ${flareIntensity * 0.98})`);
+          hGrad.addColorStop(0.65, `rgba(45, 212, 191, ${flareIntensity * 0.65})`);
+          hGrad.addColorStop(1, 'rgba(0, 240, 255, 0)');
+
+          ctx.fillStyle = hGrad;
+          ctx.fillRect(this.originX - streakW, this.originY - 2.5, streakW * 2, 5);
+
+          // Rază verticală de singularitate
+          const streakH = 90 + flareIntensity * 190;
+          const vGrad = ctx.createLinearGradient(
+            this.originX,
+            this.originY - streakH,
+            this.originX,
+            this.originY + streakH
+          );
+          vGrad.addColorStop(0, 'rgba(0, 240, 255, 0)');
+          vGrad.addColorStop(0.5, `rgba(255, 255, 255, ${flareIntensity * 0.9})`);
+          vGrad.addColorStop(1, 'rgba(0, 240, 255, 0)');
+
+          ctx.fillStyle = vGrad;
+          ctx.fillRect(this.originX - 2, this.originY - streakH, 4, streakH * 2);
+
+          // Inele giroscopice cuantice în jurul butonului atomic
+          ctx.translate(this.originX, this.originY);
+          ctx.rotate(elapsed * 0.008);
+          ctx.strokeStyle = `rgba(0, 240, 255, ${flareIntensity * 0.85})`;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.ellipse(0, 0, 24 + flareIntensity * 42, 10 + flareIntensity * 16, 0.4, 0, Math.PI * 2);
+          ctx.stroke();
+
+          ctx.rotate(-elapsed * 0.016);
+          ctx.strokeStyle = `rgba(250, 204, 21, ${flareIntensity * 0.8})`;
+          ctx.beginPath();
+          ctx.ellipse(0, 0, 22 + flareIntensity * 38, 9 + flareIntensity * 14, -0.5, 0, Math.PI * 2);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+
+      // =========================================================================
+      // ACTUL 3 (470ms – 1680ms): PROIECȚIE LASER HOLOGRAFICĂ & DEPLIERE 3D A PAGINII
+      // =========================================================================
+      if (elapsed >= 470) {
+        // 3A. Unde de șoc concentrice care împing pagina în afară din #swarmAtomicBtn
+        this.restoreShockwaves.forEach((sw) => {
+          if (elapsed < sw.delay) return;
+          sw.r += sw.speed;
+          sw.a *= 0.945;
+          if (sw.a > 0.02) {
+            ctx.strokeStyle = `rgba(${sw.color}, ${sw.a})`;
+            ctx.lineWidth = 2.4;
+            ctx.beginPath();
+            ctx.arc(this.originX, this.originY, sw.r, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+        });
+
+        // 3B. Pachete Holografice Wireframe & Conuri de Proiecție Laser către fiecare secțiune/card DOM
+        this.restoreDomBlocks.forEach((blk) => {
+          const localElapsed = elapsed - 485 - blk.delayMs;
+          if (localElapsed <= 0) return;
+
+          const bDur = 820;
+          const bt = Math.min(1, localElapsed / bDur);
+          if (bt >= 1) return;
+
+          // Curba de depliere cu ușor overshoot elastic
+          const easeOut = 1 - (1 - bt) ** 3.1;
+          const inv = 1 - easeOut;
+
+          const curCX =
+            inv * inv * this.originX + 2 * inv * easeOut * blk.cpX + easeOut * easeOut * blk.cx;
+          const curCY =
+            inv * inv * this.originY + 2 * inv * easeOut * blk.cpY + easeOut * easeOut * blk.cy;
+
+          const curW = 8 + (blk.w - 8) * easeOut;
+          const curH = 6 + (blk.h - 6) * easeOut;
+          const left = curCX - curW * 0.5;
+          const top = curCY - curH * 0.5;
+
+          const alpha = bt < 0.65 ? Math.min(1, bt * 2.4) : Math.max(0, (1 - bt) / 0.35);
+
+          ctx.save();
+          // Con volumetric de proiecție laser din #swarmAtomicBtn către colțurile cardului DOM în zbor
+          if (bt < 0.88) {
+            const beamAlpha = alpha * 0.22;
+            ctx.fillStyle = blk.color;
+            ctx.globalAlpha = beamAlpha * 0.35;
+            ctx.beginPath();
+            ctx.moveTo(this.originX, this.originY);
+            ctx.lineTo(left, top);
+            ctx.lineTo(left + curW, top);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.globalAlpha = alpha * 0.55;
+            ctx.strokeStyle = blk.color;
+            ctx.lineWidth = 1.1;
+            ctx.beginPath();
+            ctx.moveTo(this.originX, this.originY);
+            ctx.lineTo(left, top);
+            ctx.moveTo(this.originX, this.originY);
+            ctx.lineTo(left + curW, top);
+            ctx.moveTo(this.originX, this.originY);
+            ctx.lineTo(left + curW, top + curH);
+            ctx.stroke();
+          }
+
+          // Cadrul Holografic Wireframe care îmbracă elementul DOM real în timp ce iese din buton
+          ctx.globalAlpha = alpha * 0.85;
+          ctx.strokeStyle = blk.color;
+          ctx.lineWidth = 1.6;
+          ctx.strokeRect(left, top, curW, curH);
+
+          // Colțare de Target-Lock [ ⌖ ] pe colțurile secțiunii proiectate
+          const cLen = Math.min(18, curW * 0.18, curH * 0.28);
+          ctx.strokeStyle = '#ffffff';
+          ctx.lineWidth = 2.2;
+          ctx.beginPath();
+          // Stânga-Sus
+          ctx.moveTo(left, top + cLen);
+          ctx.lineTo(left, top);
+          ctx.lineTo(left + cLen, top);
+          // Dreapta-Sus
+          ctx.moveTo(left + curW - cLen, top);
+          ctx.lineTo(left + curW, top);
+          ctx.lineTo(left + curW, top + cLen);
+          // Stânga-Jos
+          ctx.moveTo(left, top + curH - cLen);
+          ctx.lineTo(left, top + curH);
+          ctx.lineTo(left + cLen, top + curH);
+          // Dreapta-Jos
+          ctx.moveTo(left + curW - cLen, top + curH);
+          ctx.lineTo(left + curW, top + curH);
+          ctx.lineTo(left + curW, top + curH - cLen);
+          ctx.stroke();
+
+          // Bară laser de scanare orizontală care materializează cardul/secțiunea HTML
+          const scanY = top + ((bt * 1.45) % 1) * curH;
+          ctx.strokeStyle = '#00f0ff';
+          ctx.lineWidth = 1.8;
+          ctx.beginPath();
+          ctx.moveTo(left, scanY);
+          ctx.lineTo(left + curW, scanY);
+          ctx.stroke();
+
+          if (curW > 110 && curH > 32) {
+            ctx.fillStyle = blk.color;
+            ctx.font = '700 9px "JetBrains Mono", monospace';
+            ctx.fillText(blk.codeLabel, left + 8, top + 13);
+          }
+          ctx.restore();
+        });
+
+        // 3C. Jet spiralat de particule cuantice care țâșnesc din #swarmAtomicBtn și se așază în pagină
+        const streamT = Math.min(1, (elapsed - 470) / 1050);
+        const streamEase = 1 - (1 - streamT) ** 3;
+        const spinOffset = (1 - streamEase) ** 1.75 * Math.PI * 2.4;
+        const particleAlpha = streamT < 0.7 ? 0.92 : Math.max(0, (1 - streamT) / 0.3);
+
+        if (particleAlpha > 0.02) {
+          ctx.save();
+          ctx.globalAlpha = particleAlpha;
+          for (let i = 0; i < this.vortexParticles.length; i += 2) {
+            const p = this.vortexParticles[i];
+            const curDist = (p.homeDist || 140) * streamEase;
+            const curAngle = (p.homeAngle || 0) + spinOffset * (i % 4 === 0 ? 1 : -0.85);
+            const cx = this.originX + Math.cos(curAngle) * curDist;
+            const cy = this.originY + Math.sin(curAngle) * curDist;
+            ctx.fillStyle = p.color;
+            ctx.fillRect(cx, cy, p.size, p.size);
+          }
+          ctx.restore();
+        }
       }
 
       if (t >= 1) {
         ctx.clearRect(0, 0, w, h);
-        document.body.classList.remove('swarm-consumed');
+        this.portalMix = 0;
+        this.clearRestoreEmergeClasses();
+        document.body.classList.remove(
+          'swarm-imploding',
+          'swarm-consumed',
+          'swarm-crunching',
+          'swarm-restoring'
+        );
+        if (this.dom.webglCanvas) {
+          this.dom.webglCanvas.classList.remove('is-restoring', 'is-imploding-to-atom');
+        }
+        if (this.dom.atomicBtn) {
+          this.dom.atomicBtn.classList.remove('is-portal-flare');
+        }
         this.dom.root.classList.remove('is-active');
         this.state = 'IDLE';
         cancelAnimationFrame(this.rafId);
