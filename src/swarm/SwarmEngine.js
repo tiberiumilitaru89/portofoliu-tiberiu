@@ -494,8 +494,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj3',
           projectKey: 'proj3',
           category: 'crm',
-          desc: 'Platformă B2B Edge SSR pe Cloudflare Workers & R2 pentru digitalizarea asociațiilor de proprietari. Raportare avarii cu SLA 96h, compresie foto WebP și 0€ costuri hosting.',
-          tags: ['Next.js 15', 'Cloudflare Workers', 'Cloudflare R2', 'Turso LibSQL', 'Drizzle ORM']
+          desc: 'Platformă PropTech & Marketplace Full-Stack: Next.js 16 Edge SSR, Cloudflare R2, Turso LibSQL, plăți Netopia IPN AES-256, Dispecerat Super-Admin, monitorizare deficite meșteri și rapoarte CSV/Email.',
+          tags: ['Next.js 16', 'Cloudflare Workers & R2', 'Turso LibSQL', 'Drizzle ORM', 'Netopia IPN', 'Dispecerat Super-Admin']
         },
         {
           label: 'Platformă Civică & Audit Urban (Viziune Urbană Ploiești)',
@@ -561,8 +561,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj3',
           projectKey: 'proj3',
           category: 'crm',
-          desc: 'B2B platform running Edge SSR on Cloudflare Workers & R2 for homeowner associations. 96h SLA incidents, client-side WebP compression, and zero hosting costs.',
-          tags: ['Next.js 15', 'Cloudflare Workers', 'Cloudflare R2', 'Turso LibSQL', 'Drizzle ORM']
+          desc: 'Full-Stack PropTech & Marketplace: Next.js 16 Edge SSR, Cloudflare R2, Turso LibSQL, Netopia IPN AES-256 payments, Super-Admin dispatch, trade deficit telemetry, and modular CSV/email reports.',
+          tags: ['Next.js 16', 'Cloudflare Workers & R2', 'Turso LibSQL', 'Drizzle ORM', 'Netopia IPN', 'Super-Admin Dispatch']
         },
         {
           label: 'Civic Platform & Urban Audit (Viziune Urbana Ploiesti)',
@@ -1012,18 +1012,19 @@ const GATEKEEPER_CODE_LINES = [
 const CASE_STUDIES_DATA = {
   ro: {
     proj3: {
-      title: 'InstalBloc — Portal Administrare & Contorizare',
-      badge: 'SaaS / PropTech (2026)',
+      title: 'InstalBloc — Platformă Enterprise Administrare Asociații & Marketplace Tehnic',
+      badge: 'SaaS / PropTech & Marketplace (2026)',
       challenge:
-        'Asociațiile de proprietari pierdeau zeci de ore lunar cu centralizarea manuală a indecșilor de apă pe hârtie și WhatsApp, generând erori de calcul la întreținere și lipsă de transparență.',
+        'Asociațiile de proprietari și clienții independenți se confruntau cu timpi mari de răspuns la avarii tehnice, lipsă de meșteri autorizați pe județe/domenii și absența unui sistem centralizat de evidență financiară și raportare executivă.',
       architecture:
-        'Aplicație web modulară cu interfață intuitivă pentru locatari (raportare indecși în 15 secunde de pe mobil) și dashboard administrativ cu validare automată a consumului, istoric și export direct pentru listele de plată.',
+        'Arhitectură Cloud Zero-Defect: Next.js 16 Edge SSR pe Cloudflare Workers & R2 (zero cost egress), persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, modul integrat de plăți Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și OTP CSPRNG, FSM determinist în 4 etape, Dispecerat General Super-Admin cu telemetrie dinamică (3 lei/apartament), sistem de monitorizare a deficitului de prestatori per județ și domeniu (< 3 prestatori), exporturi CSV conform RFC-4180 cu UTF-8 BOM și centru de rapoarte modulare pe email.',
       results: [
-        'Timpul de colectare și verificare a indecșilor redus cu 85%',
-        'Zero erori de transcriere între contorul locatarului și tabelul centralizator',
-        'Interfață Mobile-First adaptată inclusiv pentru utilizatori non-tehnici'
+        'Dispecerat General complet cu vizualizare detaliată a fiecărei entități și telemetrie venituri în timp real',
+        'Monitorizare proactivă a deficitelor de prestatori pe 41 de județe și municipiul București',
+        'Rapoarte modulare automate expediate direct pe emailul administratorilor desemnați',
+        'Exporturi CSV conforme RFC-4180 cu UTF-8 BOM compatibile 100% cu Excel (fără alterarea diacriticelor)'
       ],
-      stack: ['HTML5 / CSS3', 'JavaScript (ES6+)', 'State Management', 'Vercel Edge', 'Responsive UI']
+      stack: ['Next.js 16 (Edge SSR)', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Email Digest']
     },
     proj4: {
       title: 'Viziune Urbană Ploiești — Platformă CivicTech',
@@ -1084,18 +1085,19 @@ const CASE_STUDIES_DATA = {
   },
   en: {
     proj3: {
-      title: 'InstalBloc — HOA Management & Metering Portal',
-      badge: 'SaaS / PropTech (2026)',
+      title: 'InstalBloc — Enterprise HOA Management & Technical Marketplace',
+      badge: 'SaaS / PropTech & Marketplace (2026)',
       challenge:
-        'Homeowners associations wasted dozens of hours monthly collecting water meter readings via paper and WhatsApp, causing billing errors and lack of transparency.',
+        'Homeowners associations and independent clients suffered from delayed responses to technical emergencies, lack of verified contractors by county and trade domain, and absence of a unified executive dashboard with financial telemetry and automated reporting.',
       architecture:
-        'Modular web application featuring a 15-second mobile meter submission flow for residents and an admin dashboard with automated consumption validation, history tracking, and billing export.',
+        'Zero-Defect Cloud Architecture: Next.js 16 Edge SSR on Cloudflare Workers & R2 (zero egress cost), distributed relational persistence on Turso Cloud (LibSQL) with Drizzle ORM, Netopia XML payment engine with AES-256/RSA encryption and IPN webhook (node:crypto), secure HMAC-SHA256 session auth (timingSafeEqual) and CSPRNG OTP, deterministic 4-stage FSM workflow, Super-Admin Dispatcher with dynamic revenue telemetry (3 RON/apartment), proactive contractor deficit monitoring per county & trade (< 3 contractors), RFC-4180 CSV exports with UTF-8 BOM, and modular email reporting dispatch.',
       results: [
-        'Reduced monthly meter collection and verification time by 85%',
-        'Zero transcription errors between resident meters and master spreadsheets',
-        'Mobile-first interface tailored for non-technical users'
+        'Unified Super-Admin Dispatcher with detailed entity drilldowns and real-time revenue telemetry',
+        'Proactive contractor deficit tracking across 41 Romanian counties and Bucharest',
+        'Automated modular executive reports dispatched directly to designated administrator inboxes',
+        'RFC-4180 compliant CSV exports with UTF-8 BOM for 100% Excel compatibility and diacritic preservation'
       ],
-      stack: ['HTML5 / CSS3', 'JavaScript (ES6+)', 'State Management', 'Vercel Edge', 'Responsive UI']
+      stack: ['Next.js 16 (Edge SSR)', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Email Digest']
     },
     proj4: {
       title: 'Ploiești Urban Vision — CivicTech Platform',
