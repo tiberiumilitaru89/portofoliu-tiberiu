@@ -2797,7 +2797,7 @@ export class TiberiuSwarmEngine {
       } else if (cmd === 'clear') {
         out.replaceChildren();
       } else if (cmd === 'projects') {
-        appendLine('1. InstalBloc (https://instalbloc.vercel.app)', 'swarm-cli-res');
+        appendLine('1. InstalBloc (https://instalbloc.ro)', 'swarm-cli-res');
         appendLine('2. Viziune Urbană Ploiești (https://viziuneurbanaploiesti.ro)', 'swarm-cli-res');
         appendLine('3. CV Builder Pro ATS (https://cvsmartats.web.app/)', 'swarm-cli-res');
         appendLine('4. Florărie E-Commerce (Private NDA)', 'swarm-cli-res');
@@ -2817,8 +2817,8 @@ export class TiberiuSwarmEngine {
         appendLine('Opening /CV-Militaru-Tiberiu.pdf ...', 'swarm-cli-res');
         this.openExternalUrl('/CV-Militaru-Tiberiu.pdf');
       } else if (cmd.includes('instalbloc')) {
-        appendLine('Launching https://instalbloc.vercel.app ...', 'swarm-cli-res');
-        this.openExternalUrl('https://instalbloc.vercel.app');
+        appendLine('Launching https://instalbloc.ro ...', 'swarm-cli-res');
+        this.openExternalUrl('https://instalbloc.ro');
       } else if (cmd.includes('viziune')) {
         appendLine('Launching https://viziuneurbanaploiesti.ro ...', 'swarm-cli-res');
         this.openExternalUrl('https://viziuneurbanaploiesti.ro');
