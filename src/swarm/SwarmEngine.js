@@ -494,8 +494,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj3',
           projectKey: 'proj3',
           category: 'crm',
-          desc: 'Platformă PropTech & Marketplace Full-Stack: Next.js 16 Edge SSR, Cloudflare R2, Turso LibSQL, plăți Netopia IPN AES-256, Dispecerat Super-Admin, monitorizare deficite meșteri și rapoarte CSV/Email.',
-          tags: ['Next.js 16', 'Cloudflare Workers & R2', 'Turso LibSQL', 'Drizzle ORM', 'Netopia IPN', 'Dispecerat Super-Admin']
+          desc: 'Platformă PropTech & Marketplace Full-Stack: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, PWA nativ offline, stocare R2, Turso LibSQL, plăți Netopia IPN AES-256, Dispecerat Super-Admin (3 lei/apartament), abonamente meșteri (100 lei), regulă plafonare 3 oferte și rapoarte CSV RFC-4180 / Email Resend.',
+          tags: ['Next.js 16 Edge', 'PWA Nativ', 'Cloudflare Workers & R2', 'Turso LibSQL', 'Drizzle ORM', 'Netopia IPN', 'Dispecerat Super-Admin', 'Resend Email']
         },
         {
           label: 'Platformă Civică & Audit Urban (Viziune Urbană Ploiești)',
@@ -561,8 +561,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj3',
           projectKey: 'proj3',
           category: 'crm',
-          desc: 'Full-Stack PropTech & Marketplace: Next.js 16 Edge SSR, Cloudflare R2, Turso LibSQL, Netopia IPN AES-256 payments, Super-Admin dispatch, trade deficit telemetry, and modular CSV/email reports.',
-          tags: ['Next.js 16', 'Cloudflare Workers & R2', 'Turso LibSQL', 'Drizzle ORM', 'Netopia IPN', 'Super-Admin Dispatch']
+          desc: 'Full-Stack PropTech & Marketplace: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native offline PWA, Cloudflare R2, Turso LibSQL, Netopia IPN AES-256 payments, Super-Admin dispatch (3 RON/apartment), contractor subscriptions (100 RON), 3-offer revision cap, and RFC-4180 CSV / Resend email reports.',
+          tags: ['Next.js 16 Edge', 'Native PWA', 'Cloudflare Workers & R2', 'Turso LibSQL', 'Drizzle ORM', 'Netopia IPN', 'Super-Admin Dispatch', 'Resend Email']
         },
         {
           label: 'Civic Platform & Urban Audit (Viziune Urbana Ploiesti)',
@@ -737,7 +737,7 @@ const SWARM_CLUSTERS = [
     ro: {
       tab: 'experiență',
       title: '06 EXPERIENȚĂ & EDUCAȚIE',
-      subtitle: 'cele 5 carduri cronologice din rubrica Experiență (#experience)',
+      subtitle: 'Sinteza traseului profesional (#experience) · consultă istoricul tehnic și acreditările',
       nodes: [
         {
           label: 'Administrator Baze de Date (DBA) · Corpul Experților',
@@ -745,8 +745,9 @@ const SWARM_CLUSTERS = [
           dx: -5.6,
           dy: 3.6,
           dz: 2.2,
-          desc: '2026 - Prezent: Administrare, optimizare și securizare baze de date, automatizare raportări SQL și asigurarea integrității și disponibilității datelor.',
-          tags: ['DBA', 'SQL Tuning', 'Securitate Date', '2026 - Prezent']
+          desc: '2026 - Prezent: Administrare, optimizare și securizare baze de date de producție (PostgreSQL, MySQL), redundanță și disponibilitate continuă.',
+          tags: ['DBA', 'SQL Tuning', 'Securitate Date', '2026 - Prezent'],
+          matchKey: 'cv_modal'
         },
         {
           label: 'Asistent Manager & Coordonator Digitalizare · SIATI SRL',
@@ -754,8 +755,9 @@ const SWARM_CLUSTERS = [
           dx: 5.8,
           dy: 2.6,
           dz: -2.0,
-          desc: '2018 - 2024 (6 ani): Coordonarea proceselor de digitalizare, implementare soluții ERP/CRM, gestiune baze de date clienți și optimizare fluxuri operaționale.',
-          tags: ['Digitalizare', 'ERP / CRM', 'Gestiune Date', '2018 - 2024']
+          desc: '2018 - 2024: Coordonarea proceselor de digitalizare, implementare soluții ERP/CRM, gestiune baze de date clienți și optimizare fluxuri operaționale.',
+          tags: ['Digitalizare', 'ERP / CRM', 'Gestiune Date', '2018 - 2024'],
+          matchKey: 'cv_modal'
         },
         {
           label: 'Tehnician IT (Suport Nivel 1 și 2) · GFR',
@@ -764,7 +766,8 @@ const SWARM_CLUSTERS = [
           dy: -4.8,
           dz: 3.0,
           desc: 'Grup Feroviar Român: Suport tehnic hardware/software pentru infrastructură critică, depanare rețele, configurare stații de lucru și rezolvare tichete SLA.',
-          tags: ['IT Support Tier 1/2', 'Rețelistică', 'Hardware', 'Grup Feroviar Român']
+          tags: ['IT Support Tier 1/2', 'Rețelistică', 'Hardware', 'Grup Feroviar Român'],
+          matchKey: 'cv_modal'
         },
         {
           label: 'Studii Analist Programator (Nivel 5) · Colegiul „Elie Radu”',
@@ -772,8 +775,9 @@ const SWARM_CLUSTERS = [
           dx: 5.4,
           dy: -4.2,
           dz: 1.2,
-          desc: '2024 - 2026: Specializare postliceală în proiectarea algoritmilor, baze de date relaționale, programare orientată pe obiecte (OOP) și dezvoltare software.',
-          tags: ['Analist Programator', 'Algoritmi & OOP', 'Baze de Date', '2024 - 2026']
+          desc: '2025 - Prezent: Specializare postliceală în proiectarea algoritmilor, baze de date relaționale, OOP și dezvoltare web full-stack.',
+          tags: ['Analist Programator', 'Algoritmi & OOP', 'Baze de Date', '2025 - Prezent'],
+          matchKey: 'cv_modal'
         },
         {
           label: 'Master & Licență în Management · Univ. Bioterra',
@@ -781,15 +785,16 @@ const SWARM_CLUSTERS = [
           dx: 0.0,
           dy: 5.8,
           dz: -3.0,
-          desc: 'Formare academică în management organizațional, analiză economică, gestiunea proiectelor și optimizarea resurselor.',
-          tags: ['Master Management', 'Inginerie Economică', 'Project Management']
+          desc: 'Formare academică în management organizațional, analiză economică, optimizarea proceselor și arhitecturi de control în IMM-uri.',
+          tags: ['Master Management', 'Optimizare Procese', 'Management Operațional'],
+          matchKey: 'cv_modal'
         }
       ]
     },
     en: {
       tab: 'experience',
       title: '06 EXPERIENCE & EDUCATION',
-      subtitle: 'the 5 timeline cards from Experience & Education (#experience)',
+      subtitle: 'Professional track record (#experience) · view full career timeline and credentials',
       nodes: [
         {
           label: 'Database Administrator (DBA) · Corpul Expertilor',
@@ -798,7 +803,8 @@ const SWARM_CLUSTERS = [
           dy: 3.6,
           dz: 2.2,
           desc: '2026 - Present: Database administration, query tuning, security hardening, automated SQL reporting, and high-availability data governance.',
-          tags: ['DBA', 'SQL Tuning', 'Data Security', '2026 - Present']
+          tags: ['DBA', 'SQL Tuning', 'Data Security', '2026 - Present'],
+          matchKey: 'cv_modal'
         },
         {
           label: 'Assistant Manager & Digitalization Coordinator · SIATI',
@@ -806,8 +812,9 @@ const SWARM_CLUSTERS = [
           dx: 5.8,
           dy: 2.6,
           dz: -2.0,
-          desc: '2018 - 2024 (6 yrs): Led company digitalization, ERP/CRM implementation, client database management, and operational workflow automation.',
-          tags: ['Digitalization', 'ERP / CRM', 'Data Management', '2018 - 2024']
+          desc: '2018 - 2024: Led company digitalization, ERP/CRM implementation, client database management, and operational workflow automation.',
+          tags: ['Digitalization', 'ERP / CRM', 'Data Management', '2018 - 2024'],
+          matchKey: 'cv_modal'
         },
         {
           label: 'IT Technician (Tier 1 & 2 Support) · GFR',
@@ -816,7 +823,8 @@ const SWARM_CLUSTERS = [
           dy: -4.8,
           dz: 3.0,
           desc: 'Grup Feroviar Roman: Hardware/software technical support for critical infrastructure, network troubleshooting, workstation setup, and SLA ticketing.',
-          tags: ['Tier 1/2 Support', 'Networking', 'Hardware', 'Critical Infra']
+          tags: ['Tier 1/2 Support', 'Networking', 'Hardware', 'Critical Infra'],
+          matchKey: 'cv_modal'
         },
         {
           label: 'Programmer Analyst Studies (Level 5) · Elie Radu College',
@@ -824,8 +832,9 @@ const SWARM_CLUSTERS = [
           dx: 5.4,
           dy: -4.2,
           dz: 1.2,
-          desc: '2024 - 2026: Advanced specialization in algorithm design, relational databases, object-oriented programming (OOP), and software development.',
-          tags: ['Programmer Analyst', 'Algorithms & OOP', 'Databases', '2024 - 2026']
+          desc: '2025 - Present: Advanced specialization in algorithm design, relational databases, object-oriented programming (OOP), and full-stack web.',
+          tags: ['Programmer Analyst', 'Algorithms & OOP', 'Databases', '2025 - Present'],
+          matchKey: 'cv_modal'
         },
         {
           label: 'MSc & BSc in Management · Bioterra University',
@@ -833,8 +842,9 @@ const SWARM_CLUSTERS = [
           dx: 0.0,
           dy: 5.8,
           dz: -3.0,
-          desc: 'Academic degree in organizational management, economic analysis, project management, and resource optimization.',
-          tags: ['MSc Management', 'Economic Engineering', 'Project Management']
+          desc: 'Academic degree in organizational management, economic analysis, process optimization, and control architectures.',
+          tags: ['MSc Management', 'Process Optimization', 'Operations Management'],
+          matchKey: 'cv_modal'
         }
       ]
     }
@@ -1015,16 +1025,17 @@ const CASE_STUDIES_DATA = {
       title: 'InstalBloc — Platformă Enterprise Administrare Asociații & Marketplace Tehnic',
       badge: 'SaaS / PropTech & Marketplace (2026)',
       challenge:
-        'Asociațiile de proprietari și clienții independenți se confruntau cu timpi mari de răspuns la avarii tehnice, lipsă de meșteri autorizați pe județe/domenii și absența unui sistem centralizat de evidență financiară și raportare executivă.',
+        'Asociațiile de proprietari și clienții independenți se confruntau cu timpi mari de răspuns la avarii tehnice, lipsă de meșteri autorizați pe județe/domenii și absența unui sistem centralizat de evidență financiară, abonamente și raportare executivă.',
       architecture:
-        'Arhitectură Cloud Zero-Defect: Next.js 16 Edge SSR pe Cloudflare Workers & R2 (zero cost egress), persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, modul integrat de plăți Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și OTP CSPRNG, FSM determinist în 4 etape, Dispecerat General Super-Admin cu telemetrie dinamică (3 lei/apartament), sistem de monitorizare a deficitului de prestatori per județ și domeniu (< 3 prestatori), exporturi CSV conform RFC-4180 cu UTF-8 BOM și centru de rapoarte modulare pe email.',
+        'Arhitectură Cloud Zero-Defect: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, suport PWA nativ pentru operare mobilă și offline, stocare Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client, persistență distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, plăți securizate Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și OTP CSPRNG, FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h, componentă printare conformă CSP, Dispecerat General Super-Admin cu telemetrie dinamică (3 lei/apartament), gestiune abonamente lunare (100 lei prestator), regulă de plafonare la 3 modificări de ofertă, exporturi CSV RFC-4180 cu UTF-8 BOM, profil utilizator cu gestiune abonament și centru de rapoarte modulare pe email (Resend).',
       results: [
-        'Dispecerat General complet cu vizualizare detaliată a fiecărei entități și telemetrie venituri în timp real',
-        'Monitorizare proactivă a deficitelor de prestatori pe 41 de județe și municipiul București',
-        'Rapoarte modulare automate expediate direct pe emailul administratorilor desemnați',
-        'Exporturi CSV conforme RFC-4180 cu UTF-8 BOM compatibile 100% cu Excel (fără alterarea diacriticelor)'
+        'Suport PWA nativ complet cu service worker offline, iconițe adaptive și instalare directă pe mobile/desktop',
+        'Dispecerat General Super-Admin cu telemetrie dinamică a veniturilor (3 lei/apartament și abonamente prestator 100 lei)',
+        'Regulă de securitate comercială: plafonare strictă la maximum 3 modificări de ofertă per incident raportat',
+        'Monitorizare proactivă a deficitelor de meșteri pe 41 de județe și municipiul București',
+        'Rapoarte executive modulare automate expediate direct prin Resend și exporturi CSV conforme RFC-4180 cu UTF-8 BOM'
       ],
-      stack: ['Next.js 16 (Edge SSR)', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Email Digest']
+      stack: ['Next.js 16 (Edge SSR)', 'PWA Nativ', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Resend Email']
     },
     proj4: {
       title: 'Viziune Urbană Ploiești — Platformă CivicTech',
@@ -1088,16 +1099,17 @@ const CASE_STUDIES_DATA = {
       title: 'InstalBloc — Enterprise HOA Management & Technical Marketplace',
       badge: 'SaaS / PropTech & Marketplace (2026)',
       challenge:
-        'Homeowners associations and independent clients suffered from delayed responses to technical emergencies, lack of verified contractors by county and trade domain, and absence of a unified executive dashboard with financial telemetry and automated reporting.',
+        'Homeowners associations and independent clients suffered from delayed responses to technical emergencies, lack of verified contractors by county and trade domain, and absence of a unified executive dashboard with financial telemetry, subscriptions, and automated reporting.',
       architecture:
-        'Zero-Defect Cloud Architecture: Next.js 16 Edge SSR on Cloudflare Workers & R2 (zero egress cost), distributed relational persistence on Turso Cloud (LibSQL) with Drizzle ORM, Netopia XML payment engine with AES-256/RSA encryption and IPN webhook (node:crypto), secure HMAC-SHA256 session auth (timingSafeEqual) and CSPRNG OTP, deterministic 4-stage FSM workflow, Super-Admin Dispatcher with dynamic revenue telemetry (3 RON/apartment), proactive contractor deficit monitoring per county & trade (< 3 contractors), RFC-4180 CSV exports with UTF-8 BOM, and modular email reporting dispatch.',
+        'Zero-Defect Cloud Architecture: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native PWA capabilities for offline & mobile operation, zero-egress media storage on Cloudflare R2 with client-side WebP canvas compression, distributed persistence on Turso Cloud (LibSQL) via Drizzle ORM, Netopia XML payment engine with AES-256/RSA encryption and IPN webhook (node:crypto), secure HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP generation, deterministic 4-stage FSM, noticeboard QR reporting module without account, automated 96h SLA cron dispatcher, CSP-compliant print trigger component, Super-Admin Dispatcher with dynamic revenue telemetry (3 RON/apartment), monthly contractor subscription tiers (100 RON), anti-fraud max-3 offer revisions rule, RFC-4180 CSV exports with UTF-8 BOM, user profile section with subscription management, and modular email digests via Resend.',
       results: [
-        'Unified Super-Admin Dispatcher with detailed entity drilldowns and real-time revenue telemetry',
+        'Full native PWA capabilities with offline service worker caching, adaptive icons, and installable mobile experience',
+        'Unified Super-Admin Dispatcher with real-time revenue telemetry (3 RON/apartment & 100 RON contractor subscriptions)',
+        'Strict commercial anti-fraud guardrail: deterministic cap at maximum 3 offer revisions per reported ticket',
         'Proactive contractor deficit tracking across 41 Romanian counties and Bucharest',
-        'Automated modular executive reports dispatched directly to designated administrator inboxes',
-        'RFC-4180 compliant CSV exports with UTF-8 BOM for 100% Excel compatibility and diacritic preservation'
+        'Automated modular executive email digests via Resend and RFC-4180 CSV exports with UTF-8 BOM'
       ],
-      stack: ['Next.js 16 (Edge SSR)', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Email Digest']
+      stack: ['Next.js 16 (Edge SSR)', 'Native PWA', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Resend Email']
     },
     proj4: {
       title: 'Ploiești Urban Vision — CivicTech Platform',
@@ -1732,6 +1744,19 @@ export class TiberiuSwarmEngine {
     if (c.matchKey === 'contact_form') {
       this.openContactDrawer();
       return true;
+    }
+    if (c.matchKey === 'cv_modal' || c.clusterId === 'experience' || c.clusterIdx === 5) {
+      if (typeof window !== 'undefined' && typeof window.__openCvModal === 'function') {
+        window.__openCvModal();
+        return true;
+      }
+      const cvModal = document.getElementById('cvModal');
+      if (cvModal) {
+        cvModal.classList.add('active');
+        cvModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        return true;
+      }
     }
     return false;
   }
@@ -2815,9 +2840,18 @@ export class TiberiuSwarmEngine {
         this.setStage(4);
       } else if (cmd === 'contact') {
         this.openContactDrawer();
-      } else if (cmd === 'cv' || cmd === 'open cv') {
-        appendLine('Opening /CV-Militaru-Tiberiu.pdf ...', 'swarm-cli-res');
-        this.openExternalUrl('/CV-Militaru-Tiberiu.pdf');
+      } else if (cmd === 'cv' || cmd === 'open cv' || cmd === 'experience') {
+        appendLine(isRo ? 'Deschidere fereastră modală Traseu & Acreditări...' : 'Opening Career & Credentials modal...', 'swarm-cli-res');
+        if (typeof window !== 'undefined' && typeof window.__openCvModal === 'function') {
+          window.__openCvModal();
+        } else {
+          const cvModal = document.getElementById('cvModal');
+          if (cvModal) {
+            cvModal.classList.add('active');
+            cvModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+          }
+        }
       } else if (cmd.includes('instalbloc')) {
         appendLine('Launching https://instalbloc.ro ...', 'swarm-cli-res');
         this.openExternalUrl('https://instalbloc.ro');
@@ -4205,6 +4239,23 @@ export class TiberiuSwarmEngine {
           ? '✉ SOLICITĂ OFERTĂ PENTRU ACEST SERVICIU'
           : '✉ REQUEST QUOTE FOR THIS SERVICE';
         this.dom.insExtraBtn.onclick = () => this.openContactDrawer(c.label);
+        this.dom.insExtraBtn.classList.remove('is-hidden');
+      } else if (c.matchKey === 'cv_modal' || c.clusterIdx === 5 || c.clusterId === 'experience') {
+        this.dom.insExtraBtn.textContent = isRo
+          ? '🎓 DESCHIDE MODALA CU TRASEU & STUDII'
+          : '🎓 OPEN CAREER & CREDENTIALS MODAL';
+        this.dom.insExtraBtn.onclick = () => {
+          if (typeof window !== 'undefined' && typeof window.__openCvModal === 'function') {
+            window.__openCvModal();
+          } else {
+            const cvModal = document.getElementById('cvModal');
+            if (cvModal) {
+              cvModal.classList.add('active');
+              cvModal.setAttribute('aria-hidden', 'false');
+              document.body.classList.add('modal-open');
+            }
+          }
+        };
         this.dom.insExtraBtn.classList.remove('is-hidden');
       } else {
         this.dom.insExtraBtn.onclick = null;

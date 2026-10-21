@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Header & Nav
                 nav_home: "Acasă",
                 nav_services: "Servicii",
-                nav_about: "Despre Mine",
+                nav_about: "Cum Lucrez",
                 nav_projects: "Portofoliu",
                 nav_skills: "Competențe",
                 nav_experience: "Experiență",
@@ -157,15 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 s4_pt2: "Diagnosticare hardware, rețele locale & depanare incidente critice",
                 s4_pt3: "Mentenanță preventivă și suport dedicat pentru stabilitate 24/7",
 
-                // Despre Mine
-                about_badge: "Profil Profesional & Viziune",
-                about_title: "Cine Sunt și Cum Lucrez",
-                about_p1: "Sunt un <strong>consultant IT și dezvoltator cu orientare pragmatică spre rezultate de business</strong>, îmbinând formarea superioară în management cu expertiza practică acumulată în peste 5 ani de menținere a sistemelor critice. În prezent, îmi consolidez cunoștințele de algoritmi, structuri de date și programare orientată pe obiecte (C#, C++) ca <strong>Analist Programator (Nivel 5)</strong> la <strong>Colegiul Tehnic „Elie Radu” din Ploiești</strong>.",
-                about_p2: "În activitatea mea am văzut cât de mult costă o pană de sistem sau un proces operațional blocat în hârtii. De aceea, abordarea mea este una <strong>pragmatică și orientată spre soluții</strong>: ascult nevoile tale, explic opțiunile în cuvinte simple și construiesc sisteme fiabile, sigure și concepute pentru disponibilitate continuă.",
-                h1_title: "Orientat pe Rezultate",
-                h1_desc: "Fiecare linie de cod sau piesă hardware montată are un scop clar: să economisească timp și bani.",
-                h2_title: "Comunicare Transparentă",
-                h2_desc: "Fără jargon tehnic inutil. Știi întotdeauna stadiul lucrărilor și ce soluții sunt cele mai bune.",
+                // Despre Mine / Cum Lucrez
+                about_badge: "Viziune & Metodologie de Lucru",
+                about_title: "Cum Lucrez: Arhitectură Cloud Zero-Defect & Eficiență Operațională",
+                about_p1: "Dezvolt <strong>sisteme web enterprise, platforme SaaS și automatizări de procese</strong> concepute pentru disponibilitate continuă și costuri minime de mentenanță. Abordarea mea elimină riscurile de scalabilitate și facturile umflate de cloud: folosesc arhitecturi moderne serverless edge, persistență distribuită și cod optimizat fără compromisuri.",
+                about_p2: "În orice proiect, fie că este vorba despre o platformă complexă cu plăți securizate și dispecerat sau despre optimizarea unor baze de date de producție, prioritizez <strong>claritatea, securitatea Zero-Trust și randamentul investiției (ROI)</strong>. Fără jargon inutil — livrez soluții robuste care funcționează impecabil din prima zi.",
+                h1_title: "Arhitectură Cloud Zero-Cost",
+                h1_desc: "Infrastructuri edge serverless cu costuri pasive zero de găzduire și timpi de răspuns sub 100ms.",
+                h2_title: "Securitate Zero-Trust & ROI",
+                h2_desc: "Soluții protejate criptografic, livrate etapizat și gândite exclusiv să economisească timp și resurse.",
                 stats_card_title: "Cifre & Indicatori de Performanță",
                 stat_exp_lbl: "Ani Experiență IT & Suport Sisteme",
                 stat_uptime_lbl: "Disponibilitate Continuă pe Sisteme de Baze de Date",
@@ -188,10 +188,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj2_tag: "Aplicație Web & E-Commerce Real-Time",
                 proj2_title: "Magazin Online cu Chat Live (Florărie)",
                 proj2_summary: "Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC decuplată. Include catalog dinamic de produse, coș de cumpărături securizat cu validare strictă și modul de Live Chat în timp real bazat pe WebSockets pentru asistență instantanee și conversii crescute pe mobile.",
-                proj3_tag: "Edge SSR, Cloudflare R2 & Baze Relaționale",
+                proj3_tag: "Edge SSR, PWA, Cloudflare R2 & Dispecerat Super-Admin",
                 proj3_title: "Aplicație CRM & Gestiune Servicii (Instalbloc)",
                 proj3_status: "Live / Operațional",
-                proj3_summary: "Platformă enterprise Full-Stack dedicată asociațiilor de proprietari și companiilor de instalații sanitare / termice. Arhitectură Cloud Zero-Defect: Next.js 15 Edge SSR pe Cloudflare Workers cu OpenNext, stocare foto în Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client (Canvas API), persistență relațională distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, modul integrat de plăți Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și coduri OTP CSPRNG (crypto.randomInt), FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h, componentă printare conformă CSP, telemetrie Sentry și conformitate strictă OKF.",
+                proj3_summary: "Platformă enterprise Full-Stack dedicată asociațiilor de proprietari, locatarilor și prestatorilor tehnici. Arhitectură Cloud Zero-Defect: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, suport PWA nativ pentru operare mobilă și offline, stocare foto în Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client, persistență distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, plăți securizate Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și coduri OTP CSPRNG, FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h, componentă printare conformă CSP, Dispecerat General Super-Admin cu telemetrie dinamică (3 lei/apartament), gestiune abonamente lunare (100 lei prestator), regulă de plafonare la 3 modificări de ofertă, exporturi CSV RFC-4180 cu UTF-8 BOM, profil utilizator cu gestiune abonament și centru de rapoarte modulare pe email (Resend).",
                 proj4_tag: "Civic Tech, Audit Urban & Securitate Zero-Trust",
                 proj4_title: "Platformă Civică & Audit Urban (Viziune Urbană Ploiești)",
                 proj4_summary: "Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, validare Fail-Fast în env.ts (Zod), separare absolută CSS/JS (Zero inline styles), barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.",
@@ -241,6 +241,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 edu1_desc: "Specializare axată pe Programare Orientată pe Obiecte (C#, C++), Structuri de Date & Algoritmi, Arhitecturi Baze de Date Relaționale (SQL) și Dezvoltare Web Full-Stack (HTML5, React.js, Node.js).",
                 edu2_title: "Master & Licență în Management",
                 edu2_desc: "Specializare în Managementul Performanței, Optimizarea Sistemelor și Arhitecturi de Control în IMM-uri.",
+                exp_summary_badge: "Acreditări & Istoric Profesional",
+                exp_summary_title: "Peste 5 Ani de Stabilitate și Arhitectură IT",
+                exp_summary_desc: "De la administrarea bazelor de date de producție (DBA) cu disponibilitate 99.9% și suport pentru infrastructuri critice, până la formare academică dublă (Analist Programator Nivel 5 și Masterat în Management). Consultă parcursul complet structurat la cerere.",
+                btn_open_cv_modal: "Vezi Traseul Profesional Detaliat",
+                cv_modal_title: "Traseu Profesional & Acreditări Tehnice",
+                cv_modal_subtitle: "Istoricul complet al rolurilor mele în sisteme critice, administrare baze de date și studii formale.",
+                btn_download_cv_modal: "Descarcă CV Oficial (PDF)",
 
                 // Terminal
                 term_badge: "Consolă Interactivă",
@@ -273,6 +280,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Footer & Modal
                 footer_tagline: "Soluții web moderne, baze de date sigure și suport tehnic de încredere.",
                 footer_rights: "Toate drepturile rezervate.",
+                footer_privacy: "Confidențialitate & GDPR",
+                privacy_modal_title: "Politică de Confidențialitate & GDPR",
+                privacy_modal_subtitle: "Transparență completă privind securitatea datelor, confidențialitatea și absența trackerelor.",
+                privacy_sec1_title: "1. Colectarea Datelor prin Formularul de Contact",
+                privacy_sec1_text: "Datele introduse benevol în formularul de contact (Nume, Adresă de Email și Mesaj) sunt utilizate exclusiv pentru a procesa solicitarea ta comercială sau tehnică și a reveni cu un răspuns. Aceste informații nu sunt vândute, înstrăinate sau partajate cu terți și nu sunt utilizate în campanii nesolicitate de marketing.",
+                privacy_sec2_title: "2. Zero Cookie-uri de Urmărire (No Tracking)",
+                privacy_sec2_text: "Acest portofoliu respectă intimitatea utilizatorului și nu folosește cookie-uri de urmărire, reclame terțe sau pixeli de profilare (fără Google Analytics, Meta Pixel sau rețele publicitare). Navigarea este 100% curată și anonimă.",
+                privacy_sec3_title: "3. Stocare Locală Funcțională (localStorage)",
+                privacy_sec3_text: "Pentru a oferi o experiență optimă, site-ul memorează exclusiv preferințele tale tehnice de afișare în spațiul local al browserului tău (localStorage): limba selectată (Română / Engleză) și tema vizuală. Aceste date rămân stocate strict pe dispozitivul tău și nu sunt transmise către servere externe.",
+                privacy_sec4_title: "4. Drepturile Tale & Ștergerea Datelor",
+                privacy_sec4_text: "Conform Regulamentului General privind Protecția Datelor (GDPR - Regulamentul UE 2016/679), ai dreptul de acces, rectificare și ștergere definitivă a oricărui mesaj sau date transmise anterior. Poți solicita oricând eliminarea completă a corespondenței trimițând un mesaj direct pe WhatsApp sau prin formularul de contact.",
                 btn_view_repo: "Vezi pe GitHub",
                 btn_close: "Închide",
                 footer_qr: "Scanează pentru a distribui",
@@ -283,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Header & Nav
                 nav_home: "Home",
                 nav_services: "Services",
-                nav_about: "About Me",
+                nav_about: "How I Work",
                 nav_projects: "Portfolio",
                 nav_skills: "Skills",
                 nav_experience: "Experience",
@@ -341,15 +359,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 s4_pt2: "Hardware diagnostic, local networks & swift incident resolution",
                 s4_pt3: "Preventive maintenance and dedicated support for 24/7 reliability",
 
-                // Despre Mine
-                about_badge: "Professional Background & Vision",
-                about_title: "Who I Am & How I Work",
-                about_p1: "I am an <strong>IT consultant and software developer with a pragmatic focus on business outcomes</strong>, combining higher education in management with 5+ years of hands-on experience maintaining critical enterprise systems. Currently consolidating my knowledge of algorithms, data structures, and object-oriented programming (C#, C++) as a <strong>Programmer Analyst (Level 5)</strong> at the <strong>'Elie Radu' Technical College</strong>.",
-                about_p2: "Throughout my career, I've seen firsthand how costly system downtime and paperwork bottlenecks can be. That's why my approach is <strong>pragmatic and results-driven</strong>: I listen to your exact needs, explain solutions in plain language, and build systems engineered for continuous availability and operational safety.",
-                h1_title: "Results-Oriented",
-                h1_desc: "Every line of code and hardware component configured serves a single purpose: saving time and money.",
-                h2_title: "Clear Communication",
-                h2_desc: "No unnecessary technical jargon. You always know the status of your project and which options suit you best.",
+                // Despre Mine / How I Work
+                about_badge: "Vision & Working Methodology",
+                about_title: "How I Work: Zero-Defect Cloud Architecture & Operational ROI",
+                about_p1: "I engineer <strong>enterprise web systems, SaaS platforms, and process automations</strong> designed for continuous availability and near-zero ongoing maintenance costs. My approach eliminates scalability bottlenecks and bloated cloud bills: leveraging modern serverless edge runtimes, distributed persistence, and strictly optimized code.",
+                about_p2: "Across every engagement, whether delivering complex platforms with secure checkout and dispatching or tuning production databases, I prioritize <strong>clarity, Zero-Trust security, and return on investment (ROI)</strong>. No unnecessary jargon — only robust solutions that perform reliably from day one.",
+                h1_title: "Zero-Cost Cloud Architecture",
+                h1_desc: "Serverless edge architectures with zero passive hosting overhead and sub-100ms response latencies.",
+                h2_title: "Zero-Trust Security & ROI",
+                h2_desc: "Cryptographically protected, milestone-driven systems engineered to maximize business time and capital efficiency.",
                 stats_card_title: "Key Performance Indicators",
                 stat_exp_lbl: "Years in IT Systems & Infrastructure",
                 stat_uptime_lbl: "Continuous High Availability on Production DBs",
@@ -372,10 +390,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 proj2_tag: "Web Application & Real-Time E-Commerce",
                 proj2_title: "Online Store with Live Chat (Florist)",
                 proj2_summary: "Full-scale e-commerce web application for a local florist built with decoupled MVC architecture. Features real-time WebSockets live chat, dynamic product catalogs, and secure checkout to drive mobile sales conversions.",
-                proj3_tag: "Edge SSR, Cloudflare R2 & Relational Databases",
+                proj3_tag: "Edge SSR, PWA, Cloudflare R2 & Super-Admin Dispatch",
                 proj3_title: "Service Management & CRM Tool (Instalbloc)",
                 proj3_status: "Live / Operational",
-                proj3_summary: "Enterprise Full-Stack platform designed for property associations and plumbing contractors. Cloud Zero-Defect architecture: Next.js 15 Edge SSR on Cloudflare Workers via OpenNext, zero-egress media storage on Cloudflare R2 with client-side WebP canvas compression, distributed relational persistence on Turso Cloud (LibSQL) via Drizzle ORM, secure HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP generation (crypto.randomInt), deterministic 4-stage FSM, noticeboard QR reporting module without account, automated 96h SLA cron dispatcher, CSP-compliant print trigger component, Sentry telemetry, and strict OKF governance.",
+                proj3_summary: "Enterprise Full-Stack platform designed for property associations, residents, and technical service contractors. Cloud Zero-Defect architecture: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native PWA capabilities for offline & mobile operation, zero-egress media storage on Cloudflare R2 with client-side WebP canvas compression, distributed persistence on Turso Cloud (LibSQL) via Drizzle ORM, Netopia XML payment engine with AES-256/RSA encryption and IPN webhook (node:crypto), secure HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP generation, deterministic 4-stage FSM, noticeboard QR reporting module without account, automated 96h SLA cron dispatcher, CSP-compliant print trigger component, Super-Admin Dispatcher with dynamic revenue telemetry (3 RON/apartment), monthly contractor subscription tiers (100 RON), anti-fraud max-3 offer revisions rule, RFC-4180 CSV exports with UTF-8 BOM, user profile section with subscription management, and modular email digests via Resend.",
                 proj4_tag: "Civic Tech, Urban Audit & Zero-Trust Security",
                 proj4_title: "Civic Platform & Urban Audit (Viziune Urbană Ploiești)",
                 proj4_summary: "Full-Stack civic platform (Next.js 15, Zero-Any TypeScript, Supabase PostgreSQL & Storage) for technical audits and residential building rehabilitation in Ploiești. Features a public dossier tracker (/status) with a 5-step FSM stepper and DOSAR-PH-XXX lookup, 6-module admin dashboard, secure image upload pipeline, official A4 noticeboard sheet generator, ANAF Form 230 collective borderou export (CSV BOM), timing-safe HMAC-SHA256 server sessions, Fail-Fast environment validation in env.ts (Zod), absolute CSS/JS decoupling (zero inline styles), mechanical Gatekeeper barrier, and verified Resend DKIM/SPF email.",
@@ -425,6 +443,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 edu1_desc: "Core curriculum focused on Object-Oriented Programming (C#, C++), Data Structures & Algorithms, Relational SQL Databases, and Full-Stack Web Architecture (React.js, Node.js).",
                 edu2_title: "Master's & Bachelor's in Management",
                 edu2_desc: "Specialization in Systems Optimization, Performance Management, and Digital Transformation.",
+                exp_summary_badge: "Credentials & Professional Background",
+                exp_summary_title: "Over 5 Years of IT Architecture & System Stability",
+                exp_summary_desc: "From managing production databases (DBA) with 99.9% uptime and supporting national-scale railway systems, to dual academic qualifications (Level 5 Programmer Analyst & Master's in Management). Explore the complete career trajectory and certifications.",
+                btn_open_cv_modal: "View Full Career Timeline & CV",
+                cv_modal_title: "Professional Experience & Academic Credentials",
+                cv_modal_subtitle: "Detailed chronology, production roles, technical responsibilities, and education.",
+                btn_download_cv_modal: "Download Official CV (PDF)",
 
                 // Terminal
                 term_badge: "Interactive Console",
@@ -457,6 +482,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Footer & Modal
                 footer_tagline: "Modern web solutions, dependable databases, and trusted IT maintenance.",
                 footer_rights: "All rights reserved.",
+                footer_privacy: "Privacy & GDPR",
+                privacy_modal_title: "Privacy Policy & GDPR",
+                privacy_modal_subtitle: "Full transparency regarding data security, privacy, and zero-tracking commitment.",
+                privacy_sec1_title: "1. Data Collection via Contact Form",
+                privacy_sec1_text: "Information submitted voluntarily via the contact form (Name, Email Address, and Message) is solely used to process and respond to your technical or business inquiry. Your information is never sold, leased, or shared with third parties, nor is it ever used for unsolicited marketing.",
+                privacy_sec2_title: "2. Zero Tracking Cookies",
+                privacy_sec2_text: "This portfolio respects your privacy and uses zero tracking cookies, third-party advertising scripts, or profiling pixels (no Google Analytics, Meta Pixel, or ad tracking networks). Your browsing experience is completely private and anonymous.",
+                privacy_sec3_title: "3. Strictly Functional Local Storage (localStorage)",
+                privacy_sec3_text: "To ensure a smooth user experience, the website exclusively stores your personal interface preferences locally in your browser (localStorage): selected language (RO/EN) and visual theme. This data remains strictly on your device and is never transmitted to external servers.",
+                privacy_sec4_title: "4. Your Rights & Data Erasure (GDPR)",
+                privacy_sec4_text: "Under the General Data Protection Regulation (GDPR - EU Regulation 2016/679), you have the right to access, rectify, or request the erasure of any submitted messages or contact details. You may request immediate deletion at any time via WhatsApp or the contact form.",
                 btn_view_repo: "View on GitHub",
                 btn_close: "Close",
                 footer_qr: "Scan to share",
@@ -1430,7 +1466,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'projects':
                     printLine('• [CV Builder Pro & ATS Analyzer]: SaaS Serverless, strict CSP without unsafe-inline, zero-trust DOM, Puppeteer anti-SSRF, Stripe webhooks, structured JSON logger', 't-out');
                     printLine('• [Magazin Online Florărie]: Live chat, WebSockets, decoupled MVC architecture, React storefront', 't-out');
-                    printLine('• [Instalbloc CRM]: Next.js 15 Edge SSR (Cloudflare Workers), Cloudflare R2 Media, Turso Cloud DB (LibSQL), Zero-Cost Architecture (0€), Zero-Any, Gatekeeper, 4-stage FSM, 96h SLA cron, Drizzle ORM [Status: Live / Operațional pe https://instalbloc.ro]', 't-out');
+                    printLine('• [Instalbloc CRM]: Next.js 16 Edge SSR (Cloudflare Workers), PWA Nativ, Cloudflare R2 Media, Turso Cloud DB (LibSQL), Drizzle ORM, Netopia XML (AES-256 IPN), Dispecerat Super-Admin, 4-stage FSM, 96h SLA cron [Status: Live / Operațional pe https://instalbloc.ro]', 't-out');
                     printLine('• [Viziune Urbană Ploiești]: Civic platform, Next.js 15, TypeScript zero-any, Supabase PostgreSQL & Storage, HMAC timing-safe auth, /status FSM tracker, admin storage & ANAF exports, Gatekeeper', 't-out');
                     printLine('• [Portofoliu Tiberiu]: Vite, Three.js 3D universe, strict CSP, zero inline styling, zero-trust DOM, Gatekeeper, OKF SSOT', 't-out');
                     const projTarget = document.getElementById('projects');
@@ -1444,10 +1480,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
 
                 case 'experience':
-                    printLine('• Database Administrator @ Corpul Expertilor (2026 - Present)', 't-out');
-                    printLine('• Assistant Manager & Digital Transformation @ SC SIATI SRL (2014 - 2020)', 't-out');
-                    printLine('• IT System Technician (Tier 1 & 2) @ GFR (2010 - 2014)', 't-out');
-                    printLine('• Analyst Programmer Studies @ Colegiul Tehnic Elie Radu', 't-out');
+                    printLine('• Administrator Baze de Date (DBA) @ Corpul Experților (2026 - Prezent)', 't-out');
+                    printLine('• Asistent Manager & Coordonator Digitalizare @ SC SIATI SRL (2022 - 2025)', 't-out');
+                    printLine('• Tehnician IT (Suport Nivel 1 & 2) @ GFR (2020 - 2022)', 't-out');
+                    printLine('• Studii Analist Programator @ Colegiul Tehnic Elie Radu (2025 - Prezent)', 't-out');
+                    printLine('• Master & Licență în Management @ Universitatea Bioterra (2010 - 2016)', 't-out');
+                    printLine('[ACTION] Se deschide fișa detaliată din dosarul tehnic (CV Modal)...', 't-succ');
+                    if (typeof window.__openCvModal === 'function') {
+                        window.__openCvModal();
+                    }
                     break;
 
                 case 'contact':
@@ -1458,16 +1499,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
 
                 case 'cv':
-                    printLine('[ACTION] Downloading official Curriculum Vitae (PDF)...', 't-succ');
+                    printLine('[ACTION] Se deschide dosarul tehnic & CV complet...', 't-succ');
+                    if (typeof window.__openCvModal === 'function') {
+                        window.__openCvModal();
+                    }
+                    printLine('[INFO] Pentru descărcare directă PDF, folosește butonul dedicat din fereastră sau linkul generat:', 't-out');
                     const dlLink = document.createElement('a');
-                    dlLink.href = 'CV-Militaru-Tiberiu.pdf';
-                    dlLink.download = 'CV-Militaru-Tiberiu.pdf';
+                    dlLink.href = '/CV-Militaru-Tiberiu.pdf';
+                    dlLink.download = 'Militaru-Tiberiu-CV.pdf';
                     dlLink.target = '_blank';
                     dlLink.rel = 'noopener noreferrer';
                     document.body.appendChild(dlLink);
                     dlLink.click();
                     dlLink.remove();
-                    printLine('[OK] Fișierul "CV-Militaru-Tiberiu.pdf" a fost descărcat cu succes.', 't-succ');
+                    printLine('[OK] Descărcare inițiată pentru "Militaru-Tiberiu-CV.pdf".', 't-succ');
                     break;
 
                 case 'matrix':
@@ -1761,40 +1806,40 @@ document.addEventListener('DOMContentLoaded', () => {
             proj3: {
                 ro: {
                     title: "Aplicație CRM & Gestiune Servicii (Instalbloc) — Live / Operațional",
-                    desc: "Platformă enterprise Full-Stack dezvoltată pentru asociațiile de proprietari și companiile de instalații sanitare și intervenții tehnice pe teren, eliminând suprapunerile de programări și întârzierile de intervenție.",
-                    architecture: "Full-Stack Next.js 15 Edge SSR pe Cloudflare Workers prin OpenNext, cu React 19 și TypeScript în regim strict Zero-Any, optimizat pentru costuri 0 de infrastructură (Zero-Cost Enterprise Architecture). Pipeline multimedia decuplat: stocare obiecte în Cloudflare R2 (zero taxe de transfer/egress) prin client compatibil S3 și compresie foto automată pe client (Canvas WebP, max 1600px / ~200KB) ce reduce dimensiunea cu peste 80% înainte de transmitere. Persistență distribuită de înaltă performanță prin Drizzle ORM peste Turso Cloud (LibSQL), validare la runtime cu Zod, interfață stilizată cu Tailwind CSS și monitorizare cu Sentry. Sistemul include: strat de autentificare server-side prin sesiuni criptografice HMAC-SHA256 cu timingSafeEqual și cookie-uri HttpOnly; generator OTP securizat prin CSPRNG nativ (crypto.randomInt); FSM determinist în 4 etape; cron automat de triaj și alerte SLA de 96h (/api/cron/sla-check); modul de raportare avarii fără cont prin scanare cod QR de avizier; componentă PrintTrigger conformă CSP fără script injection; disciplină financiară împotriva rotunjirilor IEEE 754; logging forensic structurat JSON (logger.ts) cu mascare automată PII și ID-uri de corelare; barieră mecanică Gatekeeper și documentare OKF.",
+                    desc: "Platformă enterprise Full-Stack dedicată asociațiilor de proprietari, locatarilor și prestatorilor tehnici autorizați, eliminând timpii morți la intervenții, oferind dispecerat centralizat și gestiune automată a abonamentelor și plăților.",
+                    architecture: "Arhitectură Cloud Zero-Defect pe Next.js 16 Edge SSR rulat pe Cloudflare Workers prin OpenNext (cu @libsql/isomorphic-ws și @aws-sdk izolate extern), suport PWA nativ pentru operare mobilă și offline (sw.js, manifest.json, prompt instalare), persistență distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM și validare Zod. Stocare foto în Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client (Canvas API, <200KB). Modul de plăți securizate Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), gestiune abonamente lunare (100 lei prestator / 3 lei apartament) și emitere automată de facturi. Arhitectură dual-role cu izolare strictă a Dispeceratului General Super-Admin, telemetrie financiară în timp real, monitorizare deficite prestatori per județ/domeniu (< 3 prestatori), regulă anti-fraudă de plafonare la maximum 3 modificări de ofertă, exporturi CSV conforme RFC-4180 cu UTF-8 BOM pentru compatibilitate nativă Excel, profil utilizator cu gestiune abonament și ștergere cont conform GDPR, centru de rapoarte modulare pe email (Resend API), autentificare prin sesiuni HMAC-SHA256 (timingSafeEqual) și coduri OTP CSPRNG, FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h și conformitate strictă CSP fără scripturi inline.",
                     results: [
-                        "Status: Live / Operațional la https://instalbloc.ro pe Cloudflare Workers & Cloudflare R2.",
-                        "Infrastructură Enterprise Zero-Cost (0€/lună) prin combinarea Cloudflare Workers Free Tier, Turso Cloud DB și R2.",
-                        "Pipeline media optimizat: compresie WebP nativă pe client și stocare securizată în Cloudflare R2 cu 0 taxe egress.",
-                        "Autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și generare de coduri OTP prin CSPRNG (crypto.randomInt).",
-                        "Persistență relațională scalabilă cu roluri active: Super Admin, Admin Asociație, Prestator și Locatar.",
-                        "Modul QR Code de avizier dedicat pentru sesizări instant fără cont, cu optimizare foto direct pe client.",
-                        "Tipizare absolută garantată la compilare (Zero-Any) pe întreaga bază de cod și server actions.",
-                        "Flux FSM determinist în 4 etape: Avarie Deschisă -> În Ofertare -> Acceptată (SLA 96h) -> Finalizată cu Raport Tehnic & PV.",
-                        "Cron automat (/api/cron/sla-check) cu detectare proactivă a depășirilor de SLA și alerte de dispecerat.",
-                        "Componente de tipărire rapoarte (PrintTrigger) conforme CSP strict, fără execuție de cod inline.",
-                        "Arhitectură de securitate ranforsată cu Content Security Policy strictă și protecție automată anti-abuz.",
-                        "Standardizare arhitecturală completă guvernată prin Open Knowledge Format (OKF)."
+                        "Status: Live / Operațional în producție pe Cloudflare Workers & Cloudflare R2.",
+                        "Suport PWA nativ complet: offline caching, service worker dedicat, iconițe maskable și flux rapid de instalare pe ecranul principal.",
+                        "Arhitectură Dual-Role cu izolare strictă: Super-Admin-ul poate gestiona platforma global sau comuta în rol de Asociație/Prestator.",
+                        "Dispecerat General Super-Admin: telemetrie financiară (3 lei/ap.), hartă deficite prestatori pe 41 de județe și rapoarte email modulare.",
+                        "Gestiune financiară completă: abonamente lunare (100 lei prestator), plăți securizate Netopia XML (AES-256/RSA) și facturare automată.",
+                        "Regulă anti-abuz: plafonare strictă la maximum 3 modificări de ofertă per solicitare de intervenție.",
+                        "Exporturi CSV RFC-4180 cu UTF-8 BOM: deschidere directă în Microsoft Excel cu diacritice românești 100% conservate.",
+                        "Secțiune de profil utilizator cu anulare abonament, gestionare date de facturare și solicitare ștergere cont conform GDPR.",
+                        "Pipeline multimedia eficient: compresie WebP nativă pe client (Canvas) și stocare securizată în Cloudflare R2 cu 0 taxe egress.",
+                        "Autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și coduri OTP generate prin CSPRNG nativ.",
+                        "Cron automat SLA 96h (/api/cron/sla-check), flux FSM determinist în 4 etape și modul QR Code de avizier pentru sesizări fără cont.",
+                        "Barieră mecanică Gatekeeper (ESLint zero warnings, compilare TypeScript strictă) și guvernanță Open Knowledge Format (OKF)."
                     ]
                 },
                 en: {
                     title: "Service Management & CRM Tool (Instalbloc) — Live / Operational",
-                    desc: "Enterprise Full-Stack field service platform engineered for property associations and plumbing contractors, eliminating scheduling overlaps and dispatch delays.",
-                    architecture: "Full-Stack Next.js 15 Edge SSR on Cloudflare Workers via OpenNext, with React 19 and strict Zero-Any TypeScript, engineered for zero hosting costs (Zero-Cost Enterprise Architecture). Decoupled media pipeline: Cloudflare R2 object storage (zero egress fees) via S3-compatible client and client-side Canvas WebP compression (max 1600px / ~200KB) reducing payload by >80% prior to transmission. High-performance distributed persistence through Drizzle ORM over Turso Cloud (LibSQL), runtime schema validation with Zod, modern styling with Tailwind CSS, and observability via Sentry. Engineered with: server-side cryptographic HMAC-SHA256 sessions with timingSafeEqual and HttpOnly cookies; secure CSPRNG OTP generation (crypto.randomInt); deterministic 4-stage FSM; automated 96h SLA check cron dispatcher (/api/cron/sla-check); noticeboard QR reporting module without account; CSP-compliant PrintTrigger component without inline script injection; financial discipline eliminating IEEE 754 floating-point rounding errors; structured forensic JSON logger (logger.ts) with automatic PII masking and correlation IDs; mechanical Gatekeeper build barrier, and OKF governance.",
+                    desc: "Enterprise Full-Stack field service platform engineered for property associations, residents, and verified service contractors, eliminating dispatch delays with a unified command center, automated subscriptions, and payment processing.",
+                    architecture: "Cloud Zero-Defect Architecture on Next.js 16 Edge SSR hosted on Cloudflare Workers via OpenNext (with @libsql/isomorphic-ws and @aws-sdk bundled as externals), native PWA support for offline and mobile operation (sw.js, manifest.json, install prompt), distributed persistence on Turso Cloud (LibSQL) with Drizzle ORM and Zod runtime schema validation. Object media storage on Cloudflare R2 (zero egress fees) with client-side Canvas WebP compression (<200KB). Secure Netopia XML payment engine with AES-256/RSA encryption and IPN webhook (node:crypto), monthly subscription management (100 RON contractor / 3 RON apartment) with automated billing. Dual-role architecture with strict Super-Admin command center isolation, real-time revenue telemetry, county/trade contractor deficit monitoring (< 3 contractors), anti-fraud rule capping offer revisions at 3 per incident, RFC-4180 CSV exports with UTF-8 BOM for seamless Excel compatibility, user profile section with subscription cancellation and GDPR account deletion, modular email reporting digests via Resend API, cryptographic HMAC-SHA256 session auth (timingSafeEqual) with CSPRNG OTP generation, deterministic 4-stage FSM, noticeboard QR reporting module without account, automated 96h SLA cron dispatcher, and strict CSP compliance without inline scripts.",
                     results: [
-                        "Status: Live & Operational at https://instalbloc.ro on Cloudflare Workers & Cloudflare R2.",
-                        "Zero-Cost Enterprise Infrastructure (€0/month) leveraging Cloudflare Workers Free Tier, Turso Cloud DB, and R2.",
-                        "Optimized media pipeline: native client-side WebP compression and secure Cloudflare R2 storage with zero egress fees.",
-                        "Hardened authentication via HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP code generation (crypto.randomInt).",
-                        "Scalable relational persistence with active roles: Super Admin, Association Admin, Service Provider, and Resident.",
-                        "Dedicated noticeboard QR code module for fast reporting without account and client-side photo optimization.",
-                        "Absolute compile-time type safety (Zero-Any) across all server actions, models, and UI components.",
-                        "Deterministic 4-stage FSM: Open Incident -> Bidding -> Accepted (96h SLA) -> Completed with Technical Report.",
-                        "Automated SLA cron dispatcher (/api/cron/sla-check) detecting schedule breaches before impact.",
-                        "Strict CSP-compliant report printing (PrintTrigger) without inline script injection.",
-                        "Hardened security architecture with strict Content Security Policy and anti-abuse safeguards.",
-                        "Complete architectural alignment and governance under Open Knowledge Format (OKF)."
+                        "Status: Live & Operational in production on Cloudflare Workers & Cloudflare R2.",
+                        "Native PWA implementation: offline caching, dedicated service worker, maskable icons, and mobile home screen installation.",
+                        "Dual-Role Architecture with strict isolation: Super-Admin can manage global platform settings or seamlessly switch to Association/Contractor context.",
+                        "Unified Super-Admin Command Center: revenue telemetry (3 RON/unit), 41-county contractor deficit monitoring, and modular email digests.",
+                        "End-to-End Billing: monthly subscription tiers (100 RON/contractor), encrypted Netopia XML checkout (AES-256/RSA), and automated invoices.",
+                        "Anti-Fraud Protection: strict ceiling of maximum 3 offer revisions per incident request.",
+                        "RFC-4180 CSV Exports with UTF-8 BOM: seamless native Excel opening preserving Romanian diacritics without character corruption.",
+                        "User Profile Section with self-service subscription cancellation, billing management, and GDPR-compliant account deletion.",
+                        "Optimized Media Pipeline: client-side WebP compression and secure Cloudflare R2 object storage with zero egress fees.",
+                        "Hardened authentication via HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP code generation.",
+                        "Automated 96h SLA cron dispatcher (/api/cron/sla-check), 4-stage deterministic FSM, and noticeboard QR code module.",
+                        "Mechanical Gatekeeper barrier (zero ESLint warnings, strict TypeScript build) and Open Knowledge Format (OKF) governance."
                     ]
                 },
                 github: "https://github.com/tiberiumilitaru89/instalbloc"
@@ -1955,6 +2000,120 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         window.addEventListener('keydown', handleEscape);
         document.addEventListener('keydown', handleEscape);
+    })();
+
+
+    // ==========================================================================
+    // 8.1. CV / CAREER TIMELINE MODAL (Accessible Dialog & Zero-Trust DOM)
+    // ==========================================================================
+    (() => {
+        const modal = document.getElementById('cvModal');
+        if (!modal) return;
+
+        const closeBtn = document.getElementById('cvModalCloseBtn');
+        const dismissBtn = document.getElementById('cvModalDismissBtn');
+
+        const openCvModal = () => {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+        };
+
+        const closeCvModal = () => {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        };
+
+        // Attach to all elements with data-cv-modal-open across the page
+        document.querySelectorAll('[data-cv-modal-open]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Close mobile drawer if open
+                const drawer = document.getElementById('mobileDrawer');
+                const hamburger = document.getElementById('hamburgerBtn');
+                if (drawer && drawer.classList.contains('active')) {
+                    drawer.classList.remove('active');
+                    document.body.classList.remove('drawer-open');
+                }
+                if (hamburger && hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+                openCvModal();
+            });
+        });
+
+        closeBtn?.addEventListener('click', closeCvModal);
+        dismissBtn?.addEventListener('click', closeCvModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeCvModal();
+        });
+
+        const handleCvEscape = (e) => {
+            if ((e.key === 'Escape' || e.key === 'Esc') && modal.classList.contains('active')) {
+                closeCvModal();
+            }
+        };
+        window.addEventListener('keydown', handleCvEscape);
+        document.addEventListener('keydown', handleCvEscape);
+
+        // Expose for external modules (e.g. SwarmEngine 3D canvas)
+        if (typeof window !== 'undefined') {
+            window.__openCvModal = openCvModal;
+        }
+    })();
+
+    // ==========================================================================
+    // 8.2. ACCESSIBLE PRIVACY POLICY MODAL CONTROLLER
+    // ==========================================================================
+    (() => {
+        const modal = document.getElementById('privacyModal');
+        if (!modal) return;
+
+        const closeBtn = document.getElementById('privacyModalCloseBtn');
+        const dismissBtn = document.getElementById('privacyModalDismissBtn');
+
+        const openPrivacyModal = () => {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+        };
+
+        const closePrivacyModal = () => {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        };
+
+        const triggerBtn = document.getElementById('privacyPolicyBtn');
+        if (triggerBtn) {
+            triggerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openPrivacyModal();
+            });
+        }
+
+        document.querySelectorAll('[data-privacy-modal-open]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openPrivacyModal();
+            });
+        });
+
+        closeBtn?.addEventListener('click', closePrivacyModal);
+        dismissBtn?.addEventListener('click', closePrivacyModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closePrivacyModal();
+        });
+
+        const handlePrivacyEscape = (e) => {
+            if ((e.key === 'Escape' || e.key === 'Esc') && modal.classList.contains('active')) {
+                closePrivacyModal();
+            }
+        };
+        window.addEventListener('keydown', handlePrivacyEscape);
+        document.addEventListener('keydown', handlePrivacyEscape);
     })();
 
 
