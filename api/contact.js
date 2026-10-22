@@ -1,8 +1,10 @@
-// In-memory sliding window rate limiter for Serverless container defense
+// Hybrid distributed + in-memory sliding window rate limiter for Serverless defense
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minut
+const RATE_LIMIT_WINDOW_SECONDS = 60;
 const MAX_REQUESTS_PER_WINDOW = 5;
 const MIN_HUMAN_INTERACTION_MS = 2500; // Prag minim de interacțiune umană anti-bot
+const MAX_PAYLOAD_BYTES = 16384; // 16 KB Denial-of-Wallet guard
 
 function cleanupRateLimits() {
     if (rateLimitMap.size > 500) {
@@ -15,7 +17,7 @@ function cleanupRateLimits() {
     }
 }
 
-function isRateLimited(ip) {
+function isMemoryRateLimited(ip) {
     if (!ip || ip === 'unknown') return false;
     cleanupRateLimits();
 
@@ -33,6 +35,40 @@ function isRateLimited(ip) {
 
     record.count += 1;
     return false;
+}
+
+async function isRateLimited(ip) {
+    if (!ip || ip === 'unknown') return false;
+
+    const kvUrl = (process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL || '').trim();
+    const kvToken = (process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN || '').trim();
+
+    if (kvUrl && kvToken) {
+        try {
+            const key = `rl:contact:${ip}`;
+            const res = await fetch(`${kvUrl.replace(/\/$/, '')}/pipeline`, {
+                method: 'POST',
+                signal: AbortSignal.timeout(1500),
+                headers: {
+                    'Authorization': `Bearer ${kvToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify([
+                    ['INCR', key],
+                    ['EXPIRE', key, RATE_LIMIT_WINDOW_SECONDS, 'NX']
+                ])
+            });
+            if (res.ok) {
+                const data = await res.json();
+                const currentCount = Array.isArray(data) && data[0] ? Number(data[0].result) : 1;
+                return currentCount > MAX_REQUESTS_PER_WINDOW;
+            }
+        } catch (_) {
+            // Fallback la in-memory store dacă store-ul distribuit nu răspunde în 1.5s
+        }
+    }
+
+    return isMemoryRateLimited(ip);
 }
 
 function sanitize(str) {
@@ -248,14 +284,24 @@ export default async function handler(req, res) {
         || req.socket?.remoteAddress
         || 'unknown';
 
-    if (isRateLimited(clientIp)) {
+    if (await isRateLimited(clientIp)) {
         logStructured('warn', 'Rate limit exceeded for IP', correlationId, { ip: maskIp(clientIp) });
         return res.status(429).json({ error: 'Prea multe cereri. Te rog să aștepți un minut înainte de a trimite din nou.' });
+    }
+
+    // 2.2 Denial-of-Wallet Payload Size Guard (max 16 KB)
+    const contentLength = Number(req.headers['content-length'] || 0);
+    if (contentLength > MAX_PAYLOAD_BYTES) {
+        logStructured('warn', 'Payload size limit exceeded', correlationId, { ip: maskIp(clientIp), contentLength });
+        return res.status(413).json({ error: 'Dimensiunea cererii depășește limita admisă.' });
     }
 
     try {
         // 3. Extragere payload
         const body = req.body || {};
+        if (JSON.stringify(body).length > MAX_PAYLOAD_BYTES) {
+            return res.status(413).json({ error: 'Dimensiunea cererii depășește limita admisă.' });
+        }
 
         // 4. Honeypot check (Capcană bot invizibilă pe server)
         if (body._gotcha && typeof body._gotcha === 'string' && body._gotcha.trim() !== '') {

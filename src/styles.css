@@ -227,7 +227,7 @@ main, header, footer, .toast-container, .modal-backdrop, .back-to-top {
     z-index: 1;
 }
 
-/* Scroll progress indicator */
+/* Scroll progress indicator (Strict CSP Zero-Inline-Style via data-scroll-step) */
 .scroll-progress-bar {
     position: fixed;
     top: 0;
@@ -237,8 +237,40 @@ main, header, footer, .toast-container, .modal-backdrop, .back-to-top {
     background: var(--gradient-primary);
     z-index: 1001;
     box-shadow: 0 0 10px var(--accent-cyan);
-    transition: width 0.1s ease-out;
+    transition: width 0.12s ease-out;
 }
+.scroll-progress-bar[data-scroll-step="0"]  { --scroll-progress: 0%; }
+.scroll-progress-bar[data-scroll-step="1"]  { --scroll-progress: 5%; }
+.scroll-progress-bar[data-scroll-step="2"]  { --scroll-progress: 10%; }
+.scroll-progress-bar[data-scroll-step="3"]  { --scroll-progress: 15%; }
+.scroll-progress-bar[data-scroll-step="4"]  { --scroll-progress: 20%; }
+.scroll-progress-bar[data-scroll-step="5"]  { --scroll-progress: 25%; }
+.scroll-progress-bar[data-scroll-step="6"]  { --scroll-progress: 30%; }
+.scroll-progress-bar[data-scroll-step="7"]  { --scroll-progress: 35%; }
+.scroll-progress-bar[data-scroll-step="8"]  { --scroll-progress: 40%; }
+.scroll-progress-bar[data-scroll-step="9"]  { --scroll-progress: 45%; }
+.scroll-progress-bar[data-scroll-step="10"] { --scroll-progress: 50%; }
+.scroll-progress-bar[data-scroll-step="11"] { --scroll-progress: 55%; }
+.scroll-progress-bar[data-scroll-step="12"] { --scroll-progress: 60%; }
+.scroll-progress-bar[data-scroll-step="13"] { --scroll-progress: 65%; }
+.scroll-progress-bar[data-scroll-step="14"] { --scroll-progress: 70%; }
+.scroll-progress-bar[data-scroll-step="15"] { --scroll-progress: 75%; }
+.scroll-progress-bar[data-scroll-step="16"] { --scroll-progress: 80%; }
+.scroll-progress-bar[data-scroll-step="17"] { --scroll-progress: 85%; }
+.scroll-progress-bar[data-scroll-step="18"] { --scroll-progress: 90%; }
+.scroll-progress-bar[data-scroll-step="19"] { --scroll-progress: 95%; }
+.scroll-progress-bar[data-scroll-step="20"] { --scroll-progress: 100%; }
+
+/* 3D Perspective Card Tilt States (Strict CSP Zero-Inline-Style via data-tilt) */
+[data-tilt="tl"] { --tilt-x: 4deg;  --tilt-y: -4deg; --tilt-y-trans: -6px; }
+[data-tilt="tc"] { --tilt-x: 4deg;  --tilt-y: 0deg;  --tilt-y-trans: -6px; }
+[data-tilt="tr"] { --tilt-x: 4deg;  --tilt-y: 4deg;  --tilt-y-trans: -6px; }
+[data-tilt="ml"] { --tilt-x: 0deg;  --tilt-y: -4deg; --tilt-y-trans: -6px; }
+[data-tilt="mc"] { --tilt-x: 0deg;  --tilt-y: 0deg;  --tilt-y-trans: -6px; }
+[data-tilt="mr"] { --tilt-x: 0deg;  --tilt-y: 4deg;  --tilt-y-trans: -6px; }
+[data-tilt="bl"] { --tilt-x: -4deg; --tilt-y: -4deg; --tilt-y-trans: -6px; }
+[data-tilt="bc"] { --tilt-x: -4deg; --tilt-y: 0deg;  --tilt-y-trans: -6px; }
+[data-tilt="br"] { --tilt-x: -4deg; --tilt-y: 4deg;  --tilt-y-trans: -6px; }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {

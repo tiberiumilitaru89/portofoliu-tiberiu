@@ -26,7 +26,22 @@ export default [
         "caughtErrorsIgnorePattern": "^_"
       }],
       "no-eval": "error",
-      "no-implied-eval": "error"
+      "no-implied-eval": "error",
+      "no-restricted-properties": [
+        "error",
+        {
+          "property": "innerHTML",
+          "message": "Strict interzis innerHTML (Zero-Trust DOM). Folosește textContent, createElement sau safeSetHTML cu DOMParser."
+        },
+        {
+          "property": "outerHTML",
+          "message": "Strict interzis outerHTML (Zero-Trust DOM)."
+        },
+        {
+          "property": "style",
+          "message": "Strict interzis element.style.* (Strict CSP style-src 'self'). Folosește classList sau atribute data-*."
+        }
+      ]
     }
   },
   {

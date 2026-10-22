@@ -1177,21 +1177,19 @@ document.addEventListener('DOMContentLoaded', () => {
             resizeTimeout = setTimeout(resize, 120);
         });
 
-        // 3D Perspective Card Tilt
+        // 3D Perspective Card Tilt (Strict CSP Zero-Inline-Style via data-tilt quadrants)
         const tiltCards = document.querySelectorAll('.service-card, .project-card, .profile-card, .skill-group-card');
         tiltCards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                card.style.setProperty('--tilt-x', `${-y * 0.035}deg`);
-                card.style.setProperty('--tilt-y', `${x * 0.035}deg`);
-                card.style.setProperty('--tilt-y-trans', '-6px');
+                const relX = (e.clientX - rect.left) / Math.max(1, rect.width);
+                const relY = (e.clientY - rect.top) / Math.max(1, rect.height);
+                const col = relX < 0.33 ? 'l' : (relX > 0.66 ? 'r' : 'c');
+                const row = relY < 0.33 ? 't' : (relY > 0.66 ? 'b' : 'm');
+                card.setAttribute('data-tilt', `${row}${col}`);
             });
             card.addEventListener('mouseleave', () => {
-                card.style.removeProperty('--tilt-x');
-                card.style.removeProperty('--tilt-y');
-                card.style.removeProperty('--tilt-y-trans');
+                card.removeAttribute('data-tilt');
             });
         });
     })();
@@ -1202,7 +1200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. NAVIGATION, SCROLL PROGRESS & MOBILE DRAWER
     // ==========================================================================
     (() => {
-                const scrollBar = document.getElementById('scrollProgress');
+        const scrollBar = document.getElementById('scrollProgress');
         const backToTopBtn = document.getElementById('backToTopBtn');
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const mobileDrawer = document.getElementById('mobileDrawer');
@@ -1219,9 +1217,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const scrollY = window.scrollY;
                     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
                     
-                    // Progress bar
+                    // Progress bar (Strict CSP Zero-Inline-Style via discrete data-scroll-step 0..20)
                     if (scrollBar && docHeight > 0) {
-                        scrollBar.style.setProperty('--scroll-progress', `${(scrollY / docHeight) * 100}%`);
+                        const step = Math.min(20, Math.max(0, Math.round((scrollY / docHeight) * 20)));
+                        scrollBar.setAttribute('data-scroll-step', String(step));
                     }
 
                     // Back to top
@@ -2154,13 +2153,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ==========================================================================
-    // 10. SECURE CONTACT FORM (With Honeypot, Validation & Email Delivery)
+    // 10. SECURE CONTACT FORM (FSM State Machine, Honeypot, Validation & Delivery)
     // ==========================================================================
     (() => {
         const form = document.getElementById('contactForm');
         if (!form) return;
 
         let formInitTime = Date.now();
+
+        /**
+         * Algebraic Finite State Machine (FSM) for Contact Form
+         * States: 'idle' | 'submitting' | 'success' | 'error'
+         */
+        let formState = { status: 'idle', code: null };
+        const transitionFormState = (nextState) => {
+            formState = nextState;
+            form.setAttribute('data-state', nextState.status);
+        };
+        transitionFormState({ status: 'idle', code: null });
 
         const nameInput = document.getElementById('senderName');
         const emailInput = document.getElementById('senderEmail');
@@ -2207,17 +2217,25 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            // FSM concurrency guard: prevent double submissions while in 'submitting' state
+            if (formState.status === 'submitting') return;
+
             // Honeypot check for bots
             const honeypot = document.getElementById('_gotcha');
             if (honeypot && honeypot.value) {
                 // Silently discard spam bots
+                transitionFormState({ status: 'success', code: 'HONEYPOT_DISCARD' });
                 ToastModule.show("Mesaj transmis!", 'success');
                 form.reset();
                 return;
             }
 
-            if (!validate()) return;
+            if (!validate()) {
+                transitionFormState({ status: 'error', code: 'VALIDATION_FAILED' });
+                return;
+            }
 
+            transitionFormState({ status: 'submitting', code: null });
             const lang = I18nModule.getCurrentLang();
             const originalBtnContent = Array.from(submitBtn.childNodes).map(n => n.cloneNode(true));
             submitBtn.disabled = true;
@@ -2251,6 +2269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
+                    transitionFormState({ status: 'success', code: 'DELIVERED' });
                     ToastModule.show(
                         lang === 'ro' 
                             ? "Mesajul tău a fost trimis cu succes! Te voi contacta în cel mai scurt timp." 
@@ -2266,6 +2285,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     } catch (_err) {
                         errPayload = null;
                     }
+
+                    transitionFormState({ status: 'error', code: `HTTP_${response.status}` });
 
                     if (response.status === 429) {
                         ToastModule.show(
@@ -2290,6 +2311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Notă: NU apelăm form.reset() pentru ca vizitatorul să nu piardă textul tastat!
                 }
             } catch (_error) {
+                transitionFormState({ status: 'error', code: 'NETWORK_FAILURE' });
                 // Dacă rețeaua e offline sau blocată de extensii, textul rămâne intact în formular
                 ToastModule.show(
                     lang === 'ro'
