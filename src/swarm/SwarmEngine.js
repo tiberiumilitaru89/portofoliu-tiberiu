@@ -1982,6 +1982,13 @@ export class TiberiuSwarmEngine {
   }
 
   injectAtomicButton() {
+    const existing = document.getElementById('swarmAtomicBtn');
+    if (existing) {
+      existing.addEventListener('click', () => this.openBatteryWarning());
+      this.dom.atomicBtn = existing;
+      return;
+    }
+
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.id = 'swarmAtomicBtn';
@@ -2017,6 +2024,7 @@ export class TiberiuSwarmEngine {
 
     const root = document.createElement('div');
     root.className = 'swarm-root';
+    root.setAttribute('inert', '');
 
     const webglCanvas = document.createElement('canvas');
     webglCanvas.className = 'swarm-webgl-canvas';
@@ -2284,12 +2292,14 @@ export class TiberiuSwarmEngine {
     insLiveLink.className = 'swarm-inspector-link is-hidden';
     insLiveLink.target = '_blank';
     insLiveLink.rel = 'noopener noreferrer';
+    insLiveLink.href = 'https://www.tiberiumilitaru.ro';
     insLiveLink.textContent = '↗ LIVE DEMO';
 
     const insGitLink = document.createElement('a');
     insGitLink.className = 'swarm-inspector-link is-hidden';
     insGitLink.target = '_blank';
     insGitLink.rel = 'noopener noreferrer';
+    insGitLink.href = 'https://github.com/tiberiumilitaru89';
     insGitLink.textContent = '↗ GITHUB';
 
     extRow.append(insLiveLink, insGitLink);
@@ -2310,6 +2320,7 @@ export class TiberiuSwarmEngine {
     const insJump = document.createElement('button');
     insJump.type = 'button';
     insJump.className = 'swarm-inspector-jump';
+    insJump.setAttribute('aria-label', this.lang === 'ro' ? 'Sari la secțiune în pagină' : 'Jump to section in page');
     insJump.addEventListener('click', () => {
       if (this.selectedCard) {
         this.restoreReality(this.selectedCard.targetSelector);
@@ -2910,6 +2921,7 @@ export class TiberiuSwarmEngine {
 
   openBatteryWarning() {
     if (this.state !== 'IDLE') return;
+    if (this.dom.root) this.dom.root.removeAttribute('inert');
     this.harvestDOMLinks();
     this.setLanguage(this.detectLanguage(), false);
     this.state = 'MODAL';
@@ -2922,6 +2934,7 @@ export class TiberiuSwarmEngine {
     if (this.state !== 'MODAL') return;
     this.dom.backdrop.classList.remove('is-visible');
     this.dom.root.classList.remove('is-active');
+    if (this.dom.root) this.dom.root.setAttribute('inert', '');
     this.state = 'IDLE';
   }
 
@@ -5312,6 +5325,9 @@ export class TiberiuSwarmEngine {
           this.dom.atomicBtn.classList.remove('is-portal-flare');
         }
         this.dom.root.classList.remove('is-active');
+        if (this.dom.root) {
+          this.dom.root.setAttribute('inert', '');
+        }
         this.state = 'IDLE';
         cancelAnimationFrame(this.rafId);
         this.rafId = null;

@@ -135,12 +135,36 @@
     color: var(--accent-cyan);
     box-shadow: 0 4px 14px rgba(2, 132, 199, 0.16);
 }
+[data-theme="light"] .section-badge {
+    color: #0369a1;
+    background: rgba(3, 105, 161, 0.08);
+    border-color: rgba(3, 105, 161, 0.2);
+}
+[data-theme="light"] .btn-outline-cyan {
+    color: #0369a1;
+    background: rgba(3, 105, 161, 0.08);
+    border-color: rgba(3, 105, 161, 0.35);
+}
+[data-theme="light"] .btn-outline-cyan:hover {
+    background: #0369a1;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(3, 105, 161, 0.25);
+}
 [data-theme="light"] .footer {
     background: #edf2f7;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
+[data-theme="light"] .footer .logo-sub {
+    color: #0369a1;
+}
+[data-theme="light"] .footer-tagline {
+    color: #475569;
+}
 [data-theme="light"] .footer-copyright {
     color: var(--text-secondary);
+}
+[data-theme="light"] .lang-box-title {
+    color: #0369a1;
 }
 [data-theme="light"] .modal-window {
     background: #ffffff;
@@ -558,6 +582,82 @@ img {
     gap: 6px;
 }
 
+/* Swarm Atomic Button (Header Embedded) */
+.swarm-atomic-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 240, 255, 0.45);
+    background: radial-gradient(circle at center, rgba(0, 240, 255, 0.2) 0%, rgba(4, 5, 8, 0.92) 75%);
+    color: var(--accent-cyan);
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+    flex-shrink: 0;
+}
+.swarm-atomic-btn:hover,
+.swarm-atomic-btn:focus-visible {
+    transform: scale(1.14);
+    border-color: #facc15;
+    box-shadow: 0 0 22px rgba(250, 204, 21, 0.65), inset 0 0 10px rgba(0, 240, 255, 0.4);
+    outline: none;
+}
+.swarm-atomic-svg {
+    width: 26px;
+    height: 26px;
+    overflow: visible;
+}
+.swarm-orbit {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.1;
+    vector-effect: non-scaling-stroke;
+    transform-origin: 18px 18px;
+}
+.swarm-atomic-btn:hover .swarm-orbit {
+    stroke: #facc15;
+}
+.swarm-orbit-1 { animation: swOrbit1 3.8s linear infinite; }
+.swarm-orbit-2 { animation: swOrbit2 3.0s linear infinite reverse; }
+.swarm-orbit-3 { animation: swOrbit3 2.4s linear infinite; }
+@keyframes swOrbit1 { from { transform: rotate3d(1, 0.3, 0.2, 0deg); } to { transform: rotate3d(1, 0.3, 0.2, 360deg); } }
+@keyframes swOrbit2 { from { transform: rotate3d(0.2, 1, 0.3, 0deg); } to { transform: rotate3d(0.2, 1, 0.3, 360deg); } }
+@keyframes swOrbit3 { from { transform: rotate3d(0.3, 0.2, 1, 0deg); } to { transform: rotate3d(0.3, 0.2, 1, 360deg); } }
+.swarm-core {
+    fill: #facc15;
+    transform-origin: 18px 18px;
+    animation: swCorePulse 1.2s ease-in-out infinite alternate;
+}
+@keyframes swCorePulse { from { transform: scale(0.85); opacity: 0.8; } to { transform: scale(1.15); opacity: 1; } }
+.swarm-atomic-btn:hover .swarm-core {
+    fill: #ff2a54;
+}
+.swarm-atomic-badge {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    padding: 1px 4px;
+    font-family: var(--font-mono, monospace);
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #000;
+    background: var(--accent-cyan);
+    border-radius: 3px;
+    pointer-events: none;
+}
+[data-theme="light"] .swarm-atomic-btn {
+    border-color: rgba(2, 132, 199, 0.45);
+    background: radial-gradient(circle at center, rgba(2, 132, 199, 0.15) 0%, rgba(248, 250, 252, 0.95) 75%);
+    color: #0284c7;
+    box-shadow: 0 0 10px rgba(2, 132, 199, 0.2);
+}
+
 /* Hamburger button */
 .hamburger-btn {
     display: none;
@@ -743,7 +843,7 @@ img {
     font-family: var(--font-mono);
     font-size: 1.1rem;
     margin-bottom: 24px;
-    min-height: 32px;
+    min-height: 64px;
 }
 .typing-label {
     color: var(--text-muted);
@@ -821,6 +921,7 @@ img {
 }
 .profile-card {
     position: relative;
+    background-color: #0b1120;
     background: var(--gradient-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -830,6 +931,9 @@ img {
     z-index: 1;
     transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(var(--tilt-y-trans, 0px));
     transition: transform 0.15s ease-out;
+}
+[data-theme="light"] .profile-card {
+    background-color: #ffffff;
 }
 
 .profile-img-container {
@@ -857,10 +961,13 @@ img {
     margin-bottom: 4px;
 }
 .profile-card-role {
-    color: var(--accent-cyan);
+    color: #38bdf8;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 20px;
+}
+[data-theme="light"] .profile-card-role {
+    color: #0369a1;
 }
 
 .profile-quick-stats {
@@ -1028,6 +1135,7 @@ img {
     font-size: 1.5rem;
     color: var(--accent-cyan);
 }
+.highlight-item h3,
 .highlight-item h4 {
     font-size: 1.05rem;
     margin-bottom: 4px;

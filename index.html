@@ -161,10 +161,10 @@
     </script>
 
     <!-- Self-Hosted Fonts (Outfit, Space Grotesk, JetBrains Mono - Zero External CDN) -->
-    <link rel="stylesheet" href="/fonts/google-fonts.css">
+    <link rel="stylesheet" href="/fonts/google-fonts.css" media="print" id="gfonts-css">
     
     <!-- Self-Hosted Font Awesome Icons (Zero External CDN) -->
-    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css" media="print" id="fontawesome-css">
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/src/styles.css">
@@ -182,7 +182,7 @@
     <!-- Navigation Header -->
     <header class="header" id="header">
         <div class="nav-container">
-            <a href="#home" class="logo" aria-label="Militaru Tiberiu Nicolae Acasă">
+            <a href="#home" class="logo" aria-label="Tiberiu.Dev - Militaru Tiberiu Nicolae Acasă">
                 <span class="logo-bracket">&lt;</span><span class="logo-name">Tiberiu</span><span class="logo-dot">.</span><span class="logo-sub">Dev</span><span class="logo-bracket">/&gt;</span>
             </a>
 
@@ -204,11 +204,22 @@
             <div class="nav-controls">
                 <!-- Language Toggle Button -->
                 <div class="lang-switch-wrap">
-                    <button id="langToggleBtn" class="control-btn lang-btn" aria-label="Comută limba (Switch language)">
+                    <button id="langToggleBtn" class="control-btn lang-btn" aria-label="RO - Comută limba (Switch language)">
                         <i class="fa-solid fa-globe"></i>
                         <span id="langCurrentText">RO</span>
                     </button>
                 </div>
+
+                <!-- 3D Neural Swarm Launch Button -->
+                <button id="swarmAtomicBtn" class="swarm-atomic-btn" type="button" title="Lansează Arhitectura Neurală 3D (Swarm Engine)" aria-label="Lansează Arhitectura Neurală 3D (Swarm Engine)">
+                    <svg viewBox="0 0 36 36" class="swarm-atomic-svg" aria-hidden="true">
+                        <ellipse cx="18" cy="18" rx="15" ry="5.5" class="swarm-orbit swarm-orbit-1"></ellipse>
+                        <ellipse cx="18" cy="18" rx="15" ry="5.5" class="swarm-orbit swarm-orbit-2"></ellipse>
+                        <ellipse cx="18" cy="18" rx="15" ry="5.5" class="swarm-orbit swarm-orbit-3"></ellipse>
+                        <circle cx="18" cy="18" r="3.2" class="swarm-core"></circle>
+                    </svg>
+                    <span class="swarm-atomic-badge">3D</span>
+                </button>
 
                 <!-- Theme Toggle Button -->
                 <button id="themeToggleBtn" class="control-btn theme-btn" aria-label="Comută tema (Dark / Light)">
@@ -325,10 +336,10 @@
                             <div class="profile-glow-ring"></div>
                             <div class="profile-card">
                                 <div class="profile-img-container">
-                                    <img src="/profile.webp" srcset="/profile-mobile.webp 400w, /profile.webp 800w" sizes="(max-width: 768px) 400px, 800px" alt="Militaru Tiberiu Nicolae - IT Consultant & Soluții Software" class="profile-photo" fetchpriority="high" onerror="this.src='https://ui-avatars.com/api/?name=Militaru+Tiberiu+Nicolae&background=0284c7&color=ffffff&size=300'">
+                                    <img src="/profile.webp" srcset="/profile-mobile.webp 400w, /profile.webp 800w" sizes="(max-width: 768px) 200px, 300px" width="200" height="200" alt="Militaru Tiberiu Nicolae - IT Consultant & Soluții Software" class="profile-photo" fetchpriority="high" onerror="this.src='https://ui-avatars.com/api/?name=Militaru+Tiberiu+Nicolae&background=0284c7&color=ffffff&size=300'">
                                 </div>
                                 <div class="profile-info-footer">
-                                    <h3 class="profile-card-name">Militaru Tiberiu Nicolae</h3>
+                                    <h2 class="profile-card-name">Militaru Tiberiu Nicolae</h2>
                                     <p class="profile-card-role" data-i18n="profile_card_role">IT Consultant & Soluții Software</p>
                                     
                                     <div class="profile-quick-stats">
@@ -473,14 +484,14 @@
                             <div class="highlight-item">
                                 <div class="h-icon"><i class="fa-solid fa-cloud"></i></div>
                                 <div>
-                                    <h4 data-i18n="h1_title">Arhitectură Cloud Zero-Cost</h4>
+                                    <h3 class="highlight-title" data-i18n="h1_title">Arhitectură Cloud Zero-Cost</h3>
                                     <p data-i18n="h1_desc">Infrastructuri edge serverless cu costuri pasive zero de găzduire și timpi de răspuns sub 100ms.</p>
                                 </div>
                             </div>
                             <div class="highlight-item">
                                 <div class="h-icon"><i class="fa-solid fa-shield-halved"></i></div>
                                 <div>
-                                    <h4 data-i18n="h2_title">Securitate Zero-Trust & ROI</h4>
+                                    <h3 class="highlight-title" data-i18n="h2_title">Securitate Zero-Trust & ROI</h3>
                                     <p data-i18n="h2_desc">Soluții protejate criptografic, livrate etapizat și gândite exclusiv să economisească timp și resurse.</p>
                                 </div>
                             </div>
@@ -1211,7 +1222,7 @@
        rel="noopener noreferrer" 
        class="floating-whatsapp" 
        id="floatingWhatsappBtn" 
-       aria-label="Contactează-mă direct pe WhatsApp">
+       aria-label="Discută pe WhatsApp - Contactează-mă direct">
         <span class="whatsapp-status-dot" aria-hidden="true"></span>
         <i class="fa-brands fa-whatsapp"></i>
         <span class="whatsapp-label" data-i18n="floating_whatsapp_label">Discută pe WhatsApp</span>
@@ -1223,7 +1234,7 @@
     </button>
 
     <!-- Project Details Modal -->
-    <div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" inert>
         <div class="modal-window">
             <div class="modal-header">
                 <h3 class="modal-title" id="modalTitle">Titlu Proiect</h3>
@@ -1242,7 +1253,7 @@
     </div>
 
     <!-- Detailed Career & CV Modal -->
-    <div class="modal-backdrop" id="cvModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="cvModal" aria-hidden="true" role="dialog" aria-modal="true" inert>
         <div class="modal-window cv-modal-window">
             <div class="modal-header">
                 <div>
@@ -1361,7 +1372,7 @@
     </div>
 
     <!-- Privacy Policy & GDPR Modal -->
-    <div class="modal-backdrop" id="privacyModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="privacyModal" aria-hidden="true" role="dialog" aria-modal="true" inert>
         <div class="modal-window privacy-modal-window">
             <div class="modal-header">
                 <div>

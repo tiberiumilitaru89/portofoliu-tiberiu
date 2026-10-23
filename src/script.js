@@ -1,5 +1,3 @@
-import { TiberiuSwarmEngine } from './swarm/SwarmEngine.js';
-
 "use strict";
 /**
  * script.js - Portofoliu & CV Militaru Tiberiu Nicolae
@@ -7,6 +5,19 @@ import { TiberiuSwarmEngine } from './swarm/SwarmEngine.js';
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Non-blocking stylesheet upgrade after initial render (Zero CSP inline handler)
+    const upgradeNonCriticalStyles = () => {
+        const gf = document.getElementById('gfonts-css');
+        if (gf && gf.media !== 'all') gf.media = 'all';
+        const fa = document.getElementById('fontawesome-css');
+        if (fa && fa.media !== 'all') fa.media = 'all';
+    };
+    if (document.readyState === 'complete') {
+        upgradeNonCriticalStyles();
+    } else {
+        window.addEventListener('load', upgradeNonCriticalStyles, { once: true });
+    }
+
     // Idempotent initialization guard (prevents duplicate listeners on reload/hot-reload/test runners)
     if (typeof window !== 'undefined' && window.__portfolioInitialized) return;
     if (typeof window !== 'undefined') window.__portfolioInitialized = true;
@@ -295,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn_close: "Închide",
                 footer_qr: "Scanează pentru a distribui",
                 floating_whatsapp_label: "Discută pe WhatsApp",
-                floating_whatsapp_aria: "Contactează-mă direct pe WhatsApp"
+                floating_whatsapp_aria: "Discută pe WhatsApp - Contactează-mă direct"
             },
             en: {
                 // Header & Nav
@@ -497,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn_close: "Close",
                 footer_qr: "Scan to share",
                 floating_whatsapp_label: "Chat on WhatsApp",
-                floating_whatsapp_aria: "Chat directly with Tiberiu on WhatsApp"
+                floating_whatsapp_aria: "Chat on WhatsApp - Contact Tiberiu directly"
             }
         };
 
@@ -523,10 +534,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Update Lang Toggle Text
+            // Update Lang Toggle Text & Accessible Name
             const langIndicator = document.getElementById('langCurrentText');
             if (langIndicator) {
                 langIndicator.textContent = lang.toUpperCase();
+            }
+            const toggleBtn = document.getElementById('langToggleBtn');
+            if (toggleBtn) {
+                toggleBtn.setAttribute('aria-label', `${lang.toUpperCase()} - ${lang === 'ro' ? 'Comută limba (Switch language)' : 'Switch language (Comută limba)'}`);
             }
 
             // Update Floating WhatsApp Link & Aria
@@ -813,7 +828,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let count = Math.min(Math.floor((width * height) / 12500), 95);
             if (width < 768) {
                 // Eco Mode: drastically reduce particle count
-                count = Math.min(count, 25);
+                count = Math.min(count, 18);
             }
 
             const palette = palettes[currentTheme] || palettes.dark;
@@ -1167,9 +1182,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Initialize and start animation
+        // Initialize canvas dimensions
         resize();
-        render();
+
+        // Defer RAF animation loop until page load (prevents main thread contention during initial paint)
+        if (document.readyState === 'complete') {
+            render();
+        } else {
+            window.addEventListener('load', () => {
+                if (!animId && !isPaused) render();
+            }, { once: true });
+        }
 
         let resizeTimeout;
         window.addEventListener('resize', () => {
@@ -1968,6 +1991,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            modal.removeAttribute('inert');
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
@@ -1975,6 +1999,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const closeModal = () => {
             if (!modal) return;
+            modal.setAttribute('inert', '');
             modal.classList.remove('active');
             modal.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('modal-open');
@@ -2013,12 +2038,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const dismissBtn = document.getElementById('cvModalDismissBtn');
 
         const openCvModal = () => {
+            modal.removeAttribute('inert');
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
         };
 
         const closeCvModal = () => {
+            modal.setAttribute('inert', '');
             modal.classList.remove('active');
             modal.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('modal-open');
@@ -2074,12 +2101,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const dismissBtn = document.getElementById('privacyModalDismissBtn');
 
         const openPrivacyModal = () => {
+            modal.removeAttribute('inert');
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
         };
 
         const closePrivacyModal = () => {
+            modal.setAttribute('inert', '');
             modal.classList.remove('active');
             modal.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('modal-open');
@@ -2348,9 +2377,49 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     // ==========================================================================
-    // 12. SWARM 3D NEURAL ENGINE INITIALIZATION
+    // 12. SWARM 3D NEURAL ENGINE LAZY INITIALIZATION
     // ==========================================================================
-    const swarmEngine = new TiberiuSwarmEngine();
-    swarmEngine.init();
+    let swarmEngineInstance = null;
+    let isSwarmLoading = false;
+
+    const loadSwarmEngine = (autoOpenWarning = false) => {
+        if (swarmEngineInstance) {
+            if (autoOpenWarning && typeof swarmEngineInstance.openBatteryWarning === 'function') {
+                swarmEngineInstance.openBatteryWarning();
+            }
+            return Promise.resolve(swarmEngineInstance);
+        }
+        if (isSwarmLoading) return Promise.resolve(null);
+        isSwarmLoading = true;
+
+        return import('./swarm/SwarmEngine.js')
+            .then(({ TiberiuSwarmEngine }) => {
+                swarmEngineInstance = new TiberiuSwarmEngine();
+                swarmEngineInstance.init();
+                isSwarmLoading = false;
+                if (autoOpenWarning && typeof swarmEngineInstance.openBatteryWarning === 'function') {
+                    swarmEngineInstance.openBatteryWarning();
+                }
+                return swarmEngineInstance;
+            })
+            .catch(err => {
+                console.error('Failed to load SwarmEngine:', err);
+                isSwarmLoading = false;
+                return null;
+            });
+    };
+
+    const atomicBtn = document.getElementById('swarmAtomicBtn');
+    if (atomicBtn) {
+        atomicBtn.addEventListener('pointerenter', () => loadSwarmEngine(false), { once: true, passive: true });
+        atomicBtn.addEventListener('focus', () => loadSwarmEngine(false), { once: true, passive: true });
+        atomicBtn.addEventListener('touchstart', () => loadSwarmEngine(false), { once: true, passive: true });
+        atomicBtn.addEventListener('click', () => loadSwarmEngine(true));
+    }
+
+    window.launchSwarmSingularity = () => {
+        loadSwarmEngine(true);
+        return '[SWARM_ENGINE] Initializing 3D Deep-Space Singularity... Check viewport.';
+    };
 
 });
