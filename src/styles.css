@@ -157,7 +157,9 @@
 [data-theme="light"] .footer .logo-sub {
     color: #0369a1;
 }
-[data-theme="light"] .footer-tagline {
+[data-theme="light"] .footer-tagline,
+[data-theme="light"] .footer-qr-code .qr-text,
+[data-theme="light"] .footer-privacy-btn {
     color: #475569;
 }
 [data-theme="light"] .footer-copyright {
@@ -2024,7 +2026,7 @@ img {
     right: 24px;
     height: 48px;
     padding: 0 18px 0 14px;
-    background: #25D366;
+    background: #15803d;
     color: #ffffff;
     border-radius: 9999px;
     display: inline-flex;
@@ -2033,7 +2035,7 @@ img {
     font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 8px 24px rgba(21, 128, 61, 0.4);
     z-index: 999;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.2s ease;
 }
@@ -2045,8 +2047,8 @@ img {
 
 .floating-whatsapp:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
-    background: #20ba59;
+    box-shadow: 0 12px 30px rgba(21, 128, 61, 0.55);
+    background: #166534;
     color: #ffffff;
 }
 
