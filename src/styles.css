@@ -2707,17 +2707,37 @@ body.modal-open {
 }
 
 @media (max-width: 768px) {
+    button, a, input, select, textarea, .nav-link, .filter-btn, .quick-chip, .control-btn, .hamburger-btn, .swarm-atomic-btn {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .header {
+        padding-top: env(safe-area-inset-top);
+    }
     .nav-menu {
         display: none;
     }
     .header-cv-btn {
         display: none;
     }
+    .control-btn,
+    .hamburger-btn,
+    .swarm-atomic-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
     .hamburger-btn {
         display: flex;
     }
     .mobile-drawer {
         display: flex;
+        padding-bottom: max(32px, env(safe-area-inset-bottom));
+    }
+    .input-wrap input,
+    .input-wrap select,
+    .input-wrap textarea,
+    .terminal-input {
+        font-size: 16px !important;
     }
     .section {
         padding: 60px 0;
@@ -2795,6 +2815,13 @@ body.modal-open {
 }
 
 @media (max-width: 480px) {
+    .nav-container {
+        padding-left: max(14px, env(safe-area-inset-left));
+        padding-right: max(14px, env(safe-area-inset-right));
+    }
+    .nav-controls {
+        gap: 8px;
+    }
     .container {
         padding: 0 16px;
     }
@@ -2807,8 +2834,14 @@ body.modal-open {
     .services-grid {
         grid-template-columns: 1fr;
     }
+    .service-card {
+        padding: 24px 18px;
+    }
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    .project-card {
+        padding: 24px 18px;
     }
     .project-actions {
         display: flex;
@@ -2839,7 +2872,11 @@ body.modal-open {
     }
     .quick-chip {
         font-size: 0.78rem;
-        padding: 5px 9px;
+        padding: 6px 10px;
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
     .modal-backdrop {
         padding: 8px;
@@ -2847,6 +2884,12 @@ body.modal-open {
     .modal-window {
         padding: 0;
         width: 100%;
+    }
+    .modal-body,
+    .cv-modal-body,
+    .privacy-modal-body {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
     }
     .modal-header {
         padding: 16px;
@@ -2943,8 +2986,8 @@ body.modal-open {
         min-height: 44px;
     }
     .floating-whatsapp {
-        bottom: 20px;
-        right: 16px;
+        bottom: max(20px, calc(env(safe-area-inset-bottom) + 12px));
+        right: max(16px, env(safe-area-inset-right));
         width: 48px;
         height: 48px;
         padding: 0;
@@ -2961,10 +3004,10 @@ body.modal-open {
         border: 1.5px solid #25D366;
     }
     .back-to-top {
-        bottom: 78px;
-        right: 18px;
-        width: 40px;
-        height: 40px;
+        bottom: max(78px, calc(env(safe-area-inset-bottom) + 68px));
+        right: max(18px, env(safe-area-inset-right));
+        width: 44px;
+        height: 44px;
     }
 }
 
