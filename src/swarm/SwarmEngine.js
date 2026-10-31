@@ -494,8 +494,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj3',
           projectKey: 'proj3',
           category: 'crm',
-          desc: 'Platformă PropTech & Marketplace Full-Stack: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, PWA nativ offline, stocare R2, Turso LibSQL, plăți Netopia IPN AES-256, Dispecerat Super-Admin (3 lei/apartament), abonamente meșteri (100 lei), regulă plafonare 3 oferte și rapoarte CSV RFC-4180 / Email Resend.',
-          tags: ['Next.js 16 Edge', 'PWA Nativ', 'Cloudflare Workers & R2', 'Turso LibSQL', 'Drizzle ORM', 'Netopia IPN', 'Dispecerat Super-Admin', 'Resend Email']
+          desc: 'Platformă PropTech & Marketplace Full-Stack: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, PWA nativ offline, stocare R2, Turso LibSQL cu audit_logs, telemetrie GA4 & Clarity cu Nonce CSP, digest executiv cu GA4 Data API (JWT Edge), plăți Netopia IPN AES-256, Dispecerat Super-Admin, abonamente meșteri, cron orar SLA 96h/72h și garanție 12 luni.',
+          tags: ['Next.js 16 Edge', 'PWA Nativ', 'Cloudflare Workers & R2', 'Turso LibSQL', 'GA4 & Clarity', 'GA4 Data API', 'Audit Logs', 'Drizzle ORM', 'Netopia IPN', 'Dispecerat Super-Admin', 'Resend Email']
         },
         {
           label: 'Platformă Civică & Audit Urban (Viziune Urbană Ploiești)',
@@ -561,8 +561,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj3',
           projectKey: 'proj3',
           category: 'crm',
-          desc: 'Full-Stack PropTech & Marketplace: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native offline PWA, Cloudflare R2, Turso LibSQL, Netopia IPN AES-256 payments, Super-Admin dispatch (3 RON/apartment), contractor subscriptions (100 RON), 3-offer revision cap, and RFC-4180 CSV / Resend email reports.',
-          tags: ['Next.js 16 Edge', 'Native PWA', 'Cloudflare Workers & R2', 'Turso LibSQL', 'Drizzle ORM', 'Netopia IPN', 'Super-Admin Dispatch', 'Resend Email']
+          desc: 'Full-Stack PropTech & Marketplace: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native offline PWA, Cloudflare R2, Turso LibSQL with audit_logs, dual GA4 & Clarity telemetry with CSP Nonce, automated weekly digest with GA4 Data API (Edge JWT), Netopia IPN AES-256 payments, hourly cron SLA 96h/72h, and 12-month warranty.',
+          tags: ['Next.js 16 Edge', 'Native PWA', 'Cloudflare Workers & R2', 'Turso LibSQL', 'GA4 & Clarity', 'GA4 Data API', 'Audit Logs', 'Drizzle ORM', 'Netopia IPN', 'Super-Admin Dispatch', 'Resend Email']
         },
         {
           label: 'Civic Platform & Urban Audit (Viziune Urbana Ploiesti)',
@@ -1027,15 +1027,18 @@ const CASE_STUDIES_DATA = {
       challenge:
         'Asociațiile de proprietari și clienții independenți se confruntau cu timpi mari de răspuns la avarii tehnice, lipsă de meșteri autorizați pe județe/domenii și absența unui sistem centralizat de evidență financiară, abonamente și raportare executivă.',
       architecture:
-        'Arhitectură Cloud Zero-Defect: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, suport PWA nativ pentru operare mobilă și offline, stocare Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client, persistență distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM, plăți securizate Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare securizată prin sesiuni HMAC-SHA256 (timingSafeEqual) și OTP CSPRNG, FSM determinist în 4 etape, modul avizier QR fără cont, dispecerat cron SLA 96h, componentă printare conformă CSP, Dispecerat General Super-Admin cu telemetrie dinamică (3 lei/apartament), gestiune abonamente lunare (100 lei prestator), regulă de plafonare la 3 modificări de ofertă, exporturi CSV RFC-4180 cu UTF-8 BOM, profil utilizator cu gestiune abonament și centru de rapoarte modulare pe email (Resend).',
+        'Arhitectură Cloud Zero-Defect: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, suport PWA nativ pentru operare mobilă și offline, stocare Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client, persistență distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM și tabelă audit_logs, telemetrie dublă GA4 & Clarity cu Nonce criptografic CSP și mascare GDPR PII, raport executiv săptămânal automatizat prin Google Analytics Data API (Service Account JWT nativ pe Edge), plăți securizate Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare prin sesiuni HMAC-SHA256 (timingSafeEqual) și OTP CSPRNG, FSM determinist în 4 etape cu fereastră de 6h exclusivă locatar pe QR, garanție legală 12 luni, dispecerat cron orar Cloudflare pentru SLA 96h și recepție tacită la 72h, regulă de plafonare la 3 modificări de ofertă cu protecție anti-spoofing și Dispecerat General Super-Admin.',
       results: [
+        'Telemetrie dublă GA4 & Microsoft Clarity cu CSP Nonce per-request și protecție GDPR (anonimizare IP & mascare formulare)',
+        'Digest executiv săptămânal automatizat cu extragere date audiență direct din Google Analytics Data API prin JWT nativ pe Edge',
+        'Tabelă dedicată audit_logs în Turso DB pentru jurnalizarea atomară a tuturor evenimentelor și mutațiilor critice',
+        'Daemon orar autonom pe Cloudflare Edge (0 * * * *) pentru recepție tacită la 72h și monitorizare SLA critic la 96h',
+        'Garanție de conformitate legală pe 12 luni și Proces-Verbal de Recepție generabil digital pentru fiecare lucrare finalizată',
+        'Fereastră exclusivă de 6 ore acordată locatarilor pe sesizările QR înainte de posibilitatea intervenției administratorului',
         'Suport PWA nativ complet cu service worker offline, iconițe adaptive și instalare directă pe mobile/desktop',
-        'Dispecerat General Super-Admin cu telemetrie dinamică a veniturilor (3 lei/apartament și abonamente prestator 100 lei)',
-        'Regulă de securitate comercială: plafonare strictă la maximum 3 modificări de ofertă per incident raportat',
-        'Monitorizare proactivă a deficitelor de meșteri pe 41 de județe și municipiul București',
-        'Rapoarte executive modulare automate expediate direct prin Resend și exporturi CSV conforme RFC-4180 cu UTF-8 BOM'
+        'Dispecerat General Super-Admin cu telemetrie dinamică a veniturilor și hartă deficite meșteri pe 41 de județe'
       ],
-      stack: ['Next.js 16 (Edge SSR)', 'PWA Nativ', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Resend Email']
+      stack: ['Next.js 16 (Edge SSR)', 'PWA Nativ', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'GA4 & Clarity', 'GA4 Data API', 'Audit Logs', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Resend Email']
     },
     proj4: {
       title: 'Viziune Urbană Ploiești — Platformă CivicTech',
@@ -1101,15 +1104,18 @@ const CASE_STUDIES_DATA = {
       challenge:
         'Homeowners associations and independent clients suffered from delayed responses to technical emergencies, lack of verified contractors by county and trade domain, and absence of a unified executive dashboard with financial telemetry, subscriptions, and automated reporting.',
       architecture:
-        'Zero-Defect Cloud Architecture: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native PWA capabilities for offline & mobile operation, zero-egress media storage on Cloudflare R2 with client-side WebP canvas compression, distributed persistence on Turso Cloud (LibSQL) via Drizzle ORM, Netopia XML payment engine with AES-256/RSA encryption and IPN webhook (node:crypto), secure HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP generation, deterministic 4-stage FSM, noticeboard QR reporting module without account, automated 96h SLA cron dispatcher, CSP-compliant print trigger component, Super-Admin Dispatcher with dynamic revenue telemetry (3 RON/apartment), monthly contractor subscription tiers (100 RON), anti-fraud max-3 offer revisions rule, RFC-4180 CSV exports with UTF-8 BOM, user profile section with subscription management, and modular email digests via Resend.',
+        'Zero-Defect Cloud Architecture: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native PWA capabilities for offline & mobile operation, zero-egress media storage on Cloudflare R2 with client-side WebP canvas compression, distributed persistence on Turso Cloud (LibSQL) via Drizzle ORM and dedicated audit_logs table, dual telemetry via GA4 & Microsoft Clarity with CSP Nonce and GDPR PII masking, automated weekly executive digest via Google Analytics Data API (Edge JWT), Netopia XML payment engine with AES-256/RSA encryption and IPN webhook (node:crypto), secure HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP generation, deterministic 4-stage FSM with 6h resident decision window on QR incidents, 12-month legal guarantee certificate, Cloudflare worker hourly cron dispatcher for 96h SLA and 72h tacit acceptance, anti-spoofing offer revisions cap (max 3), RFC-4180 CSV exports with UTF-8 BOM, and Super-Admin Command Center with dynamic telemetry.',
       results: [
+        'Dual GA4 & Microsoft Clarity telemetry with per-request CSP Nonce and strict GDPR compliance (IP anonymization & automated form masking)',
+        'Automated weekly executive digest with audience analytics pulled directly from Google Analytics Data API via native Edge JWT exchange',
+        'Traceability & compliance: dedicated audit_logs ledger table in Turso DB recording all critical system transitions',
+        'Autonomous hourly Cloudflare Edge cron daemon (0 * * * *) enforcing 72h tacit completion and 96h SLA escalation alerts',
+        '12-month legal warranty certificate and digital formal handover report generated for each completed job',
+        '6-hour exclusive resident decision window on QR apartment incident reports prior to HOA admin assignment',
         'Full native PWA capabilities with offline service worker caching, adaptive icons, and installable mobile experience',
-        'Unified Super-Admin Dispatcher with real-time revenue telemetry (3 RON/apartment & 100 RON contractor subscriptions)',
-        'Strict commercial anti-fraud guardrail: deterministic cap at maximum 3 offer revisions per reported ticket',
-        'Proactive contractor deficit tracking across 41 Romanian counties and Bucharest',
-        'Automated modular executive email digests via Resend and RFC-4180 CSV exports with UTF-8 BOM'
+        'Unified Super-Admin Dispatcher with real-time revenue telemetry and 41-county contractor deficit monitoring'
       ],
-      stack: ['Next.js 16 (Edge SSR)', 'Native PWA', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Resend Email']
+      stack: ['Next.js 16 (Edge SSR)', 'Native PWA', 'Cloudflare Workers & R2', 'Turso Cloud (LibSQL)', 'GA4 & Clarity', 'GA4 Data API', 'Audit Logs', 'Drizzle ORM', 'TypeScript (Zero-Any)', 'Netopia IPN (AES-256)', 'HMAC-SHA256 Auth', 'RFC-4180 CSV BOM', 'Resend Email']
     },
     proj4: {
       title: 'Ploiești Urban Vision — CivicTech Platform',
