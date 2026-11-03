@@ -813,11 +813,12 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.height = Math.floor(height * dpr);
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+            isMobile = width < 768;
             initNeurons();
         };
 
         // Neuron class / generator
-        const isMobile = window.innerWidth < 768; // Verificare dynamica, fara matchMedia static
+        let isMobile = window.innerWidth < 768; // Adaptive dynamic check
 
         const initNeurons = () => {
             neurons = [];
@@ -1278,13 +1279,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Mobile drawer toggle
+        // Mobile drawer toggle (Accessible WAI-ARIA & Focus Managed)
         const toggleDrawer = (open) => {
             const isActive = open !== undefined ? open : !mobileDrawer.classList.contains('active');
             hamburgerBtn.classList.toggle('active', isActive);
             mobileDrawer.classList.toggle('active', isActive);
-            hamburgerBtn.setAttribute('aria-expanded', isActive);
-            document.body.classList.toggle('modal-open', isActive);
+            hamburgerBtn.setAttribute('aria-expanded', String(isActive));
+            if (isActive) {
+                mobileDrawer.removeAttribute('inert');
+                mobileDrawer.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('modal-open');
+                drawerCloseBtn?.focus();
+            } else {
+                mobileDrawer.setAttribute('inert', '');
+                mobileDrawer.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('modal-open');
+                document.body.classList.remove('drawer-open');
+                hamburgerBtn.focus();
+            }
         };
 
         if (hamburgerBtn && mobileDrawer) {
@@ -2076,7 +2088,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const hamburger = document.getElementById('hamburgerBtn');
                 if (drawer && drawer.classList.contains('active')) {
                     drawer.classList.remove('active');
+                    drawer.setAttribute('inert', '');
+                    drawer.setAttribute('aria-hidden', 'true');
                     document.body.classList.remove('drawer-open');
+                    document.body.classList.remove('modal-open');
                 }
                 if (hamburger && hamburger.classList.contains('active')) {
                     hamburger.classList.remove('active');
