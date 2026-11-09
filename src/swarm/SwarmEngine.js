@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * @file SwarmEngine.js
  * @description Master Unified 3D Neural Architecture & Deep-Space Engine pentru www.tiberiumilitaru.ro.
@@ -494,8 +495,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj3',
           projectKey: 'proj3',
           category: 'crm',
-          desc: 'Platformă PropTech & Marketplace Full-Stack: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, PWA nativ offline, stocare R2, Turso LibSQL cu audit_logs, telemetrie GA4 & Clarity cu Nonce CSP, digest executiv cu GA4 Data API (JWT Edge), plăți Netopia IPN AES-256, Dispecerat Super-Admin, abonamente meșteri, cron orar SLA 96h/72h și garanție 12 luni.',
-          tags: ['Next.js 16 Edge', 'PWA Nativ', 'Cloudflare Workers & R2', 'Turso LibSQL', 'GA4 & Clarity', 'GA4 Data API', 'Audit Logs', 'Drizzle ORM', 'Netopia IPN', 'Dispecerat Super-Admin', 'Resend Email']
+          desc: 'Platformă online care conectează locatarii și asociațiile de proprietari cu instalatori și electricieni autorizați: sesizări rapide prin cod QR de la avizier, oferte transparente și garanție 12 luni.',
+          tags: ['Sesizări Rapide prin QR', 'Meșteri Autorizați', 'Garanție 12 Luni', 'Plată Online Sigură']
         },
         {
           label: 'Platformă Civică & Audit Urban (Viziune Urbană Ploiești)',
@@ -506,8 +507,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj4',
           projectKey: 'proj4',
           category: 'civic',
-          desc: 'Platformă interactivă de raportare civică și monitorizare a infrastructurii urbane, cu hartă dinamică, clasificare sesizări și panou transparent de audit.',
-          tags: ['React 19', 'TypeScript', 'Hărți Interactive', 'Civic Tech']
+          desc: 'Platformă civică pentru raportarea problemelor din cartiere și a stării blocurilor din Ploiești, cu trimitere rapidă de fotografii și urmărirea online a fiecărui dosar.',
+          tags: ['Urmărire Dosar Online', 'Sesizări cu Fotografii', 'Afișe pentru Avizier', 'Formular 230 Online']
         },
         {
           label: 'CV Builder Pro & ATS Analyzer (SaaS)',
@@ -518,8 +519,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj1',
           projectKey: 'proj1',
           category: 'saas',
-          desc: 'Aplicație SaaS completă pentru crearea CV-urilor optimizate ATS, cu scor de compatibilitate în timp real, export PDF prin microserviciu Puppeteer și plăți Stripe.',
-          tags: ['React', 'Firebase / Firestore', 'Stripe Webhooks', 'Puppeteer PDF']
+          desc: 'Aplicație online care te ajută să îți construiești rapid un CV clar și modern, cu recomandări pe loc și descărcare instantă în format PDF.',
+          tags: ['Analiză CV în Timp Real', 'Șabloane Moderne', 'Descărcare Instantă PDF', 'Ușor de Folosit pe Mobil']
         },
         {
           label: 'Magazin Online cu Chat Live (Florărie)',
@@ -530,8 +531,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj2',
           projectKey: 'proj2',
           category: 'ecommerce',
-          desc: 'Sistem e-commerce complet cu gestiune stocuri în timp real, coș de cumpărături, panou de administrare comenzi și suport clienți prin chat live WebSockets.',
-          tags: ['Node.js', 'WebSockets', 'MySQL', 'E-Commerce', 'Cod Privat (Client)']
+          desc: 'Magazin online modern pentru o florărie locală, cu catalog intuitiv, comandă rapidă de pe telefon și chat live pentru consilierea clienților în timp real.',
+          tags: ['Chat Live cu Clienții', 'Catalog de Produse', 'Comandă Rapidă pe Mobil', 'Cod Privat (Client)']
         },
         {
           label: 'Portofoliu Tiberiu & Universal 3D Engine',
@@ -542,8 +543,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj5',
           projectKey: 'proj5',
           category: 'saas',
-          desc: 'Platforma curentă: arhitectură Vanilla Vite ultra-rapidă, conformă Strict CSP (Zero-innerHTML), cu emulator CLI și motor WebGL 3D Neural Swarm.',
-          tags: ['Vanilla ES6+', 'WebGL Shaders', 'Strict CSP', 'Vite 8']
+          desc: 'Site-ul pe care te afli acum: încărcare instantanee pe orice dispozitiv, navigare clară și accesibilă, plus un mod vizual 3D interactiv pentru explorarea proiectelor.',
+          tags: ['Încărcare Instantanee', 'Explorare 3D Interactivă', 'Optimizat pentru Mobil', 'Bilingv (RO / EN)']
         }
       ]
     },
@@ -561,8 +562,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj3',
           projectKey: 'proj3',
           category: 'crm',
-          desc: 'Full-Stack PropTech & Marketplace: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native offline PWA, Cloudflare R2, Turso LibSQL with audit_logs, dual GA4 & Clarity telemetry with CSP Nonce, automated weekly digest with GA4 Data API (Edge JWT), Netopia IPN AES-256 payments, hourly cron SLA 96h/72h, and 12-month warranty.',
-          tags: ['Next.js 16 Edge', 'Native PWA', 'Cloudflare Workers & R2', 'Turso LibSQL', 'GA4 & Clarity', 'GA4 Data API', 'Audit Logs', 'Drizzle ORM', 'Netopia IPN', 'Super-Admin Dispatch', 'Resend Email']
+          desc: 'Online platform connecting residents and homeowner associations with certified plumbers and electricians: quick QR issue reporting, transparent quotes, and a 12-month warranty.',
+          tags: ['Quick QR Reporting', 'Verified Contractors', '12-Month Warranty', 'Secure Online Payment']
         },
         {
           label: 'Civic Platform & Urban Audit (Viziune Urbana Ploiesti)',
@@ -573,8 +574,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj4',
           projectKey: 'proj4',
           category: 'civic',
-          desc: 'Interactive civic reporting and urban infrastructure monitoring platform with dynamic mapping, issue tracking, and public audit dashboard.',
-          tags: ['React 19', 'TypeScript', 'Interactive Maps', 'Civic Tech']
+          desc: 'Civic platform for Ploiești residents to report neighborhood and building issues with photos and track the progress of each case online step by step.',
+          tags: ['Online Case Tracking', 'Photo Reports', 'Noticeboard Sheets', 'Online Form 230']
         },
         {
           label: 'CV Builder Pro & ATS Analyzer (SaaS)',
@@ -585,8 +586,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj1',
           projectKey: 'proj1',
           category: 'saas',
-          desc: 'Full SaaS application for building ATS-optimized resumes with live compatibility scoring, Puppeteer microservice PDF export, and Stripe billing.',
-          tags: ['React', 'Firebase / Firestore', 'Stripe Webhooks', 'Puppeteer PDF']
+          desc: 'Easy-to-use online app for building a clean, modern resume with instant improvement tips and one-click PDF download on phone or desktop.',
+          tags: ['Live Resume Feedback', 'Modern Templates', 'Instant PDF Download', 'Mobile Friendly']
         },
         {
           label: 'E-Commerce Store with Live Chat (Flower Shop)',
@@ -597,8 +598,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj2',
           projectKey: 'proj2',
           category: 'ecommerce',
-          desc: 'Complete e-commerce system featuring real-time inventory management, shopping cart, order admin panel, and live WebSocket customer chat.',
-          tags: ['Node.js', 'WebSockets', 'MySQL', 'E-Commerce', 'Private Client Code']
+          desc: 'Modern online flower shop with an intuitive product catalog, fast mobile ordering, and live customer chat for personalized bouquet advice.',
+          tags: ['Live Customer Chat', 'Product Catalog', 'Fast Mobile Checkout', 'Private Client Code']
         },
         {
           label: 'Tiberiu Portfolio & Universal 3D Engine',
@@ -609,8 +610,8 @@ const SWARM_CLUSTERS = [
           matchKey: 'proj5',
           projectKey: 'proj5',
           category: 'saas',
-          desc: 'This platform: ultra-fast Vanilla Vite architecture, Strict CSP compliant (Zero-innerHTML), interactive CLI, and native WebGL 3D Neural Swarm.',
-          tags: ['Vanilla ES6+', 'WebGL Shaders', 'Strict CSP', 'Vite 8']
+          desc: 'The website you are browsing right now: instant loading on any device, clean accessible navigation, and an interactive 3D visual mode.',
+          tags: ['Instant Loading', 'Interactive 3D Mode', 'Mobile Optimized', 'Bilingual (RO / EN)']
         }
       ]
     }
@@ -755,8 +756,8 @@ const SWARM_CLUSTERS = [
           dx: 5.8,
           dy: 2.6,
           dz: -2.0,
-          desc: '2018 - 2024: Coordonarea proceselor de digitalizare, implementare soluții ERP/CRM, gestiune baze de date clienți și optimizare fluxuri operaționale.',
-          tags: ['Digitalizare', 'ERP / CRM', 'Gestiune Date', '2018 - 2024'],
+          desc: '2022 – 2025: Coordonarea proceselor de digitalizare, implementare soluții ERP/CRM, gestiune baze de date clienți și optimizare fluxuri operaționale.',
+          tags: ['Digitalizare', 'ERP / CRM', 'Gestiune Date', '2022 – 2025'],
           matchKey: 'cv_modal'
         },
         {
@@ -812,8 +813,8 @@ const SWARM_CLUSTERS = [
           dx: 5.8,
           dy: 2.6,
           dz: -2.0,
-          desc: '2018 - 2024: Led company digitalization, ERP/CRM implementation, client database management, and operational workflow automation.',
-          tags: ['Digitalization', 'ERP / CRM', 'Data Management', '2018 - 2024'],
+          desc: '2022 – 2025: Led company digitalization, ERP/CRM implementation, client database management, and operational workflow automation.',
+          tags: ['Digitalization', 'ERP / CRM', 'Data Management', '2022 – 2025'],
           matchKey: 'cv_modal'
         },
         {
@@ -1758,6 +1759,7 @@ export class TiberiuSwarmEngine {
       }
       const cvModal = document.getElementById('cvModal');
       if (cvModal) {
+        cvModal.removeAttribute('inert');
         cvModal.classList.add('active');
         cvModal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
@@ -1771,10 +1773,12 @@ export class TiberiuSwarmEngine {
    * Deschide în siguranță o adresă URL externă sau de protocol (inclusiv pe iOS Safari / Android Chrome în touchend).
    */
   openExternalUrl(url) {
-    if (!url) return;
+    if (!url || typeof url !== 'string') return;
+    const trimmed = url.trim();
+    if (!/^(?:(?:https?|mailto|tel):|\/|#)/i.test(trimmed)) return;
     const a = document.createElement('a');
-    a.href = url;
-    if (!url.startsWith('mailto:') && !url.startsWith('tel:')) {
+    a.href = trimmed;
+    if (!trimmed.startsWith('mailto:') && !trimmed.startsWith('tel:')) {
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
     }
@@ -1855,9 +1859,9 @@ export class TiberiuSwarmEngine {
 
         const links = card.querySelectorAll('a[href]');
         links.forEach((a) => {
-          const href = a.getAttribute('href') || '';
+          const href = (a.getAttribute('href') || '').trim();
           const txt = (a.textContent || '').toLowerCase();
-          if (!href || href === '#' || href.startsWith('javascript:')) return;
+          if (!href || href === '#' || !/^(?:(?:https?|mailto|tel):|\/|#)/i.test(href)) return;
 
           if (href.includes('github.com') || txt.includes('github')) {
             githubUrl = href;
@@ -1990,7 +1994,6 @@ export class TiberiuSwarmEngine {
   injectAtomicButton() {
     const existing = document.getElementById('swarmAtomicBtn');
     if (existing) {
-      existing.addEventListener('click', () => this.openBatteryWarning());
       this.dom.atomicBtn = existing;
       return;
     }
@@ -2048,7 +2051,9 @@ export class TiberiuSwarmEngine {
     backdrop.className = 'swarm-modal-backdrop';
 
     const modal = document.createElement('div');
-    modal.className = 'swarm-modal';
+    modal.className = 'swarm-modal swarm-modal-card';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
 
     const mHead = document.createElement('div');
     mHead.className = 'swarm-modal-header';
@@ -2441,7 +2446,9 @@ export class TiberiuSwarmEngine {
     });
 
     const drawerModal = document.createElement('div');
-    drawerModal.className = 'swarm-drawer-modal';
+    drawerModal.className = 'swarm-drawer-modal swarm-drawer';
+    drawerModal.setAttribute('role', 'dialog');
+    drawerModal.setAttribute('aria-modal', 'true');
 
     const drawerHead = document.createElement('div');
     drawerHead.className = 'swarm-drawer-head';
@@ -2647,6 +2654,7 @@ export class TiberiuSwarmEngine {
    * Deschide Formularul de Contact Direct conectat la /api/contact fără a părăsi universul 3D.
    */
   openContactDrawer(prefillSubject = '') {
+    const drawerOpenedAt = Date.now();
     this.audio.playPing('stage');
     const isRo = this.lang === 'ro';
     this.dom.drawerBadge.textContent = isRo
@@ -2728,13 +2736,19 @@ export class TiberiuSwarmEngine {
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const rawMessage = fMsg.input.value.trim();
+      const formattedMessage = prefillSubject
+        ? `[Subiect: ${prefillSubject}]\n\n${rawMessage}`
+        : rawMessage;
       const payload = {
         name: fName.input.value.trim(),
         email: fEmail.input.value.trim(),
-        subject: prefillSubject || 'Mesaj din 3D Swarm Engine',
-        message: fMsg.input.value.trim()
+        service: 'Mesaj din 3D Swarm Engine',
+        message: formattedMessage,
+        _formDuration: Math.max(1500, Date.now() - drawerOpenedAt),
+        _gotcha: ''
       };
-      if (!payload.name || !payload.email || !payload.message) return;
+      if (!payload.name || !payload.email || !rawMessage) return;
 
       submitBtn.disabled = true;
       submitBtn.textContent = isRo ? 'SE TRANSMITE...' : 'TRANSMITTING...';
@@ -2768,9 +2782,9 @@ export class TiberiuSwarmEngine {
           ? '⚠ Serverul local nu răspunde. Deschidem clientul de email direct...'
           : '⚠ Local API unreachable. Opening direct email client...';
         const mailto = `mailto:contact@tiberiumilitaru.ro?subject=${encodeURIComponent(
-          payload.subject
+          prefillSubject || 'Mesaj din 3D Swarm Engine'
         )}&body=${encodeURIComponent(
-          `${payload.name} (${payload.email}):\n\n${payload.message}`
+          `${payload.name} (${payload.email}):\n\n${rawMessage}`
         )}`;
         this.openExternalUrl(mailto);
       } finally {
@@ -3020,6 +3034,16 @@ export class TiberiuSwarmEngine {
    * - Layer 2: Cele 5 Galaxii Spirale Îndepărtate (Andromeda, Cygnus, Helios, Centauri, Zenith)
    */
   initNativeWebGL() {
+    if (!this._webglListenersAttached && this.dom.webglCanvas) {
+      this._webglListenersAttached = true;
+      this.dom.webglCanvas.addEventListener('webglcontextlost', (e) => {
+        e.preventDefault();
+        this.gl = null;
+      });
+      this.dom.webglCanvas.addEventListener('webglcontextrestored', () => {
+        this.initNativeWebGL();
+      });
+    }
     if (this.gl) return;
     const gl =
       this.dom.webglCanvas.getContext('webgl', { antialias: true, alpha: false }) ||
@@ -4269,6 +4293,7 @@ export class TiberiuSwarmEngine {
           } else {
             const cvModal = document.getElementById('cvModal');
             if (cvModal) {
+              cvModal.removeAttribute('inert');
               cvModal.classList.add('active');
               cvModal.setAttribute('aria-hidden', 'false');
               document.body.classList.add('modal-open');
@@ -4529,6 +4554,9 @@ export class TiberiuSwarmEngine {
     if (this.state !== 'SWARM_LIVE') return;
 
     if (e.key === 'Escape') {
+      if (document.querySelector('#cvModal.active, #projectModal.active, #privacyModal.active')) {
+        return;
+      }
       e.preventDefault();
       if (this.dom.drawerBackdrop && this.dom.drawerBackdrop.classList.contains('is-open')) {
         this.closeDrawerModal();

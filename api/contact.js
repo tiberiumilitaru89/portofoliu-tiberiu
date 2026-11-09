@@ -1,10 +1,40 @@
+// @ts-check
 // Hybrid distributed + in-memory sliding window rate limiter for Serverless defense
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minut
 const RATE_LIMIT_WINDOW_SECONDS = 60;
 const MAX_REQUESTS_PER_WINDOW = 5;
-const MIN_HUMAN_INTERACTION_MS = 2500; // Prag minim de interacțiune umană anti-bot
+const MIN_HUMAN_INTERACTION_MS = 1200; // Prag minim de interacțiune umană anti-bot (1.2s)
 const MAX_PAYLOAD_BYTES = 16384; // 16 KB Denial-of-Wallet guard
+
+const ALLOWED_ORIGINS = new Set([
+    'https://www.tiberiumilitaru.ro',
+    'https://tiberiumilitaru.ro',
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:5173'
+]);
+
+const ALLOWED_SERVICES = new Set([
+    'mvp_saas_web',
+    'crm_automatizare',
+    'baza_date_sql',
+    'it_consultanta',
+    'altele',
+    'General',
+    'Mesaj din 3D Swarm Engine'
+]);
+
+const CORRELATION_ID_REGEX = /^[a-zA-Z0-9_-]{8,64}$/;
+
+export function __resetRateLimitMap() {
+    rateLimitMap.clear();
+}
+
+function normalizeRateLimitIp(ip) {
+    const trimmed = typeof ip === 'string' ? ip.trim() : '';
+    return (!trimmed || trimmed.toLowerCase() === 'unknown') ? 'global_unknown_ip' : trimmed;
+}
 
 function cleanupRateLimits() {
     if (rateLimitMap.size > 500) {
@@ -18,14 +48,14 @@ function cleanupRateLimits() {
 }
 
 function isMemoryRateLimited(ip) {
-    if (!ip || ip === 'unknown') return false;
+    const bucketKey = normalizeRateLimitIp(ip);
     cleanupRateLimits();
 
     const now = Date.now();
-    const record = rateLimitMap.get(ip);
+    const record = rateLimitMap.get(bucketKey);
 
     if (!record || now - record.startTime > RATE_LIMIT_WINDOW_MS) {
-        rateLimitMap.set(ip, { count: 1, startTime: now });
+        rateLimitMap.set(bucketKey, { count: 1, startTime: now });
         return false;
     }
 
@@ -38,14 +68,14 @@ function isMemoryRateLimited(ip) {
 }
 
 async function isRateLimited(ip) {
-    if (!ip || ip === 'unknown') return false;
+    const bucketKey = normalizeRateLimitIp(ip);
 
     const kvUrl = (process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL || '').trim();
     const kvToken = (process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN || '').trim();
 
     if (kvUrl && kvToken) {
         try {
-            const key = `rl:contact:${ip}`;
+            const key = `rl:contact:${bucketKey}`;
             const res = await fetch(`${kvUrl.replace(/\/$/, '')}/pipeline`, {
                 method: 'POST',
                 signal: AbortSignal.timeout(1500),
@@ -68,12 +98,12 @@ async function isRateLimited(ip) {
         }
     }
 
-    return isMemoryRateLimited(ip);
+    return isMemoryRateLimited(bucketKey);
 }
 
 function sanitize(str) {
     if (typeof str !== 'string') return '';
-    return str.replace(/<[^>]*>?/gm, '').trim();
+    return str.replace(/<[^>]*>?/gm, '').replace(/[\r\n\0]+/g, ' ').trim();
 }
 
 function escapeHtml(str) {
@@ -263,44 +293,83 @@ function buildClientEmailHtml({ name, service, dateFormatted }) {
 </html>`;
 }
 
-export default async function handler(req, res) {
-    const correlationId = 'msg_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
+function sendProblem(res, status, title, detail, correlationId) {
+    if (typeof res.setHeader === 'function') {
+        res.setHeader('Content-Type', 'application/problem+json');
+        res.setHeader('X-Correlation-ID', correlationId);
+    }
+    return res.status(status).json({
+        type: `https://www.tiberiumilitaru.ro/problems/http-${status}`,
+        title,
+        status,
+        detail,
+        instance: '/api/contact',
+        correlation_id: correlationId,
+        error: detail
+    });
+}
 
-    // 1. CORS & Preflight checks
+export default async function handler(req, res) {
+    const incomingCorrId = typeof req.headers?.['x-correlation-id'] === 'string'
+        ? req.headers['x-correlation-id'].trim()
+        : '';
+    const correlationId = CORRELATION_ID_REGEX.test(incomingCorrId)
+        ? incomingCorrId
+        : 'msg_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
+
+    if (typeof res.setHeader === 'function') {
+        res.setHeader('X-Correlation-ID', correlationId);
+    }
+
+    // 1. CORS Origin Validation & Preflight checks
+    const origin = typeof req.headers?.['origin'] === 'string' ? req.headers['origin'].trim() : '';
+    if (origin && !ALLOWED_ORIGINS.has(origin)) {
+        logStructured('warn', 'Forbidden origin blocked', correlationId, { origin });
+        return sendProblem(res, 403, 'Forbidden Origin', 'Originea cererii nu este autorizată.', correlationId);
+    }
+    if (origin && ALLOWED_ORIGINS.has(origin) && typeof res.setHeader === 'function') {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+        res.setHeader('Vary', 'Origin');
+    }
+
     if (req.method === 'OPTIONS') {
-        return res.status(200).end();
+        return res.status(204).end();
     }
 
     // 2. Doar cereri POST permise
     if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method Not Allowed' });
+        return sendProblem(res, 405, 'Method Not Allowed', 'Method Not Allowed', correlationId);
     }
 
     // 2.1 Sliding Window Rate Limiting (Anti-flood / DoS defense)
-    const forwarded = req.headers['x-forwarded-for'];
-    const clientIp = req.headers['x-real-ip']
-        || req.headers['x-vercel-ip']
-        || (typeof forwarded === 'string' ? forwarded.split(',')[0].trim() : null)
+    const vercelForwarded = req.headers?.['x-vercel-forwarded-for'];
+    const vercelIp = req.headers?.['x-vercel-ip'];
+    const forwarded = req.headers?.['x-forwarded-for'];
+    const realIp = req.headers?.['x-real-ip'];
+    const clientIp = (typeof vercelForwarded === 'string' && vercelForwarded.trim() ? vercelForwarded.split(',')[0].trim() : '')
+        || (typeof vercelIp === 'string' && vercelIp.trim() ? vercelIp.trim() : '')
+        || (typeof forwarded === 'string' && forwarded.trim() ? forwarded.split(',')[0].trim() : '')
         || req.socket?.remoteAddress
+        || (typeof realIp === 'string' && realIp.trim() ? realIp.trim() : '')
         || 'unknown';
 
     if (await isRateLimited(clientIp)) {
         logStructured('warn', 'Rate limit exceeded for IP', correlationId, { ip: maskIp(clientIp) });
-        return res.status(429).json({ error: 'Prea multe cereri. Te rog să aștepți un minut înainte de a trimite din nou.' });
+        return sendProblem(res, 429, 'Too Many Requests', 'Prea multe cereri. Te rog să aștepți un minut înainte de a trimite din nou.', correlationId);
     }
 
     // 2.2 Denial-of-Wallet Payload Size Guard (max 16 KB)
-    const contentLength = Number(req.headers['content-length'] || 0);
+    const contentLength = Number(req.headers?.['content-length'] || 0);
     if (contentLength > MAX_PAYLOAD_BYTES) {
         logStructured('warn', 'Payload size limit exceeded', correlationId, { ip: maskIp(clientIp), contentLength });
-        return res.status(413).json({ error: 'Dimensiunea cererii depășește limita admisă.' });
+        return sendProblem(res, 413, 'Payload Too Large', 'Dimensiunea cererii depășește limita admisă.', correlationId);
     }
 
     try {
         // 3. Extragere payload
         const body = req.body || {};
         if (JSON.stringify(body).length > MAX_PAYLOAD_BYTES) {
-            return res.status(413).json({ error: 'Dimensiunea cererii depășește limita admisă.' });
+            return sendProblem(res, 413, 'Payload Too Large', 'Dimensiunea cererii depășește limita admisă.', correlationId);
         }
 
         // 4. Honeypot check (Capcană bot invizibilă pe server)
@@ -309,7 +378,7 @@ export default async function handler(req, res) {
             return res.status(200).json({ success: true, message: 'Mesajul a fost recepționat.' });
         }
 
-        // 4.1 Time-based bot defense (Submisiile fără durată sau mai rapide de 2.5s sunt neutralizate silențios)
+        // 4.1 Time-based bot defense (Submisiile fără durată sau mai rapide de 1.2s sunt neutralizate silențios)
         if (typeof body._formDuration !== 'number' || body._formDuration < MIN_HUMAN_INTERACTION_MS) {
             logStructured('warn', 'Bot trapped via invalid or missing submission duration threshold', correlationId, {
                 ip: maskIp(clientIp),
@@ -321,21 +390,22 @@ export default async function handler(req, res) {
         // 4.2 Sanitizare și validare la graniță
         const sanitizedName = sanitize(body.name);
         const sanitizedEmail = sanitize(body.email);
-        const sanitizedType = sanitize(body.service || body.type || 'General');
+        const rawService = sanitize(body.service || body.type || 'General');
+        const sanitizedType = ALLOWED_SERVICES.has(rawService) ? rawService : 'General';
         const sanitizedMessage = sanitize(body.message);
 
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         if (!sanitizedName || sanitizedName.length < 2 || sanitizedName.length > 100) {
-            return res.status(400).json({ error: 'Numele trebuie să conțină între 2 și 100 de caractere.' });
+            return sendProblem(res, 400, 'Validation Error', 'Numele trebuie să conțină între 2 și 100 de caractere.', correlationId);
         }
 
         if (!sanitizedEmail || !emailRegex.test(sanitizedEmail) || sanitizedEmail.length > 120) {
-            return res.status(400).json({ error: 'Adresă de email invalidă.' });
+            return sendProblem(res, 400, 'Validation Error', 'Adresă de email invalidă.', correlationId);
         }
 
         if (!sanitizedMessage || sanitizedMessage.length < 10 || sanitizedMessage.length > 5000) {
-            return res.status(400).json({ error: 'Mesajul trebuie să aibă între 10 și 5000 de caractere.' });
+            return sendProblem(res, 400, 'Validation Error', 'Mesajul trebuie să aibă între 10 și 5000 de caractere.', correlationId);
         }
 
         // 5. Configurare variabile Resend API (suportă atât RESEND_API_KEY cât și RESENDAPIKEY)
@@ -350,10 +420,11 @@ export default async function handler(req, res) {
 
         if (!apiKey) {
             logStructured('error', 'Configuration error: RESEND_API_KEY is missing in environment variables', correlationId);
-            return res.status(500).json({ error: 'Eroare de configurare server. Te rog să mă contactezi direct pe WhatsApp sau email.' });
+            return sendProblem(res, 500, 'Configuration Error', 'Eroare de configurare server. Te rog să mă contactezi direct pe WhatsApp sau email.', correlationId);
         }
 
         const dateFormatted = new Date().toLocaleString('ro-RO', { timeZone: 'Europe/Bucharest' });
+        const maskedClientIp = maskIp(clientIp);
 
         // 6. Expediere Alerta Administrator (Critică)
         const adminSubject = `[Militaru Tiberiu Nicolae] Mesaj nou de la ${sanitizedName} (${sanitizedType})`;
@@ -363,7 +434,7 @@ export default async function handler(req, res) {
             service: sanitizedType,
             message: sanitizedMessage,
             dateFormatted,
-            clientIp
+            clientIp: maskedClientIp
         });
 
         const adminRes = await fetch('https://api.resend.com/emails', {
@@ -383,12 +454,10 @@ export default async function handler(req, res) {
         });
 
         if (!adminRes.ok) {
-            const errorDetails = await adminRes.text();
             logStructured('error', 'Resend API admin notification failed', correlationId, {
-                status: adminRes.status,
-                details: errorDetails
+                status: adminRes.status
             });
-            return res.status(502).json({ error: 'Eroare la transmiterea email-ului către serverul de mesagerie.' });
+            return sendProblem(res, 502, 'Bad Gateway', 'Eroare la transmiterea email-ului către serverul de mesagerie.', correlationId);
         }
 
         let adminData = null;
@@ -430,10 +499,8 @@ export default async function handler(req, res) {
             });
 
             if (!clientRes.ok) {
-                const clientErr = await clientRes.text();
                 logStructured('warn', 'Client auto-responder rejected by Resend', correlationId, {
-                    status: clientRes.status,
-                    details: clientErr
+                    status: clientRes.status
                 });
             } else {
                 logStructured('info', 'Client auto-responder sent successfully', correlationId, {
@@ -443,7 +510,7 @@ export default async function handler(req, res) {
         } catch (autoReplyError) {
             // Nu blocăm răspunsul de succes către client dacă auto-responderul opțional eșuează sau dă timeout
             logStructured('warn', 'Client auto-responder failed or timed out', correlationId, {
-                error: autoReplyError.message
+                errorName: autoReplyError instanceof Error ? autoReplyError.name : 'AutoReplyError'
             });
         }
 
@@ -452,9 +519,8 @@ export default async function handler(req, res) {
 
     } catch (error) {
         logStructured('error', 'Unexpected server error in contact handler', correlationId, {
-            error: error.message,
-            stack: error.stack
+            errorName: error instanceof Error ? error.name : 'UnknownError'
         });
-        return res.status(500).json({ error: 'A apărut o eroare neașteptată la procesarea solicitării.' });
+        return sendProblem(res, 500, 'Internal Server Error', 'A apărut o eroare neașteptată la procesarea solicitării.', correlationId);
     }
 }

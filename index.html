@@ -171,9 +171,9 @@
 </head>
 <body data-theme="dark">
     <!-- Screen Reader Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Sari la conținutul principal</a>
+    <a href="#main-content" class="skip-link" data-i18n="skip_link">Sari la conținutul principal</a>
 
-    <!-- Three.js Interactive 3D Particle Universe Container -->
+    <!-- WebGL / GLSL Interactive 3D Particle Universe Container -->
     <div id="canvas-container" class="canvas-container" aria-hidden="true"></div>
 
     <!-- Scroll Progress Bar -->
@@ -243,7 +243,7 @@
         <!-- Mobile Drawer Menu -->
         <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" inert>
             <div class="mobile-drawer-header">
-                <span class="drawer-title"><i class="fa-solid fa-compass"></i> Meniu</span>
+                <span class="drawer-title"><i class="fa-solid fa-compass"></i> <span data-i18n="drawer_menu_title">Meniu</span></span>
                 <button id="drawerCloseBtn" class="drawer-close-btn" aria-label="Închide meniul">&times;</button>
             </div>
             <ul class="mobile-nav-list">
@@ -261,7 +261,7 @@
                     <i class="fa-solid fa-file-pdf"></i> <span data-i18n="btn_print_cv">Descarcă CV (PDF)</span>
                 </a>
                 <a href="https://wa.me/40720955119?text=Salut%20Tiberiu,%20am%20vazut%20portofoliul%20tau%20si%20as%20dori%20sa%20discutam." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-full">
-                    <i class="fa-brands fa-whatsapp"></i> <span>Scrie-mi pe WhatsApp</span>
+                    <i class="fa-brands fa-whatsapp"></i> <span data-i18n="drawer_whatsapp_btn">Scrie-mi pe WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -336,7 +336,7 @@
                             <div class="profile-glow-ring"></div>
                             <div class="profile-card">
                                 <div class="profile-img-container">
-                                    <img src="/profile.webp" srcset="/profile-mobile.webp 400w, /profile.webp 800w" sizes="(max-width: 768px) 200px, 300px" width="200" height="200" alt="Militaru Tiberiu Nicolae - IT Consultant & Soluții Software" class="profile-photo" fetchpriority="high" onerror="this.src='https://ui-avatars.com/api/?name=Militaru+Tiberiu+Nicolae&background=0284c7&color=ffffff&size=300'">
+                                    <img src="/profile.webp" srcset="/profile-mobile.webp 400w, /profile.webp 800w" sizes="(max-width: 768px) 200px, 300px" width="200" height="200" alt="Militaru Tiberiu Nicolae - IT Consultant & Soluții Software" class="profile-photo" fetchpriority="high">
                                 </div>
                                 <div class="profile-info-footer">
                                     <h2 class="profile-card-name">Militaru Tiberiu Nicolae</h2>
@@ -574,49 +574,23 @@
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-toolbox"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj3_tag">Edge SSR, PWA, Cloudflare R2, GA4/Clarity & Dispecerat Super-Admin</span>
+                            <span class="project-category" data-i18n="proj3_tag">Platformă pentru Asociații & Meșteri</span>
                         </div>
                         <h3 class="project-title" data-i18n="proj3_title">Aplicație CRM & Gestiune Servicii (Instalbloc)</h3>
                         <p class="project-desc" data-i18n="proj3_summary">
-                            Platformă enterprise Full-Stack dedicată asociațiilor de proprietari, locatarilor și prestatorilor tehnici. Arhitectură Cloud Zero-Defect: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, suport PWA nativ pentru operare mobilă și offline, stocare foto în Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client, persistență distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM și tabelă dedicată audit_logs, telemetrie dublă Google Analytics 4 & Microsoft Clarity cu CSP Nonce criptografic și mascare GDPR PII, raport executiv săptămânal pe Edge Cron cu atașamente duale securizate (CSV RFC-4180 cu apărare CWE-1236 și dashboard HTML interactiv standalone offline) și șablon email compact &lt;10KB fără trunchiere Gmail, Google Analytics Data API (JWT Edge), plăți securizate Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare prin sesiuni HMAC-SHA256 (timingSafeEqual) și OTP CSPRNG, FSM determinist în 4 etape cu fereastră de 6h exclusivă locatar pe sesizări QR, garanție legală 12 luni cu PV recepție, dispecerat cron orar Cloudflare pentru SLA 96h și recepție tacită la 72h, regulă de plafonare la 3 modificări de ofertă cu protecție anti-spoofing, exporturi CSV RFC-4180 cu UTF-8 BOM și Dispecerat General Super-Admin cu telemetrie dinamică.
+                            Platformă online care conectează locatarii și asociațiile de proprietari cu instalatori și electricieni autorizați. Locatarii pot sesiza rapid o avarie chiar de la avizierul blocului (prin cod QR), primesc oferte transparente de la meșteri verificați și beneficiază de garanție pentru fiecare lucrare finalizată.
                         </p>
                         <div class="project-tech-tags">
-                            <span class="tech-tag tech-tag-perf">PageSpeed 98-100</span>
-                            <span class="tech-tag">Next.js 16 (Edge SSR)</span>
-                            <span class="tech-tag">PWA Nativ (Offline)</span>
-                            <span class="tech-tag">Cloudflare Workers</span>
-                            <span class="tech-tag">Cloudflare R2 Storage</span>
-                            <span class="tech-tag">Turso Cloud (LibSQL)</span>
-                            <span class="tech-tag">Drizzle ORM</span>
-                            <span class="tech-tag">TypeScript (Zero-Any)</span>
-                            <span class="tech-tag">Google Analytics 4 & Clarity</span>
-                            <span class="tech-tag">GA4 Data API (JWT Edge)</span>
-                            <span class="tech-tag">Audit Log Turso DB</span>
-                            <span class="tech-tag">Cloudflare Hourly Cron</span>
-                            <span class="tech-tag">CSP Nonce Criptografic</span>
-                            <span class="tech-tag">Garanție Legală 12 Luni</span>
-                            <span class="tech-tag">Fereastră 6h Decizie QR</span>
-                            <span class="tech-tag">Netopia XML IPN (node:crypto)</span>
-                            <span class="tech-tag">Dispecerat Super-Admin</span>
-                            <span class="tech-tag">Abonamente & Facturi</span>
-                            <span class="tech-tag">Plafonare 3 Oferte</span>
-                            <span class="tech-tag">Alerte Deficit Județean</span>
-                            <span class="tech-tag">Export CSV UTF-8 BOM</span>
-                            <span class="tech-tag">Rapoarte Email Resend</span>
-                            <span class="tech-tag">Client WebP (Canvas)</span>
-                            <span class="tech-tag">HMAC-SHA256 Auth</span>
-                            <span class="tech-tag">CSPRNG OTP</span>
-                            <span class="tech-tag">FSM 4 Etape</span>
-                            <span class="tech-tag">SLA 96h Dispatcher</span>
-                            <span class="tech-tag">Cod QR Avizier</span>
-                            <span class="tech-tag">Zero-Cost Infra (0€)</span>
-                            <span class="tech-tag">OKF SSOT</span>
+                            <span class="tech-tag tech-tag-perf">Sesizări Rapide prin QR</span>
+                            <span class="tech-tag">Meșteri Autorizați</span>
+                            <span class="tech-tag">Garanție 12 Luni</span>
+                            <span class="tech-tag">Plată Online Sigură</span>
                         </div>
                         <div class="project-actions">
-                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj3" aria-label="Detalii tehnice despre Aplicație CRM">
-                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj3" aria-label="Detalii proiect despre Aplicație CRM">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Proiect</span>
                             </button>
-                            <a href="https://instalbloc.ro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan" title="Vezi Live Demo (Instalbloc pe Cloudflare Workers)">
+                            <a href="https://instalbloc.ro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan" title="Vezi Live Demo (Instalbloc)">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
                             </a>
                             <a href="https://github.com/tiberiumilitaru89/instalbloc" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi depozitul pe GitHub">
@@ -631,33 +605,21 @@
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-city"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj4_tag">Civic Tech, Audit Urban & Securitate Zero-Trust</span>
+                            <span class="project-category" data-i18n="proj4_tag">Platformă Civică & Implicare Comunitară</span>
                         </div>
                         <h3 class="project-title" data-i18n="proj4_title">Platformă Civică & Audit Urban (Viziune Urbană Ploiești)</h3>
                         <p class="project-desc" data-i18n="proj4_summary">
-                            Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, validare Fail-Fast în env.ts (Zod), separare absolută CSS/JS (Zero inline styles), barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.
+                            Platformă civică dedicată locuitorilor din Ploiești pentru raportarea problemelor din cartiere și a stării blocurilor. Cetățenii pot trimite sesizări însoțite de fotografii în câteva secunde și pot urmări online, pas cu pas, stadiul fiecărui dosar până la rezolvare, alături de opțiunea de susținere a proiectelor comunitare.
                         </p>
                         <div class="project-tech-tags">
-                            <span class="tech-tag tech-tag-perf">PageSpeed 98-100</span>
-                            <span class="tech-tag">Next.js 15</span>
-                            <span class="tech-tag">TypeScript (Zero-Any)</span>
-                            <span class="tech-tag">Core Web Vitals</span>
-                            <span class="tech-tag">Gatekeeper Barrier</span>
-                            <span class="tech-tag">Supabase (PostgreSQL)</span>
-                            <span class="tech-tag">HMAC Auth (timingSafe)</span>
-                            <span class="tech-tag">Fail-Fast env (Zod)</span>
-                            <span class="tech-tag">Zero Inline CSS</span>
-                            <span class="tech-tag">Portal /status (FSM Stepper)</span>
-                            <span class="tech-tag">Admin Dashboard (6 Module)</span>
-                            <span class="tech-tag">Fișe Avizier A4 (QR Code)</span>
-                            <span class="tech-tag">Supabase Storage</span>
-                            <span class="tech-tag">ANAF 230 CSV (UTF-8 BOM)</span>
-                            <span class="tech-tag">Resend (DKIM & SPF)</span>
-                            <span class="tech-tag">OKF SSOT</span>
+                            <span class="tech-tag tech-tag-perf">Urmărire Dosar Online</span>
+                            <span class="tech-tag">Sesizări cu Fotografii</span>
+                            <span class="tech-tag">Afișe pentru Avizier</span>
+                            <span class="tech-tag">Formular 230 Online</span>
                         </div>
                         <div class="project-actions">
-                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj4" aria-label="Detalii tehnice despre Viziune Urbană Ploiești">
-                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj4" aria-label="Detalii proiect despre Viziune Urbană Ploiești">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Proiect</span>
                             </button>
                             <a href="https://viziuneurbanaploiesti.ro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan" title="Vezi Platforma Online">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
@@ -674,32 +636,23 @@
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-file-pdf"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj1_tag">SaaS, CSP Strict & Microservicii Serverless</span>
+                            <span class="project-category" data-i18n="proj1_tag">Carieră & Redactare CV Online</span>
                         </div>
                         <h3 class="project-title" data-i18n="proj1_title">CV Builder Pro & ATS Analyzer (SaaS)</h3>
                         <p class="project-desc" data-i18n="proj1_summary">
-                            Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Node 22 Puppeteer) ranforsate anti-SSRF/XSS, tranzacții atomice Firestore pe scăderea creditelor (anti-race condition), barieră de idempotență deterministă Stripe (colecție dedicată processed_stripe_events), CORS restrâns pe origini autorizate, Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (DOMPurify DOMFragment & replaceChildren), zero stiluri inline, logging structurat JSON cu ID de corelare și barieră Gatekeeper.
+                            Aplicație online care te ajută să îți construiești rapid un CV clar, modern și ușor de citit de angajatori. Primești recomandări pe loc pentru a-ți pune în valoare experiența, îți poți personaliza aspectul vizual și descarci CV-ul gata de trimis în format PDF, direct de pe telefon sau calculator.
                         </p>
                         <div class="project-tech-tags">
-                            <span class="tech-tag tech-tag-perf">PageSpeed 99-100</span>
-                            <span class="tech-tag">Vanilla JS ES6+</span>
-                            <span class="tech-tag">Core Web Vitals</span>
-                            <span class="tech-tag">Strict CSP (No Unsafe-Inline)</span>
-                            <span class="tech-tag">Tranzacții Atomice Firestore</span>
-                            <span class="tech-tag">Stripe Idempotency Ledger</span>
-                            <span class="tech-tag">CORS Origin Gating</span>
-                            <span class="tech-tag">Zero-Trust DOM (DOMPurify)</span>
-                            <span class="tech-tag">Zero Inline CSS</span>
-                            <span class="tech-tag">Cloud Functions (Node 22)</span>
-                            <span class="tech-tag">Puppeteer (Anti-SSRF)</span>
-                            <span class="tech-tag">Gatekeeper Barrier</span>
-                            <span class="tech-tag">OKF SSOT</span>
+                            <span class="tech-tag tech-tag-perf">Analiză CV în Timp Real</span>
+                            <span class="tech-tag">Șabloane Moderne</span>
+                            <span class="tech-tag">Descărcare Instantă PDF</span>
+                            <span class="tech-tag">Ușor de Folosit pe Mobil</span>
                         </div>
                         <div class="project-actions">
-                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj1" aria-label="Detalii tehnice despre Generator PDF">
-                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj1" aria-label="Detalii proiect despre Generator PDF">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Proiect</span>
                             </button>
-                            <a href="https://cvsmartats.web.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan" title="Vezi Live (Firebase)">
+                            <a href="https://cvsmartats.web.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-cyan" title="Vezi Live (CV Builder)">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo</span>
                             </a>
                             <a href="https://github.com/tiberiumilitaru89/cv-builder-ats" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi pe GitHub">
@@ -714,23 +667,21 @@
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-store"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj2_tag">Aplicație Web & E-Commerce Real-Time</span>
+                            <span class="project-category" data-i18n="proj2_tag">Magazin Online & Asistență Clienți</span>
                         </div>
                         <h3 class="project-title" data-i18n="proj2_title">Magazin Online cu Chat Live (Florărie)</h3>
                         <p class="project-desc" data-i18n="proj2_summary">
-                            Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC decuplată. Include catalog dinamic de produse, coș de cumpărături securizat cu validare strictă și modul de Live Chat în timp real bazat pe WebSockets pentru asistență instantanee și conversii crescute pe mobile.
+                            Magazin online modern creat pentru o florărie locală, gândit să transforme vizitatorii în clienți fideli. Include un catalog vizual intuitiv, comandă rapidă de pe telefon și un chat live prin care clienții pot cere sfaturi în timp real pentru alegerea sau personalizarea buchetelor.
                         </p>
                         <div class="project-tech-tags">
-                            <span class="tech-tag">React.js</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">WebSockets</span>
-                            <span class="tech-tag">MVC Architecture</span>
-                            <span class="tech-tag">Zero-Trust Sanitization</span>
-                            <span class="tech-tag">Responsive UI</span>
+                            <span class="tech-tag tech-tag-perf">Chat Live cu Clienții</span>
+                            <span class="tech-tag">Catalog de Produse</span>
+                            <span class="tech-tag">Comandă Rapidă pe Mobil</span>
+                            <span class="tech-tag">Gestiune Comenzi</span>
                         </div>
                         <div class="project-actions">
-                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj2" aria-label="Detalii tehnice despre Magazin Florărie">
-                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj2" aria-label="Detalii proiect despre Magazin Florărie">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Proiect</span>
                             </button>
                             <span class="btn btn-sm btn-ghost btn-private-tag" title="Proiect comercial cu cod proprietar protejat prin acord NDA">
                                 <i class="fa-solid fa-lock"></i> <span>Cod Privat (Client)</span>
@@ -744,35 +695,21 @@
                             <div class="project-icon-badge">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
-                            <span class="project-category" data-i18n="proj5_tag">Arhitectură Zero-Defect & Audit Red-Team</span>
+                            <span class="project-category" data-i18n="proj5_tag">Site de Prezentare & Explorare 3D</span>
                         </div>
                         <h3 class="project-title" data-i18n="proj5_title">Portofoliu Tiberiu & Universal 3D Engine</h3>
                         <p class="project-desc" data-i18n="proj5_summary">
-                            Platformă web ultra-performantă cu scor Google PageSpeed 98-100 (Desktop 99/100, Mobile 98/100) și Lighthouse 100/100, optimizată mobil la standarde WCAG 2.2 AA (ținte tactile &ge;44px), WAI-ARIA inert & focus trapping pe drawer, unități dinamice de viewport (dvh) anti-jitter și safe-area insets (iOS/Android). Arhitectură Zero-Defect pe Vite, Three.js și Vanilla ES6+: Content Security Policy strictă fără 'unsafe-inline', parsare sigură DOMParser fără innerHTML vulnerabil, mutație Zero-Trust DOM (replaceChildren), separare absolută CSS/JS fără stiluri inline, univers 3D interactiv pe GPU cu eco-mode adaptiv, terminal CLI sandboxat, barieră mecanică deterministă Gatekeeper (ESLint zero warnings + Vite build) și guvernanță OKF.
+                            Site-ul pe care te afli acum — gândit să se încarce instantaneu pe orice telefon sau laptop și să ofere o experiență plăcută, clară și accesibilă. Pe lângă prezentarea clasică a proiectelor și a serviciilor, include și un mod vizual 3D interactiv în care poți explora portofoliul într-un mod inedit.
                         </p>
                         <div class="project-tech-tags">
-                            <span class="tech-tag tech-tag-perf">PageSpeed 98-100</span>
-                            <span class="tech-tag tech-tag-perf">Lighthouse 100</span>
-                            <span class="tech-tag">WCAG 2.2 AA (44px)</span>
-                            <span class="tech-tag">WAI-ARIA Focus & Inert</span>
-                            <span class="tech-tag">Dynamic Viewport (dvh)</span>
-                            <span class="tech-tag">Safe-Area Insets</span>
-                            <span class="tech-tag">Vite</span>
-                            <span class="tech-tag">Three.js (3D Particles)</span>
-                            <span class="tech-tag">Core Web Vitals</span>
-                            <span class="tech-tag">Vanilla JS ES6+</span>
-                            <span class="tech-tag">Strict CSP (No Unsafe-Inline)</span>
-                            <span class="tech-tag">DOMParser Sanitizer (Zero-innerHTML)</span>
-                            <span class="tech-tag">Zero-Trust DOM</span>
-                            <span class="tech-tag">Zero Inline CSS</span>
-                            <span class="tech-tag">Interactive CLI Terminal</span>
-                            <span class="tech-tag">i18n (RO / EN)</span>
-                            <span class="tech-tag">Gatekeeper (ESLint + Vite)</span>
-                            <span class="tech-tag">OKF SSOT</span>
+                            <span class="tech-tag tech-tag-perf">Încărcare Instantanee</span>
+                            <span class="tech-tag">Explorare 3D Interactivă</span>
+                            <span class="tech-tag">Optimizat pentru Mobil</span>
+                            <span class="tech-tag">Bilingv (RO / EN)</span>
                         </div>
                         <div class="project-actions">
-                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj5" aria-label="Detalii tehnice despre Portofoliu Tiberiu">
-                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Tehnice</span>
+                            <button class="btn btn-sm btn-outline-cyan btn-project-modal" data-target="proj5" aria-label="Detalii proiect despre Portofoliu Tiberiu">
+                                <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn_details">Detalii Proiect</span>
                             </button>
                             <a href="https://github.com/tiberiumilitaru89/portofoliu-tiberiu" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" title="Vezi depozitul pe GitHub">
                                 <i class="fa-brands fa-github"></i> <span>GitHub</span>
@@ -940,22 +877,22 @@
                             <div class="exp-pillar-item">
                                 <div class="exp-pillar-icon"><i class="fa-solid fa-database"></i></div>
                                 <div class="exp-pillar-info">
-                                    <h4>Administrare Baze de Date & DBA</h4>
-                                    <p>PostgreSQL, MySQL, optimizare interogări SQL complexe și disponibilitate 99.9%.</p>
+                                    <h4 data-i18n="exp_pillar1_title">Administrare Baze de Date & DBA</h4>
+                                    <p data-i18n="exp_pillar1_desc">PostgreSQL, MySQL, optimizare interogări SQL complexe și disponibilitate 99.9%.</p>
                                 </div>
                             </div>
                             <div class="exp-pillar-item">
                                 <div class="exp-pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
                                 <div class="exp-pillar-info">
-                                    <h4>Digitalizare & Arhitectură ERP/CRM</h4>
-                                    <p>Automatizare fluxuri de lucru, gestiune baze de date clienți și reducerea timpilor operaționali.</p>
+                                    <h4 data-i18n="exp_pillar2_title">Digitalizare & Arhitectură ERP/CRM</h4>
+                                    <p data-i18n="exp_pillar2_desc">Automatizare fluxuri de lucru, gestiune baze de date clienți și reducerea timpilor operaționali.</p>
                                 </div>
                             </div>
                             <div class="exp-pillar-item">
                                 <div class="exp-pillar-icon"><i class="fa-solid fa-server"></i></div>
                                 <div class="exp-pillar-info">
-                                    <h4>Suport Sisteme Critice & SLA</h4>
-                                    <p>Infrastructură hardware feroviară, depanare rețele, monitorizare proactivă și rezoluție rapidă RCA.</p>
+                                    <h4 data-i18n="exp_pillar3_title">Suport Sisteme Critice & SLA</h4>
+                                    <p data-i18n="exp_pillar3_desc">Infrastructură hardware feroviară, depanare rețele, monitorizare proactivă și rezoluție rapidă RCA.</p>
                                 </div>
                             </div>
                         </div>
@@ -1069,7 +1006,7 @@
                                     <i class="fa-brands fa-whatsapp"></i>
                                 </div>
                                 <div class="c-details">
-                                    <span class="c-label">WhatsApp (Chat Rapid)</span>
+                                    <span class="c-label" data-i18n="contact_whatsapp_label">WhatsApp (Chat Rapid)</span>
                                     <span class="c-value">(+40) 720 955 119</span>
                                 </div>
                                 <div class="c-action-arrow">
@@ -1083,7 +1020,7 @@
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                                 <div class="c-details">
-                                    <span class="c-label">Telefon Direct</span>
+                                    <span class="c-label" data-i18n="contact_phone_label">Telefon Direct</span>
                                     <span class="c-value">(+40) 720 955 119</span>
                                 </div>
                                 <div class="c-action-arrow">
@@ -1147,7 +1084,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="senderName" data-i18n="form_name_label">Numele Tău <span class="required">*</span></label>
+                                    <label for="senderName"><span data-i18n="form_name_label">Numele Tău</span> <span class="required">*</span></label>
                                     <div class="input-wrap">
                                         <i class="fa-solid fa-user input-icon"></i>
                                         <input type="text" id="senderName" name="name" required placeholder="Ex: Alexandru Popescu" autocomplete="name">
@@ -1156,7 +1093,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="senderEmail" data-i18n="form_email_label">Adresa de Email <span class="required">*</span></label>
+                                    <label for="senderEmail"><span data-i18n="form_email_label">Adresa de Email</span> <span class="required">*</span></label>
                                     <div class="input-wrap">
                                         <i class="fa-solid fa-envelope input-icon"></i>
                                         <input type="email" id="senderEmail" name="email" required placeholder="nume@exemplu.ro" autocomplete="email">
@@ -1179,7 +1116,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="senderMessage" data-i18n="form_msg_label">Mesajul Tău <span class="required">*</span></label>
+                                    <label for="senderMessage"><span data-i18n="form_msg_label">Mesajul Tău</span> <span class="required">*</span></label>
                                     <div class="input-wrap">
                                         <i class="fa-solid fa-message input-icon textarea-icon"></i>
                                         <textarea id="senderMessage" name="message" rows="4" required placeholder="Spune-mi câteva detalii despre ce dorești să realizezi..."></textarea>

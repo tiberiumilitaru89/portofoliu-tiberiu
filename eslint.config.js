@@ -45,7 +45,7 @@ export default [
     }
   },
   {
-    files: ["api/**/*.js"],
+    files: ["api/**/*.js", "tests/**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",

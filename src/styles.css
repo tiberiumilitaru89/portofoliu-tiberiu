@@ -1740,6 +1740,11 @@ img {
     font-size: 0.95rem;
     flex-grow: 1;
 }
+.terminal-input:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
 
 .terminal-quick-chips {
     background: #0b1122;

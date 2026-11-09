@@ -1,3 +1,4 @@
+// @ts-check
 "use strict";
 /**
  * script.js - Portofoliu & CV Militaru Tiberiu Nicolae
@@ -108,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const translations = {
             ro: {
                 // Header & Nav
-                nav_home: "Acasă",
+                nav_home: "Acasă", skip_link: "Sari la conținutul principal", drawer_menu_title: "Meniu", drawer_whatsapp_btn: "Scrie-mi pe WhatsApp", exp_pillar1_title: "Administrare Baze de Date & DBA", exp_pillar1_desc: "PostgreSQL, MySQL, optimizare interogări SQL complexe și disponibilitate 99.9%.", exp_pillar2_title: "Digitalizare & Arhitectură ERP/CRM", exp_pillar2_desc: "Automatizare fluxuri de lucru, gestiune baze de date clienți și reducerea timpilor operaționali.", exp_pillar3_title: "Suport Sisteme Critice & SLA", exp_pillar3_desc: "Infrastructură hardware feroviară, depanare rețele, monitorizare proactivă și rezoluție rapidă RCA.", contact_whatsapp_label: "WhatsApp (Chat Rapid)", contact_phone_label: "Telefon Direct",
                 nav_services: "Servicii",
                 nav_about: "Cum Lucrez",
                 nav_projects: "Portofoliu",
@@ -193,23 +194,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 filter_ecommerce: "E-Commerce & Live Web",
                 filter_crm: "Sisteme CRM & B2B",
                 filter_civic: "Civic Tech & Platforme Publice",
-                proj1_tag: "SaaS, CSP Strict & Microservicii Serverless",
+                proj1_tag: "Carieră & Redactare CV Online",
                 proj1_title: "CV Builder Pro & ATS Analyzer (SaaS)",
-                proj1_summary: "Platformă SaaS de redactare CV și analiză ATS în timp real, cu randare vectorială PDF pe microservicii serverless (Node 22 Puppeteer) ranforsate anti-SSRF/XSS, tranzacții atomice Firestore pe scăderea creditelor (anti-race condition), barieră de idempotență deterministă Stripe (colecție dedicată processed_stripe_events), CORS restrâns pe origini autorizate, Content Security Policy strictă fără 'unsafe-inline', mutație Zero-Trust DOM (DOMPurify DOMFragment & replaceChildren), zero stiluri inline, logging structurat JSON cu ID de corelare și barieră Gatekeeper.",
-                proj2_tag: "Aplicație Web & E-Commerce Real-Time",
+                proj1_summary: "Aplicație online care te ajută să îți construiești rapid un CV clar, modern și ușor de citit de angajatori. Primești recomandări pe loc pentru a-ți pune în valoare experiența, îți poți personaliza aspectul vizual și descarci CV-ul gata de trimis în format PDF, direct de pe telefon sau calculator.",
+                proj2_tag: "Magazin Online & Asistență Clienți",
                 proj2_title: "Magazin Online cu Chat Live (Florărie)",
-                proj2_summary: "Aplicație web completă pentru o florărie locală, dezvoltată pe arhitectură MVC decuplată. Include catalog dinamic de produse, coș de cumpărături securizat cu validare strictă și modul de Live Chat în timp real bazat pe WebSockets pentru asistență instantanee și conversii crescute pe mobile.",
-                proj3_tag: "Edge SSR, PWA, Cloudflare R2, GA4/Clarity & Dispecerat Super-Admin",
+                proj2_summary: "Magazin online modern creat pentru o florărie locală, gândit să transforme vizitatorii în clienți fideli. Include un catalog vizual intuitiv, comandă rapidă de pe telefon și un chat live prin care clienții pot cere sfaturi în timp real pentru alegerea sau personalizarea buchetelor.",
+                proj3_tag: "Platformă pentru Asociații & Meșteri",
                 proj3_title: "Aplicație CRM & Gestiune Servicii (Instalbloc)",
                 proj3_status: "Live / Operațional",
-                proj3_summary: "Platformă enterprise Full-Stack dedicată asociațiilor de proprietari, locatarilor și prestatorilor tehnici. Arhitectură Cloud Zero-Defect: Next.js 16 Edge SSR pe Cloudflare Workers cu OpenNext, suport PWA nativ pentru operare mobilă și offline, stocare foto în Cloudflare R2 (zero cost egress) cu compresie automată WebP pe client, persistență distribuită pe Turso Cloud (LibSQL) cu Drizzle ORM și tabelă dedicată audit_logs, telemetrie dublă Google Analytics 4 & Microsoft Clarity cu CSP Nonce criptografic și mascare GDPR PII, raport executiv săptămânal automatizat pe Cloudflare Edge Cron (0 7 * * 1) cu Google Analytics Data API (Service Account JWT nativ) și pachet dual de atașamente (CSV RFC-4180 securizat anti-CWE-1236 și Dashboard HTML Interactiv autonom), plăți securizate Netopia XML criptat AES-256/RSA cu webhook IPN (node:crypto), autentificare prin sesiuni HMAC-SHA256 (timingSafeEqual) și OTP CSPRNG, FSM determinist în 4 etape cu fereastră de 6h exclusivă locatar pe sesizări QR, garanție legală 12 luni cu PV recepție, dispecerat cron orar Cloudflare pentru SLA 96h și recepție tacită la 72h, regulă de plafonare la 3 modificări de ofertă cu protecție anti-spoofing și Dispecerat General Super-Admin.",
-                proj4_tag: "Civic Tech, Audit Urban & Securitate Zero-Trust",
+                proj3_summary: "Platformă online care conectează locatarii și asociațiile de proprietari cu instalatori și electricieni autorizați. Locatarii pot sesiza rapid o avarie chiar de la avizierul blocului (prin cod QR), primesc oferte transparente de la meșteri verificați și beneficiază de garanție pentru fiecare lucrare finalizată.",
+                proj4_tag: "Platformă Civică & Implicare Comunitară",
                 proj4_title: "Platformă Civică & Audit Urban (Viziune Urbană Ploiești)",
-                proj4_summary: "Platformă civică Full-Stack (Next.js 15, TypeScript Zero-Any, Supabase PostgreSQL & Storage) dedicată auditului tehnic și reabilitării blocurilor din Ploiești. Include portal public de urmărire dosare (/status) cu stepper FSM în 5 pași și căutare DOSAR-PH-XXX, panou admin cu 6 secțiuni, upload securizat imagini, generator fișe avizier A4, exporturi ANAF Formular 230 (CSV BOM), sesiuni server HMAC-SHA256 timingSafeEqual, validare Fail-Fast în env.ts (Zod), separare absolută CSS/JS (Zero inline styles), barieră mecanică Gatekeeper, pipeline tranzacțional Resend DKIM/SPF și guvernare OKF.",
-                proj5_tag: "Arhitectură Zero-Defect & Audit Red-Team",
+                proj4_summary: "Platformă civică dedicată locuitorilor din Ploiești pentru raportarea problemelor din cartiere și a stării blocurilor. Cetățenii pot trimite sesizări însoțite de fotografii în câteva secunde și pot urmări online, pas cu pas, stadiul fiecărui dosar până la rezolvare, alături de opțiunea de susținere a proiectelor comunitare.",
+                proj5_tag: "Site de Prezentare & Explorare 3D",
                 proj5_title: "Portofoliu Tiberiu & Universal 3D Engine",
-                proj5_summary: "Platformă web ultra-performantă cu scor Google PageSpeed 98-100 (Desktop 99/100, Mobile 98/100) și Lighthouse 100/100, optimizată mobil la standarde WCAG 2.2 AA (ținte tactile ≥44px), WAI-ARIA inert & focus trapping pe drawer, unități dinamice de viewport (dvh) anti-jitter și safe-area insets (iOS/Android). Arhitectură Zero-Defect pe Vite, Three.js și Vanilla ES6+: Content Security Policy strictă fără 'unsafe-inline', parsare sigură DOMParser fără innerHTML vulnerabil, mutație Zero-Trust DOM (replaceChildren), separare absolută CSS/JS fără stiluri inline, univers 3D interactiv pe GPU cu eco-mode adaptiv, terminal CLI sandboxat, barieră mecanică deterministă Gatekeeper (ESLint zero warnings + Vite build) și guvernanță OKF.",
-                btn_details: "Detalii Tehnice",
+                proj5_summary: "Site-ul pe care te afli acum — gândit să se încarce instantaneu pe orice telefon sau laptop și să ofere o experiență plăcută, clară și accesibilă. Pe lângă prezentarea clasică a proiectelor și a serviciilor, include și un mod vizual 3D interactiv în care poți explora portofoliul într-un mod inedit.",
+                btn_details: "Detalii Proiect",
                 proj_cta_text: "Ai o idee de proiect sau vrei să optimizezi un flux de lucru existent?",
                 proj_cta_btn: "Discută Proiectul Tău pe WhatsApp",
 
@@ -310,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             en: {
                 // Header & Nav
-                nav_home: "Home",
+                nav_home: "Home", skip_link: "Skip to main content", drawer_menu_title: "Menu", drawer_whatsapp_btn: "Chat on WhatsApp", exp_pillar1_title: "Database Administration & DBA", exp_pillar1_desc: "PostgreSQL, MySQL, complex SQL query tuning, and 99.9% continuous availability.", exp_pillar2_title: "Digitalization & ERP/CRM Architecture", exp_pillar2_desc: "Workflow automation, client database management, and operational turnaround reduction.", exp_pillar3_title: "Mission-Critical Systems Support & SLA", exp_pillar3_desc: "Railway hardware infrastructure, network diagnostics, proactive monitoring, and rapid RCA resolution.", contact_whatsapp_label: "WhatsApp (Quick Chat)", contact_phone_label: "Direct Phone",
                 nav_services: "Services",
                 nav_about: "How I Work",
                 nav_projects: "Portfolio",
@@ -395,23 +396,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 filter_ecommerce: "E-Commerce & Live Web",
                 filter_crm: "CRM Systems & B2B",
                 filter_civic: "Civic Tech & Public Platforms",
-                proj1_tag: "SaaS, Hardened CSP & Serverless Microservices",
+                proj1_tag: "Career & Online Resume Builder",
                 proj1_title: "CV Builder Pro & ATS Analyzer (SaaS)",
-                proj1_summary: "Production SaaS resume builder and real-time ATS scoring platform with vector PDF microservices on Node 22 Puppeteer hardened against SSRF/XSS, atomic Firestore transactions for credit deduction (race condition prevention), Stripe webhook idempotency ledger (processed_stripe_events), restricted CORS origin gating, strict Content Security Policy without 'unsafe-inline', Zero-Trust DOM mutations (DOMPurify DOMFragment & replaceChildren), zero inline styling, structured JSON logging with correlation IDs, and mechanical Gatekeeper barrier.",
-                proj2_tag: "Web Application & Real-Time E-Commerce",
+                proj1_summary: "An easy-to-use online app that helps you quickly build a clean, modern resume that employers and recruitment systems can read effortlessly. Get instant tips to highlight your experience, customize the layout, and download a ready-to-send PDF from your phone or computer.",
+                proj2_tag: "Online Store & Live Customer Care",
                 proj2_title: "Online Store with Live Chat (Florist)",
-                proj2_summary: "Full-scale e-commerce web application for a local florist built with decoupled MVC architecture. Features real-time WebSockets live chat, dynamic product catalogs, and secure checkout to drive mobile sales conversions.",
-                proj3_tag: "Edge SSR, PWA, Cloudflare R2, GA4/Clarity & Super-Admin Dispatch",
+                proj2_summary: "A modern online shop built for a local flower store, designed to turn visitors into loyal customers. Features an intuitive visual catalog, fast mobile ordering, and a live chat where customers can get real-time advice for choosing or customizing bouquets.",
+                proj3_tag: "Platform for Homeowners & Contractors",
                 proj3_title: "Service Management & CRM Tool (Instalbloc)",
                 proj3_status: "Live / Operational",
-                proj3_summary: "Enterprise Full-Stack platform designed for property associations, residents, and technical service contractors. Cloud Zero-Defect architecture: Next.js 16 Edge SSR on Cloudflare Workers via OpenNext, native PWA capabilities for offline & mobile operation, zero-egress media storage on Cloudflare R2 with client-side WebP canvas compression, distributed persistence on Turso Cloud (LibSQL) via Drizzle ORM and dedicated audit_logs table, dual telemetry via Google Analytics 4 & Microsoft Clarity with cryptographic Nonce in CSP and GDPR PII masking, automated weekly executive digest via Google Analytics Data API (Service Account JWT natively on Edge), Netopia XML payment engine with AES-256/RSA encryption and IPN webhook (node:crypto), secure HMAC-SHA256 sessions (timingSafeEqual) and CSPRNG OTP generation, deterministic 4-stage FSM with 6h resident decision window on QR incidents, 12-month legal guarantee certificate, Cloudflare worker hourly cron dispatcher for 96h SLA and 72h tacit acceptance, anti-spoofing offer revisions cap (max 3), RFC-4180 CSV exports with UTF-8 BOM, and Super-Admin Command Center with dynamic telemetry.",
-                proj4_tag: "Civic Tech, Urban Audit & Zero-Trust Security",
+                proj3_summary: "An online platform connecting residents and homeowner associations with certified plumbers and electricians. Residents can report an issue right from the building noticeboard (via QR code), receive transparent quotes from verified professionals, and get a warranty for every completed repair.",
+                proj4_tag: "Civic Platform & Community Action",
                 proj4_title: "Civic Platform & Urban Audit (Viziune Urbană Ploiești)",
-                proj4_summary: "Full-Stack civic platform (Next.js 15, Zero-Any TypeScript, Supabase PostgreSQL & Storage) for technical audits and residential building rehabilitation in Ploiești. Features a public dossier tracker (/status) with a 5-step FSM stepper and DOSAR-PH-XXX lookup, 6-module admin dashboard, secure image upload pipeline, official A4 noticeboard sheet generator, ANAF Form 230 collective borderou export (CSV BOM), timing-safe HMAC-SHA256 server sessions, Fail-Fast environment validation in env.ts (Zod), absolute CSS/JS decoupling (zero inline styles), mechanical Gatekeeper barrier, and verified Resend DKIM/SPF email.",
-                proj5_tag: "Zero-Defect Architecture & Red-Team Audit",
+                proj4_summary: "A civic platform built for Ploiești residents to report neighborhood issues and building conditions. Citizens can submit photo reports in seconds and track the progress of each case online step by step until resolved, alongside options to support local community initiatives.",
+                proj5_tag: "Personal Website & 3D Exploration",
                 proj5_title: "Tiberiu Portfolio & Universal 3D Engine",
-                proj5_summary: "Ultra-fast web platform achieving Google PageSpeed 98-100 (Desktop 99/100, Mobile 98/100) and Lighthouse 100/100, mobile-first optimized to WCAG 2.2 AA standards (min 44px touch targets), WAI-ARIA inert & focus trapping on the drawer, dynamic viewport units (dvh) preventing address bar layout jitter, and safe-area insets (iOS/Android). Hardened Zero-Defect architecture on Vite, Three.js, and Vanilla ES6+: strict Content Security Policy without 'unsafe-inline', secure DOMParser template parsing eliminating vulnerable innerHTML, Zero-Trust DOM mutations (replaceChildren), complete CSS/JS decoupling with zero inline styles, GPU-accelerated interactive 3D universe with adaptive eco-mode, sandboxed CLI terminal, deterministic Gatekeeper build barrier (ESLint zero warnings + Vite build), and OKF governance.",
-                btn_details: "Technical Details",
+                proj5_summary: "The website you are browsing right now — built to load instantly on any phone or laptop and provide a clear, accessible experience. Alongside the classic presentation of projects and services, it features an interactive 3D visual mode where you can explore the portfolio in a unique way.",
+                btn_details: "Project Details",
                 proj_cta_text: "Have a project idea or want to optimize an existing workflow?",
                 proj_cta_btn: "Discuss Your Project on WhatsApp",
 
@@ -522,8 +523,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Update title
             document.title = lang === 'ro' 
-                ? "Militaru Tiberiu Nicolae | IT Consultant • Full-Stack Solutions" 
-                : "Militaru Tiberiu Nicolae | IT Consultant • Full-Stack Solutions";
+                ? "Militaru Tiberiu Nicolae | Consultant IT & Soluții Software Full-Stack" 
+                : "Militaru Tiberiu Nicolae | IT Consultant • Full-Stack Software Solutions";
+            const senderNameEl = document.getElementById('senderName');
+            if (senderNameEl) senderNameEl.setAttribute('placeholder', lang === 'ro' ? 'Ex: Alexandru Popescu' : 'e.g., Alex Morgan');
+            const senderEmailEl = document.getElementById('senderEmail');
+            if (senderEmailEl) senderEmailEl.setAttribute('placeholder', lang === 'ro' ? 'nume@exemplu.ro' : 'name@example.com');
+            const senderMsgEl = document.getElementById('senderMessage');
+            if (senderMsgEl) senderMsgEl.setAttribute('placeholder', lang === 'ro' ? 'Spune-mi câteva detalii despre ce dorești să realizezi...' : 'Share a few details about what you would like to build...');
 
             // Update all DOM elements with data-i18n attribute (Defensive DOM rendering)
             document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -941,7 +948,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 animId = null;
                 return;
             }
-            animId = requestAnimationFrame(render);
+            const prefersReducedMotion = Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+            if (!prefersReducedMotion) {
+                animId = requestAnimationFrame(render);
+            } else {
+                animId = null;
+            }
             frameCount++;
 
             // Smooth mouse lerping
@@ -1454,7 +1466,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     drops[i]++;
                 }
 
-                if (isMatrixActive) {
+                const prefersReducedMotion = Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+                if (isMatrixActive && !prefersReducedMotion) {
                     matrixAnimId = requestAnimationFrame(draw);
                 }
             };
@@ -1502,7 +1515,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     printLine('• [Magazin Online Florărie]: Live chat, WebSockets, decoupled MVC architecture, React storefront', 't-out');
                     printLine('• [Instalbloc CRM]: Next.js 16 Edge SSR (Cloudflare Workers), PWA Nativ, Cloudflare R2 Media, Turso Cloud DB (LibSQL), Drizzle ORM, Netopia XML (AES-256 IPN), Dispecerat Super-Admin, 4-stage FSM, 96h SLA cron [Status: Live / Operațional pe https://instalbloc.ro]', 't-out');
                     printLine('• [Viziune Urbană Ploiești]: Civic platform, Next.js 15, TypeScript zero-any, Supabase PostgreSQL & Storage, HMAC timing-safe auth, /status FSM tracker, admin storage & ANAF exports, Gatekeeper', 't-out');
-                    printLine('• [Portofoliu Tiberiu]: Vite, Three.js 3D universe, strict CSP, zero inline styling, zero-trust DOM, Gatekeeper, OKF SSOT', 't-out');
+                    printLine('• [Portofoliu Tiberiu]: Vite, WebGL 1.0 & GLSL Shaders 3D universe, strict CSP, zero inline styling, zero-trust DOM, Gatekeeper, OKF SSOT', 't-out');
                     const projTarget = document.getElementById('projects');
                     if (typeof projTarget?.scrollIntoView === 'function') projTarget.scrollIntoView({ behavior: 'smooth' });
                     break;
@@ -1929,7 +1942,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ro: {
                     title: "Portofoliu Tiberiu & Universal 3D Engine",
                     desc: "Platformă web ultra-performantă de prezentare profesională și demonstrare de capabilități tehnice, construită de la zero pe principii de arhitectură Zero-Defect.",
-                    architecture: "Build toolchain Vite cu Vanilla ES6+ și Three.js pentru redarea pe GPU a unui univers interactiv de particule reactive cu modul eco adaptiv pe mobil (<18 noduri la redimensionare/rotire). Structurat pe standarde Zero-Defect și WCAG 2.2 AA: scor Google PageSpeed 98-100 și Lighthouse 100/100; ținte tactile calibrate la minim 44x44px pentru toate butoanele, drawer-ul mobil și modalele; atribut HTML inert și capturare de focus pe meniul mobil; unități dinamice de viewport (dvh) și safe-area insets (iOS/Android) pentru prevenirea oricărui layout shift (CLS 0); Content Security Policy strictă fără 'unsafe-inline' în script-src; parsare sigură a template-urilor prin DOMParser eliminând orice folosire de innerHTML nesanitizat; mutații DOM Zero-Trust prin API-uri native (replaceChildren, createTextNode); separare completă CSS/JS fără atribute de stil inline dinamice; terminal CLI interactiv integrat cu sandboxare de comenzi; sistem bilingv complet (RO/EN) prin I18nModule; barieră mecanică Gatekeeper (ESLint zero warnings + Vite build) și guvernanță Open Knowledge Format (OKF).",
+                    architecture: "Build toolchain Vite cu Vanilla ES6+ și WebGL 1.0 & GLSL Shaders pentru redarea pe GPU a unui univers interactiv de particule reactive cu modul eco adaptiv pe mobil (<18 noduri la redimensionare/rotire). Structurat pe standarde Zero-Defect și WCAG 2.2 AA: scor Google PageSpeed 98-100 și Lighthouse 100/100; ținte tactile calibrate la minim 44x44px pentru toate butoanele, drawer-ul mobil și modalele; atribut HTML inert și capturare de focus pe meniul mobil; unități dinamice de viewport (dvh) și safe-area insets (iOS/Android) pentru prevenirea oricărui layout shift (CLS 0); Content Security Policy strictă fără 'unsafe-inline' în script-src; parsare sigură a template-urilor prin DOMParser eliminând orice folosire de innerHTML nesanitizat; mutații DOM Zero-Trust prin API-uri native (replaceChildren, createTextNode); separare completă CSS/JS fără atribute de stil inline dinamice; terminal CLI interactiv integrat cu sandboxare de comenzi; sistem bilingv complet (RO/EN) prin I18nModule; barieră mecanică Gatekeeper (ESLint zero warnings + Vite build) și guvernanță Open Knowledge Format (OKF).",
                     results: [
                         "Scor Google PageSpeed 98-100 (Desktop 99/100, Mobile 98/100) cu optimizare totală Core Web Vitals (LCP 1.1s, CLS 0, INP < 50ms).",
                         "Scor Google Lighthouse 100/100 pe Accesibilitate, Best Practices și SEO (TBT 0ms, FCP sub 1.2s).",
@@ -1938,7 +1951,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         "Stabilitate vizuală prin unități dinamice dvh și safe-area-insets: zero jitter la expandarea barei de adrese din Safari/Chrome.",
                         "Parsare DOM securizată via DOMParser fără innerHTML vulnerabil în întreaga logică de randare dinamică.",
                         "Zero stiluri dinamice inline și separare completă conformă cu cele mai rigide standarde CSP.",
-                        "Motor 3D optimizat pe GPU cu Three.js capabil de 60 FPS constant pe dispozitive desktop și mobile.",
+                        "Motor 3D optimizat pe GPU cu WebGL 1.0 & GLSL Shaders capabil de 60 FPS constant pe dispozitive desktop și mobile.",
                         "Terminal CLI funcțional direct în browser pentru inspecția stack-ului și navigare prin comenzi.",
                         "Sincronizare bilingvă instantanee (RO/EN) fără refacerea arborelui DOM sau pâlpâire vizuală.",
                         "Verificare mecanică deterministă la build prin scriptul Gatekeeper (ESLint + Vite) și trasabilitate OKF în .knowledge/."
@@ -1947,7 +1960,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 en: {
                     title: "Tiberiu Portfolio & Universal 3D Engine",
                     desc: "Ultra-fast professional engineering portfolio and technical demonstration platform, engineered from scratch adhering to Zero-Defect principles.",
-                    architecture: "Vite build toolchain with Vanilla ES6+ and Three.js rendering an interactive GPU-accelerated particle universe featuring orientation-adaptive mobile eco-mode (<18 nodes on resize/orientation change). Hardened to Zero-Defect and WCAG 2.2 AA standards: Google PageSpeed 98-100 and Lighthouse 100/100 scores; minimum 44x44px touch targets across all buttons, mobile drawer, and modals; standard inert HTML attribute and focus trapping on the mobile navigation drawer; dynamic viewport units (dvh) and safe-area insets (iOS/Android) completely preventing mobile layout shifts (CLS 0); strict Content Security Policy without 'unsafe-inline' in script-src; secure DOMParser template parsing eliminating unsanitized innerHTML; Zero-Trust DOM mutations through native APIs (replaceChildren, createTextNode); complete CSS/JS decoupling with zero dynamic inline styles; interactive client-side CLI terminal; full bilingual support (RO/EN) via I18nModule; mechanical Gatekeeper barrier (ESLint zero warnings + Vite build); and Open Knowledge Format (OKF) governance.",
+                    architecture: "Vite build toolchain with Vanilla ES6+ and WebGL 1.0 & GLSL Shaders rendering an interactive GPU-accelerated particle universe featuring orientation-adaptive mobile eco-mode (<18 nodes on resize/orientation change). Hardened to Zero-Defect and WCAG 2.2 AA standards: Google PageSpeed 98-100 and Lighthouse 100/100 scores; minimum 44x44px touch targets across all buttons, mobile drawer, and modals; standard inert HTML attribute and focus trapping on the mobile navigation drawer; dynamic viewport units (dvh) and safe-area insets (iOS/Android) completely preventing mobile layout shifts (CLS 0); strict Content Security Policy without 'unsafe-inline' in script-src; secure DOMParser template parsing eliminating unsanitized innerHTML; Zero-Trust DOM mutations through native APIs (replaceChildren, createTextNode); complete CSS/JS decoupling with zero dynamic inline styles; interactive client-side CLI terminal; full bilingual support (RO/EN) via I18nModule; mechanical Gatekeeper barrier (ESLint zero warnings + Vite build); and Open Knowledge Format (OKF) governance.",
                     results: [
                         "Google PageSpeed 98-100 score (Desktop 99/100, Mobile 98/100) with complete Core Web Vitals optimization (LCP 1.1s, CLS 0, INP < 50ms).",
                         "Google Lighthouse 100/100 score across Accessibility, Best Practices, and SEO (0ms TBT, sub-1.2s FCP).",
@@ -1956,7 +1969,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         "Mobile layout stability via dynamic dvh units and safe-area insets: zero jitter when mobile browser address bars toggle.",
                         "Hardened DOM parsing via DOMParser with zero vulnerable innerHTML throughout all dynamic UI modules.",
                         "Zero dynamic inline styling and absolute decoupling adhering to strict CSP standards.",
-                        "GPU-accelerated Three.js particle engine delivering sustained 60 FPS across desktop and mobile devices.",
+                        "GPU-accelerated WebGL 1.0 & GLSL Shaders particle engine delivering sustained 60 FPS across desktop and mobile devices.",
                         "Interactive browser CLI terminal providing immediate stack inspection and keyboard-driven navigation.",
                         "Seamless bilingual state switching (RO/EN) without DOM re-instantiation or visual layout shift.",
                         "Deterministic Gatekeeper verification at build time (ESLint + Vite) and complete architectural traceability via OKF."
@@ -1996,9 +2009,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return group;
         };
 
+        let lastProjectTrigger = null;
+
         const openModal = (id) => {
             const data = projectData[id];
             if (!data || !modal) return;
+            lastProjectTrigger = document.activeElement;
 
             const lang = I18nModule.getCurrentLang();
             const info = data[lang] || data.ro;
@@ -2029,6 +2045,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
+            closeBtn?.focus();
         };
 
         const closeModal = () => {
@@ -2036,7 +2053,13 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.setAttribute('inert', '');
             modal.classList.remove('active');
             modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('modal-open');
+            if (!document.querySelector('.modal-overlay.active, .mobile-drawer.active')) {
+                document.body.classList.remove('modal-open');
+            }
+            if (lastProjectTrigger && typeof lastProjectTrigger.focus === 'function') {
+                lastProjectTrigger.focus();
+                lastProjectTrigger = null;
+            }
         };
 
         document.querySelectorAll('.btn-project-modal').forEach(btn => {
@@ -2057,7 +2080,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         window.addEventListener('keydown', handleEscape);
-        document.addEventListener('keydown', handleEscape);
     })();
 
 
@@ -2070,19 +2092,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const closeBtn = document.getElementById('cvModalCloseBtn');
         const dismissBtn = document.getElementById('cvModalDismissBtn');
+        let lastCvTrigger = null;
 
         const openCvModal = () => {
+            lastCvTrigger = document.activeElement;
             modal.removeAttribute('inert');
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
+            closeBtn?.focus();
         };
 
         const closeCvModal = () => {
             modal.setAttribute('inert', '');
             modal.classList.remove('active');
             modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('modal-open');
+            if (!document.querySelector('.modal-overlay.active, .mobile-drawer.active')) {
+                document.body.classList.remove('modal-open');
+            }
+            if (lastCvTrigger && typeof lastCvTrigger.focus === 'function') {
+                lastCvTrigger.focus();
+                lastCvTrigger = null;
+            }
         };
 
         // Attach to all elements with data-cv-modal-open across the page
@@ -2119,7 +2150,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         window.addEventListener('keydown', handleCvEscape);
-        document.addEventListener('keydown', handleCvEscape);
 
         // Expose for external modules (e.g. SwarmEngine 3D canvas)
         if (typeof window !== 'undefined') {
@@ -2136,19 +2166,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const closeBtn = document.getElementById('privacyModalCloseBtn');
         const dismissBtn = document.getElementById('privacyModalDismissBtn');
+        let lastPrivacyTrigger = null;
 
         const openPrivacyModal = () => {
+            lastPrivacyTrigger = document.activeElement;
             modal.removeAttribute('inert');
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
+            closeBtn?.focus();
         };
 
         const closePrivacyModal = () => {
             modal.setAttribute('inert', '');
             modal.classList.remove('active');
             modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('modal-open');
+            if (!document.querySelector('.modal-overlay.active, .mobile-drawer.active')) {
+                document.body.classList.remove('modal-open');
+            }
+            if (lastPrivacyTrigger && typeof lastPrivacyTrigger.focus === 'function') {
+                lastPrivacyTrigger.focus();
+                lastPrivacyTrigger = null;
+            }
         };
 
         const triggerBtn = document.getElementById('privacyPolicyBtn');
@@ -2178,7 +2217,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         window.addEventListener('keydown', handlePrivacyEscape);
-        document.addEventListener('keydown', handlePrivacyEscape);
     })();
 
 
@@ -2414,36 +2452,47 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     // ==========================================================================
-    // 12. SWARM 3D NEURAL ENGINE LAZY INITIALIZATION
+    // 12. SWARM 3D NEURAL ENGINE LAZY INITIALIZATION (FSM)
     // ==========================================================================
     let swarmEngineInstance = null;
-    let isSwarmLoading = false;
+    const swarmLoaderFSM = { status: 'idle', pendingOpen: false, promise: null };
 
     const loadSwarmEngine = (autoOpenWarning = false) => {
-        if (swarmEngineInstance) {
-            if (autoOpenWarning && typeof swarmEngineInstance.openBatteryWarning === 'function') {
+        if (autoOpenWarning) {
+            swarmLoaderFSM.pendingOpen = true;
+        }
+        if (swarmLoaderFSM.status === 'ready' && swarmEngineInstance) {
+            if (swarmLoaderFSM.pendingOpen && typeof swarmEngineInstance.openBatteryWarning === 'function') {
+                swarmLoaderFSM.pendingOpen = false;
                 swarmEngineInstance.openBatteryWarning();
             }
             return Promise.resolve(swarmEngineInstance);
         }
-        if (isSwarmLoading) return Promise.resolve(null);
-        isSwarmLoading = true;
+        if (swarmLoaderFSM.status === 'loading' && swarmLoaderFSM.promise) {
+            return swarmLoaderFSM.promise;
+        }
+        swarmLoaderFSM.status = 'loading';
 
-        return import('./swarm/SwarmEngine.js')
+        swarmLoaderFSM.promise = import('./swarm/SwarmEngine.js')
             .then(({ TiberiuSwarmEngine }) => {
                 swarmEngineInstance = new TiberiuSwarmEngine();
                 swarmEngineInstance.init();
-                isSwarmLoading = false;
-                if (autoOpenWarning && typeof swarmEngineInstance.openBatteryWarning === 'function') {
+                swarmLoaderFSM.status = 'ready';
+                if (swarmLoaderFSM.pendingOpen && typeof swarmEngineInstance.openBatteryWarning === 'function') {
+                    swarmLoaderFSM.pendingOpen = false;
                     swarmEngineInstance.openBatteryWarning();
                 }
                 return swarmEngineInstance;
             })
             .catch(err => {
                 console.error('Failed to load SwarmEngine:', err);
-                isSwarmLoading = false;
+                swarmLoaderFSM.status = 'error';
+                swarmLoaderFSM.pendingOpen = false;
+                swarmLoaderFSM.promise = null;
                 return null;
             });
+
+        return swarmLoaderFSM.promise;
     };
 
     const atomicBtn = document.getElementById('swarmAtomicBtn');
