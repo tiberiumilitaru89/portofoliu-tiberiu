@@ -16,3 +16,4 @@ Thumbs.db
 # Documentation & Rules
 .knowledge/
 *.md
+!/README.md
