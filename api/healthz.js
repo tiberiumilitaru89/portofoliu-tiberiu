@@ -1,4 +1,6 @@
 // @ts-check
+import { randomUUID } from 'node:crypto';
+
 const CORRELATION_ID_REGEX = /^[a-zA-Z0-9_-]{8,64}$/;
 
 export default function handler(req, res) {
@@ -7,7 +9,7 @@ export default function handler(req, res) {
         : '';
     const correlationId = CORRELATION_ID_REGEX.test(incomingCorrId)
         ? incomingCorrId
-        : 'hlth_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 7);
+        : `hlth_${randomUUID().replace(/-/g, '').slice(0, 12)}`;
 
     if (typeof res.setHeader === 'function') {
         res.setHeader('Cache-Control', 'no-store');

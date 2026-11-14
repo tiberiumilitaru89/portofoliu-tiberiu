@@ -1775,7 +1775,7 @@ export class TiberiuSwarmEngine {
   openExternalUrl(url) {
     if (!url || typeof url !== 'string') return;
     const trimmed = url.trim();
-    if (!/^(?:(?:https?|mailto|tel):|\/|#)/i.test(trimmed)) return;
+    if (!/^(?:(?:https?|mailto|tel):|\/(?!\/|\\)|#)/i.test(trimmed)) return;
     const a = document.createElement('a');
     a.href = trimmed;
     if (!trimmed.startsWith('mailto:') && !trimmed.startsWith('tel:')) {
@@ -2760,7 +2760,10 @@ export class TiberiuSwarmEngine {
         const tId = setTimeout(() => ctrl.abort(), 9000);
         const res = await fetch('/api/contact', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
           body: JSON.stringify(payload),
           signal: ctrl.signal
         });

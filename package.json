@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "test": "node --test tests/*.test.js",
-    "gatekeeper": "eslint . --max-warnings=0 && npm test && vite build",
+    "gatekeeper": "eslint . --max-warnings=0 && npm test && vite build && npm audit --omit=dev --audit-level=high",
     "preview": "vite preview"
   },
   "repository": {

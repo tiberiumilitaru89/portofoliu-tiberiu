@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const doc = parser.parseFromString(htmlString, 'text/html');
         const allowedTags = new Set(['STRONG', 'EM', 'SPAN', 'B', 'I', 'BR', 'A', 'P', 'DIV', 'CODE']);
         const allowedAttrs = new Set(['class', 'href', 'target', 'rel', 'title']);
-        const safeUrlPattern = /^(?:(?:https?|mailto|tel):|\/|#)/i;
+        const safeUrlPattern = /^(?:(?:https?|mailto|tel):|\/(?!\/|\\)|#)/i;
 
         const sanitizeNode = (node) => {
             for (let i = node.children.length - 1; i >= 0; i--) {
@@ -2352,7 +2352,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = {
                 name: nameInput.value.trim(),
                 email: emailInput.value.trim(),
-                _replyto: emailInput.value.trim(),
                 service: document.getElementById('projectType')?.value || 'General',
                 message: messageInput.value.trim(),
                 _formDuration: interactionDuration
